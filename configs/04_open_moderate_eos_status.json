@@ -1,0 +1,94 @@
+{
+    "supply-curve-aggregation": {
+        "pipeline_index": 0,
+        "04_open_moderate_eos_agg": {
+            "job_id": "7630747",
+            "hardware": "eagle",
+            "fout": "04_open_moderate_eos_agg.csv",
+            "dirout": "/shared-projects/rev/projects/weto/fy21/atb/rev/aggregation/onshore/04_open_moderate_eos/",
+            "job_status": "successful",
+            "area_filter_kernel": "queen",
+            "cap_cost_scale": "np.interp(capacity, [0, 20, 50, 100, 150, 200, 400, 1000, 2000], [1.23, 1.23, 1.12, 1.06, 1.02, 1.0, 0.97, 0.96, 0.96])",
+            "cf_dset": "cf_mean-means",
+            "econ_fpath": null,
+            "excl_dict": {
+                "albers": {
+                    "include_values": 1
+                },
+                "atlas_landform_elev_exclusion": {
+                    "exclude_values": 1
+                },
+                "conus_building_percent": {
+                    "use_as_weights": 1
+                },
+                "conus_rail_percent": {
+                    "use_as_weights": 1
+                },
+                "conus_roads_percent": {
+                    "use_as_weights": 1
+                },
+                "conus_xmission_percent": {
+                    "use_as_weights": 1
+                },
+                "dist_to_coast": {
+                    "include_values": 0
+                },
+                "lbnl_convex_hull_existing_farms_2021": {
+                    "force_include_values": 1
+                },
+                "nlcd_water_wetlands_1000ft": {
+                    "exclude_values": 1
+                },
+                "open_access": {
+                    "exclude_values": 1
+                }
+            },
+            "excl_fpath": [
+                "/projects/rev/data/exclusions/ATB_Exclusions.h5"
+            ],
+            "finput": [
+                [
+                    "/projects/rev/data/exclusions/ATB_Exclusions.h5"
+                ],
+                "/shared-projects/rev/projects/weto/fy21/atb/rev/generation/onshore/4_moderate_eos/4_moderate_eos_multi-year.h5",
+                "/datasets/WIND/conus/v1.0.0/wtk_conus_2007.h5"
+            ],
+            "friction_dset": null,
+            "friction_fpath": null,
+            "gen_fpath": "/shared-projects/rev/projects/weto/fy21/atb/rev/generation/onshore/4_moderate_eos/4_moderate_eos_multi-year.h5",
+            "lcoe_dset": "lcoe_fcr-means",
+            "min_area": null,
+            "power_density": 3.0,
+            "recalc_lcoe": true,
+            "res_class_bins": null,
+            "res_class_dset": "ws_mean-means",
+            "resolution": 128,
+            "runtime": 23.83922779162725,
+            "tm_dset": "techmap_wtk"
+        }
+    },
+    "supply-curve": {
+        "pipeline_index": 1,
+        "04_open_moderate_eos_sc": {
+            "job_id": "7631468",
+            "hardware": "eagle",
+            "fout": "04_open_moderate_eos_sc.csv",
+            "dirout": "/lustre/eaglefs/shared-projects/rev/projects/weto/fy21/atb/rev/aggregation/onshore/04_open_moderate_eos/",
+            "job_status": "successful",
+            "finput": [
+                "/shared-projects/rev/projects/weto/fy21/atb/rev/aggregation/onshore/04_open_moderate_eos/04_open_moderate_eos_agg.csv",
+                "/projects/rev/data/transmission/build/connections_128.csv",
+                "/projects/rev/data/transmission/build/multipliers_128.csv",
+                {
+                    "available_capacity": 1.0,
+                    "center_tie_in_cost": 0,
+                    "line_cost": 3667,
+                    "line_tie_in_cost": 14000,
+                    "sink_tie_in_cost": 14000,
+                    "station_tie_in_cost": 0
+                }
+            ],
+            "runtime": 2.337122599283854
+        }
+    }
+}

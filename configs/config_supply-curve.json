@@ -1,0 +1,28 @@
+{
+    "avail_cap_frac": 1.0,
+    "directories": {
+        "log_directory": "./logs",
+        "output_directory": "./"
+    },
+    "execution_control": {
+        "allocation": "wetosa",
+        "feature": "--qos=normal",
+        "memory": 90,
+        "nodes": 4,
+        "option": "eagle",
+        "walltime": 2
+    },
+    "fixed_charge_rate": 0.049,
+    "sc_features": "/projects/rev/data/transmission/build/multipliers_128.csv",
+    "sc_points": "PIPELINE",
+    "simple": false,
+    "trans_table": "/projects/rev/data/transmission/build/connections_128.csv",
+    "transmission_costs": {
+        "available_capacity": 1.0,
+        "line_cost": 3667,
+        "line_tie_in_cost": 14000,
+        "station_tie_in_cost": 0,
+        "center_tie_in_cost": 0,
+        "sink_tie_in_cost": 14000
+    }
+}

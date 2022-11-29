@@ -1,0 +1,34 @@
+{
+    "directories": {
+        "log_directory": "./logs/",
+        "output_directory": "./"
+    },
+    "execution_control": {
+        "allocation": "wetosa",
+        "option": "eagle",
+        "walltime": 3
+    },
+    "gen_fpath": "PIPELINE",
+    "log_level": "INFO",
+    "offshore_fpath": "/shared-projects/rev/projects/weto/fy21/atb/rev/site_data/offshore_inputs.csv",
+    "offshore_meta_cols": [
+        "depth"
+    ],
+    "offshore_nrwal_keys": [
+        "array",
+        "capital_cost",
+        "depth",
+        "export",
+        "fixed_charge_rate",
+        "fixed_operating_cost"
+    ],
+    "project_points": "/shared-projects/rev/projects/weto/fy21/atb/rev/project_points/project_points_offshore.csv",
+    "sam_files": {
+        "fixed": "/shared-projects/rev/projects/weto/fy21/atb/rev/sam_configs/moderate_fixed.json",
+        "floating": "/shared-projects/rev/projects/weto/fy21/atb/rev/sam_configs/moderate_floating.json"
+    },
+    "nrwal_configs": {
+        "fixed": "/shared-projects/rev/projects/weto/fy21/atb/rev/nrwal_configs/moderate_fixed.yaml",
+        "floating": "/shared-projects/rev/projects/weto/fy21/atb/rev/nrwal_configs/moderate_floating.yaml"
+    }
+}

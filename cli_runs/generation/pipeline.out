@@ -1,0 +1,49 @@
+INFO - 2022-01-20 12:07:59,985 [pipeline.py:134] : Pipeline submitting: "generation" for job "outputs"
+WARNING - 2022-01-20 12:08:21,628 [pipeline.py:147] : Subprocess received stderr: 
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/reV/config/base_analysis_config.py:161: UserWarning: Execution control option not specified. Defaulting to a local run.
+  warn('Execution control option not specified. '
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/rex/sam_resource.py:493: SAMInputWarning: Resource dataset "wind_speed" out of viable SAM range (0, 120) for sites [7]. Data min/max: 0/170. Patching data...
+  warn('Resource dataset "{}" out of viable SAM range ({}, {}) for '
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/rex/sam_resource.py:493: SAMInputWarning: Resource dataset "wind_speed" out of viable SAM range (0, 120) for sites [9]. Data min/max: 0/170. Patching data...
+  warn('Resource dataset "{}" out of viable SAM range ({}, {}) for '
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/rex/sam_resource.py:493: SAMInputWarning: Resource dataset "wind_speed" out of viable SAM range (0, 120) for sites [6]. Data min/max: 0/170. Patching data...
+  warn('Resource dataset "{}" out of viable SAM range ({}, {}) for '
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/rex/sam_resource.py:493: SAMInputWarning: Resource dataset "wind_speed" out of viable SAM range (0, 120) for sites [8]. Data min/max: 0/170. Patching data...
+  warn('Resource dataset "{}" out of viable SAM range ({}, {}) for '
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/rex/sam_resource.py:493: SAMInputWarning: Resource dataset "wind_speed" out of viable SAM range (0, 120) for sites [7]. Data min/max: 1/146. Patching data...
+  warn('Resource dataset "{}" out of viable SAM range ({}, {}) for '
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/rex/sam_resource.py:493: SAMInputWarning: Resource dataset "wind_speed" out of viable SAM range (0, 120) for sites [6]. Data min/max: 1/146. Patching data...
+  warn('Resource dataset "{}" out of viable SAM range ({}, {}) for '
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/rex/sam_resource.py:493: SAMInputWarning: Resource dataset "wind_speed" out of viable SAM range (0, 120) for sites [9]. Data min/max: 1/146. Patching data...
+  warn('Resource dataset "{}" out of viable SAM range ({}, {}) for '
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/rex/sam_resource.py:493: SAMInputWarning: Resource dataset "wind_speed" out of viable SAM range (0, 120) for sites [8]. Data min/max: 1/146. Patching data...
+  warn('Resource dataset "{}" out of viable SAM range ({}, {}) for '
+INFO - 2022-01-20 12:08:27,656 [pipeline.py:280] : Module "generation" for job "outputs" is successful.
+INFO - 2022-01-20 12:08:27,657 [pipeline.py:134] : Pipeline submitting: "multi-year" for job "outputs"
+WARNING - 2022-01-20 12:08:30,551 [pipeline.py:147] : Subprocess received stderr: 
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/reV/config/base_analysis_config.py:161: UserWarning: Execution control option not specified. Defaulting to a local run.
+  warn('Execution control option not specified. '
+INFO - 2022-01-20 12:08:36,568 [pipeline.py:280] : Module "multi-year" for job "outputs" is successful.
+INFO - 2022-01-20 12:08:36,568 [pipeline.py:134] : Pipeline submitting: "qa-qc" for job "outputs"
+WARNING - 2022-01-20 12:08:58,126 [pipeline.py:147] : Subprocess received stderr: 
+/Users/twillia2/anaconda3/envs/revruns/lib/python3.8/site-packages/reV/config/base_analysis_config.py:161: UserWarning: Execution control option not specified. Defaulting to a local run.
+  warn('Execution control option not specified. '
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+INFO - 2022-01-20 12:09:04,145 [pipeline.py:280] : Module "qa-qc" for job "outputs" is successful.
+INFO - 2022-01-20 12:09:04,145 [pipeline.py:117] : Pipeline job "outputs" is complete.

@@ -1,0 +1,24 @@
+INFO - 2022-01-20 12:08:30,035 [cli_multi_year.py:80] : Running reV multi-year from config file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/config_multi-year.json"
+INFO - 2022-01-20 12:08:30,035 [cli_multi_year.py:82] : Target output directory: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs"
+INFO - 2022-01-20 12:08:30,035 [cli_multi_year.py:83] : Target logging directory: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/logs/"
+INFO - 2022-01-20 12:08:30,039 [cli_multi_year.py:217] : Multi-year collection is being run with job name "outputs_multi-year". Target output path is: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_multi-year.h5
+INFO - 2022-01-20 12:08:30,039 [cli_multi_year.py:223] : - Collecting datasets "['cf_mean', 'cf_profile', 'lcoe_fcr', 'ghi_mean']" from "['/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_gen_2012.h5', '/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_gen_2013.h5']" into "none/"
+INFO - 2022-01-20 12:08:30,042 [multi_year.py:403] : Collecting cf_mean into /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_multi-year.h5 and computing multi-year means and standard deviations.
+INFO - 2022-01-20 12:08:30,042 [__init__.py:20] : Running with reV version 0.5.13
+INFO - 2022-01-20 12:08:30,042 [loggers.py:600] : Running with rex version 0.2.68
+INFO - 2022-01-20 12:08:30,090 [multi_year.py:427] : Collecting cf_profile into /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_multi-year.h5
+INFO - 2022-01-20 12:08:30,090 [__init__.py:20] : Running with reV version 0.5.13
+INFO - 2022-01-20 12:08:30,090 [loggers.py:600] : Running with rex version 0.2.68
+INFO - 2022-01-20 12:08:30,133 [multi_year.py:403] : Collecting lcoe_fcr into /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_multi-year.h5 and computing multi-year means and standard deviations.
+INFO - 2022-01-20 12:08:30,133 [__init__.py:20] : Running with reV version 0.5.13
+INFO - 2022-01-20 12:08:30,133 [loggers.py:600] : Running with rex version 0.2.68
+INFO - 2022-01-20 12:08:30,211 [multi_year.py:403] : Collecting ghi_mean into /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_multi-year.h5 and computing multi-year means and standard deviations.
+INFO - 2022-01-20 12:08:30,211 [__init__.py:20] : Running with reV version 0.5.13
+INFO - 2022-01-20 12:08:30,211 [loggers.py:600] : Running with rex version 0.2.68
+INFO - 2022-01-20 12:08:30,307 [cli_multi_year.py:241] : - none collection completed in: 0.00 min.
+INFO - 2022-01-20 12:08:30,307 [cli_multi_year.py:245] : Multi-year collection completed in : 0.00 min.
+INFO - 2022-01-20 12:08:38,956 [__init__.py:20] : Running with reV version 0.5.13
+INFO - 2022-01-20 12:08:38,956 [loggers.py:600] : Running with rex version 0.2.68
+INFO - 2022-01-20 12:08:38,956 [qa_qc.py:30] : QA/QC results to be saved to: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/QA_multi-year
+INFO - 2022-01-20 12:08:38,956 [summary.py:31] : QAQC Summarize initializing on: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_multi-year.h5
+INFO - 2022-01-20 12:08:57,753 [qa_qc.py:140] : Finished QAQC on file: outputs_multi-year.h5 output directory: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/QA_multi-year

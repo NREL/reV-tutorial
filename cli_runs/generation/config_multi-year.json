@@ -1,0 +1,23 @@
+{
+  "directories": {
+    "log_directory": "./outputs/logs/",
+    "output_directory": "./outputs"
+  },
+  "execution_control": {
+    "memory_utilization_limit": 0.4
+  },
+  "groups": {
+    "none": {
+      "dsets": [
+        "cf_mean",
+        "cf_profile",
+        "lcoe_fcr",
+        "ghi_mean"
+      ],
+      "source_dir": "./",
+      "source_files": "PIPELINE",
+      "source_prefix": ""
+    }
+  },
+  "log_level": "INFO"
+}

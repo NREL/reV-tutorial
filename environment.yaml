@@ -1,0 +1,18 @@
+name: rev
+channels:
+  - nrel
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - h5py
+  - python=3.8
+  - nrel-nrwal=0.0.3
+  - nrel-pysam=2.2.4
+  - nrel-rex=0.2.64
+  - nrel-rev=0.5.12
+  - packaging=20.3
+  - pip
+  - plotly=4.7.1
+  - pip:
+    - plotting>=0.0.6

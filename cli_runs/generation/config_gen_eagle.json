@@ -1,0 +1,32 @@
+{
+  "analysis_years": [
+    2012,
+    2013
+  ],
+  "directories": {
+    "log_directory": "./logs/",
+    "output_directory": "./"
+  },
+  "execution_control": {
+    "allocation": "rev",
+    "feature": "--qos=high",
+    "memory": 90,
+    "nodes": 20,
+    "option": "eagle",
+    "sites_per_worker": 100,
+    "walltime": 4.0
+  },
+  "log_level": "INFO",
+  "output_request": [
+    "cf_mean",
+    "cf_profile",
+    "lcoe_fcr",
+    "ghi_mean"
+  ],
+  "project_points": "./nsrdb_conus_project_points.csv",
+  "resource_file": "../../data/nsrdb/ri_nsrdb_{}.h5",
+  "sam_files": {
+    "default": "./pv.json"
+  },
+  "technology": "pvwattsv7"
+}

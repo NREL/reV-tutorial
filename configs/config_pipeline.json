@@ -1,0 +1,14 @@
+{
+    "logging": {
+        "log_file": null,
+        "log_level": "INFO"
+    },
+    "pipeline": [
+        {
+            "supply-curve-aggregation": "/shared-projects/rev/projects/weto/fy21/atb/rev/aggregation/onshore/04_open_moderate_eos/config_aggregation.json"
+        },
+        {
+            "supply-curve": "/shared-projects/rev/projects/weto/fy21/atb/rev/aggregation/onshore/04_open_moderate_eos/config_supply-curve.json"
+        }
+    ]
+}

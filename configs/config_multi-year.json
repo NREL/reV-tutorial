@@ -1,0 +1,34 @@
+{
+    "directories": {
+        "log_directory": "./logs",
+        "output_directory": "./"
+    },
+    "execution_control": {
+        "allocation": "wetosa",
+        "feature": "--qos=normal",
+        "memory": 179,
+        "option": "eagle",
+        "walltime": 2.0
+    },
+    "groups": {
+        "none": {
+            "dsets": [
+                "cf_profile",
+                "cf_mean",
+                "lcoe_fcr",
+                "ws_mean"
+            ],
+            "source_dir": "./",
+            "source_files": "PIPELINE",
+            "source_prefix": "",
+            "pass_through_dsets": [
+                "capital_cost",
+                "fixed_operating_cost",
+                "system_capacity",
+                "fixed_charge_rate",
+                "variable_operating_cost"
+            ]
+        }
+    },
+    "log_level": "INFO"
+}

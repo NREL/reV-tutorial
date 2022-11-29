@@ -1,0 +1,49 @@
+INFO - 2022-01-20 12:08:02,378 [cli_gen.py:87] : Running reV Generation from config file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/config_gen.json"
+INFO - 2022-01-20 12:08:02,378 [cli_gen.py:89] : Target output directory: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs"
+INFO - 2022-01-20 12:08:02,378 [cli_gen.py:90] : Target logging directory: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/logs/"
+INFO - 2022-01-20 12:08:02,378 [cli_gen.py:91] : The following project points were specified: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv"
+INFO - 2022-01-20 12:08:02,379 [cli_gen.py:93] : The following SAM configs are available to this run:
+{   'default': '/Users/twillia2/github/reV-tutorial/cli_runs/generation/sam_configs/pv.json'}
+INFO - 2022-01-20 12:08:02,379 [cli_gen.py:96] : The following is being used for site specific input data: "None"
+INFO - 2022-01-20 12:08:02,382 [cli_gen.py:421] : Gen local is being run with with job name "outputs_gen_2012" and resource file: /Users/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2012.h5. Target output path is: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_gen_2012.h5
+INFO - 2022-01-20 12:08:02,385 [__init__.py:20] : Running with reV version 0.5.13
+INFO - 2022-01-20 12:08:02,385 [loggers.py:600] : Running with rex version 0.2.68
+INFO - 2022-01-20 12:08:02,405 [base.py:898] : Initializing full output file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_gen_2012.h5" with mode: w
+INFO - 2022-01-20 12:08:02,497 [base.py:212] : Output results from a single site are calculated to use 0.0 KB of memory.
+INFO - 2022-01-20 12:08:02,497 [base.py:179] : Limited to storing 196035 sites in memory (17.2 GB total hardware, 6.9 GB available with 40.0% utilization).
+INFO - 2022-01-20 12:08:02,497 [base.py:959] : Initializing in-memory outputs for 10 sites with gids 0 through 9 inclusive (site list index 0 through 9)
+INFO - 2022-01-20 12:08:02,497 [generation.py:536] : Running reV generation for: PointsControl for sites 0 through 9
+INFO - 2022-01-20 12:08:02,498 [base.py:1142] : Running parallel execution with max_workers=16
+INFO - 2022-01-20 12:08:10,231 [base.py:1181] : Parallel run at iteration 1 out of 10. Memory utilization is 9.510 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,262 [base.py:1181] : Parallel run at iteration 2 out of 10. Memory utilization is 9.510 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,279 [base.py:1181] : Parallel run at iteration 3 out of 10. Memory utilization is 9.511 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,280 [base.py:1181] : Parallel run at iteration 4 out of 10. Memory utilization is 9.511 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,301 [base.py:1181] : Parallel run at iteration 5 out of 10. Memory utilization is 9.511 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,301 [base.py:1181] : Parallel run at iteration 6 out of 10. Memory utilization is 9.511 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,324 [base.py:1181] : Parallel run at iteration 7 out of 10. Memory utilization is 9.510 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,324 [base.py:1181] : Parallel run at iteration 8 out of 10. Memory utilization is 9.510 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,333 [base.py:1181] : Parallel run at iteration 9 out of 10. Memory utilization is 9.510 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:10,333 [base.py:1181] : Parallel run at iteration 10 out of 10. Memory utilization is 9.510 GB out of 17.180 GB total (55.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:11,626 [base.py:1067] : Flushing outputs to disk, target file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_gen_2012.h5"
+INFO - 2022-01-20 12:08:11,640 [cli_gen.py:447] : Gen compute complete for project points "/Users/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv". Time elapsed: 0.15 min. Target output dir: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs
+INFO - 2022-01-20 12:08:11,643 [cli_gen.py:421] : Gen local is being run with with job name "outputs_gen_2013" and resource file: /Users/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2013.h5. Target output path is: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_gen_2013.h5
+INFO - 2022-01-20 12:08:11,646 [__init__.py:20] : Running with reV version 0.5.13
+INFO - 2022-01-20 12:08:11,646 [loggers.py:600] : Running with rex version 0.2.68
+INFO - 2022-01-20 12:08:11,665 [base.py:898] : Initializing full output file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_gen_2013.h5" with mode: w
+INFO - 2022-01-20 12:08:11,754 [base.py:212] : Output results from a single site are calculated to use 0.0 KB of memory.
+INFO - 2022-01-20 12:08:11,754 [base.py:179] : Limited to storing 196035 sites in memory (17.2 GB total hardware, 6.9 GB available with 40.0% utilization).
+INFO - 2022-01-20 12:08:11,754 [base.py:959] : Initializing in-memory outputs for 10 sites with gids 0 through 9 inclusive (site list index 0 through 9)
+INFO - 2022-01-20 12:08:11,754 [generation.py:536] : Running reV generation for: PointsControl for sites 0 through 9
+INFO - 2022-01-20 12:08:11,755 [base.py:1142] : Running parallel execution with max_workers=16
+INFO - 2022-01-20 12:08:19,939 [base.py:1181] : Parallel run at iteration 1 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:19,952 [base.py:1181] : Parallel run at iteration 2 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:19,979 [base.py:1181] : Parallel run at iteration 3 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:19,979 [base.py:1181] : Parallel run at iteration 4 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:19,994 [base.py:1181] : Parallel run at iteration 5 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:19,994 [base.py:1181] : Parallel run at iteration 6 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:20,002 [base.py:1181] : Parallel run at iteration 7 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:20,002 [base.py:1181] : Parallel run at iteration 8 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:20,015 [base.py:1181] : Parallel run at iteration 9 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:20,015 [base.py:1181] : Parallel run at iteration 10 out of 10. Memory utilization is 9.684 GB out of 17.180 GB total (56.4% used, intended limit of 40.0%)
+INFO - 2022-01-20 12:08:21,298 [base.py:1067] : Flushing outputs to disk, target file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_gen_2013.h5"
+INFO - 2022-01-20 12:08:21,314 [cli_gen.py:447] : Gen compute complete for project points "/Users/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv". Time elapsed: 0.16 min. Target output dir: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs

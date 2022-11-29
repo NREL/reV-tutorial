@@ -1,0 +1,28 @@
+{
+    "directories": {
+        "collect_directory": "PIPELINE",
+        "log_directory": "./logs",
+        "output_directory": "./"
+    },
+    "execution_control": {
+        "allocation": "wetosa",
+        "feature": "--qos=normal",
+        "memory": 90,
+        "option": "eagle",
+        "walltime": 1.0
+    },
+    "dsets": [
+        "cf_profile",
+        "cf_mean",
+        "lcoe_fcr",
+        "ws_mean",
+        "capital_cost",
+        "fixed_operating_cost",
+        "system_capacity",
+        "fixed_charge_rate",
+        "variable_operating_cost"
+    ],
+    "file_prefixes": "PIPELINE",
+    "log_level": "INFO",
+    "project_points": "/shared-projects/rev/projects/weto/fy21/atb/rev/project_points/project_points_onshore.csv"
+}

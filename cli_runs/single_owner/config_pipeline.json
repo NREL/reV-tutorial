@@ -1,0 +1,14 @@
+{
+  "logging": {
+    "log_file": null,
+    "log_level": "INFO"
+  },
+  "pipeline": [
+    {
+      "generation": "./config_gen.json"
+    },
+    {
+      "econ": "./config_econ.json"
+    }
+  ]
+}
