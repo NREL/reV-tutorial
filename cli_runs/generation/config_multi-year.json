@@ -1,8 +1,5 @@
 {
-  "directories": {
-    "log_directory": "./outputs/logs/",
-    "output_directory": "./outputs"
-  },
+  "log_directory": "./logs/",
   "execution_control": {
     "memory_utilization_limit": 0.4
   },

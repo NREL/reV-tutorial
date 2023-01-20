@@ -1,8 +1,0 @@
-INFO - 2022-01-20 12:08:38,953 [cli_qa_qc.py:403] : Running reV supply curve from config file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/config_qa-qc.json"
-INFO - 2022-01-20 12:08:38,953 [cli_qa_qc.py:405] : Target output directory: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs"
-INFO - 2022-01-20 12:08:38,953 [cli_qa_qc.py:406] : Target logging directory: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/logs/"
-INFO - 2022-01-20 12:08:38,956 [__init__.py:20] : Running with reV version 0.5.13
-INFO - 2022-01-20 12:08:38,956 [loggers.py:600] : Running with rex version 0.2.68
-INFO - 2022-01-20 12:08:38,956 [qa_qc.py:30] : QA/QC results to be saved to: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/QA_multi-year
-INFO - 2022-01-20 12:08:38,956 [summary.py:31] : QAQC Summarize initializing on: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/outputs_multi-year.h5
-INFO - 2022-01-20 12:08:57,753 [qa_qc.py:140] : Finished QAQC on file: outputs_multi-year.h5 output directory: /Users/twillia2/github/reV-tutorial/cli_runs/generation/outputs/QA_multi-year
