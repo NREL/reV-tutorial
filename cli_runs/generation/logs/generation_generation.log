@@ -1,0 +1,12 @@
+INFO - 2023-01-27 09:15:07,281 [cli_gen.py:84] : Running reV Generation from config file: "config_gen.json"
+INFO - 2023-01-27 09:15:07,281 [cli_gen.py:86] : Target output directory: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/"
+INFO - 2023-01-27 09:15:07,281 [cli_gen.py:87] : Target logging directory: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/logs"
+INFO - 2023-01-27 09:15:07,281 [cli_gen.py:88] : The following project points were specified: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv"
+INFO - 2023-01-27 09:15:07,281 [cli_gen.py:90] : The following SAM configs are available to this run:
+{   'default': '/Users/twillia2/github/reV-tutorial/cli_runs/generation/sam_configs/pv.json'}
+INFO - 2023-01-27 09:15:07,281 [cli_gen.py:93] : The following is being used for site specific input data: "None"
+INFO - 2023-01-27 09:15:07,283 [cli_gen.py:423] : Gen local is being run with with job name "generation_generation_2012" and resource file: /Users/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2012.h5. Target output path is: /Users/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5
+INFO - 2023-01-27 09:15:07,285 [__init__.py:62] : Running with reV version 0.7.0
+INFO - 2023-01-27 09:15:07,285 [loggers.py:600] : Running with rex version 0.2.76
+INFO - 2023-01-27 09:15:07,300 [base.py:901] : Initializing full output file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5" with mode: w
+ERROR - 2023-01-27 09:15:07,597 [base.py:857] : Could not get data shape for dset "ws_profile" from object "<Pvwattsv8 object at 0x185bf6780>". Received the following error: "'Pvwattsv8.Outputs' object has no attribute 'ws_profile'"

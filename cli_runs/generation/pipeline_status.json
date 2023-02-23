@@ -1,0 +1,10 @@
+{
+    "generation": {
+        "generation_generation_2012": {
+            "hardware": "local",
+            "fout": "generation_generation_2012.h5",
+            "dirout": "/Users/twillia2/github/reV-tutorial/cli_runs/generation/",
+            "job_status": "submitted"
+        }
+    }
+}
