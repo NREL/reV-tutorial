@@ -10,3 +10,87 @@ INFO - 2023-01-27 09:15:07,285 [__init__.py:62] : Running with reV version 0.7.0
 INFO - 2023-01-27 09:15:07,285 [loggers.py:600] : Running with rex version 0.2.76
 INFO - 2023-01-27 09:15:07,300 [base.py:901] : Initializing full output file: "/Users/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5" with mode: w
 ERROR - 2023-01-27 09:15:07,597 [base.py:857] : Could not get data shape for dset "ws_profile" from object "<Pvwattsv8 object at 0x185bf6780>". Received the following error: "'Pvwattsv8.Outputs' object has no attribute 'ws_profile'"
+INFO - 2023-02-23 13:01:05,863 [cli_gen.py:84] : Running reV Generation from config file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/config_gen.json"
+INFO - 2023-02-23 13:01:05,863 [cli_gen.py:86] : Target output directory: "/home/twillia2/github/reV-tutorial/cli_runs/generation/"
+INFO - 2023-02-23 13:01:05,863 [cli_gen.py:87] : Target logging directory: "/home/twillia2/github/reV-tutorial/cli_runs/generation/logs"
+INFO - 2023-02-23 13:01:05,863 [cli_gen.py:88] : The following project points were specified: "/home/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv"
+INFO - 2023-02-23 13:01:05,864 [cli_gen.py:90] : The following SAM configs are available to this run:
+{   'default': '/home/twillia2/github/reV-tutorial/cli_runs/generation/sam_configs/pv.json'}
+INFO - 2023-02-23 13:01:05,864 [cli_gen.py:93] : The following is being used for site specific input data: "None"
+INFO - 2023-02-23 13:01:05,914 [cli_gen.py:438] : Gen local is being run with with job name "generation_generation_2012" and resource file: /home/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2012.h5. Target output path is: /home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5
+INFO - 2023-02-23 13:01:06,262 [__init__.py:62] : Running with reV version 0.7.1
+INFO - 2023-02-23 13:01:06,262 [loggers.py:600] : Running with rex version 0.2.78
+INFO - 2023-02-23 13:01:06,715 [base.py:901] : Initializing full output file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5" with mode: w
+ERROR - 2023-02-23 13:01:08,131 [base.py:857] : Could not get data shape for dset "ws_profile" from object "<Pvwattsv8 object at 0x7f46ff386840>". Received the following error: "'Pvwattsv8.Outputs' object has no attribute 'ws_profile'"
+INFO - 2023-02-23 13:03:01,390 [cli_gen.py:84] : Running reV Generation from config file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/config_gen.json"
+INFO - 2023-02-23 13:03:01,390 [cli_gen.py:86] : Target output directory: "/home/twillia2/github/reV-tutorial/cli_runs/generation/"
+INFO - 2023-02-23 13:03:01,392 [cli_gen.py:87] : Target logging directory: "/home/twillia2/github/reV-tutorial/cli_runs/generation/logs"
+INFO - 2023-02-23 13:03:01,393 [cli_gen.py:88] : The following project points were specified: "/home/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv"
+INFO - 2023-02-23 13:03:01,394 [cli_gen.py:90] : The following SAM configs are available to this run:
+{   'default': '/home/twillia2/github/reV-tutorial/cli_runs/generation/sam_configs/pv.json'}
+INFO - 2023-02-23 13:03:01,395 [cli_gen.py:93] : The following is being used for site specific input data: "None"
+INFO - 2023-02-23 13:03:01,406 [cli_gen.py:438] : Gen local is being run with with job name "generation_generation_2012" and resource file: /home/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2012.h5. Target output path is: /home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5
+INFO - 2023-02-23 13:03:01,412 [__init__.py:62] : Running with reV version 0.7.1
+INFO - 2023-02-23 13:03:01,412 [loggers.py:600] : Running with rex version 0.2.78
+INFO - 2023-02-23 13:03:01,452 [base.py:901] : Initializing full output file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5" with mode: w
+INFO - 2023-02-23 13:04:27,977 [cli_gen.py:84] : Running reV Generation from config file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/config_gen.json"
+INFO - 2023-02-23 13:04:27,977 [cli_gen.py:86] : Target output directory: "/home/twillia2/github/reV-tutorial/cli_runs/generation/"
+INFO - 2023-02-23 13:04:27,979 [cli_gen.py:87] : Target logging directory: "/home/twillia2/github/reV-tutorial/cli_runs/generation/logs"
+INFO - 2023-02-23 13:04:27,980 [cli_gen.py:88] : The following project points were specified: "/home/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv"
+INFO - 2023-02-23 13:04:27,981 [cli_gen.py:90] : The following SAM configs are available to this run:
+{   'default': '/home/twillia2/github/reV-tutorial/cli_runs/generation/sam_configs/pv.json'}
+INFO - 2023-02-23 13:04:27,982 [cli_gen.py:93] : The following is being used for site specific input data: "None"
+INFO - 2023-02-23 13:04:27,993 [cli_gen.py:438] : Gen local is being run with with job name "generation_generation_2012" and resource file: /home/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2012.h5. Target output path is: /home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5
+INFO - 2023-02-23 13:04:27,998 [__init__.py:62] : Running with reV version 0.7.1
+INFO - 2023-02-23 13:04:27,998 [loggers.py:600] : Running with rex version 0.2.78
+INFO - 2023-02-23 13:04:28,033 [base.py:901] : Initializing full output file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5" with mode: w
+ERROR - 2023-02-23 13:04:29,352 [base.py:857] : Could not get data shape for dset "ws_profile" from object "<Pvwattsv8 object at 0x7fdfcca50840>". Received the following error: "'Pvwattsv8.Outputs' object has no attribute 'ws_profile'"
+INFO - 2023-02-23 13:04:56,247 [cli_gen.py:84] : Running reV Generation from config file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/config_gen.json"
+INFO - 2023-02-23 13:04:56,247 [cli_gen.py:86] : Target output directory: "/home/twillia2/github/reV-tutorial/cli_runs/generation/"
+INFO - 2023-02-23 13:04:56,250 [cli_gen.py:87] : Target logging directory: "/home/twillia2/github/reV-tutorial/cli_runs/generation/logs"
+INFO - 2023-02-23 13:04:56,251 [cli_gen.py:88] : The following project points were specified: "/home/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv"
+INFO - 2023-02-23 13:04:56,252 [cli_gen.py:90] : The following SAM configs are available to this run:
+{   'default': '/home/twillia2/github/reV-tutorial/cli_runs/generation/sam_configs/pv.json'}
+INFO - 2023-02-23 13:04:56,252 [cli_gen.py:93] : The following is being used for site specific input data: "None"
+INFO - 2023-02-23 13:04:56,264 [cli_gen.py:438] : Gen local is being run with with job name "generation_generation_2012" and resource file: /home/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2012.h5. Target output path is: /home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5
+INFO - 2023-02-23 13:04:56,270 [__init__.py:62] : Running with reV version 0.7.1
+INFO - 2023-02-23 13:04:56,270 [loggers.py:600] : Running with rex version 0.2.78
+INFO - 2023-02-23 13:04:56,306 [base.py:901] : Initializing full output file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5" with mode: w
+INFO - 2023-02-23 13:04:56,477 [base.py:212] : Output results from a single site are calculated to use 0.0 KB of memory.
+INFO - 2023-02-23 13:04:56,477 [base.py:179] : Limited to storing 2306733 sites in memory (202.2 GB total hardware, 80.9 GB available with 40.0% utilization).
+INFO - 2023-02-23 13:04:56,478 [base.py:962] : Initializing in-memory outputs for 10 sites with gids 0 through 9 inclusive (site list index 0 through 9)
+INFO - 2023-02-23 13:04:56,479 [generation.py:624] : Running reV generation for: PointsControl with 10 sites from gid 0 through 9
+INFO - 2023-02-23 13:04:56,480 [base.py:1145] : Running parallel execution with max_workers=24
+INFO - 2023-02-23 13:05:05,403 [base.py:1184] : Parallel run at iteration 1 out of 10. Memory utilization is 133.257 GB out of 202.154 GB total (65.9% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,403 [base.py:1184] : Parallel run at iteration 2 out of 10. Memory utilization is 133.258 GB out of 202.154 GB total (65.9% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,410 [base.py:1184] : Parallel run at iteration 3 out of 10. Memory utilization is 133.263 GB out of 202.154 GB total (65.9% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,410 [base.py:1184] : Parallel run at iteration 4 out of 10. Memory utilization is 133.264 GB out of 202.154 GB total (65.9% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,467 [base.py:1184] : Parallel run at iteration 5 out of 10. Memory utilization is 133.321 GB out of 202.154 GB total (65.9% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,467 [base.py:1184] : Parallel run at iteration 6 out of 10. Memory utilization is 133.321 GB out of 202.154 GB total (66.0% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,468 [base.py:1184] : Parallel run at iteration 7 out of 10. Memory utilization is 133.322 GB out of 202.154 GB total (66.0% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,469 [base.py:1184] : Parallel run at iteration 8 out of 10. Memory utilization is 133.323 GB out of 202.154 GB total (66.0% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,470 [base.py:1184] : Parallel run at iteration 9 out of 10. Memory utilization is 133.324 GB out of 202.154 GB total (66.0% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:05,471 [base.py:1184] : Parallel run at iteration 10 out of 10. Memory utilization is 133.325 GB out of 202.154 GB total (66.0% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:06,320 [base.py:1070] : Flushing outputs to disk, target file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2012.h5"
+INFO - 2023-02-23 13:05:06,344 [cli_gen.py:466] : Gen compute complete for project points "/home/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv". Time elapsed: 0.17 min. Target output dir: /home/twillia2/github/reV-tutorial/cli_runs/generation
+INFO - 2023-02-23 13:05:06,359 [cli_gen.py:438] : Gen local is being run with with job name "generation_generation_2013" and resource file: /home/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2013.h5. Target output path is: /home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2013.h5
+INFO - 2023-02-23 13:05:06,363 [__init__.py:62] : Running with reV version 0.7.1
+INFO - 2023-02-23 13:05:06,363 [loggers.py:600] : Running with rex version 0.2.78
+INFO - 2023-02-23 13:05:06,399 [base.py:901] : Initializing full output file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2013.h5" with mode: w
+INFO - 2023-02-23 13:05:06,537 [base.py:212] : Output results from a single site are calculated to use 0.0 KB of memory.
+INFO - 2023-02-23 13:05:06,537 [base.py:179] : Limited to storing 2306733 sites in memory (202.2 GB total hardware, 80.9 GB available with 40.0% utilization).
+INFO - 2023-02-23 13:05:06,538 [base.py:962] : Initializing in-memory outputs for 10 sites with gids 0 through 9 inclusive (site list index 0 through 9)
+INFO - 2023-02-23 13:05:06,539 [generation.py:624] : Running reV generation for: PointsControl with 10 sites from gid 0 through 9
+INFO - 2023-02-23 13:05:06,540 [base.py:1145] : Running parallel execution with max_workers=24
+INFO - 2023-02-23 13:05:15,093 [base.py:1184] : Parallel run at iteration 1 out of 10. Memory utilization is 127.491 GB out of 202.154 GB total (63.1% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,441 [base.py:1184] : Parallel run at iteration 2 out of 10. Memory utilization is 127.734 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,509 [base.py:1184] : Parallel run at iteration 3 out of 10. Memory utilization is 127.784 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,540 [base.py:1184] : Parallel run at iteration 4 out of 10. Memory utilization is 127.805 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,540 [base.py:1184] : Parallel run at iteration 5 out of 10. Memory utilization is 127.805 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,541 [base.py:1184] : Parallel run at iteration 6 out of 10. Memory utilization is 127.806 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,542 [base.py:1184] : Parallel run at iteration 7 out of 10. Memory utilization is 127.807 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,543 [base.py:1184] : Parallel run at iteration 8 out of 10. Memory utilization is 127.808 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,565 [base.py:1184] : Parallel run at iteration 9 out of 10. Memory utilization is 127.821 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:15,566 [base.py:1184] : Parallel run at iteration 10 out of 10. Memory utilization is 127.821 GB out of 202.154 GB total (63.2% used, intended limit of 40.0%)
+INFO - 2023-02-23 13:05:16,397 [base.py:1070] : Flushing outputs to disk, target file: "/home/twillia2/github/reV-tutorial/cli_runs/generation/generation_generation_2013.h5"
+INFO - 2023-02-23 13:05:16,420 [cli_gen.py:466] : Gen compute complete for project points "/home/twillia2/github/reV-tutorial/cli_runs/generation/project_points/project_points_small.csv". Time elapsed: 0.17 min. Target output dir: /home/twillia2/github/reV-tutorial/cli_runs/generation

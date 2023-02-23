@@ -2,41 +2,38 @@
   "cf_dset": "cf_mean-means",
   "data_layers": {
     "reeds_region": {
-      "dset": "reeds_regions",
+      "dset": "ri_reeds_regions",
       "method": "mode"
     },
     "slope": {
-      "dset": "srtm_slope",
+      "dset": "ri_srtm_slope",
       "method": "mean"
     }
   },
-  "log_directory": "./logs/",
+  "log_directory": "./logs",
   "excl_dict": {
-    "smod": {
-      "inclusion_weights": {
+    "ri_smod": {
+      "include_weights": {
         "1": 0.5,
         "2": 1,
         "3": 1
       }
     },
-    "srtm_slope": {
-      "inclusion_range": [
+    "ri_srtm_slope": {
+      "include_range": [
         null,
         5
       ],
       "weight": 1.0
     }
   },
-  "excl_fpath": "./rev_conus_exclusions.h5",
+  "excl_fpath": "./ri_exclusions.h5",
   "execution_control": {
-    "allocation": "rev",
-    "feature": "--qos=high",
-    "memory": 90,
+    "memory_utilization_limit": 0.4,
     "nodes": 1,
-    "option": "eagle",
-    "walltime": 4.0
+    "sites_per_worker": 10
   },
-  "gen_fpath": "PIPELINE",
+  "gen_fpath": "./generation_multi-year.h5",
   "lcoe_dset": "lcoe_fcr-means",
   "power_density": 31.5,
   "res_class_bins": [
@@ -46,7 +43,6 @@
     100
   ],
   "res_class_dset": "ghi_mean-means",
-  "res_fpath": "/datasets/NSRDB/v3.0.1/nsrdb_{}.h5",
   "resolution": 64,
-  "tm_dset": "techmap_nsrdb"
+  "tm_dset": "techmap_nsrdb_ri_truth"
 }

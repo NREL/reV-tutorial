@@ -1,0 +1,73 @@
+INFO - 2023-02-23 13:32:07,327 [cli_supply_curve.py:73] : Running reV supply curve from config file: "/home/twillia2/github/reV-tutorial/cli_runs/aggregation/config_supply-curve.json"
+INFO - 2023-02-23 13:32:07,327 [cli_supply_curve.py:75] : Target output directory: "/home/twillia2/github/reV-tutorial/cli_runs/aggregation/"
+INFO - 2023-02-23 13:32:07,328 [cli_supply_curve.py:76] : Target logging directory: "/home/twillia2/github/reV-tutorial/cli_runs/aggregation/logs"
+INFO - 2023-02-23 13:32:07,340 [supply_curve_configs.py:314] : Supply curve using the following pipeline input for sc_points: /home/twillia2/github/reV-tutorial/cli_runs/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-02-23 13:32:07,342 [__init__.py:62] : Running with reV version 0.7.1
+INFO - 2023-02-23 13:32:07,342 [loggers.py:600] : Running with rex version 0.2.78
+INFO - 2023-02-23 13:32:07,343 [supply_curve.py:83] : Supply curve points input: /home/twillia2/github/reV-tutorial/cli_runs/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-02-23 13:32:07,344 [supply_curve.py:84] : Transmission table input: /home/twillia2/github/reV-tutorial/cli_runs/aggregation/ri_transmission_table.csv
+INFO - 2023-02-23 13:32:07,383 [supply_curve.py:444] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2023-02-23 13:32:07,447 [supply_curve.py:1069] : Starting full competitive supply curve sort.
+INFO - 2023-02-23 13:32:07,502 [supply_curve.py:659] : Computing LCOT costs for all possible connections...
+ERROR - 2023-02-23 13:32:18,125 [cli_supply_curve.py:253] : Supply curve compute failed. Received the following error:
+feature_costs() got an unexpected keyword argument 'available_capacity'
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_envs/devruns/lib/python3.9/concurrent/futures/process.py", line 246, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+TypeError: feature_costs() got an unexpected keyword argument 'available_capacity'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/cli_supply_curve.py", line 242, in direct
+    out = SupplyCurve.full(sc_points, trans_table,
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/supply_curve.py", line 1287, in full
+    supply_curve = sc.full_sort(fcr, transmission_costs=transmission_costs,
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/supply_curve.py", line 1071, in full_sort
+    self.compute_total_lcoe(fcr, transmission_costs=transmission_costs,
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/supply_curve.py", line 725, in compute_total_lcoe
+    cost = self._compute_trans_cap_cost(self._trans_table,
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/supply_curve.py", line 675, in _compute_trans_cap_cost
+    cost = [future.result() for future in futures]
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/supply_curve.py", line 675, in <listcomp>
+    cost = [future.result() for future in futures]
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_envs/devruns/lib/python3.9/concurrent/futures/_base.py", line 446, in result
+    return self.__get_result()
+  File "/lustre/eaglefs/shared-projects/rev/modulefiles/alternate_envs/devruns/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+TypeError: feature_costs() got an unexpected keyword argument 'available_capacity'
+INFO - 2023-02-23 13:32:36,637 [cli_supply_curve.py:73] : Running reV supply curve from config file: "/home/twillia2/github/reV-tutorial/cli_runs/aggregation/config_supply-curve.json"
+INFO - 2023-02-23 13:32:36,637 [cli_supply_curve.py:75] : Target output directory: "/home/twillia2/github/reV-tutorial/cli_runs/aggregation/"
+INFO - 2023-02-23 13:32:36,638 [cli_supply_curve.py:76] : Target logging directory: "/home/twillia2/github/reV-tutorial/cli_runs/aggregation/logs"
+INFO - 2023-02-23 13:32:36,651 [supply_curve_configs.py:314] : Supply curve using the following pipeline input for sc_points: /home/twillia2/github/reV-tutorial/cli_runs/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-02-23 13:32:36,653 [__init__.py:62] : Running with reV version 0.7.1
+INFO - 2023-02-23 13:32:36,653 [loggers.py:600] : Running with rex version 0.2.78
+INFO - 2023-02-23 13:32:36,654 [supply_curve.py:83] : Supply curve points input: /home/twillia2/github/reV-tutorial/cli_runs/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-02-23 13:32:36,655 [supply_curve.py:84] : Transmission table input: /home/twillia2/github/reV-tutorial/cli_runs/aggregation/ri_transmission_table.csv
+INFO - 2023-02-23 13:32:36,699 [supply_curve.py:444] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2023-02-23 13:32:36,708 [supply_curve.py:1069] : Starting full competitive supply curve sort.
+INFO - 2023-02-23 13:32:36,740 [supply_curve.py:659] : Computing LCOT costs for all possible connections...
+INFO - 2023-02-23 13:32:48,168 [supply_curve.py:688] : LCOT cost calculation is complete.
+INFO - 2023-02-23 13:32:48,239 [supply_curve.py:940] : 5.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,239 [supply_curve.py:940] : 10.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,240 [supply_curve.py:940] : 15.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,241 [supply_curve.py:940] : 21.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,242 [supply_curve.py:940] : 26.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,243 [supply_curve.py:940] : 31.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,244 [supply_curve.py:940] : 36.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,245 [supply_curve.py:940] : 42.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,246 [supply_curve.py:940] : 47.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,247 [supply_curve.py:940] : 52.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,248 [supply_curve.py:940] : 57.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,249 [supply_curve.py:940] : 63.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,250 [supply_curve.py:940] : 68.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,251 [supply_curve.py:940] : 73.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,252 [supply_curve.py:940] : 78.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,253 [supply_curve.py:940] : 84.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,254 [supply_curve.py:940] : 89.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,255 [supply_curve.py:940] : 94.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,256 [supply_curve.py:940] : 99.0 % of supply curve points connected
+INFO - 2023-02-23 13:32:48,270 [cli_supply_curve.py:262] : Supply curve complete. Time elapsed: 0.19 min. Target output dir: /home/twillia2/github/reV-tutorial/cli_runs/aggregation/

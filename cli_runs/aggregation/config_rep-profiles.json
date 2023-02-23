@@ -1,6 +1,5 @@
 {
   "analysis_years": [
-    2011,
     2012,
     2013
   ],
@@ -8,14 +7,9 @@
   "log_directory": "./logs/",
   "err_method": "rmse",
   "execution_control": {
-    "allocation": "rev",
-    "feature": "--qos=high",
-    "max_workers": 36,
-    "memory": 190,
+    "memory_utilization_limit": 0.4,
     "nodes": 1,
-    "option": "eagle",
-    "sites_per_worker": 100,
-    "walltime": 4.0
+    "sites_per_worker": 10
   },
   "gen_fpath": "PIPELINE",
   "log_level": "INFO",
