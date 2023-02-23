@@ -1,0 +1,4 @@
+aggregation_*.csv
+*rep-profiles*.h5
+logs/
+*status*

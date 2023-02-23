@@ -1,0 +1,5 @@
+*.h5
+logs/
+QA_multi-year/
+generation_status.json
+pipeline.out

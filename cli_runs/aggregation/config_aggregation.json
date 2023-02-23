@@ -37,12 +37,20 @@
   "lcoe_dset": "lcoe_fcr-means",
   "power_density": 31.5,
   "res_class_bins": [
-    0,
-    3.7,
-    3.9,
-    100
+     0,
+     3.7,
+     3.9,
+     100
   ],
   "res_class_dset": "ghi_mean-means",
   "resolution": 64,
-  "tm_dset": "techmap_nsrdb_ri_truth"
+  "tm_dset": "techmap_nsrdb_ri_truth",
+  "h5_dsets": [
+    "capital_cost",
+    "fixed_operating_cost",
+    "system_capacity",
+    "fixed_charge_rate",
+    "variable_operating_cost"
+  ],
+  "recalc_lcoe": true
 }

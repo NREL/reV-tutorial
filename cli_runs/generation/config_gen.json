@@ -6,7 +6,6 @@
   "log_directory": "./logs/",
   "execution_control": {
     "memory_utilization_limit": 0.4,
-    "nodes": 1,
     "sites_per_worker": 1
   },
   "log_level": "INFO",
@@ -14,7 +13,12 @@
     "cf_mean",
     "cf_profile",
     "lcoe_fcr",
-    "ghi_mean"
+    "ghi_mean",
+    "capital_cost",
+    "fixed_operating_cost",
+    "system_capacity",
+    "fixed_charge_rate",
+    "variable_operating_cost"
   ],
   "project_points": "./project_points/project_points_small.csv",
   "resource_file": "./resource/ri_100_nsrdb_{}.h5",

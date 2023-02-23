@@ -13,7 +13,14 @@
       ],
       "source_dir": "./",
       "source_files": "PIPELINE",
-      "source_prefix": ""
+      "source_prefix": "",
+      "pass_through_dsets": [
+        "capital_cost",
+        "fixed_operating_cost",
+        "system_capacity",
+        "fixed_charge_rate",
+        "variable_operating_cost"
+      ]
     }
   },
   "log_level": "INFO"

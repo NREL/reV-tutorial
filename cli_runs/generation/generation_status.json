@@ -7,7 +7,7 @@
             "dirout": "/home/twillia2/github/reV-tutorial/cli_runs/generation",
             "job_status": "successful",
             "finput": "/home/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2012.h5",
-            "runtime": 0.16799474557240804
+            "runtime": 0.16939141352971396
         },
         "generation_generation_2013": {
             "hardware": "local",
@@ -15,7 +15,7 @@
             "dirout": "/home/twillia2/github/reV-tutorial/cli_runs/generation",
             "job_status": "successful",
             "finput": "/home/twillia2/github/reV-tutorial/cli_runs/generation/resource/ri_100_nsrdb_2013.h5",
-            "runtime": 0.1676884412765503
+            "runtime": 0.16921277443567911
         }
     },
     "multi-year": {
@@ -25,7 +25,7 @@
             "fout": "generation_multi-year.h5",
             "dirout": "/home/twillia2/github/reV-tutorial/cli_runs/generation",
             "job_status": "successful",
-            "runtime": 0.006126614411671957
+            "runtime": 0.010752304395039877
         }
     },
     "qa-qc": {
