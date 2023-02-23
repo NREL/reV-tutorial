@@ -6,3 +6,8 @@ This set of configs will take outputs built in `generation`, apply exclusions, a
 ```
 reV -c config_pipeline.json pipeline --monitor
 ```
+
+
+Production Notes:
+ - These runs depend on two very specific input formats: the exclusion HDF5 file and the transmission connection table.
+ - Tutorials on how to build these inputs will be available soon.
