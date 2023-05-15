@@ -28,7 +28,7 @@ conda activate rev
 conda install nrel-rev -c nrel
 ```
 
-You can also close the repository and install directly from there. 
+You can also clone the repository and install directly from there. 
 ```
 conda create -n rev python=3.9 -y
 conda activate rev
