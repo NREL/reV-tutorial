@@ -25,6 +25,13 @@ The simplest way to install reV and it's supporting packages ([PySAM](https://gi
 ```
 conda create -n rev python=3.9 -y
 conda activate rev
+conda install nrel-rev -c nrel
+```
+
+You can also close the repository and install directly from there. 
+```
+conda create -n rev python=3.9 -y
+conda activate rev
 git clone https://github.com/NREL/reV.git
 cd reV
 python setup.py install
