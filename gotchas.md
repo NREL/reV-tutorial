@@ -53,3 +53,6 @@
       "tilt": 0,                        # Tracking has no single tilt value, set to 0
       "variable_operating_cost": 0
     }
+
+## 5) Removing the correct files when rerunning 
+    Make sure to remove the xx_status.json and the logs folder before rerunning 
