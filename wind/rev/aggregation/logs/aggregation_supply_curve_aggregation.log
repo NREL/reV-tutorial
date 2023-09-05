@@ -1,0 +1,393 @@
+gaps (ERROR) - [config.py:369] : The following required keys are missing from the configuration file: {'tm_dset'}
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:23:33,139 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:23:33,139 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:23:33,139 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:23:33,144 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:23:33,154 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:23:33,162 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:23:33,162 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:23:35,951 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.191 GB out of 34.360 GB (12.20% utilized).
+INFO - 2023-09-05 00:23:36,024 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.191 GB out of 34.360 GB (12.20% utilized).
+INFO - 2023-09-05 00:23:36,096 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.191 GB out of 34.360 GB (12.20% utilized).
+ERROR - 2023-09-05 00:23:36,475 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:23:36,478 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:03
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:29:10,203 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:29:10,203 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:29:10,204 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:29:10,209 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:29:10,216 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:29:10,224 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:29:10,224 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:29:12,450 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.164 GB out of 34.360 GB (12.12% utilized).
+INFO - 2023-09-05 00:29:12,517 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.164 GB out of 34.360 GB (12.12% utilized).
+INFO - 2023-09-05 00:29:12,577 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.164 GB out of 34.360 GB (12.12% utilized).
+ERROR - 2023-09-05 00:29:12,929 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:29:12,930 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:30:00,401 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:30:00,402 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:30:00,402 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:30:00,407 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:30:00,414 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:30:00,419 [extent.py:562] : Found 96 valid SC points out of 96 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:30:00,420 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 95 at a resolution of 128 on 10 cores in 10 chunks.
+INFO - 2023-09-05 00:30:02,663 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 10. Memory usage is 4.163 GB out of 34.360 GB (12.11% utilized).
+ERROR - 2023-09-05 00:30:02,970 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:30:02,971 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:33:21,178 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:33:21,179 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:33:21,179 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:33:21,185 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:33:21,197 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:33:21,206 [extent.py:562] : Found 96 valid SC points out of 96 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:33:21,206 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 95 at a resolution of 128 on 10 cores in 10 chunks.
+INFO - 2023-09-05 00:33:23,451 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 10. Memory usage is 4.076 GB out of 34.360 GB (11.86% utilized).
+ERROR - 2023-09-05 00:33:23,754 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:33:23,754 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:33:39,318 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:33:39,318 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:33:39,318 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:33:39,324 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:33:39,333 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:33:39,340 [extent.py:562] : Found 96 valid SC points out of 96 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:33:39,340 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 95 at a resolution of 128 on 10 cores in 10 chunks.
+INFO - 2023-09-05 00:33:41,685 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 10. Memory usage is 4.101 GB out of 34.360 GB (11.94% utilized).
+ERROR - 2023-09-05 00:33:42,004 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:33:42,004 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:34:38,909 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:34:38,909 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:34:38,909 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:34:38,914 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:34:38,922 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:34:38,930 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:34:38,930 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+ERROR - 2023-09-05 00:34:41,152 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,169 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,187 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,200 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,211 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,217 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,218 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,231 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,235 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,239 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,239 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,246 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,247 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,249 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,251 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,259 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,260 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,265 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,265 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,276 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,277 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,277 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,281 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,284 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,287 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,288 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,290 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,293 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,296 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,296 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,296 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,303 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,303 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,307 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,308 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,308 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+ERROR - 2023-09-05 00:34:41,313 [exclusions.py:319] : None is an invalid mask type: expecting "include_range", "exclude_range", "exclude", "include", or "include_weights"
+INFO - 2023-09-05 00:34:41,638 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:34:59,969 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:34:59,969 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:34:59,969 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:34:59,974 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:34:59,981 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:34:59,989 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:34:59,989 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:35:02,250 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.106 GB out of 34.360 GB (11.95% utilized).
+INFO - 2023-09-05 00:35:02,318 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.106 GB out of 34.360 GB (11.95% utilized).
+INFO - 2023-09-05 00:35:02,391 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.106 GB out of 34.360 GB (11.95% utilized).
+ERROR - 2023-09-05 00:35:02,737 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:35:02,737 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:35:06,410 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:35:06,411 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:35:06,411 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:35:06,416 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:35:06,423 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:35:06,430 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:35:06,431 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:35:08,698 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.064 GB out of 34.360 GB (11.83% utilized).
+INFO - 2023-09-05 00:35:08,783 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.064 GB out of 34.360 GB (11.83% utilized).
+INFO - 2023-09-05 00:35:08,851 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.064 GB out of 34.360 GB (11.83% utilized).
+ERROR - 2023-09-05 00:35:09,185 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:35:09,186 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:35:27,560 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:35:27,560 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:35:27,560 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:35:27,566 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:35:27,573 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:35:27,580 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:35:27,581 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:35:29,820 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.074 GB out of 34.360 GB (11.86% utilized).
+INFO - 2023-09-05 00:35:29,886 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.074 GB out of 34.360 GB (11.86% utilized).
+INFO - 2023-09-05 00:35:29,961 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.074 GB out of 34.360 GB (11.86% utilized).
+ERROR - 2023-09-05 00:35:30,320 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:35:30,320 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:36:17,661 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:36:17,661 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:36:17,661 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:36:17,666 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:36:17,673 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:36:17,680 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:36:17,681 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:36:19,885 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.053 GB out of 34.360 GB (11.80% utilized).
+INFO - 2023-09-05 00:36:19,977 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.053 GB out of 34.360 GB (11.80% utilized).
+INFO - 2023-09-05 00:36:20,041 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.053 GB out of 34.360 GB (11.80% utilized).
+ERROR - 2023-09-05 00:36:20,399 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:36:20,400 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:36:26,791 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:36:26,791 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:36:26,791 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:36:26,796 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:36:26,801 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 1 through 5 at a resolution of 64 on 10 cores in 1 chunks.
+ERROR - 2023-09-05 00:36:28,254 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:36:28,255 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:01
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:36:56,480 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:36:56,480 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:36:56,480 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:36:56,485 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:36:56,490 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 1 through 5 at a resolution of 64 on 10 cores in 1 chunks.
+ERROR - 2023-09-05 00:36:57,952 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:36:57,952 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:01
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:40:57,940 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:40:57,940 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:40:57,940 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:40:57,945 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:40:57,953 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:40:57,960 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:40:57,960 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:41:00,191 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.102 GB out of 34.360 GB (11.94% utilized).
+INFO - 2023-09-05 00:41:00,261 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.102 GB out of 34.360 GB (11.94% utilized).
+INFO - 2023-09-05 00:41:00,342 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.102 GB out of 34.360 GB (11.94% utilized).
+ERROR - 2023-09-05 00:41:00,706 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:41:00,707 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:41:10,568 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:41:10,568 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:41:10,568 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:41:10,573 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:41:10,581 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:41:10,588 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:41:10,589 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:41:13,053 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.117 GB out of 34.360 GB (11.98% utilized).
+INFO - 2023-09-05 00:41:13,162 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.117 GB out of 34.360 GB (11.98% utilized).
+INFO - 2023-09-05 00:41:13,231 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.117 GB out of 34.360 GB (11.98% utilized).
+ERROR - 2023-09-05 00:41:13,607 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:41:13,607 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:03
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:41:39,697 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:41:39,697 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:41:39,697 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:41:39,702 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:41:39,709 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:41:39,716 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:41:39,717 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:41:41,942 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.144 GB out of 34.360 GB (12.06% utilized).
+INFO - 2023-09-05 00:41:42,023 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.144 GB out of 34.360 GB (12.06% utilized).
+INFO - 2023-09-05 00:41:42,104 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.144 GB out of 34.360 GB (12.06% utilized).
+ERROR - 2023-09-05 00:41:42,453 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:41:42,454 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:42:07,694 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:42:07,694 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:42:07,694 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:42:07,699 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:42:07,707 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:42:07,715 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:42:07,716 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:42:09,968 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.172 GB out of 34.360 GB (12.14% utilized).
+INFO - 2023-09-05 00:42:10,022 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.172 GB out of 34.360 GB (12.14% utilized).
+INFO - 2023-09-05 00:42:10,069 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.172 GB out of 34.360 GB (12.14% utilized).
+ERROR - 2023-09-05 00:42:10,432 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:42:10,432 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:42:24,265 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:42:24,265 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:42:24,265 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 00:42:24,271 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:42:24,280 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:42:24,287 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:42:24,288 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:42:26,484 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.134 GB out of 34.360 GB (12.03% utilized).
+INFO - 2023-09-05 00:42:26,534 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.137 GB out of 34.360 GB (12.04% utilized).
+INFO - 2023-09-05 00:42:26,573 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.139 GB out of 34.360 GB (12.05% utilized).
+ERROR - 2023-09-05 00:42:26,926 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:42:26,926 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:42:58,381 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:42:58,381 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:42:58,381 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 00:42:58,382 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 00:42:58,386 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:42:58,394 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:42:58,401 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:42:58,402 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:43:00,646 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.101 GB out of 34.360 GB (11.94% utilized).
+INFO - 2023-09-05 00:43:00,724 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.101 GB out of 34.360 GB (11.94% utilized).
+INFO - 2023-09-05 00:43:00,794 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.101 GB out of 34.360 GB (11.94% utilized).
+ERROR - 2023-09-05 00:43:01,158 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:43:01,158 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:43:30,552 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:43:30,552 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:43:30,552 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 00:43:30,554 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 00:43:30,555 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:43:30,562 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:43:30,570 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:43:30,570 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:43:32,766 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.124 GB out of 34.360 GB (12.00% utilized).
+INFO - 2023-09-05 00:43:32,830 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.127 GB out of 34.360 GB (12.01% utilized).
+INFO - 2023-09-05 00:43:32,873 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.131 GB out of 34.360 GB (12.02% utilized).
+ERROR - 2023-09-05 00:43:33,211 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:43:33,211 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (ERROR) - [config.py:369] : The following required keys are missing from the configuration file: {'excl_fpath'}
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 00:44:00,714 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:44:00,714 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:44:00,714 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 00:44:00,716 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 00:44:00,717 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 00:44:00,725 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 00:44:00,732 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 00:44:00,733 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 00:44:02,854 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.166 GB out of 34.360 GB (12.13% utilized).
+INFO - 2023-09-05 00:44:02,924 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.173 GB out of 34.360 GB (12.14% utilized).
+INFO - 2023-09-05 00:44:02,980 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.176 GB out of 34.360 GB (12.15% utilized).
+ERROR - 2023-09-05 00:44:03,371 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 00:44:03,371 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 12:08:40,488 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:08:40,488 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:08:40,488 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 12:08:40,491 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 12:08:40,497 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 12:08:40,513 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 12:08:40,522 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 12:08:40,523 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 12:08:43,147 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.425 GB out of 34.360 GB (12.88% utilized).
+INFO - 2023-09-05 12:08:43,235 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.431 GB out of 34.360 GB (12.90% utilized).
+INFO - 2023-09-05 12:08:43,272 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.428 GB out of 34.360 GB (12.89% utilized).
+ERROR - 2023-09-05 12:08:43,695 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 12:08:43,696 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:03
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 12:09:07,583 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:09:07,583 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:09:07,583 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 12:09:07,585 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 12:09:07,589 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 12:09:07,597 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 12:09:07,606 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 12:09:07,606 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 12:09:10,122 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.407 GB out of 34.360 GB (12.83% utilized).
+INFO - 2023-09-05 12:09:10,185 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.408 GB out of 34.360 GB (12.83% utilized).
+INFO - 2023-09-05 12:09:10,229 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.411 GB out of 34.360 GB (12.84% utilized).
+ERROR - 2023-09-05 12:09:10,606 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 12:09:10,606 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:03
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 12:10:14,690 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:10:14,690 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:10:14,690 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 12:10:14,692 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 12:10:14,696 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 12:10:14,704 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 12:10:14,712 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 12:10:14,713 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 10 cores in 37 chunks.
+INFO - 2023-09-05 12:10:17,308 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 4.387 GB out of 34.360 GB (12.77% utilized).
+INFO - 2023-09-05 12:10:17,370 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 4.387 GB out of 34.360 GB (12.77% utilized).
+INFO - 2023-09-05 12:10:17,419 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.387 GB out of 34.360 GB (12.77% utilized).
+ERROR - 2023-09-05 12:10:17,885 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 12:10:17,888 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:03

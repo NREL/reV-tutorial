@@ -1,0 +1,29 @@
+{
+    "log_directory": "./logs/",
+    "execution_control": {
+      "memory_utilization_limit": 0.4,
+      "sites_per_worker": 1
+    },
+    "analysis_years": [
+      2012,
+      2013
+    ],
+    "log_level": "INFO",
+    "output_request": [
+      "cf_mean",
+      "cf_profile",
+      "lcoe_fcr",
+      "capital_cost",
+      "fixed_operating_cost",
+      "system_capacity",
+      "fixed_charge_rate",
+      "variable_operating_cost"
+    ],
+    "project_points": "./data/rhode_island_onshore_wind_project_points.csv",
+    "resource_file": "./data/ri_100_wtk_{}.h5",
+    "sam_files": {
+      "onshore": "././sam_configs/wind.json"
+    },
+    "technology": "windpower"
+  }
+  

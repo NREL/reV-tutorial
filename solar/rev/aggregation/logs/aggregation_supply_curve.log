@@ -1,0 +1,70 @@
+gaps (INFO) - [config.py:215] : Running supply-curve from config file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/config_supply-curve.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve' locally with job name 'aggregation_supply_curve'.
+INFO - 2023-09-05 01:13:12,333 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:13:12,333 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:13:12,333 [supply_curve.py:124] : Supply curve points input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-09-05 01:13:12,333 [supply_curve.py:125] : Transmission table input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/ri_transmission_table.csv
+INFO - 2023-09-05 01:13:12,333 [supply_curve.py:126] : Supply curve capacity column: capacity
+INFO - 2023-09-05 01:13:12,350 [supply_curve.py:512] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2023-09-05 01:13:12,355 [supply_curve.py:1177] : Starting full competitive supply curve sort.
+INFO - 2023-09-05 01:13:12,387 [supply_curve.py:758] : Computing LCOT costs for all possible connections...
+INFO - 2023-09-05 01:13:14,945 [supply_curve.py:789] : LCOT cost calculation is complete.
+INFO - 2023-09-05 01:13:14,984 [status.py:749] : Command 'supply-curve' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve from config file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/config_supply-curve.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve' locally with job name 'aggregation_supply_curve'.
+INFO - 2023-09-05 01:20:35,705 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:20:35,705 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:20:35,705 [supply_curve.py:124] : Supply curve points input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-09-05 01:20:35,705 [supply_curve.py:125] : Transmission table input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/ri_transmission_table.csv
+INFO - 2023-09-05 01:20:35,705 [supply_curve.py:126] : Supply curve capacity column: capacity
+INFO - 2023-09-05 01:20:35,729 [supply_curve.py:512] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2023-09-05 01:20:35,736 [supply_curve.py:1177] : Starting full competitive supply curve sort.
+INFO - 2023-09-05 01:20:35,768 [supply_curve.py:758] : Computing LCOT costs for all possible connections...
+INFO - 2023-09-05 01:20:38,470 [supply_curve.py:789] : LCOT cost calculation is complete.
+INFO - 2023-09-05 01:20:38,507 [status.py:749] : Command 'supply-curve' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve from config file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/config_supply-curve.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve' locally with job name 'aggregation_supply_curve'.
+INFO - 2023-09-05 01:22:57,607 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:22:57,607 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:22:57,607 [supply_curve.py:124] : Supply curve points input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-09-05 01:22:57,608 [supply_curve.py:125] : Transmission table input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/ri_transmission_table.csv
+INFO - 2023-09-05 01:22:57,608 [supply_curve.py:126] : Supply curve capacity column: capacity
+INFO - 2023-09-05 01:22:57,624 [supply_curve.py:512] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2023-09-05 01:22:57,628 [supply_curve.py:1177] : Starting full competitive supply curve sort.
+INFO - 2023-09-05 01:22:57,658 [supply_curve.py:758] : Computing LCOT costs for all possible connections...
+INFO - 2023-09-05 01:23:00,261 [supply_curve.py:789] : LCOT cost calculation is complete.
+INFO - 2023-09-05 01:23:00,294 [status.py:749] : Command 'supply-curve' failed in 0:00:02
+gaps (INFO) - [config.py:215] : Running supply-curve from config file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/config_supply-curve.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve' locally with job name 'aggregation_supply_curve'.
+INFO - 2023-09-05 12:15:09,410 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:15:09,410 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:15:09,410 [supply_curve.py:124] : Supply curve points input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-09-05 12:15:09,410 [supply_curve.py:125] : Transmission table input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/ri_transmission_table.csv
+INFO - 2023-09-05 12:15:09,411 [supply_curve.py:126] : Supply curve capacity column: capacity
+INFO - 2023-09-05 12:15:09,433 [supply_curve.py:512] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2023-09-05 12:15:09,443 [supply_curve.py:1177] : Starting full competitive supply curve sort.
+INFO - 2023-09-05 12:15:09,479 [supply_curve.py:758] : Computing LCOT costs for all possible connections...
+INFO - 2023-09-05 12:15:13,157 [supply_curve.py:789] : LCOT cost calculation is complete.
+INFO - 2023-09-05 12:15:13,205 [status.py:749] : Command 'supply-curve' failed in 0:00:03
+gaps (INFO) - [config.py:215] : Running supply-curve from config file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/config_supply-curve.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve' locally with job name 'aggregation_supply_curve'.
+INFO - 2023-09-05 12:17:28,059 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:17:28,059 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:17:28,059 [supply_curve.py:124] : Supply curve points input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-09-05 12:17:28,059 [supply_curve.py:125] : Transmission table input: /Users/sthomson/github/reV-tutorial/solar/rev/aggregation/ri_transmission_table.csv
+INFO - 2023-09-05 12:17:28,059 [supply_curve.py:126] : Supply curve capacity column: capacity
+INFO - 2023-09-05 12:17:28,078 [supply_curve.py:512] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2023-09-05 12:17:28,083 [supply_curve.py:1177] : Starting full competitive supply curve sort.
+INFO - 2023-09-05 12:17:28,116 [supply_curve.py:758] : Computing LCOT costs for all possible connections...
+INFO - 2023-09-05 12:17:31,466 [supply_curve.py:789] : LCOT cost calculation is complete.
+INFO - 2023-09-05 12:17:31,505 [status.py:749] : Command 'supply-curve' failed in 0:00:03

@@ -1,0 +1,20 @@
+{
+    "log_directory": "./logs",
+    "execution_control": {
+        "memory_utilization_limit": 0.4
+    },
+    "dsets": [
+        "cf_profile",
+        "cf_mean",
+        "lcoe_fcr",
+        "ghi_mean",
+        "capital_cost",
+        "fixed_operating_cost",
+        "system_capacity",
+        "fixed_charge_rate",
+        "variable_operating_cost"
+    ],
+    "collect_pattern": "PIPELINE",
+    "log_level": "INFO",
+    "project_points": null
+}

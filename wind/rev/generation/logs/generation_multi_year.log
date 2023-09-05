@@ -1,0 +1,79 @@
+gaps (INFO) - [config.py:215] : Running multi-year from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/config_multi-year.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/logs'
+gaps (INFO) - [execution.py:119] : Running 'multi-year' locally with job name 'generation_multi_year'.
+INFO - 2023-09-05 00:28:10,038 [multi_year.py:785] : Multi-year collection is being run with output path: /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 00:28:10,038 [multi_year.py:789] : - Collecting datasets "['cf_mean', 'cf_profile', 'lcoe_fcr']" from "['/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5', '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5']" into "none/"
+INFO - 2023-09-05 00:28:10,041 [multi_year.py:680] : Collecting cf_mean into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 00:28:10,041 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,041 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,061 [multi_year.py:709] : Collecting cf_profile into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 00:28:10,062 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,062 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,080 [multi_year.py:680] : Collecting lcoe_fcr into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 00:28:10,080 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,080 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,102 [multi_year.py:655] : Passing through capital_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,102 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,102 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,110 [multi_year.py:655] : Passing through fixed_operating_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,110 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,110 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,117 [multi_year.py:655] : Passing through system_capacity into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,117 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,117 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,125 [multi_year.py:655] : Passing through fixed_charge_rate into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,125 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,125 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,134 [multi_year.py:655] : Passing through variable_operating_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,134 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,134 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,142 [multi_year.py:807] : - none collection completed in: 0.00 min.
+INFO - 2023-09-05 00:28:10,142 [multi_year.py:811] : Multi-year collection completed in : 0.00 min.
+INFO - 2023-09-05 00:28:10,142 [status.py:738] : Command 'multi-year' complete. Time elapsed: 0:00:00. Target output file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5'
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 00:28:10,038 [multi_year.py:785] : Multi-year collection is being run with output path: /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 00:28:10,038 [multi_year.py:789] : - Collecting datasets "['cf_mean', 'cf_profile', 'lcoe_fcr']" from "['/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5', '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5']" into "none/"
+INFO - 2023-09-05 00:28:10,041 [multi_year.py:680] : Collecting cf_mean into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 00:28:10,041 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,041 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,061 [multi_year.py:709] : Collecting cf_profile into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 00:28:10,062 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,062 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,080 [multi_year.py:680] : Collecting lcoe_fcr into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 00:28:10,080 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,080 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,102 [multi_year.py:655] : Passing through capital_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,102 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,102 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,110 [multi_year.py:655] : Passing through fixed_operating_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,110 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,110 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,117 [multi_year.py:655] : Passing through system_capacity into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,117 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,117 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,125 [multi_year.py:655] : Passing through fixed_charge_rate into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,125 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,125 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,134 [multi_year.py:655] : Passing through variable_operating_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,134 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,134 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,142 [multi_year.py:807] : - none collection completed in: 0.00 min.
+INFO - 2023-09-05 00:28:10,142 [multi_year.py:811] : Multi-year collection completed in : 0.00 min.
+INFO - 2023-09-05 00:28:10,142 [status.py:738] : Command 'multi-year' complete. Time elapsed: 0:00:00. Target output file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5'
+gaps (INFO) - [execution.py:138] : Completed job 'generation_multi_year'.
+gaps (INFO) - [pipeline.py:199] : CLI command 'multi-year' for job 'generation' is successful. (Tue Sep  5 00:28:16 2023)
+gaps (INFO) - [config.py:215] : Running qa-qc from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/config_qa-qc.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/logs'
+gaps (INFO) - [execution.py:119] : Running 'qa-qc' locally with job name 'generation_qa_qc'.
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 00:28:17,629 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:17,629 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:17,629 [qa_qc.py:34] : QA/QC results to be saved to: /Users/sthomson/github/reV-tutorial/wind/rev/generation/QA_multi-year
+INFO - 2023-09-05 00:28:17,629 [summary.py:31] : QAQC Summarize initializing on: /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 00:28:35,850 [qa_qc.py:144] : Finished QAQC on file: generation_multi_year.h5 output directory: /Users/sthomson/github/reV-tutorial/wind/rev/generation/QA_multi-year
+INFO - 2023-09-05 00:28:35,850 [status.py:738] : Command 'qa-qc' complete. Time elapsed: 0:00:18. Target output file: None
+gaps (INFO) - [execution.py:138] : Completed job 'generation_qa_qc'.
+gaps (INFO) - [pipeline.py:199] : CLI command 'qa-qc' for job 'generation' is successful. (Tue Sep  5 00:28:42 2023)
+gaps (INFO) - [pipeline.py:112] : Pipeline job 'generation' is complete.

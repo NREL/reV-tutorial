@@ -1,0 +1,124 @@
+{
+    "monitor_pid": 36146,
+    "generation": {
+        "pipeline_index": 0,
+        "generation_generation_j0": {
+            "job_status": "successful",
+            "hardware": "local",
+            "time_submitted": "05-Sep-2023 00:27:40",
+            "low_res_resource_file": null,
+            "memory_utilization_limit": 0.4,
+            "out_file": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5",
+            "out_fpath": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0",
+            "output_request": [
+                "cf_mean",
+                "cf_profile",
+                "lcoe_fcr",
+                "capital_cost",
+                "fixed_operating_cost",
+                "system_capacity",
+                "fixed_charge_rate",
+                "variable_operating_cost"
+            ],
+            "resource_file": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/data/ri_100_wtk_2012.h5",
+            "runtime_seconds": 9.783277,
+            "sam_files": {
+                "onshore": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/sam_configs/wind.json"
+            },
+            "sites_per_worker": 1,
+            "technology": "windpower",
+            "time_end": "05-Sep-2023 00:27:51",
+            "time_start": "05-Sep-2023 00:27:41",
+            "total_runtime": "0:00:09"
+        },
+        "generation_generation_j1": {
+            "job_status": "successful",
+            "hardware": "local",
+            "time_submitted": "05-Sep-2023 00:27:51",
+            "low_res_resource_file": null,
+            "memory_utilization_limit": 0.4,
+            "out_file": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5",
+            "out_fpath": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1",
+            "output_request": [
+                "cf_mean",
+                "cf_profile",
+                "lcoe_fcr",
+                "capital_cost",
+                "fixed_operating_cost",
+                "system_capacity",
+                "fixed_charge_rate",
+                "variable_operating_cost"
+            ],
+            "resource_file": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/data/ri_100_wtk_2013.h5",
+            "runtime_seconds": 9.572667,
+            "sam_files": {
+                "onshore": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/sam_configs/wind.json"
+            },
+            "sites_per_worker": 1,
+            "technology": "windpower",
+            "time_end": "05-Sep-2023 00:28:02",
+            "time_start": "05-Sep-2023 00:27:52",
+            "total_runtime": "0:00:09"
+        }
+    },
+    "multi-year": {
+        "pipeline_index": 1,
+        "generation_multi_year": {
+            "job_status": "successful",
+            "hardware": "local",
+            "time_submitted": "05-Sep-2023 00:28:08",
+            "groups": {
+                "none": {
+                    "dsets": [
+                        "cf_mean",
+                        "cf_profile",
+                        "lcoe_fcr"
+                    ],
+                    "pass_through_dsets": [
+                        "capital_cost",
+                        "fixed_operating_cost",
+                        "system_capacity",
+                        "fixed_charge_rate",
+                        "variable_operating_cost"
+                    ],
+                    "source_dir": "/Users/sthomson/github/reV-tutorial/wind/rev/generation",
+                    "source_files": "PIPELINE",
+                    "source_prefix": ""
+                }
+            },
+            "out_file": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5",
+            "out_fpath": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year",
+            "runtime_seconds": 0.130719,
+            "time_end": "05-Sep-2023 00:28:10",
+            "time_start": "05-Sep-2023 00:28:10",
+            "total_runtime": "0:00:00"
+        }
+    },
+    "qa-qc": {
+        "pipeline_index": 2,
+        "generation_qa_qc": {
+            "job_status": "successful",
+            "hardware": "local",
+            "time_submitted": "05-Sep-2023 00:28:16",
+            "modules": {
+                "multi-year": {
+                    "dsets": [
+                        "cf_mean-means",
+                        "cf_mean-stdev",
+                        "lcoe_fcr-means",
+                        "lcoe_fcr-stdev"
+                    ],
+                    "fpath": "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5",
+                    "plot_type": "plot",
+                    "sub_dir": "QA_multi-year"
+                }
+            },
+            "out_dir": "/Users/sthomson/github/reV-tutorial/wind/rev/generation",
+            "out_file": null,
+            "runtime_seconds": 18.221164,
+            "time_end": "05-Sep-2023 00:28:35",
+            "time_start": "05-Sep-2023 00:28:17",
+            "total_runtime": "0:00:18"
+        }
+    }
+}

@@ -1,0 +1,1255 @@
+gaps (INFO) - [config.py:215] : Running generation from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/config_gen.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/logs'
+INFO - 2023-09-05 00:27:40,384 [cli_functions.py:31] : Initialized reV/rex loggers with name 'generation_generation' and log directory '/Users/sthomson/github/reV-tutorial/wind/rev/generation/logs'
+INFO - 2023-09-05 00:27:40,384 [cli_gen.py:96] : The following project points were specified: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/data/rhode_island_onshore_wind_project_points.csv"
+INFO - 2023-09-05 00:27:40,384 [cli_gen.py:98] : The following SAM configs are available to this run:
+{   'onshore': '/Users/sthomson/github/reV-tutorial/wind/rev/generation/sam_configs/wind.json'}
+INFO - 2023-09-05 00:27:40,384 [cli_gen.py:101] : The following is being used for site specific input data: "None"
+gaps (INFO) - [execution.py:119] : Running 'generation' locally with job name 'generation_generation_j0'.
+INFO - 2023-09-05 00:27:41,652 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:27:41,652 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:27:41,664 [base.py:907] : Initializing full output file: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5" with mode: w
+INFO - 2023-09-05 00:27:41,709 [base.py:210] : Output results from a single site are calculated to use 0.0 KB of memory.
+INFO - 2023-09-05 00:27:41,709 [base.py:177] : Limited to storing 782810 sites in memory (34.4 GB total hardware, 13.7 GB available with 40.0% utilization).
+INFO - 2023-09-05 00:27:41,709 [base.py:968] : Initializing in-memory outputs for 96 sites with gids 0 through 98 inclusive (site list index 0 through 95)
+INFO - 2023-09-05 00:27:41,710 [generation.py:813] : Running reV generation for: PointsControl with 96 sites from gid 0 through 98
+INFO - 2023-09-05 00:27:41,806 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 0 through 0 (iteration 1 out of 96)
+INFO - 2023-09-05 00:27:41,917 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 1 through 1 (iteration 2 out of 96)
+INFO - 2023-09-05 00:27:42,028 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 2 through 2 (iteration 3 out of 96)
+INFO - 2023-09-05 00:27:42,113 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 3 through 3 (iteration 4 out of 96)
+INFO - 2023-09-05 00:27:42,226 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 4 through 4 (iteration 5 out of 96)
+INFO - 2023-09-05 00:27:42,313 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 5 through 5 (iteration 6 out of 96)
+INFO - 2023-09-05 00:27:42,428 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 6 through 6 (iteration 7 out of 96)
+INFO - 2023-09-05 00:27:42,516 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 7 through 7 (iteration 8 out of 96)
+INFO - 2023-09-05 00:27:42,631 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 8 through 8 (iteration 9 out of 96)
+INFO - 2023-09-05 00:27:42,718 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 9 through 9 (iteration 10 out of 96)
+INFO - 2023-09-05 00:27:42,829 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 10 through 10 (iteration 11 out of 96)
+INFO - 2023-09-05 00:27:42,913 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 11 through 11 (iteration 12 out of 96)
+INFO - 2023-09-05 00:27:43,024 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 12 through 12 (iteration 13 out of 96)
+INFO - 2023-09-05 00:27:43,138 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 13 through 13 (iteration 14 out of 96)
+INFO - 2023-09-05 00:27:43,224 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 14 through 14 (iteration 15 out of 96)
+INFO - 2023-09-05 00:27:43,337 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 15 through 15 (iteration 16 out of 96)
+INFO - 2023-09-05 00:27:43,424 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 16 through 16 (iteration 17 out of 96)
+INFO - 2023-09-05 00:27:43,537 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 17 through 17 (iteration 18 out of 96)
+INFO - 2023-09-05 00:27:43,624 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 18 through 18 (iteration 19 out of 96)
+INFO - 2023-09-05 00:27:43,736 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 19 through 19 (iteration 20 out of 96)
+INFO - 2023-09-05 00:27:43,822 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 20 through 20 (iteration 21 out of 96)
+INFO - 2023-09-05 00:27:43,933 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 21 through 21 (iteration 22 out of 96)
+INFO - 2023-09-05 00:27:44,017 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 22 through 22 (iteration 23 out of 96)
+INFO - 2023-09-05 00:27:44,129 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 23 through 23 (iteration 24 out of 96)
+INFO - 2023-09-05 00:27:44,245 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 24 through 24 (iteration 25 out of 96)
+INFO - 2023-09-05 00:27:44,331 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 25 through 25 (iteration 26 out of 96)
+INFO - 2023-09-05 00:27:44,444 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 26 through 26 (iteration 27 out of 96)
+INFO - 2023-09-05 00:27:44,530 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 27 through 27 (iteration 28 out of 96)
+INFO - 2023-09-05 00:27:44,643 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 28 through 28 (iteration 29 out of 96)
+INFO - 2023-09-05 00:27:44,730 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 29 through 29 (iteration 30 out of 96)
+INFO - 2023-09-05 00:27:44,841 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 30 through 30 (iteration 31 out of 96)
+INFO - 2023-09-05 00:27:44,925 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 31 through 31 (iteration 32 out of 96)
+INFO - 2023-09-05 00:27:45,037 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 32 through 32 (iteration 33 out of 96)
+INFO - 2023-09-05 00:27:45,121 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 33 through 33 (iteration 34 out of 96)
+INFO - 2023-09-05 00:27:45,232 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 34 through 34 (iteration 35 out of 96)
+INFO - 2023-09-05 00:27:45,317 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 35 through 35 (iteration 36 out of 96)
+INFO - 2023-09-05 00:27:45,428 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 36 through 36 (iteration 37 out of 96)
+INFO - 2023-09-05 00:27:45,544 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 37 through 37 (iteration 38 out of 96)
+INFO - 2023-09-05 00:27:45,632 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 38 through 38 (iteration 39 out of 96)
+INFO - 2023-09-05 00:27:45,748 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 39 through 39 (iteration 40 out of 96)
+INFO - 2023-09-05 00:27:45,833 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 40 through 40 (iteration 41 out of 96)
+INFO - 2023-09-05 00:27:45,946 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 41 through 41 (iteration 42 out of 96)
+INFO - 2023-09-05 00:27:46,031 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 42 through 42 (iteration 43 out of 96)
+INFO - 2023-09-05 00:27:46,144 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 43 through 43 (iteration 44 out of 96)
+INFO - 2023-09-05 00:27:46,229 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 44 through 44 (iteration 45 out of 96)
+INFO - 2023-09-05 00:27:46,339 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 45 through 45 (iteration 46 out of 96)
+INFO - 2023-09-05 00:27:46,424 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 46 through 46 (iteration 47 out of 96)
+INFO - 2023-09-05 00:27:46,535 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 47 through 47 (iteration 48 out of 96)
+INFO - 2023-09-05 00:27:46,647 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 48 through 48 (iteration 49 out of 96)
+INFO - 2023-09-05 00:27:46,734 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 49 through 49 (iteration 50 out of 96)
+INFO - 2023-09-05 00:27:46,847 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 50 through 50 (iteration 51 out of 96)
+INFO - 2023-09-05 00:27:46,932 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 51 through 51 (iteration 52 out of 96)
+INFO - 2023-09-05 00:27:47,045 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 52 through 52 (iteration 53 out of 96)
+INFO - 2023-09-05 00:27:47,130 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 53 through 53 (iteration 54 out of 96)
+INFO - 2023-09-05 00:27:47,242 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 54 through 54 (iteration 55 out of 96)
+INFO - 2023-09-05 00:27:47,327 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 55 through 55 (iteration 56 out of 96)
+INFO - 2023-09-05 00:27:47,438 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 56 through 56 (iteration 57 out of 96)
+INFO - 2023-09-05 00:27:47,524 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 57 through 57 (iteration 58 out of 96)
+INFO - 2023-09-05 00:27:47,635 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 58 through 58 (iteration 59 out of 96)
+INFO - 2023-09-05 00:27:47,720 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 59 through 59 (iteration 60 out of 96)
+INFO - 2023-09-05 00:27:47,832 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 60 through 60 (iteration 61 out of 96)
+INFO - 2023-09-05 00:27:47,943 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 61 through 61 (iteration 62 out of 96)
+INFO - 2023-09-05 00:27:48,028 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 62 through 62 (iteration 63 out of 96)
+INFO - 2023-09-05 00:27:48,139 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 63 through 63 (iteration 64 out of 96)
+INFO - 2023-09-05 00:27:48,224 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 64 through 64 (iteration 65 out of 96)
+INFO - 2023-09-05 00:27:48,337 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 65 through 65 (iteration 66 out of 96)
+INFO - 2023-09-05 00:27:48,422 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 66 through 66 (iteration 67 out of 96)
+INFO - 2023-09-05 00:27:48,534 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 67 through 67 (iteration 68 out of 96)
+INFO - 2023-09-05 00:27:48,619 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 68 through 68 (iteration 69 out of 96)
+INFO - 2023-09-05 00:27:48,739 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 69 through 69 (iteration 70 out of 96)
+INFO - 2023-09-05 00:27:48,827 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 70 through 70 (iteration 71 out of 96)
+INFO - 2023-09-05 00:27:48,942 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 71 through 71 (iteration 72 out of 96)
+INFO - 2023-09-05 00:27:49,031 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 72 through 72 (iteration 73 out of 96)
+INFO - 2023-09-05 00:27:49,141 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 73 through 73 (iteration 74 out of 96)
+INFO - 2023-09-05 00:27:49,252 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 74 through 74 (iteration 75 out of 96)
+INFO - 2023-09-05 00:27:49,337 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 75 through 75 (iteration 76 out of 96)
+INFO - 2023-09-05 00:27:49,448 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 76 through 76 (iteration 77 out of 96)
+INFO - 2023-09-05 00:27:49,534 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 77 through 77 (iteration 78 out of 96)
+INFO - 2023-09-05 00:27:49,647 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 78 through 78 (iteration 79 out of 96)
+INFO - 2023-09-05 00:27:49,732 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 79 through 79 (iteration 80 out of 96)
+INFO - 2023-09-05 00:27:49,843 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 80 through 80 (iteration 81 out of 96)
+INFO - 2023-09-05 00:27:49,927 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 81 through 81 (iteration 82 out of 96)
+INFO - 2023-09-05 00:27:50,038 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 82 through 82 (iteration 83 out of 96)
+INFO - 2023-09-05 00:27:50,123 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 83 through 83 (iteration 84 out of 96)
+INFO - 2023-09-05 00:27:50,234 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 84 through 84 (iteration 85 out of 96)
+INFO - 2023-09-05 00:27:50,346 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 85 through 85 (iteration 86 out of 96)
+INFO - 2023-09-05 00:27:50,431 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 86 through 86 (iteration 87 out of 96)
+INFO - 2023-09-05 00:27:50,549 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 87 through 87 (iteration 88 out of 96)
+INFO - 2023-09-05 00:27:50,642 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 88 through 88 (iteration 89 out of 96)
+INFO - 2023-09-05 00:27:50,763 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 89 through 89 (iteration 90 out of 96)
+INFO - 2023-09-05 00:27:50,850 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 90 through 90 (iteration 91 out of 96)
+INFO - 2023-09-05 00:27:50,979 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 94 through 94 (iteration 92 out of 96)
+INFO - 2023-09-05 00:27:51,075 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 95 through 95 (iteration 93 out of 96)
+INFO - 2023-09-05 00:27:51,203 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 96 through 96 (iteration 94 out of 96)
+INFO - 2023-09-05 00:27:51,298 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 97 through 97 (iteration 95 out of 96)
+INFO - 2023-09-05 00:27:51,424 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 98 through 98 (iteration 96 out of 96)
+INFO - 2023-09-05 00:27:51,424 [base.py:1076] : Flushing outputs to disk, target file: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5"
+INFO - 2023-09-05 00:27:51,433 [status.py:738] : Command 'generation' complete. Time elapsed: 0:00:09. Target output file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5'
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 00:27:41,652 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:27:41,652 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:27:41,664 [base.py:907] : Initializing full output file: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5" with mode: w
+INFO - 2023-09-05 00:27:41,709 [base.py:210] : Output results from a single site are calculated to use 0.0 KB of memory.
+INFO - 2023-09-05 00:27:41,709 [base.py:177] : Limited to storing 782810 sites in memory (34.4 GB total hardware, 13.7 GB available with 40.0% utilization).
+INFO - 2023-09-05 00:27:41,709 [base.py:968] : Initializing in-memory outputs for 96 sites with gids 0 through 98 inclusive (site list index 0 through 95)
+INFO - 2023-09-05 00:27:41,710 [generation.py:813] : Running reV generation for: PointsControl with 96 sites from gid 0 through 98
+INFO - 2023-09-05 00:27:41,806 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 0 through 0 (iteration 1 out of 96)
+INFO - 2023-09-05 00:27:41,917 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 1 through 1 (iteration 2 out of 96)
+INFO - 2023-09-05 00:27:42,028 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 2 through 2 (iteration 3 out of 96)
+INFO - 2023-09-05 00:27:42,113 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 3 through 3 (iteration 4 out of 96)
+INFO - 2023-09-05 00:27:42,226 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 4 through 4 (iteration 5 out of 96)
+INFO - 2023-09-05 00:27:42,313 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 5 through 5 (iteration 6 out of 96)
+INFO - 2023-09-05 00:27:42,428 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 6 through 6 (iteration 7 out of 96)
+INFO - 2023-09-05 00:27:42,516 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 7 through 7 (iteration 8 out of 96)
+INFO - 2023-09-05 00:27:42,631 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 8 through 8 (iteration 9 out of 96)
+INFO - 2023-09-05 00:27:42,718 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 9 through 9 (iteration 10 out of 96)
+INFO - 2023-09-05 00:27:42,829 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 10 through 10 (iteration 11 out of 96)
+INFO - 2023-09-05 00:27:42,913 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 11 through 11 (iteration 12 out of 96)
+INFO - 2023-09-05 00:27:43,024 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 12 through 12 (iteration 13 out of 96)
+INFO - 2023-09-05 00:27:43,138 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 13 through 13 (iteration 14 out of 96)
+INFO - 2023-09-05 00:27:43,224 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 14 through 14 (iteration 15 out of 96)
+INFO - 2023-09-05 00:27:43,337 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 15 through 15 (iteration 16 out of 96)
+INFO - 2023-09-05 00:27:43,424 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 16 through 16 (iteration 17 out of 96)
+INFO - 2023-09-05 00:27:43,537 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 17 through 17 (iteration 18 out of 96)
+INFO - 2023-09-05 00:27:43,624 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 18 through 18 (iteration 19 out of 96)
+INFO - 2023-09-05 00:27:43,736 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 19 through 19 (iteration 20 out of 96)
+INFO - 2023-09-05 00:27:43,822 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 20 through 20 (iteration 21 out of 96)
+INFO - 2023-09-05 00:27:43,933 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 21 through 21 (iteration 22 out of 96)
+INFO - 2023-09-05 00:27:44,017 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 22 through 22 (iteration 23 out of 96)
+INFO - 2023-09-05 00:27:44,129 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 23 through 23 (iteration 24 out of 96)
+INFO - 2023-09-05 00:27:44,245 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 24 through 24 (iteration 25 out of 96)
+INFO - 2023-09-05 00:27:44,331 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 25 through 25 (iteration 26 out of 96)
+INFO - 2023-09-05 00:27:44,444 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 26 through 26 (iteration 27 out of 96)
+INFO - 2023-09-05 00:27:44,530 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 27 through 27 (iteration 28 out of 96)
+INFO - 2023-09-05 00:27:44,643 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 28 through 28 (iteration 29 out of 96)
+INFO - 2023-09-05 00:27:44,730 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 29 through 29 (iteration 30 out of 96)
+INFO - 2023-09-05 00:27:44,841 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 30 through 30 (iteration 31 out of 96)
+INFO - 2023-09-05 00:27:44,925 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 31 through 31 (iteration 32 out of 96)
+INFO - 2023-09-05 00:27:45,037 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 32 through 32 (iteration 33 out of 96)
+INFO - 2023-09-05 00:27:45,121 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 33 through 33 (iteration 34 out of 96)
+INFO - 2023-09-05 00:27:45,232 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 34 through 34 (iteration 35 out of 96)
+INFO - 2023-09-05 00:27:45,317 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 35 through 35 (iteration 36 out of 96)
+INFO - 2023-09-05 00:27:45,428 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 36 through 36 (iteration 37 out of 96)
+INFO - 2023-09-05 00:27:45,544 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 37 through 37 (iteration 38 out of 96)
+INFO - 2023-09-05 00:27:45,632 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 38 through 38 (iteration 39 out of 96)
+INFO - 2023-09-05 00:27:45,748 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 39 through 39 (iteration 40 out of 96)
+INFO - 2023-09-05 00:27:45,833 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 40 through 40 (iteration 41 out of 96)
+INFO - 2023-09-05 00:27:45,946 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 41 through 41 (iteration 42 out of 96)
+INFO - 2023-09-05 00:27:46,031 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 42 through 42 (iteration 43 out of 96)
+INFO - 2023-09-05 00:27:46,144 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 43 through 43 (iteration 44 out of 96)
+INFO - 2023-09-05 00:27:46,229 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 44 through 44 (iteration 45 out of 96)
+INFO - 2023-09-05 00:27:46,339 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 45 through 45 (iteration 46 out of 96)
+INFO - 2023-09-05 00:27:46,424 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 46 through 46 (iteration 47 out of 96)
+INFO - 2023-09-05 00:27:46,535 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 47 through 47 (iteration 48 out of 96)
+INFO - 2023-09-05 00:27:46,647 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 48 through 48 (iteration 49 out of 96)
+INFO - 2023-09-05 00:27:46,734 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 49 through 49 (iteration 50 out of 96)
+INFO - 2023-09-05 00:27:46,847 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 50 through 50 (iteration 51 out of 96)
+INFO - 2023-09-05 00:27:46,932 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 51 through 51 (iteration 52 out of 96)
+INFO - 2023-09-05 00:27:47,045 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 52 through 52 (iteration 53 out of 96)
+INFO - 2023-09-05 00:27:47,130 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 53 through 53 (iteration 54 out of 96)
+INFO - 2023-09-05 00:27:47,242 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 54 through 54 (iteration 55 out of 96)
+INFO - 2023-09-05 00:27:47,327 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 55 through 55 (iteration 56 out of 96)
+INFO - 2023-09-05 00:27:47,438 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 56 through 56 (iteration 57 out of 96)
+INFO - 2023-09-05 00:27:47,524 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 57 through 57 (iteration 58 out of 96)
+INFO - 2023-09-05 00:27:47,635 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 58 through 58 (iteration 59 out of 96)
+INFO - 2023-09-05 00:27:47,720 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 59 through 59 (iteration 60 out of 96)
+INFO - 2023-09-05 00:27:47,832 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 60 through 60 (iteration 61 out of 96)
+INFO - 2023-09-05 00:27:47,943 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 61 through 61 (iteration 62 out of 96)
+INFO - 2023-09-05 00:27:48,028 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 62 through 62 (iteration 63 out of 96)
+INFO - 2023-09-05 00:27:48,139 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 63 through 63 (iteration 64 out of 96)
+INFO - 2023-09-05 00:27:48,224 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 64 through 64 (iteration 65 out of 96)
+INFO - 2023-09-05 00:27:48,337 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 65 through 65 (iteration 66 out of 96)
+INFO - 2023-09-05 00:27:48,422 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 66 through 66 (iteration 67 out of 96)
+INFO - 2023-09-05 00:27:48,534 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 67 through 67 (iteration 68 out of 96)
+INFO - 2023-09-05 00:27:48,619 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 68 through 68 (iteration 69 out of 96)
+INFO - 2023-09-05 00:27:48,739 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 69 through 69 (iteration 70 out of 96)
+INFO - 2023-09-05 00:27:48,827 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 70 through 70 (iteration 71 out of 96)
+INFO - 2023-09-05 00:27:48,942 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 71 through 71 (iteration 72 out of 96)
+INFO - 2023-09-05 00:27:49,031 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 72 through 72 (iteration 73 out of 96)
+INFO - 2023-09-05 00:27:49,141 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 73 through 73 (iteration 74 out of 96)
+INFO - 2023-09-05 00:27:49,252 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 74 through 74 (iteration 75 out of 96)
+INFO - 2023-09-05 00:27:49,337 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 75 through 75 (iteration 76 out of 96)
+INFO - 2023-09-05 00:27:49,448 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 76 through 76 (iteration 77 out of 96)
+INFO - 2023-09-05 00:27:49,534 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 77 through 77 (iteration 78 out of 96)
+INFO - 2023-09-05 00:27:49,647 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 78 through 78 (iteration 79 out of 96)
+INFO - 2023-09-05 00:27:49,732 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 79 through 79 (iteration 80 out of 96)
+INFO - 2023-09-05 00:27:49,843 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 80 through 80 (iteration 81 out of 96)
+INFO - 2023-09-05 00:27:49,927 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 81 through 81 (iteration 82 out of 96)
+INFO - 2023-09-05 00:27:50,038 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 82 through 82 (iteration 83 out of 96)
+INFO - 2023-09-05 00:27:50,123 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 83 through 83 (iteration 84 out of 96)
+INFO - 2023-09-05 00:27:50,234 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 84 through 84 (iteration 85 out of 96)
+INFO - 2023-09-05 00:27:50,346 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 85 through 85 (iteration 86 out of 96)
+INFO - 2023-09-05 00:27:50,431 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 86 through 86 (iteration 87 out of 96)
+INFO - 2023-09-05 00:27:50,549 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 87 through 87 (iteration 88 out of 96)
+INFO - 2023-09-05 00:27:50,642 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 88 through 88 (iteration 89 out of 96)
+INFO - 2023-09-05 00:27:50,763 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 89 through 89 (iteration 90 out of 96)
+INFO - 2023-09-05 00:27:50,850 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 90 through 90 (iteration 91 out of 96)
+INFO - 2023-09-05 00:27:50,979 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 94 through 94 (iteration 92 out of 96)
+INFO - 2023-09-05 00:27:51,075 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 95 through 95 (iteration 93 out of 96)
+INFO - 2023-09-05 00:27:51,203 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 96 through 96 (iteration 94 out of 96)
+INFO - 2023-09-05 00:27:51,298 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 97 through 97 (iteration 95 out of 96)
+INFO - 2023-09-05 00:27:51,424 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 98 through 98 (iteration 96 out of 96)
+INFO - 2023-09-05 00:27:51,424 [base.py:1076] : Flushing outputs to disk, target file: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5"
+INFO - 2023-09-05 00:27:51,433 [status.py:738] : Command 'generation' complete. Time elapsed: 0:00:09. Target output file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5'
+gaps (WARNING) - [execution.py:136] : Subprocess received stderr: 
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+gaps (INFO) - [execution.py:138] : Completed job 'generation_generation_j0'.
+gaps (INFO) - [execution.py:119] : Running 'generation' locally with job name 'generation_generation_j1'.
+INFO - 2023-09-05 00:27:52,939 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:27:52,939 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:27:52,951 [base.py:907] : Initializing full output file: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5" with mode: w
+INFO - 2023-09-05 00:27:52,994 [base.py:210] : Output results from a single site are calculated to use 0.0 KB of memory.
+INFO - 2023-09-05 00:27:52,995 [base.py:177] : Limited to storing 782810 sites in memory (34.4 GB total hardware, 13.7 GB available with 40.0% utilization).
+INFO - 2023-09-05 00:27:52,995 [base.py:968] : Initializing in-memory outputs for 96 sites with gids 0 through 98 inclusive (site list index 0 through 95)
+INFO - 2023-09-05 00:27:52,995 [generation.py:813] : Running reV generation for: PointsControl with 96 sites from gid 0 through 98
+INFO - 2023-09-05 00:27:53,091 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 0 through 0 (iteration 1 out of 96)
+INFO - 2023-09-05 00:27:53,202 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 1 through 1 (iteration 2 out of 96)
+INFO - 2023-09-05 00:27:53,312 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 2 through 2 (iteration 3 out of 96)
+INFO - 2023-09-05 00:27:53,396 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 3 through 3 (iteration 4 out of 96)
+INFO - 2023-09-05 00:27:53,507 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 4 through 4 (iteration 5 out of 96)
+INFO - 2023-09-05 00:27:53,589 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 5 through 5 (iteration 6 out of 96)
+INFO - 2023-09-05 00:27:53,699 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 6 through 6 (iteration 7 out of 96)
+INFO - 2023-09-05 00:27:53,783 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 7 through 7 (iteration 8 out of 96)
+INFO - 2023-09-05 00:27:53,897 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 8 through 8 (iteration 9 out of 96)
+INFO - 2023-09-05 00:27:53,981 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 9 through 9 (iteration 10 out of 96)
+INFO - 2023-09-05 00:27:54,093 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 10 through 10 (iteration 11 out of 96)
+INFO - 2023-09-05 00:27:54,179 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 11 through 11 (iteration 12 out of 96)
+INFO - 2023-09-05 00:27:54,289 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 12 through 12 (iteration 13 out of 96)
+INFO - 2023-09-05 00:27:54,372 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 13 through 13 (iteration 14 out of 96)
+INFO - 2023-09-05 00:27:54,484 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 14 through 14 (iteration 15 out of 96)
+INFO - 2023-09-05 00:27:54,568 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 15 through 15 (iteration 16 out of 96)
+INFO - 2023-09-05 00:27:54,677 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 16 through 16 (iteration 17 out of 96)
+INFO - 2023-09-05 00:27:54,788 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 17 through 17 (iteration 18 out of 96)
+INFO - 2023-09-05 00:27:54,875 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 18 through 18 (iteration 19 out of 96)
+INFO - 2023-09-05 00:27:54,990 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 19 through 19 (iteration 20 out of 96)
+INFO - 2023-09-05 00:27:55,075 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 20 through 20 (iteration 21 out of 96)
+INFO - 2023-09-05 00:27:55,190 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 21 through 21 (iteration 22 out of 96)
+INFO - 2023-09-05 00:27:55,273 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 22 through 22 (iteration 23 out of 96)
+INFO - 2023-09-05 00:27:55,385 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 23 through 23 (iteration 24 out of 96)
+INFO - 2023-09-05 00:27:55,469 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 24 through 24 (iteration 25 out of 96)
+INFO - 2023-09-05 00:27:55,579 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 25 through 25 (iteration 26 out of 96)
+INFO - 2023-09-05 00:27:55,664 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 26 through 26 (iteration 27 out of 96)
+INFO - 2023-09-05 00:27:55,774 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 27 through 27 (iteration 28 out of 96)
+INFO - 2023-09-05 00:27:55,858 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 28 through 28 (iteration 29 out of 96)
+INFO - 2023-09-05 00:27:55,969 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 29 through 29 (iteration 30 out of 96)
+INFO - 2023-09-05 00:27:56,053 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 30 through 30 (iteration 31 out of 96)
+INFO - 2023-09-05 00:27:56,163 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 31 through 31 (iteration 32 out of 96)
+INFO - 2023-09-05 00:27:56,273 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 32 through 32 (iteration 33 out of 96)
+INFO - 2023-09-05 00:27:56,357 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 33 through 33 (iteration 34 out of 96)
+INFO - 2023-09-05 00:27:56,468 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 34 through 34 (iteration 35 out of 96)
+INFO - 2023-09-05 00:27:56,551 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 35 through 35 (iteration 36 out of 96)
+INFO - 2023-09-05 00:27:56,661 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 36 through 36 (iteration 37 out of 96)
+INFO - 2023-09-05 00:27:56,746 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 37 through 37 (iteration 38 out of 96)
+INFO - 2023-09-05 00:27:56,861 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 38 through 38 (iteration 39 out of 96)
+INFO - 2023-09-05 00:27:56,946 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 39 through 39 (iteration 40 out of 96)
+INFO - 2023-09-05 00:27:57,058 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 40 through 40 (iteration 41 out of 96)
+INFO - 2023-09-05 00:27:57,141 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 41 through 41 (iteration 42 out of 96)
+INFO - 2023-09-05 00:27:57,253 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 42 through 42 (iteration 43 out of 96)
+INFO - 2023-09-05 00:27:57,338 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 43 through 43 (iteration 44 out of 96)
+INFO - 2023-09-05 00:27:57,451 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 44 through 44 (iteration 45 out of 96)
+INFO - 2023-09-05 00:27:57,536 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 45 through 45 (iteration 46 out of 96)
+INFO - 2023-09-05 00:27:57,646 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 46 through 46 (iteration 47 out of 96)
+INFO - 2023-09-05 00:27:57,760 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 47 through 47 (iteration 48 out of 96)
+INFO - 2023-09-05 00:27:57,843 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 48 through 48 (iteration 49 out of 96)
+INFO - 2023-09-05 00:27:57,954 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 49 through 49 (iteration 50 out of 96)
+INFO - 2023-09-05 00:27:58,037 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 50 through 50 (iteration 51 out of 96)
+INFO - 2023-09-05 00:27:58,153 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 51 through 51 (iteration 52 out of 96)
+INFO - 2023-09-05 00:27:58,239 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 52 through 52 (iteration 53 out of 96)
+INFO - 2023-09-05 00:27:58,354 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 53 through 53 (iteration 54 out of 96)
+INFO - 2023-09-05 00:27:58,439 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 54 through 54 (iteration 55 out of 96)
+INFO - 2023-09-05 00:27:58,550 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 55 through 55 (iteration 56 out of 96)
+INFO - 2023-09-05 00:27:58,634 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 56 through 56 (iteration 57 out of 96)
+INFO - 2023-09-05 00:27:58,745 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 57 through 57 (iteration 58 out of 96)
+INFO - 2023-09-05 00:27:58,829 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 58 through 58 (iteration 59 out of 96)
+INFO - 2023-09-05 00:27:58,941 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 59 through 59 (iteration 60 out of 96)
+INFO - 2023-09-05 00:27:59,025 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 60 through 60 (iteration 61 out of 96)
+INFO - 2023-09-05 00:27:59,135 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 61 through 61 (iteration 62 out of 96)
+INFO - 2023-09-05 00:27:59,245 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 62 through 62 (iteration 63 out of 96)
+INFO - 2023-09-05 00:27:59,329 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 63 through 63 (iteration 64 out of 96)
+INFO - 2023-09-05 00:27:59,438 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 64 through 64 (iteration 65 out of 96)
+INFO - 2023-09-05 00:27:59,522 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 65 through 65 (iteration 66 out of 96)
+INFO - 2023-09-05 00:27:59,631 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 66 through 66 (iteration 67 out of 96)
+INFO - 2023-09-05 00:27:59,715 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 67 through 67 (iteration 68 out of 96)
+INFO - 2023-09-05 00:27:59,826 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 68 through 68 (iteration 69 out of 96)
+INFO - 2023-09-05 00:27:59,911 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 69 through 69 (iteration 70 out of 96)
+INFO - 2023-09-05 00:28:00,022 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 70 through 70 (iteration 71 out of 96)
+INFO - 2023-09-05 00:28:00,106 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 71 through 71 (iteration 72 out of 96)
+INFO - 2023-09-05 00:28:00,217 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 72 through 72 (iteration 73 out of 96)
+INFO - 2023-09-05 00:28:00,305 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 73 through 73 (iteration 74 out of 96)
+INFO - 2023-09-05 00:28:00,417 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 74 through 74 (iteration 75 out of 96)
+INFO - 2023-09-05 00:28:00,501 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 75 through 75 (iteration 76 out of 96)
+INFO - 2023-09-05 00:28:00,612 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 76 through 76 (iteration 77 out of 96)
+INFO - 2023-09-05 00:28:00,723 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 77 through 77 (iteration 78 out of 96)
+INFO - 2023-09-05 00:28:00,808 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 78 through 78 (iteration 79 out of 96)
+INFO - 2023-09-05 00:28:00,920 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 79 through 79 (iteration 80 out of 96)
+INFO - 2023-09-05 00:28:01,002 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 80 through 80 (iteration 81 out of 96)
+INFO - 2023-09-05 00:28:01,113 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 81 through 81 (iteration 82 out of 96)
+INFO - 2023-09-05 00:28:01,198 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 82 through 82 (iteration 83 out of 96)
+INFO - 2023-09-05 00:28:01,312 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 83 through 83 (iteration 84 out of 96)
+INFO - 2023-09-05 00:28:01,398 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 84 through 84 (iteration 85 out of 96)
+INFO - 2023-09-05 00:28:01,514 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 85 through 85 (iteration 86 out of 96)
+INFO - 2023-09-05 00:28:01,601 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 86 through 86 (iteration 87 out of 96)
+INFO - 2023-09-05 00:28:01,711 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 87 through 87 (iteration 88 out of 96)
+INFO - 2023-09-05 00:28:01,796 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 88 through 88 (iteration 89 out of 96)
+INFO - 2023-09-05 00:28:01,908 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 89 through 89 (iteration 90 out of 96)
+INFO - 2023-09-05 00:28:01,992 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 90 through 90 (iteration 91 out of 96)
+INFO - 2023-09-05 00:28:02,103 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 94 through 94 (iteration 92 out of 96)
+INFO - 2023-09-05 00:28:02,215 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 95 through 95 (iteration 93 out of 96)
+INFO - 2023-09-05 00:28:02,306 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 96 through 96 (iteration 94 out of 96)
+INFO - 2023-09-05 00:28:02,418 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 97 through 97 (iteration 95 out of 96)
+INFO - 2023-09-05 00:28:02,501 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 98 through 98 (iteration 96 out of 96)
+INFO - 2023-09-05 00:28:02,501 [base.py:1076] : Flushing outputs to disk, target file: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5"
+INFO - 2023-09-05 00:28:02,509 [status.py:738] : Command 'generation' complete. Time elapsed: 0:00:09. Target output file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5'
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 00:27:52,939 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:27:52,939 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:27:52,951 [base.py:907] : Initializing full output file: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5" with mode: w
+INFO - 2023-09-05 00:27:52,994 [base.py:210] : Output results from a single site are calculated to use 0.0 KB of memory.
+INFO - 2023-09-05 00:27:52,995 [base.py:177] : Limited to storing 782810 sites in memory (34.4 GB total hardware, 13.7 GB available with 40.0% utilization).
+INFO - 2023-09-05 00:27:52,995 [base.py:968] : Initializing in-memory outputs for 96 sites with gids 0 through 98 inclusive (site list index 0 through 95)
+INFO - 2023-09-05 00:27:52,995 [generation.py:813] : Running reV generation for: PointsControl with 96 sites from gid 0 through 98
+INFO - 2023-09-05 00:27:53,091 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 0 through 0 (iteration 1 out of 96)
+INFO - 2023-09-05 00:27:53,202 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 1 through 1 (iteration 2 out of 96)
+INFO - 2023-09-05 00:27:53,312 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 2 through 2 (iteration 3 out of 96)
+INFO - 2023-09-05 00:27:53,396 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 3 through 3 (iteration 4 out of 96)
+INFO - 2023-09-05 00:27:53,507 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 4 through 4 (iteration 5 out of 96)
+INFO - 2023-09-05 00:27:53,589 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 5 through 5 (iteration 6 out of 96)
+INFO - 2023-09-05 00:27:53,699 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 6 through 6 (iteration 7 out of 96)
+INFO - 2023-09-05 00:27:53,783 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 7 through 7 (iteration 8 out of 96)
+INFO - 2023-09-05 00:27:53,897 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 8 through 8 (iteration 9 out of 96)
+INFO - 2023-09-05 00:27:53,981 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 9 through 9 (iteration 10 out of 96)
+INFO - 2023-09-05 00:27:54,093 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 10 through 10 (iteration 11 out of 96)
+INFO - 2023-09-05 00:27:54,179 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 11 through 11 (iteration 12 out of 96)
+INFO - 2023-09-05 00:27:54,289 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 12 through 12 (iteration 13 out of 96)
+INFO - 2023-09-05 00:27:54,372 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 13 through 13 (iteration 14 out of 96)
+INFO - 2023-09-05 00:27:54,484 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 14 through 14 (iteration 15 out of 96)
+INFO - 2023-09-05 00:27:54,568 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 15 through 15 (iteration 16 out of 96)
+INFO - 2023-09-05 00:27:54,677 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 16 through 16 (iteration 17 out of 96)
+INFO - 2023-09-05 00:27:54,788 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 17 through 17 (iteration 18 out of 96)
+INFO - 2023-09-05 00:27:54,875 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 18 through 18 (iteration 19 out of 96)
+INFO - 2023-09-05 00:27:54,990 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 19 through 19 (iteration 20 out of 96)
+INFO - 2023-09-05 00:27:55,075 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 20 through 20 (iteration 21 out of 96)
+INFO - 2023-09-05 00:27:55,190 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 21 through 21 (iteration 22 out of 96)
+INFO - 2023-09-05 00:27:55,273 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 22 through 22 (iteration 23 out of 96)
+INFO - 2023-09-05 00:27:55,385 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 23 through 23 (iteration 24 out of 96)
+INFO - 2023-09-05 00:27:55,469 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 24 through 24 (iteration 25 out of 96)
+INFO - 2023-09-05 00:27:55,579 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 25 through 25 (iteration 26 out of 96)
+INFO - 2023-09-05 00:27:55,664 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 26 through 26 (iteration 27 out of 96)
+INFO - 2023-09-05 00:27:55,774 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 27 through 27 (iteration 28 out of 96)
+INFO - 2023-09-05 00:27:55,858 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 28 through 28 (iteration 29 out of 96)
+INFO - 2023-09-05 00:27:55,969 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 29 through 29 (iteration 30 out of 96)
+INFO - 2023-09-05 00:27:56,053 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 30 through 30 (iteration 31 out of 96)
+INFO - 2023-09-05 00:27:56,163 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 31 through 31 (iteration 32 out of 96)
+INFO - 2023-09-05 00:27:56,273 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 32 through 32 (iteration 33 out of 96)
+INFO - 2023-09-05 00:27:56,357 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 33 through 33 (iteration 34 out of 96)
+INFO - 2023-09-05 00:27:56,468 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 34 through 34 (iteration 35 out of 96)
+INFO - 2023-09-05 00:27:56,551 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 35 through 35 (iteration 36 out of 96)
+INFO - 2023-09-05 00:27:56,661 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 36 through 36 (iteration 37 out of 96)
+INFO - 2023-09-05 00:27:56,746 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 37 through 37 (iteration 38 out of 96)
+INFO - 2023-09-05 00:27:56,861 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 38 through 38 (iteration 39 out of 96)
+INFO - 2023-09-05 00:27:56,946 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 39 through 39 (iteration 40 out of 96)
+INFO - 2023-09-05 00:27:57,058 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 40 through 40 (iteration 41 out of 96)
+INFO - 2023-09-05 00:27:57,141 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 41 through 41 (iteration 42 out of 96)
+INFO - 2023-09-05 00:27:57,253 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 42 through 42 (iteration 43 out of 96)
+INFO - 2023-09-05 00:27:57,338 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 43 through 43 (iteration 44 out of 96)
+INFO - 2023-09-05 00:27:57,451 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 44 through 44 (iteration 45 out of 96)
+INFO - 2023-09-05 00:27:57,536 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 45 through 45 (iteration 46 out of 96)
+INFO - 2023-09-05 00:27:57,646 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 46 through 46 (iteration 47 out of 96)
+INFO - 2023-09-05 00:27:57,760 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 47 through 47 (iteration 48 out of 96)
+INFO - 2023-09-05 00:27:57,843 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 48 through 48 (iteration 49 out of 96)
+INFO - 2023-09-05 00:27:57,954 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 49 through 49 (iteration 50 out of 96)
+INFO - 2023-09-05 00:27:58,037 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 50 through 50 (iteration 51 out of 96)
+INFO - 2023-09-05 00:27:58,153 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 51 through 51 (iteration 52 out of 96)
+INFO - 2023-09-05 00:27:58,239 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 52 through 52 (iteration 53 out of 96)
+INFO - 2023-09-05 00:27:58,354 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 53 through 53 (iteration 54 out of 96)
+INFO - 2023-09-05 00:27:58,439 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 54 through 54 (iteration 55 out of 96)
+INFO - 2023-09-05 00:27:58,550 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 55 through 55 (iteration 56 out of 96)
+INFO - 2023-09-05 00:27:58,634 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 56 through 56 (iteration 57 out of 96)
+INFO - 2023-09-05 00:27:58,745 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 57 through 57 (iteration 58 out of 96)
+INFO - 2023-09-05 00:27:58,829 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 58 through 58 (iteration 59 out of 96)
+INFO - 2023-09-05 00:27:58,941 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 59 through 59 (iteration 60 out of 96)
+INFO - 2023-09-05 00:27:59,025 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 60 through 60 (iteration 61 out of 96)
+INFO - 2023-09-05 00:27:59,135 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 61 through 61 (iteration 62 out of 96)
+INFO - 2023-09-05 00:27:59,245 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 62 through 62 (iteration 63 out of 96)
+INFO - 2023-09-05 00:27:59,329 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 63 through 63 (iteration 64 out of 96)
+INFO - 2023-09-05 00:27:59,438 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 64 through 64 (iteration 65 out of 96)
+INFO - 2023-09-05 00:27:59,522 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 65 through 65 (iteration 66 out of 96)
+INFO - 2023-09-05 00:27:59,631 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 66 through 66 (iteration 67 out of 96)
+INFO - 2023-09-05 00:27:59,715 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 67 through 67 (iteration 68 out of 96)
+INFO - 2023-09-05 00:27:59,826 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 68 through 68 (iteration 69 out of 96)
+INFO - 2023-09-05 00:27:59,911 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 69 through 69 (iteration 70 out of 96)
+INFO - 2023-09-05 00:28:00,022 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 70 through 70 (iteration 71 out of 96)
+INFO - 2023-09-05 00:28:00,106 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 71 through 71 (iteration 72 out of 96)
+INFO - 2023-09-05 00:28:00,217 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 72 through 72 (iteration 73 out of 96)
+INFO - 2023-09-05 00:28:00,305 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 73 through 73 (iteration 74 out of 96)
+INFO - 2023-09-05 00:28:00,417 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 74 through 74 (iteration 75 out of 96)
+INFO - 2023-09-05 00:28:00,501 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 75 through 75 (iteration 76 out of 96)
+INFO - 2023-09-05 00:28:00,612 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 76 through 76 (iteration 77 out of 96)
+INFO - 2023-09-05 00:28:00,723 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 77 through 77 (iteration 78 out of 96)
+INFO - 2023-09-05 00:28:00,808 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 78 through 78 (iteration 79 out of 96)
+INFO - 2023-09-05 00:28:00,920 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 79 through 79 (iteration 80 out of 96)
+INFO - 2023-09-05 00:28:01,002 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 80 through 80 (iteration 81 out of 96)
+INFO - 2023-09-05 00:28:01,113 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 81 through 81 (iteration 82 out of 96)
+INFO - 2023-09-05 00:28:01,198 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 82 through 82 (iteration 83 out of 96)
+INFO - 2023-09-05 00:28:01,312 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 83 through 83 (iteration 84 out of 96)
+INFO - 2023-09-05 00:28:01,398 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 84 through 84 (iteration 85 out of 96)
+INFO - 2023-09-05 00:28:01,514 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 85 through 85 (iteration 86 out of 96)
+INFO - 2023-09-05 00:28:01,601 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 86 through 86 (iteration 87 out of 96)
+INFO - 2023-09-05 00:28:01,711 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 87 through 87 (iteration 88 out of 96)
+INFO - 2023-09-05 00:28:01,796 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 88 through 88 (iteration 89 out of 96)
+INFO - 2023-09-05 00:28:01,908 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 89 through 89 (iteration 90 out of 96)
+INFO - 2023-09-05 00:28:01,992 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 90 through 90 (iteration 91 out of 96)
+INFO - 2023-09-05 00:28:02,103 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 94 through 94 (iteration 92 out of 96)
+INFO - 2023-09-05 00:28:02,215 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 95 through 95 (iteration 93 out of 96)
+INFO - 2023-09-05 00:28:02,306 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 96 through 96 (iteration 94 out of 96)
+INFO - 2023-09-05 00:28:02,418 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 97 through 97 (iteration 95 out of 96)
+INFO - 2023-09-05 00:28:02,501 [generation.py:829] : Finished reV gen serial compute for: PointsControl with 1 sites from gid 98 through 98 (iteration 96 out of 96)
+INFO - 2023-09-05 00:28:02,501 [base.py:1076] : Flushing outputs to disk, target file: "/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5"
+INFO - 2023-09-05 00:28:02,509 [status.py:738] : Command 'generation' complete. Time elapsed: 0:00:09. Target output file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5'
+gaps (WARNING) - [execution.py:136] : Subprocess received stderr: 
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:305: ExtrapolationWarning: 120 is outside the height range (80, 100). Extrapolation to be used.
+  warnings.warn(' '.join(msg), ExtrapolationWarning)
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/rex/renewable_resource.py:1258: ExtrapolationWarning: Extrapolating windspeed_120m using Power Law Extrapolation
+  warnings.warn(msg, ExtrapolationWarning)
+gaps (INFO) - [execution.py:138] : Completed job 'generation_generation_j1'.
+gaps (INFO) - [pipeline.py:199] : CLI command 'generation' for job 'generation' is successful. (Tue Sep  5 00:28:08 2023)
+gaps (INFO) - [config.py:215] : Running multi-year from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/config_multi-year.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/logs'
+gaps (INFO) - [execution.py:119] : Running 'multi-year' locally with job name 'generation_multi_year'.
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 00:28:10,038 [multi_year.py:785] : Multi-year collection is being run with output path: /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 00:28:10,038 [multi_year.py:789] : - Collecting datasets "['cf_mean', 'cf_profile', 'lcoe_fcr']" from "['/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j0_2012.h5', '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_generation_j1_2013.h5']" into "none/"
+INFO - 2023-09-05 00:28:10,041 [multi_year.py:680] : Collecting cf_mean into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 00:28:10,041 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,041 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,061 [multi_year.py:709] : Collecting cf_profile into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 00:28:10,062 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,062 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,080 [multi_year.py:680] : Collecting lcoe_fcr into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 00:28:10,080 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,080 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,102 [multi_year.py:655] : Passing through capital_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,102 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,102 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,110 [multi_year.py:655] : Passing through fixed_operating_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,110 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,110 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,117 [multi_year.py:655] : Passing through system_capacity into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,117 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,117 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,125 [multi_year.py:655] : Passing through fixed_charge_rate into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,125 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,125 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,134 [multi_year.py:655] : Passing through variable_operating_cost into /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 00:28:10,134 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:10,134 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:10,142 [multi_year.py:807] : - none collection completed in: 0.00 min.
+INFO - 2023-09-05 00:28:10,142 [multi_year.py:811] : Multi-year collection completed in : 0.00 min.
+INFO - 2023-09-05 00:28:10,142 [status.py:738] : Command 'multi-year' complete. Time elapsed: 0:00:00. Target output file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5'
+gaps (INFO) - [execution.py:138] : Completed job 'generation_multi_year'.
+gaps (INFO) - [pipeline.py:199] : CLI command 'multi-year' for job 'generation' is successful. (Tue Sep  5 00:28:16 2023)
+gaps (INFO) - [config.py:215] : Running qa-qc from config file: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/config_qa-qc.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/wind/rev/generation/logs'
+gaps (INFO) - [execution.py:119] : Running 'qa-qc' locally with job name 'generation_qa_qc'.
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 00:28:17,629 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 00:28:17,629 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 00:28:17,629 [qa_qc.py:34] : QA/QC results to be saved to: /Users/sthomson/github/reV-tutorial/wind/rev/generation/QA_multi-year
+INFO - 2023-09-05 00:28:17,629 [summary.py:31] : QAQC Summarize initializing on: /Users/sthomson/github/reV-tutorial/wind/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 00:28:35,850 [qa_qc.py:144] : Finished QAQC on file: generation_multi_year.h5 output directory: /Users/sthomson/github/reV-tutorial/wind/rev/generation/QA_multi-year
+INFO - 2023-09-05 00:28:35,850 [status.py:738] : Command 'qa-qc' complete. Time elapsed: 0:00:18. Target output file: None
+gaps (INFO) - [execution.py:138] : Completed job 'generation_qa_qc'.
+gaps (INFO) - [pipeline.py:199] : CLI command 'qa-qc' for job 'generation' is successful. (Tue Sep  5 00:28:42 2023)
+gaps (INFO) - [pipeline.py:112] : Pipeline job 'generation' is complete.

@@ -3,6 +3,17 @@
 The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. These can be found in the SAM documentation here: [placeholder]()
 
 
+## Access the NSRDB Datasets
+https://registry.opendata.aws/nrel-pds-nsrdb/
+
+
+## Access the metadata for the wind toolkit
+https://data.nrel.gov/submissions/54
+https://www.nrel.gov/grid/wind-toolkit.html
+
+
+
+
 ### Things to do
 Finish the script, and perhaps use different input datasets. The SRWs are too awkward, and too much of it is pulling out the right meta information. 
 

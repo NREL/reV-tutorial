@@ -1,0 +1,70 @@
+gaps (INFO) - [config.py:215] : Running multi-year from config file: '/Users/sthomson/github/reV-tutorial/solar/rev/generation/config_multi-year.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/solar/rev/generation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/solar/rev/generation/logs'
+gaps (INFO) - [execution.py:119] : Running 'multi-year' locally with job name 'generation_multi_year'.
+INFO - 2023-09-05 01:08:22,109 [multi_year.py:785] : Multi-year collection is being run with output path: /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 01:08:22,109 [multi_year.py:789] : - Collecting datasets "['cf_mean', 'cf_profile', 'lcoe_fcr', 'ghi_mean']" from "['/Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_generation_j0_2012.h5', '/Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_generation_j1_2013.h5']" into "none/"
+INFO - 2023-09-05 01:08:22,112 [multi_year.py:680] : Collecting cf_mean into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 01:08:22,112 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,112 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,133 [multi_year.py:709] : Collecting cf_profile into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 01:08:22,133 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,133 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,153 [multi_year.py:680] : Collecting lcoe_fcr into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 01:08:22,153 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,153 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,176 [multi_year.py:680] : Collecting ghi_mean into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 01:08:22,176 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,176 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,203 [multi_year.py:655] : Passing through capital_cost into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,204 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,204 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,214 [multi_year.py:655] : Passing through fixed_operating_cost into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,214 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,214 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,223 [multi_year.py:655] : Passing through system_capacity into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,223 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,223 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,232 [multi_year.py:655] : Passing through fixed_charge_rate into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,232 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,232 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,242 [multi_year.py:655] : Passing through variable_operating_cost into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,242 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,242 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,252 [multi_year.py:807] : - none collection completed in: 0.00 min.
+INFO - 2023-09-05 01:08:22,252 [multi_year.py:811] : Multi-year collection completed in : 0.00 min.
+INFO - 2023-09-05 01:08:22,252 [status.py:738] : Command 'multi-year' complete. Time elapsed: 0:00:00. Target output file: '/Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5'
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 01:08:22,109 [multi_year.py:785] : Multi-year collection is being run with output path: /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 01:08:22,109 [multi_year.py:789] : - Collecting datasets "['cf_mean', 'cf_profile', 'lcoe_fcr', 'ghi_mean']" from "['/Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_generation_j0_2012.h5', '/Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_generation_j1_2013.h5']" into "none/"
+INFO - 2023-09-05 01:08:22,112 [multi_year.py:680] : Collecting cf_mean into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 01:08:22,112 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,112 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,133 [multi_year.py:709] : Collecting cf_profile into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5
+INFO - 2023-09-05 01:08:22,133 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,133 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,153 [multi_year.py:680] : Collecting lcoe_fcr into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 01:08:22,153 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,153 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,176 [multi_year.py:680] : Collecting ghi_mean into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5 and computing multi-year means and standard deviations.
+INFO - 2023-09-05 01:08:22,176 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,176 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,203 [multi_year.py:655] : Passing through capital_cost into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,204 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,204 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,214 [multi_year.py:655] : Passing through fixed_operating_cost into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,214 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,214 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,223 [multi_year.py:655] : Passing through system_capacity into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,223 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,223 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,232 [multi_year.py:655] : Passing through fixed_charge_rate into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,232 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,232 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,242 [multi_year.py:655] : Passing through variable_operating_cost into /Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5.
+INFO - 2023-09-05 01:08:22,242 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 01:08:22,242 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 01:08:22,252 [multi_year.py:807] : - none collection completed in: 0.00 min.
+INFO - 2023-09-05 01:08:22,252 [multi_year.py:811] : Multi-year collection completed in : 0.00 min.
+INFO - 2023-09-05 01:08:22,252 [status.py:738] : Command 'multi-year' complete. Time elapsed: 0:00:00. Target output file: '/Users/sthomson/github/reV-tutorial/solar/rev/generation/generation_multi_year.h5'
+gaps (INFO) - [execution.py:138] : Completed job 'generation_multi_year'.

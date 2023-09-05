@@ -1,0 +1,17 @@
+{
+    "monitor_pid": 88995,
+    "supply-curve-aggregation": {
+        "pipeline_index": 0,
+        "aggregation_supply_curve_aggregation": {
+            "job_status": "submitted",
+            "hardware": "local",
+            "time_submitted": "05-Sep-2023 12:10:13"
+        }
+    },
+    "supply-curve": {
+        "pipeline_index": 1
+    },
+    "rep-profiles": {
+        "pipeline_index": 2
+    }
+}

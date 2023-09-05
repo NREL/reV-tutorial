@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/Users/sthomson/opt/anaconda3/envs/rev/bin/reV", line 8, in <module>
+    sys.exit(main())
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/cli/pipeline.py", line 95, in pipeline
+    Pipeline.run(config_file, monitor=monitor)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/pipeline.py", line 236, in run
+    cls(pipeline, monitor=monitor)._main()
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/pipeline.py", line 98, in _main
+    self._submit(step)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/pipeline.py", line 140, in _submit
+    self.COMMANDS[command].callback(f_config)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/cli/config.py", line 345, in from_config
+    _FromConfig(ctx, config_file, command_config).run()
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/cli/config.py", line 330, in run
+    self.enable_logging()
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/cli/config.py", line 277, in kickoff_jobs
+    kickoff_job(self.ctx, cmd, deepcopy(self.exec_kwargs))
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/cli/execution.py", line 57, in kickoff_job
+    _kickoff_local_job(ctx, cmd)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/cli/execution.py", line 132, in _kickoff_local_job
+    stdout, stderr = submit(cmd)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/hpc.py", line 661, in submit
+    stdout, stderr = _subprocess_popen(cmd)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/hpc.py", line 603, in _subprocess_popen
+    raise OSError(
+OSError: Subprocess submission failed with return code 1 and stderr:
+/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/reV/supply_curve/sc_aggregation.py:656: InputWarning: Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+  warn(msg, InputWarning)
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/gaps/cli/config.py", line 521, in run_with_status_updates
+    out = func(**run_kwargs)
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/reV/supply_curve/sc_aggregation.py", line 1337, in run
+    summary = self.summarize(gen_fpath=gen_fpath, args=args,
+  File "/Users/sthomson/opt/anaconda3/envs/rev/lib/python3.9/site-packages/reV/supply_curve/sc_aggregation.py", line 1283, in summarize
+    raise EmptySupplyCurvePointError(e)
+reV.utilities.exceptions.EmptySupplyCurvePointError: Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.

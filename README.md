@@ -5,7 +5,11 @@ This is a draft repository for learning to run reV, both through the command wit
 
 # Brief Description of the reV modeling pipeline
 
-reV is split into three main components: 1) simulating renewable energy generation and cost potential across a landscape, 2) simulating discrete generation plants with spatial constraints, and 3) connecting plants to a transmission grid. At its foundation (item 1) reV serves a spatial coordinator for the [Systems Advisor Model](https://sam.nrel.gov/). It runs any number of simulated generators at any number of points for which resource data is availabe. The resource datasets most typically used with reV (at least thus far) include the [National Solar Radiation Database](https://nsrdb.nrel.gov/) (NSRDB) and the [Wind Integration National Dataset Toolkit](https://www.nrel.gov/grid/wind-toolkit.html) (WTK), however any resource dataset can be used if it is formatted correctly.
+reV is split into three main components: 
+1) simulating renewable energy generation and cost potential across a landscape 
+2) simulating discrete generation plants with spatial constraints
+3) connecting plants to a transmission grid
+At its foundation (item 1) reV serves a spatial coordinator for the [Systems Advisor Model](https://sam.nrel.gov/). It runs any number of simulated generators at any number of points for which resource data is availabe. The resource datasets most typically used with reV (at least thus far) include the [National Solar Radiation Database](https://nsrdb.nrel.gov/) (NSRDB) and the [Wind Integration National Dataset Toolkit](https://www.nrel.gov/grid/wind-toolkit.html) (WTK), however any resource dataset can be used if it is formatted correctly.
 
 reV is designed as a set of Python modules, each of which take as inputs the outputs of previous modules. The basic work flow is to take input "resource" datasets, a specifically formatted gridded timeseries of wind or solar irradiance, pass them through module generators (**in reV-Generation**) (wind turbines or photovoltaic panels) to create gridded timeseries of energy outputs and production costs, pass that into an aggregation module (**reV-Supply-Curve-Aggregation**) which combines the resource scale generation values into model plants with plant-level costs and energy production, and finally pass that into a transmission module (**reV-Supply-Curve**) which connects these plants to transmission and updates costs: 
 
@@ -57,7 +61,7 @@ Commands:
   batch                     Execute multiple steps in a reV analysis...
   collect                   Collect files from a job run on multiple nodes.
   econ                      Econ analysis (lcoe, single-owner, etc...).
-  generation                Generation analysis (pv, csp, windpower,...
+  generation                Generation analysis (pv, csp, windpower,..).
   multi-year                Run reV multi year using the config file.
   offshore                  Offshore gen/econ aggregation with NRWAL.
   pipeline                  Execute multiple steps in a reV analysis...
@@ -79,3 +83,7 @@ cd reV-tutorial
 
 # Using the CLI Method
 The quickest and easiest to get started with reV is to use the **JSON-CLI** workflow. This involves building a json configuration file (which is like a string of a Python dictionary) for a module you want to run and running that module with the corresponding CLI command. You can also configure several modules in an input-output pipeline and run each with a single command. The configurations will tell reV which SAM generator configurations to run and where, what variables to generate, which land-use assumptions to use, etc. It will also tell reV how to work with your system to most efficiently build these outputs (e.g. how to split the work across cpus, how to split work across nodes for distributed systems, what memory utilization limits to use, etc.). This method is convient in that you don't need to edit any Python scripts and is easy to set up and run directly from your terminal (at least for single runs). So far we only have one sample run, a simple generation pipeline. To get started, clone this repo, activate your reV environment setup above, cd into the **reV-tutorial/cli_runs/generation** directory, and open the README.md found there.
+
+
+# An excellent resource for learning about reV:
+https://nrel.github.io/reV/_cli/cli.html

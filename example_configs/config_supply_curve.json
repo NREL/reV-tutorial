@@ -1,0 +1,37 @@
+{
+    "execution_control": {
+        "option": "local",
+        "allocation": "[REQUIRED IF ON HPC]",
+        "walltime": "[REQUIRED IF ON HPC]",
+        "qos": "normal",
+        "memory": null,
+        "queue": null,
+        "feature": null,
+        "conda_env": null,
+        "module": null,
+        "sh_script": null,
+        "max_workers": null
+    },
+    "log_directory": "./logs",
+    "log_level": "INFO",
+    "sc_points": "[REQUIRED]",
+    "trans_table": "[REQUIRED]",
+    "sc_features": null,
+    "sc_capacity_col": "capacity",
+    "fixed_charge_rate": "[REQUIRED]",
+    "simple": true,
+    "avail_cap_frac": 1,
+    "line_limited": false,
+    "transmission_costs": null,
+    "consider_friction": true,
+    "sort_on": null,
+    "columns": [
+        "trans_gid",
+        "trans_type",
+        "trans_cap_cost_per_mw",
+        "dist_km",
+        "lcot",
+        "total_lcoe"
+    ],
+    "competition": null
+}

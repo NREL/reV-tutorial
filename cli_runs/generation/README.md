@@ -79,3 +79,22 @@ Add in "max_workers" parameters.
 
 Add in pysam variable look up.
 
+
+
+
+Explain the outputs of reV:
+    "cf_mean",
+    "cf_profile",
+    "lcoe_fcr",
+    "ghi_mean",
+    "capital_cost",
+    "fixed_operating_cost",
+    "system_capacity",
+    "fixed_charge_rate",
+    "variable_operating_cost"
+
+    Are there any more we can add here? Do we need all of them? Some of them -> what do we need to do? 
+
+How do different technologies differ? Are there differences? (Clearsky vs not clearsky but unneccessary for wind etc. )
+
+Mentioned that NSRDB and wind toolkit is available on the cloud, link it here? In a FAQ?

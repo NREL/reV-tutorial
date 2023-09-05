@@ -1,0 +1,25 @@
+{
+    "execution_control": {
+        "option": "local",
+        "allocation": "[REQUIRED IF ON HPC]",
+        "walltime": "[REQUIRED IF ON HPC]",
+        "qos": "normal",
+        "memory": null,
+        "queue": null,
+        "feature": null,
+        "conda_env": null,
+        "module": null,
+        "sh_script": null
+    },
+    "log_directory": "./logs",
+    "log_level": "INFO",
+    "gen_fpath": "[REQUIRED]",
+    "site_data": "[REQUIRED]",
+    "sam_files": "[REQUIRED]",
+    "nrwal_configs": "[REQUIRED]",
+    "output_request": "[REQUIRED]",
+    "save_raw": true,
+    "meta_gid_col": "gid",
+    "site_meta_cols": null,
+    "csv_output": false
+}
