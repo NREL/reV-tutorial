@@ -8,7 +8,7 @@
     "fixed_charge_rate": 0.096,
     "sc_features": null,
     "sc_points": "PIPELINE",
-    "simple": false,
+    "simple": true,
     "trans_table": "./ri_transmission_table.csv",
     "transmission_costs": {
       "center_tie_in_cost": 10,

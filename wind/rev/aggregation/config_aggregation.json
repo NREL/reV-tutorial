@@ -24,7 +24,7 @@
     },
     "gen_fpath": "./generation_multi_year.h5",
     "lcoe_dset": "lcoe_fcr-means",
-
+    "res_fpath": "../generation/data/ri_100_wtk_{}.h5",
     "resolution": 64,
     "h5_dsets": [
       "capital_cost",
@@ -34,6 +34,6 @@
       "variable_operating_cost"
     ],
     "recalc_lcoe": true,
-    "tm_dset": "techmap_wtk"
+    "tm_dset": "techmap_wtk_redo"
   }
   

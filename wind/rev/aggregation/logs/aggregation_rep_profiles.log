@@ -1,0 +1,194 @@
+gaps (ERROR) - [config.py:369] : The following required keys are missing from the configuration file: {'reg_cols'}
+gaps (INFO) - [config.py:215] : Running rep-profiles from config file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/config_rep-profiles.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'rep-profiles' locally with job name 'aggregation_rep_profiles_j0'.
+INFO - 2023-09-05 12:37:21,076 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:37:21,076 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:37:21,076 [rep_profiles.py:970] : Finding representative profiles that are most similar to the weighted meanoid for each supply curve region.
+INFO - 2023-09-05 12:37:21,076 [rep_profiles.py:986] : Aggregate profiles input set to `True`. Setting 'rep_method' to `'meanoid'`, 'err_method' to `None`, and 'n_profiles' to `1`
+INFO - 2023-09-05 12:37:21,076 [rep_profiles.py:600] : Running rep profiles with gen_fpath: "generation_multi_year.h5"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:602] : Running rep profiles with rev_summary: "/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_supply-curve-aggregation.csv"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:604] : Running rep profiles with region columns: "['sc_point_gid']"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:606] : Running rep profiles with representative method: "meanoid"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:608] : Running rep profiles with error method: "None"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:610] : Running rep profiles with weight factor: "gid_counts"
+INFO - 2023-09-05 12:37:21,134 [rep_profiles.py:1095] : Kicking off 48 rep profile futures.
+INFO - 2023-09-05 12:37:31,245 [rep_profiles.py:1135] : Future 1 out of 48 complete for region: {'sc_point_gid': 1}
+INFO - 2023-09-05 12:37:31,265 [rep_profiles.py:1135] : Future 2 out of 48 complete for region: {'sc_point_gid': 0}
+INFO - 2023-09-05 12:37:31,281 [rep_profiles.py:1135] : Future 3 out of 48 complete for region: {'sc_point_gid': 4}
+INFO - 2023-09-05 12:37:31,284 [rep_profiles.py:1135] : Future 4 out of 48 complete for region: {'sc_point_gid': 66}
+INFO - 2023-09-05 12:37:31,358 [rep_profiles.py:1135] : Future 5 out of 48 complete for region: {'sc_point_gid': 67}
+INFO - 2023-09-05 12:37:31,362 [rep_profiles.py:1135] : Future 6 out of 48 complete for region: {'sc_point_gid': 3}
+INFO - 2023-09-05 12:37:31,372 [rep_profiles.py:1135] : Future 7 out of 48 complete for region: {'sc_point_gid': 80}
+INFO - 2023-09-05 12:37:31,374 [rep_profiles.py:1135] : Future 8 out of 48 complete for region: {'sc_point_gid': 68}
+INFO - 2023-09-05 12:37:31,455 [rep_profiles.py:1135] : Future 9 out of 48 complete for region: {'sc_point_gid': 81}
+INFO - 2023-09-05 12:37:31,457 [rep_profiles.py:1135] : Future 10 out of 48 complete for region: {'sc_point_gid': 82}
+INFO - 2023-09-05 12:37:31,458 [rep_profiles.py:1135] : Future 11 out of 48 complete for region: {'sc_point_gid': 96}
+INFO - 2023-09-05 12:37:31,459 [rep_profiles.py:1135] : Future 12 out of 48 complete for region: {'sc_point_gid': 83}
+INFO - 2023-09-05 12:37:31,459 [rep_profiles.py:1135] : Future 13 out of 48 complete for region: {'sc_point_gid': 2}
+INFO - 2023-09-05 12:37:31,550 [rep_profiles.py:1135] : Future 14 out of 48 complete for region: {'sc_point_gid': 97}
+INFO - 2023-09-05 12:37:31,552 [rep_profiles.py:1135] : Future 15 out of 48 complete for region: {'sc_point_gid': 98}
+INFO - 2023-09-05 12:37:31,552 [rep_profiles.py:1135] : Future 16 out of 48 complete for region: {'sc_point_gid': 112}
+INFO - 2023-09-05 12:37:31,553 [rep_profiles.py:1135] : Future 17 out of 48 complete for region: {'sc_point_gid': 99}
+INFO - 2023-09-05 12:37:31,554 [rep_profiles.py:1135] : Future 18 out of 48 complete for region: {'sc_point_gid': 113}
+INFO - 2023-09-05 12:37:31,645 [rep_profiles.py:1135] : Future 19 out of 48 complete for region: {'sc_point_gid': 131}
+INFO - 2023-09-05 12:37:31,646 [rep_profiles.py:1135] : Future 20 out of 48 complete for region: {'sc_point_gid': 129}
+INFO - 2023-09-05 12:37:31,647 [rep_profiles.py:1135] : Future 21 out of 48 complete for region: {'sc_point_gid': 128}
+INFO - 2023-09-05 12:37:31,648 [rep_profiles.py:1135] : Future 22 out of 48 complete for region: {'sc_point_gid': 114}
+INFO - 2023-09-05 12:37:31,662 [rep_profiles.py:1135] : Future 23 out of 48 complete for region: {'sc_point_gid': 130}
+INFO - 2023-09-05 12:37:31,672 [rep_profiles.py:1135] : Future 24 out of 48 complete for region: {'sc_point_gid': 5}
+INFO - 2023-09-05 12:37:31,674 [rep_profiles.py:1135] : Future 25 out of 48 complete for region: {'sc_point_gid': 19}
+INFO - 2023-09-05 12:37:31,746 [rep_profiles.py:1135] : Future 26 out of 48 complete for region: {'sc_point_gid': 160}
+INFO - 2023-09-05 12:37:31,747 [rep_profiles.py:1135] : Future 27 out of 48 complete for region: {'sc_point_gid': 145}
+INFO - 2023-09-05 12:37:31,748 [rep_profiles.py:1135] : Future 28 out of 48 complete for region: {'sc_point_gid': 144}
+INFO - 2023-09-05 12:37:31,749 [rep_profiles.py:1135] : Future 29 out of 48 complete for region: {'sc_point_gid': 161}
+INFO - 2023-09-05 12:37:31,751 [rep_profiles.py:1135] : Future 30 out of 48 complete for region: {'sc_point_gid': 16}
+INFO - 2023-09-05 12:37:31,753 [rep_profiles.py:1135] : Future 31 out of 48 complete for region: {'sc_point_gid': 146}
+INFO - 2023-09-05 12:37:31,758 [rep_profiles.py:1135] : Future 32 out of 48 complete for region: {'sc_point_gid': 17}
+INFO - 2023-09-05 12:37:31,759 [rep_profiles.py:1135] : Future 33 out of 48 complete for region: {'sc_point_gid': 162}
+INFO - 2023-09-05 12:37:31,760 [rep_profiles.py:1135] : Future 34 out of 48 complete for region: {'sc_point_gid': 20}
+INFO - 2023-09-05 12:37:31,760 [rep_profiles.py:1135] : Future 35 out of 48 complete for region: {'sc_point_gid': 21}
+INFO - 2023-09-05 12:37:31,787 [rep_profiles.py:1135] : Future 36 out of 48 complete for region: {'sc_point_gid': 32}
+INFO - 2023-09-05 12:37:31,793 [rep_profiles.py:1135] : Future 37 out of 48 complete for region: {'sc_point_gid': 18}
+INFO - 2023-09-05 12:37:31,844 [rep_profiles.py:1135] : Future 38 out of 48 complete for region: {'sc_point_gid': 33}
+INFO - 2023-09-05 12:37:31,889 [rep_profiles.py:1135] : Future 39 out of 48 complete for region: {'sc_point_gid': 34}
+INFO - 2023-09-05 12:37:31,906 [rep_profiles.py:1135] : Future 40 out of 48 complete for region: {'sc_point_gid': 36}
+INFO - 2023-09-05 12:37:31,908 [rep_profiles.py:1135] : Future 41 out of 48 complete for region: {'sc_point_gid': 49}
+INFO - 2023-09-05 12:37:31,908 [rep_profiles.py:1135] : Future 42 out of 48 complete for region: {'sc_point_gid': 48}
+INFO - 2023-09-05 12:37:31,920 [rep_profiles.py:1135] : Future 43 out of 48 complete for region: {'sc_point_gid': 35}
+INFO - 2023-09-05 12:37:31,928 [rep_profiles.py:1135] : Future 44 out of 48 complete for region: {'sc_point_gid': 64}
+INFO - 2023-09-05 12:37:31,930 [rep_profiles.py:1135] : Future 45 out of 48 complete for region: {'sc_point_gid': 51}
+INFO - 2023-09-05 12:37:31,931 [rep_profiles.py:1135] : Future 46 out of 48 complete for region: {'sc_point_gid': 50}
+INFO - 2023-09-05 12:37:31,935 [rep_profiles.py:1135] : Future 47 out of 48 complete for region: {'sc_point_gid': 52}
+INFO - 2023-09-05 12:37:32,005 [rep_profiles.py:1135] : Future 48 out of 48 complete for region: {'sc_point_gid': 65}
+INFO - 2023-09-05 12:37:34,149 [rep_profiles.py:1183] : Aggregate profiles input set to `True`. Setting 'save_rev_summary' input to `False`
+INFO - 2023-09-05 12:37:34,232 [rep_profiles.py:1189] : Representative profiles complete!
+INFO - 2023-09-05 12:37:34,232 [status.py:736] : Command 'rep-profiles' complete. Time elapsed: 0:00:13. Target output file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_rep-profiles_2012.h5'
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 12:37:21,076 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:37:21,076 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:37:21,076 [rep_profiles.py:970] : Finding representative profiles that are most similar to the weighted meanoid for each supply curve region.
+INFO - 2023-09-05 12:37:21,076 [rep_profiles.py:986] : Aggregate profiles input set to `True`. Setting 'rep_method' to `'meanoid'`, 'err_method' to `None`, and 'n_profiles' to `1`
+INFO - 2023-09-05 12:37:21,076 [rep_profiles.py:600] : Running rep profiles with gen_fpath: "generation_multi_year.h5"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:602] : Running rep profiles with rev_summary: "/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_supply-curve-aggregation.csv"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:604] : Running rep profiles with region columns: "['sc_point_gid']"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:606] : Running rep profiles with representative method: "meanoid"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:608] : Running rep profiles with error method: "None"
+INFO - 2023-09-05 12:37:21,077 [rep_profiles.py:610] : Running rep profiles with weight factor: "gid_counts"
+INFO - 2023-09-05 12:37:21,134 [rep_profiles.py:1095] : Kicking off 48 rep profile futures.
+INFO - 2023-09-05 12:37:31,245 [rep_profiles.py:1135] : Future 1 out of 48 complete for region: {'sc_point_gid': 1}
+INFO - 2023-09-05 12:37:31,265 [rep_profiles.py:1135] : Future 2 out of 48 complete for region: {'sc_point_gid': 0}
+INFO - 2023-09-05 12:37:31,281 [rep_profiles.py:1135] : Future 3 out of 48 complete for region: {'sc_point_gid': 4}
+INFO - 2023-09-05 12:37:31,284 [rep_profiles.py:1135] : Future 4 out of 48 complete for region: {'sc_point_gid': 66}
+INFO - 2023-09-05 12:37:31,358 [rep_profiles.py:1135] : Future 5 out of 48 complete for region: {'sc_point_gid': 67}
+INFO - 2023-09-05 12:37:31,362 [rep_profiles.py:1135] : Future 6 out of 48 complete for region: {'sc_point_gid': 3}
+INFO - 2023-09-05 12:37:31,372 [rep_profiles.py:1135] : Future 7 out of 48 complete for region: {'sc_point_gid': 80}
+INFO - 2023-09-05 12:37:31,374 [rep_profiles.py:1135] : Future 8 out of 48 complete for region: {'sc_point_gid': 68}
+INFO - 2023-09-05 12:37:31,455 [rep_profiles.py:1135] : Future 9 out of 48 complete for region: {'sc_point_gid': 81}
+INFO - 2023-09-05 12:37:31,457 [rep_profiles.py:1135] : Future 10 out of 48 complete for region: {'sc_point_gid': 82}
+INFO - 2023-09-05 12:37:31,458 [rep_profiles.py:1135] : Future 11 out of 48 complete for region: {'sc_point_gid': 96}
+INFO - 2023-09-05 12:37:31,459 [rep_profiles.py:1135] : Future 12 out of 48 complete for region: {'sc_point_gid': 83}
+INFO - 2023-09-05 12:37:31,459 [rep_profiles.py:1135] : Future 13 out of 48 complete for region: {'sc_point_gid': 2}
+INFO - 2023-09-05 12:37:31,550 [rep_profiles.py:1135] : Future 14 out of 48 complete for region: {'sc_point_gid': 97}
+INFO - 2023-09-05 12:37:31,552 [rep_profiles.py:1135] : Future 15 out of 48 complete for region: {'sc_point_gid': 98}
+INFO - 2023-09-05 12:37:31,552 [rep_profiles.py:1135] : Future 16 out of 48 complete for region: {'sc_point_gid': 112}
+INFO - 2023-09-05 12:37:31,553 [rep_profiles.py:1135] : Future 17 out of 48 complete for region: {'sc_point_gid': 99}
+INFO - 2023-09-05 12:37:31,554 [rep_profiles.py:1135] : Future 18 out of 48 complete for region: {'sc_point_gid': 113}
+INFO - 2023-09-05 12:37:31,645 [rep_profiles.py:1135] : Future 19 out of 48 complete for region: {'sc_point_gid': 131}
+INFO - 2023-09-05 12:37:31,646 [rep_profiles.py:1135] : Future 20 out of 48 complete for region: {'sc_point_gid': 129}
+INFO - 2023-09-05 12:37:31,647 [rep_profiles.py:1135] : Future 21 out of 48 complete for region: {'sc_point_gid': 128}
+INFO - 2023-09-05 12:37:31,648 [rep_profiles.py:1135] : Future 22 out of 48 complete for region: {'sc_point_gid': 114}
+INFO - 2023-09-05 12:37:31,662 [rep_profiles.py:1135] : Future 23 out of 48 complete for region: {'sc_point_gid': 130}
+INFO - 2023-09-05 12:37:31,672 [rep_profiles.py:1135] : Future 24 out of 48 complete for region: {'sc_point_gid': 5}
+INFO - 2023-09-05 12:37:31,674 [rep_profiles.py:1135] : Future 25 out of 48 complete for region: {'sc_point_gid': 19}
+INFO - 2023-09-05 12:37:31,746 [rep_profiles.py:1135] : Future 26 out of 48 complete for region: {'sc_point_gid': 160}
+INFO - 2023-09-05 12:37:31,747 [rep_profiles.py:1135] : Future 27 out of 48 complete for region: {'sc_point_gid': 145}
+INFO - 2023-09-05 12:37:31,748 [rep_profiles.py:1135] : Future 28 out of 48 complete for region: {'sc_point_gid': 144}
+INFO - 2023-09-05 12:37:31,749 [rep_profiles.py:1135] : Future 29 out of 48 complete for region: {'sc_point_gid': 161}
+INFO - 2023-09-05 12:37:31,751 [rep_profiles.py:1135] : Future 30 out of 48 complete for region: {'sc_point_gid': 16}
+INFO - 2023-09-05 12:37:31,753 [rep_profiles.py:1135] : Future 31 out of 48 complete for region: {'sc_point_gid': 146}
+INFO - 2023-09-05 12:37:31,758 [rep_profiles.py:1135] : Future 32 out of 48 complete for region: {'sc_point_gid': 17}
+INFO - 2023-09-05 12:37:31,759 [rep_profiles.py:1135] : Future 33 out of 48 complete for region: {'sc_point_gid': 162}
+INFO - 2023-09-05 12:37:31,760 [rep_profiles.py:1135] : Future 34 out of 48 complete for region: {'sc_point_gid': 20}
+INFO - 2023-09-05 12:37:31,760 [rep_profiles.py:1135] : Future 35 out of 48 complete for region: {'sc_point_gid': 21}
+INFO - 2023-09-05 12:37:31,787 [rep_profiles.py:1135] : Future 36 out of 48 complete for region: {'sc_point_gid': 32}
+INFO - 2023-09-05 12:37:31,793 [rep_profiles.py:1135] : Future 37 out of 48 complete for region: {'sc_point_gid': 18}
+INFO - 2023-09-05 12:37:31,844 [rep_profiles.py:1135] : Future 38 out of 48 complete for region: {'sc_point_gid': 33}
+INFO - 2023-09-05 12:37:31,889 [rep_profiles.py:1135] : Future 39 out of 48 complete for region: {'sc_point_gid': 34}
+INFO - 2023-09-05 12:37:31,906 [rep_profiles.py:1135] : Future 40 out of 48 complete for region: {'sc_point_gid': 36}
+INFO - 2023-09-05 12:37:31,908 [rep_profiles.py:1135] : Future 41 out of 48 complete for region: {'sc_point_gid': 49}
+INFO - 2023-09-05 12:37:31,908 [rep_profiles.py:1135] : Future 42 out of 48 complete for region: {'sc_point_gid': 48}
+INFO - 2023-09-05 12:37:31,920 [rep_profiles.py:1135] : Future 43 out of 48 complete for region: {'sc_point_gid': 35}
+INFO - 2023-09-05 12:37:31,928 [rep_profiles.py:1135] : Future 44 out of 48 complete for region: {'sc_point_gid': 64}
+INFO - 2023-09-05 12:37:31,930 [rep_profiles.py:1135] : Future 45 out of 48 complete for region: {'sc_point_gid': 51}
+INFO - 2023-09-05 12:37:31,931 [rep_profiles.py:1135] : Future 46 out of 48 complete for region: {'sc_point_gid': 50}
+INFO - 2023-09-05 12:37:31,935 [rep_profiles.py:1135] : Future 47 out of 48 complete for region: {'sc_point_gid': 52}
+INFO - 2023-09-05 12:37:32,005 [rep_profiles.py:1135] : Future 48 out of 48 complete for region: {'sc_point_gid': 65}
+INFO - 2023-09-05 12:37:34,149 [rep_profiles.py:1183] : Aggregate profiles input set to `True`. Setting 'save_rev_summary' input to `False`
+INFO - 2023-09-05 12:37:34,232 [rep_profiles.py:1189] : Representative profiles complete!
+INFO - 2023-09-05 12:37:34,232 [status.py:736] : Command 'rep-profiles' complete. Time elapsed: 0:00:13. Target output file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_rep-profiles_2012.h5'
+gaps (INFO) - [execution.py:138] : Completed job 'aggregation_rep_profiles_j0'.
+gaps (INFO) - [execution.py:119] : Running 'rep-profiles' locally with job name 'aggregation_rep_profiles_j1'.
+INFO - 2023-09-05 12:37:39,781 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:37:39,781 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:37:39,781 [rep_profiles.py:970] : Finding representative profiles that are most similar to the weighted meanoid for each supply curve region.
+INFO - 2023-09-05 12:37:39,781 [rep_profiles.py:986] : Aggregate profiles input set to `True`. Setting 'rep_method' to `'meanoid'`, 'err_method' to `None`, and 'n_profiles' to `1`
+INFO - 2023-09-05 12:37:39,781 [rep_profiles.py:600] : Running rep profiles with gen_fpath: "generation_multi_year.h5"
+INFO - 2023-09-05 12:37:39,782 [rep_profiles.py:602] : Running rep profiles with rev_summary: "/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_supply-curve-aggregation.csv"
+INFO - 2023-09-05 12:37:39,782 [rep_profiles.py:604] : Running rep profiles with region columns: "['sc_point_gid']"
+INFO - 2023-09-05 12:37:39,782 [rep_profiles.py:606] : Running rep profiles with representative method: "meanoid"
+INFO - 2023-09-05 12:37:39,782 [rep_profiles.py:608] : Running rep profiles with error method: "None"
+INFO - 2023-09-05 12:37:39,782 [rep_profiles.py:610] : Running rep profiles with weight factor: "gid_counts"
+INFO - 2023-09-05 12:37:39,838 [rep_profiles.py:1095] : Kicking off 48 rep profile futures.
+INFO - 2023-09-05 12:37:49,993 [rep_profiles.py:1135] : Future 1 out of 48 complete for region: {'sc_point_gid': 2}
+INFO - 2023-09-05 12:37:50,070 [rep_profiles.py:1135] : Future 2 out of 48 complete for region: {'sc_point_gid': 66}
+INFO - 2023-09-05 12:37:50,147 [rep_profiles.py:1135] : Future 3 out of 48 complete for region: {'sc_point_gid': 4}
+INFO - 2023-09-05 12:37:50,153 [rep_profiles.py:1135] : Future 4 out of 48 complete for region: {'sc_point_gid': 67}
+INFO - 2023-09-05 12:37:50,178 [rep_profiles.py:1135] : Future 5 out of 48 complete for region: {'sc_point_gid': 0}
+INFO - 2023-09-05 12:37:50,179 [rep_profiles.py:1135] : Future 6 out of 48 complete for region: {'sc_point_gid': 1}
+INFO - 2023-09-05 12:37:50,188 [rep_profiles.py:1135] : Future 7 out of 48 complete for region: {'sc_point_gid': 68}
+INFO - 2023-09-05 12:37:50,245 [rep_profiles.py:1135] : Future 8 out of 48 complete for region: {'sc_point_gid': 3}
+INFO - 2023-09-05 12:37:50,248 [rep_profiles.py:1135] : Future 9 out of 48 complete for region: {'sc_point_gid': 80}
+INFO - 2023-09-05 12:37:50,273 [rep_profiles.py:1135] : Future 10 out of 48 complete for region: {'sc_point_gid': 83}
+INFO - 2023-09-05 12:37:50,275 [rep_profiles.py:1135] : Future 11 out of 48 complete for region: {'sc_point_gid': 81}
+INFO - 2023-09-05 12:37:50,277 [rep_profiles.py:1135] : Future 12 out of 48 complete for region: {'sc_point_gid': 82}
+INFO - 2023-09-05 12:37:50,277 [rep_profiles.py:1135] : Future 13 out of 48 complete for region: {'sc_point_gid': 5}
+INFO - 2023-09-05 12:37:50,288 [rep_profiles.py:1135] : Future 14 out of 48 complete for region: {'sc_point_gid': 96}
+INFO - 2023-09-05 12:37:50,347 [rep_profiles.py:1135] : Future 15 out of 48 complete for region: {'sc_point_gid': 97}
+INFO - 2023-09-05 12:37:50,358 [rep_profiles.py:1135] : Future 16 out of 48 complete for region: {'sc_point_gid': 19}
+INFO - 2023-09-05 12:37:50,359 [rep_profiles.py:1135] : Future 17 out of 48 complete for region: {'sc_point_gid': 98}
+INFO - 2023-09-05 12:37:50,370 [rep_profiles.py:1135] : Future 18 out of 48 complete for region: {'sc_point_gid': 99}
+INFO - 2023-09-05 12:37:50,381 [rep_profiles.py:1135] : Future 19 out of 48 complete for region: {'sc_point_gid': 113}
+INFO - 2023-09-05 12:37:50,396 [rep_profiles.py:1135] : Future 20 out of 48 complete for region: {'sc_point_gid': 112}
+INFO - 2023-09-05 12:37:50,449 [rep_profiles.py:1135] : Future 21 out of 48 complete for region: {'sc_point_gid': 114}
+INFO - 2023-09-05 12:37:50,451 [rep_profiles.py:1135] : Future 22 out of 48 complete for region: {'sc_point_gid': 17}
+INFO - 2023-09-05 12:37:50,453 [rep_profiles.py:1135] : Future 23 out of 48 complete for region: {'sc_point_gid': 128}
+INFO - 2023-09-05 12:37:50,454 [rep_profiles.py:1135] : Future 24 out of 48 complete for region: {'sc_point_gid': 130}
+INFO - 2023-09-05 12:37:50,455 [rep_profiles.py:1135] : Future 25 out of 48 complete for region: {'sc_point_gid': 18}
+INFO - 2023-09-05 12:37:50,455 [rep_profiles.py:1135] : Future 26 out of 48 complete for region: {'sc_point_gid': 129}
+INFO - 2023-09-05 12:37:50,457 [rep_profiles.py:1135] : Future 27 out of 48 complete for region: {'sc_point_gid': 16}
+INFO - 2023-09-05 12:37:50,468 [rep_profiles.py:1135] : Future 28 out of 48 complete for region: {'sc_point_gid': 131}
+INFO - 2023-09-05 12:37:50,475 [rep_profiles.py:1135] : Future 29 out of 48 complete for region: {'sc_point_gid': 20}
+INFO - 2023-09-05 12:37:50,478 [rep_profiles.py:1135] : Future 30 out of 48 complete for region: {'sc_point_gid': 144}
+INFO - 2023-09-05 12:37:50,479 [rep_profiles.py:1135] : Future 31 out of 48 complete for region: {'sc_point_gid': 21}
+INFO - 2023-09-05 12:37:50,481 [rep_profiles.py:1135] : Future 32 out of 48 complete for region: {'sc_point_gid': 145}
+INFO - 2023-09-05 12:37:50,487 [rep_profiles.py:1135] : Future 33 out of 48 complete for region: {'sc_point_gid': 160}
+INFO - 2023-09-05 12:37:50,488 [rep_profiles.py:1135] : Future 34 out of 48 complete for region: {'sc_point_gid': 162}
+INFO - 2023-09-05 12:37:50,489 [rep_profiles.py:1135] : Future 35 out of 48 complete for region: {'sc_point_gid': 146}
+INFO - 2023-09-05 12:37:50,489 [rep_profiles.py:1135] : Future 36 out of 48 complete for region: {'sc_point_gid': 161}
+INFO - 2023-09-05 12:37:50,574 [rep_profiles.py:1135] : Future 37 out of 48 complete for region: {'sc_point_gid': 36}
+INFO - 2023-09-05 12:37:50,605 [rep_profiles.py:1135] : Future 38 out of 48 complete for region: {'sc_point_gid': 34}
+INFO - 2023-09-05 12:37:50,610 [rep_profiles.py:1135] : Future 39 out of 48 complete for region: {'sc_point_gid': 32}
+INFO - 2023-09-05 12:37:50,616 [rep_profiles.py:1135] : Future 40 out of 48 complete for region: {'sc_point_gid': 49}
+INFO - 2023-09-05 12:37:50,617 [rep_profiles.py:1135] : Future 41 out of 48 complete for region: {'sc_point_gid': 33}
+INFO - 2023-09-05 12:37:50,624 [rep_profiles.py:1135] : Future 42 out of 48 complete for region: {'sc_point_gid': 35}
+INFO - 2023-09-05 12:37:50,626 [rep_profiles.py:1135] : Future 43 out of 48 complete for region: {'sc_point_gid': 48}
+INFO - 2023-09-05 12:37:50,669 [rep_profiles.py:1135] : Future 44 out of 48 complete for region: {'sc_point_gid': 51}
+INFO - 2023-09-05 12:37:50,674 [rep_profiles.py:1135] : Future 45 out of 48 complete for region: {'sc_point_gid': 50}
+INFO - 2023-09-05 12:37:50,674 [rep_profiles.py:1135] : Future 46 out of 48 complete for region: {'sc_point_gid': 52}
+INFO - 2023-09-05 12:37:50,716 [rep_profiles.py:1135] : Future 47 out of 48 complete for region: {'sc_point_gid': 64}
+INFO - 2023-09-05 12:37:50,724 [rep_profiles.py:1135] : Future 48 out of 48 complete for region: {'sc_point_gid': 65}
+INFO - 2023-09-05 12:37:53,014 [rep_profiles.py:1183] : Aggregate profiles input set to `True`. Setting 'save_rev_summary' input to `False`
+INFO - 2023-09-05 12:37:53,106 [rep_profiles.py:1189] : Representative profiles complete!
+INFO - 2023-09-05 12:37:53,106 [status.py:736] : Command 'rep-profiles' complete. Time elapsed: 0:00:13. Target output file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_rep-profiles_2013.h5'

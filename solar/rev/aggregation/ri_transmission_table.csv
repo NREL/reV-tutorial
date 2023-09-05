@@ -1,4 +1,4 @@
-sc_point_gid,sc_point_row_id,sc_point_col_id,trans_line_gid,category,ac_cap,cap_left,trans_gids,dist_mi,trans_capacity
+sc_point_gid,sc_point_row_id,sc_point_col_id,trans_line_gid,category,ac_cap,avail_cap,trans_gids,dist_mi,trans_capacity
 1,0,1,43865,TransLine,145.0,14.5,,7.21278117569168,145.0
 1,0,1,68900,Substation,72.5,0.725,[43918],19.4560385150052,72.5
 1,0,1,43418,TransLine,390.0,39.0,,25.3443324983371,390.0

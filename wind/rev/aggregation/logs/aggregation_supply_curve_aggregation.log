@@ -391,3 +391,182 @@ INFO - 2023-09-05 12:10:17,370 [sc_aggregation.py:1129] : Parallel aggregation f
 INFO - 2023-09-05 12:10:17,419 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 4.387 GB out of 34.360 GB (12.77% utilized).
 ERROR - 2023-09-05 12:10:17,885 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
 INFO - 2023-09-05 12:10:17,888 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:03
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 12:33:06,179 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:33:06,179 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:33:06,179 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 12:33:06,185 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 12:33:06,215 [sc_aggregation.py:1205] : Found techmap "techmap_wtk".
+INFO - 2023-09-05 12:33:06,246 [extent.py:548] : Getting valid SC points from "techmap_wtk"...
+INFO - 2023-09-05 12:33:06,269 [extent.py:562] : Found 368 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 12:33:06,272 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 367 at a resolution of 64 on 24 cores in 37 chunks.
+INFO - 2023-09-05 12:33:17,380 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 37. Memory usage is 142.952 GB out of 202.154 GB (70.71% utilized).
+INFO - 2023-09-05 12:33:17,656 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 20 out of 37. Memory usage is 142.993 GB out of 202.154 GB (70.73% utilized).
+INFO - 2023-09-05 12:33:17,693 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 30 out of 37. Memory usage is 142.951 GB out of 202.154 GB (70.71% utilized).
+ERROR - 2023-09-05 12:33:20,019 [sc_aggregation.py:1282] : Supply curve aggregation found no non-excluded SC points. Please check your exclusions or subset SC GID selection.
+INFO - 2023-09-05 12:33:20,019 [status.py:747] : Command 'supply-curve-aggregation' failed in 0:00:13
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
+INFO - 2023-09-05 12:34:58,567 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:34:58,568 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:34:58,568 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 12:34:58,573 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 12:34:58,599 [sc_aggregation.py:1213] : Could not find techmap "techmap_wtk_redo". Running techmap module.
+INFO - 2023-09-05 12:34:58,636 [tech_mapping.py:67] : Initialized TechMapping object with 2 calc chunks for 1393848 tech exclusion points
+INFO - 2023-09-05 12:35:04,007 [tech_mapping.py:397] : Parallel TechMapping futures collected: 1 out of 1
+INFO - 2023-09-05 12:35:04,486 [tech_mapping.py:313] : Writing tech map "techmap_wtk_redo" to /home/twillia2/github/reV-tutorial/wind/rev/aggregation/ri_exclusions.h5
+INFO - 2023-09-05 12:35:04,527 [tech_mapping.py:336] : Successfully saved tech map "techmap_wtk_redo" to /home/twillia2/github/reV-tutorial/wind/rev/aggregation/ri_exclusions.h5
+INFO - 2023-09-05 12:35:04,568 [extent.py:548] : Getting valid SC points from "techmap_wtk_redo"...
+INFO - 2023-09-05 12:35:04,590 [extent.py:562] : Found 100 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 12:35:04,592 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 354 at a resolution of 64 on 24 cores in 10 chunks.
+INFO - 2023-09-05 12:35:10,500 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 10. Memory usage is 140.884 GB out of 202.154 GB (69.69% utilized).
+INFO - 2023-09-05 12:35:11,404 [status.py:736] : Command 'supply-curve-aggregation' complete. Time elapsed: 0:00:12. Target output file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_supply-curve-aggregation.csv'
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 12:34:58,567 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:34:58,568 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:34:58,568 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+WARNING - 2023-09-05 12:34:58,573 [sc_aggregation.py:655] : Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+INFO - 2023-09-05 12:34:58,599 [sc_aggregation.py:1213] : Could not find techmap "techmap_wtk_redo". Running techmap module.
+INFO - 2023-09-05 12:34:58,636 [tech_mapping.py:67] : Initialized TechMapping object with 2 calc chunks for 1393848 tech exclusion points
+INFO - 2023-09-05 12:35:04,007 [tech_mapping.py:397] : Parallel TechMapping futures collected: 1 out of 1
+INFO - 2023-09-05 12:35:04,486 [tech_mapping.py:313] : Writing tech map "techmap_wtk_redo" to /home/twillia2/github/reV-tutorial/wind/rev/aggregation/ri_exclusions.h5
+INFO - 2023-09-05 12:35:04,527 [tech_mapping.py:336] : Successfully saved tech map "techmap_wtk_redo" to /home/twillia2/github/reV-tutorial/wind/rev/aggregation/ri_exclusions.h5
+INFO - 2023-09-05 12:35:04,568 [extent.py:548] : Getting valid SC points from "techmap_wtk_redo"...
+INFO - 2023-09-05 12:35:04,590 [extent.py:562] : Found 100 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 12:35:04,592 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 0 through 354 at a resolution of 64 on 24 cores in 10 chunks.
+INFO - 2023-09-05 12:35:10,500 [sc_aggregation.py:1129] : Parallel aggregation futures collected: 10 out of 10. Memory usage is 140.884 GB out of 202.154 GB (69.69% utilized).
+INFO - 2023-09-05 12:35:11,404 [status.py:736] : Command 'supply-curve-aggregation' complete. Time elapsed: 0:00:12. Target output file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_supply-curve-aggregation.csv'
+gaps (WARNING) - [execution.py:136] : Subprocess received stderr: 
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/sc_aggregation.py:656: InputWarning: Supply curve aggregation power density not specified. Will try to infer based on lookup table: {'pv': 36, 'wind': 3}
+  warn(msg, InputWarning)
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/points.py:1684: UserWarning: Could not recognize reV technology in generation meta data: "windpower". Cannot lookup an appropriate power density to calculate SC point capacity.
+  warn('Could not recognize reV technology in generation meta '
+gaps (INFO) - [execution.py:138] : Completed job 'aggregation_supply_curve_aggregation'.
+gaps (INFO) - [pipeline.py:197] : CLI command 'supply-curve-aggregation' for job 'aggregation' is successful. (Tue Sep  5 12:35:18 2023)
+gaps (INFO) - [config.py:215] : Running supply-curve from config file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/config_supply-curve.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve' locally with job name 'aggregation_supply_curve'.
+gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
+INFO - 2023-09-05 12:35:23,401 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:35:23,402 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:35:23,402 [supply_curve.py:124] : Supply curve points input: /home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_supply-curve-aggregation.csv
+INFO - 2023-09-05 12:35:23,402 [supply_curve.py:125] : Transmission table input: /home/twillia2/github/reV-tutorial/wind/rev/aggregation/ri_transmission_table.csv
+INFO - 2023-09-05 12:35:23,402 [supply_curve.py:126] : Supply curve capacity column: capacity
+INFO - 2023-09-05 12:35:23,436 [supply_curve.py:512] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+WARNING - 2023-09-05 12:35:23,444 [supply_curve.py:443] : There are 11 Supply Curve points with missing transmission mappings. Supply curve points with no transmission features will not be connected! Missing sc_gid's: [0, 6, 12, 17, 22, 27, 31, 35, 38, 42, 45]
+INFO - 2023-09-05 12:35:23,447 [supply_curve.py:1177] : Starting full competitive supply curve sort.
+INFO - 2023-09-05 12:35:23,508 [supply_curve.py:758] : Computing LCOT costs for all possible connections...
+INFO - 2023-09-05 12:35:36,993 [supply_curve.py:789] : LCOT cost calculation is complete.
+WARNING - 2023-09-05 12:35:37,068 [supply_curve.py:1075] : 48 supply curve points were not connected to tranmission! Unconnected sc_gid's: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+INFO - 2023-09-05 12:35:37,074 [status.py:736] : Command 'supply-curve' complete. Time elapsed: 0:00:13. Target output file: '/home/twillia2/github/reV-tutorial/wind/rev/aggregation/aggregation_supply-curve.csv'
+gaps (WARNING) - [execution.py:136] : Subprocess received stderr: 
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/supply_curve.py:444: UserWarning: There are 11 Supply Curve points with missing transmission mappings. Supply curve points with no transmission features will not be connected! Missing sc_gid's: [0, 6, 12, 17, 22, 27, 31, 35, 38, 42, 45]
+  warn(msg)
+/vast/shared-projects/rev/modulefiles/alternate_repos/reV/reV/supply_curve/supply_curve.py:1076: UserWarning: 48 supply curve points were not connected to tranmission! Unconnected sc_gid's: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+  warn(msg)
+gaps (INFO) - [execution.py:138] : Completed job 'aggregation_supply_curve'.
+gaps (INFO) - [pipeline.py:197] : CLI command 'supply-curve' for job 'aggregation' is successful. (Tue Sep  5 12:35:43 2023)
+gaps (ERROR) - [config.py:369] : The following required keys are missing from the configuration file: {'reg_cols'}

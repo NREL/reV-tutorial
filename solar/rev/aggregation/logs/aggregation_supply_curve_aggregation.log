@@ -1,31 +1,27 @@
-gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/config_aggregation.json'
-gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation'
-gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/logs'
+gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/home/twillia2/github/reV-tutorial/solar/rev/aggregation/config_aggregation.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/home/twillia2/github/reV-tutorial/solar/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/home/twillia2/github/reV-tutorial/solar/rev/aggregation/logs'
 gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
-INFO - 2023-09-05 01:12:46,117 [__init__.py:63] : Running with reV version 0.8.1
-INFO - 2023-09-05 01:12:46,117 [loggers.py:600] : Running with rex version 0.2.84
-INFO - 2023-09-05 01:12:46,117 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
-INFO - 2023-09-05 01:12:46,122 [sc_aggregation.py:1205] : Found techmap "techmap_nsrdb_ri_truth".
-INFO - 2023-09-05 01:12:46,122 [status.py:749] : Command 'supply-curve-aggregation' failed in 0:00:00
-gaps (INFO) - [config.py:215] : Running supply-curve-aggregation from config file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/config_aggregation.json'
-gaps (INFO) - [config.py:220] : Target output directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation'
-gaps (INFO) - [config.py:221] : Target logging directory: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/logs'
-gaps (INFO) - [execution.py:119] : Running 'supply-curve-aggregation' locally with job name 'aggregation_supply_curve_aggregation'.
-INFO - 2023-09-05 01:13:04,700 [__init__.py:63] : Running with reV version 0.8.1
-INFO - 2023-09-05 01:13:04,700 [loggers.py:600] : Running with rex version 0.2.84
-INFO - 2023-09-05 01:13:04,700 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
-INFO - 2023-09-05 01:13:04,706 [sc_aggregation.py:1205] : Found techmap "techmap_nsrdb_ri_truth".
-INFO - 2023-09-05 01:13:04,714 [extent.py:548] : Getting valid SC points from "techmap_nsrdb_ri_truth"...
-INFO - 2023-09-05 01:13:04,721 [extent.py:562] : Found 83 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
-INFO - 2023-09-05 01:13:04,722 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 1 through 354 at a resolution of 64 on 10 cores in 9 chunks.
-INFO - 2023-09-05 01:13:07,350 [status.py:738] : Command 'supply-curve-aggregation' complete. Time elapsed: 0:00:02. Target output file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv'
+INFO - 2023-09-05 12:39:57,324 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:39:57,324 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:39:57,324 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 12:39:57,355 [sc_aggregation.py:1205] : Found techmap "techmap_nsrdb_ri_truth".
+INFO - 2023-09-05 12:39:57,384 [extent.py:548] : Getting valid SC points from "techmap_nsrdb_ri_truth"...
+INFO - 2023-09-05 12:39:57,412 [extent.py:562] : Found 83 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 12:39:57,414 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 1 through 354 at a resolution of 64 on 24 cores in 9 chunks.
+INFO - 2023-09-05 12:40:04,241 [status.py:736] : Command 'supply-curve-aggregation' complete. Time elapsed: 0:00:06. Target output file: '/home/twillia2/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv'
 gaps (INFO) - [execution.py:134] : Subprocess received stdout: 
-INFO - 2023-09-05 01:13:04,700 [__init__.py:63] : Running with reV version 0.8.1
-INFO - 2023-09-05 01:13:04,700 [loggers.py:600] : Running with rex version 0.2.84
-INFO - 2023-09-05 01:13:04,700 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
-INFO - 2023-09-05 01:13:04,706 [sc_aggregation.py:1205] : Found techmap "techmap_nsrdb_ri_truth".
-INFO - 2023-09-05 01:13:04,714 [extent.py:548] : Getting valid SC points from "techmap_nsrdb_ri_truth"...
-INFO - 2023-09-05 01:13:04,721 [extent.py:562] : Found 83 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
-INFO - 2023-09-05 01:13:04,722 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 1 through 354 at a resolution of 64 on 10 cores in 9 chunks.
-INFO - 2023-09-05 01:13:07,350 [status.py:738] : Command 'supply-curve-aggregation' complete. Time elapsed: 0:00:02. Target output file: '/Users/sthomson/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv'
+INFO - 2023-09-05 12:39:57,324 [__init__.py:63] : Running with reV version 0.8.1
+INFO - 2023-09-05 12:39:57,324 [loggers.py:600] : Running with rex version 0.2.84
+INFO - 2023-09-05 12:39:57,324 [sc_aggregation.py:619] : Initializing SupplyCurveAggregation...
+INFO - 2023-09-05 12:39:57,355 [sc_aggregation.py:1205] : Found techmap "techmap_nsrdb_ri_truth".
+INFO - 2023-09-05 12:39:57,384 [extent.py:548] : Getting valid SC points from "techmap_nsrdb_ri_truth"...
+INFO - 2023-09-05 12:39:57,412 [extent.py:562] : Found 83 valid SC points out of 368 total possible (valid SC points that map to valid resource gids)
+INFO - 2023-09-05 12:39:57,414 [sc_aggregation.py:1069] : Running supply curve point aggregation for points 1 through 354 at a resolution of 64 on 24 cores in 9 chunks.
+INFO - 2023-09-05 12:40:04,241 [status.py:736] : Command 'supply-curve-aggregation' complete. Time elapsed: 0:00:06. Target output file: '/home/twillia2/github/reV-tutorial/solar/rev/aggregation/aggregation_supply-curve-aggregation.csv'
 gaps (INFO) - [execution.py:138] : Completed job 'aggregation_supply_curve_aggregation'.
+gaps (INFO) - [pipeline.py:197] : CLI command 'supply-curve-aggregation' for job 'aggregation' is successful. (Tue Sep  5 12:40:11 2023)
+gaps (INFO) - [config.py:215] : Running supply-curve from config file: '/home/twillia2/github/reV-tutorial/solar/rev/aggregation/config_supply-curve.json'
+gaps (INFO) - [config.py:220] : Target output directory: '/home/twillia2/github/reV-tutorial/solar/rev/aggregation'
+gaps (INFO) - [config.py:221] : Target logging directory: '/home/twillia2/github/reV-tutorial/solar/rev/aggregation/logs'
+gaps (INFO) - [execution.py:119] : Running 'supply-curve' locally with job name 'aggregation_supply_curve'.
