@@ -1,5 +1,3 @@
-The two main technologies that reV is used for are wind and solar.
-Geothermal is currently being developed and will be added to the tutorial in the future.
 
 reV allows researchers to include exhaustive spatial representation of the built and natural environment into the generation and cost estimates that it computes.
 reV allows the user to model a technology from a single site up to an entire continent at temporal resolutions ranging from five minutes to hourly, spanning a single year or multiple decades

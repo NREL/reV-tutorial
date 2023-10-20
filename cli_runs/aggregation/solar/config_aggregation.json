@@ -1,0 +1,57 @@
+{
+    "cf_dset": "cf_mean-means",
+    "data_layers": {
+      "reeds_region": {
+        "dset": "ri_reeds_regions",
+        "method": "mode"
+      },
+      "slope": {
+        "dset": "ri_srtm_slope",
+        "method": "mean"
+      }
+    },
+    "log_directory": "./logs",
+    "excl_dict": {
+      "ri_smod": {
+        "include_weights": {
+          "1": 0.5,
+          "2": 1,
+          "3": 1
+        }
+      },
+      "ri_srtm_slope": {
+        "include_range": [
+          null,
+          5
+        ],
+        "weight": 1.0
+      }
+    },
+    "excl_fpath": "./ri_exclusions.h5",
+    "execution_control": {
+      "memory_utilization_limit": 0.4,
+      "nodes": 1,
+      "sites_per_worker": 10
+    },
+    "gen_fpath": "./solar_multi_year.h5",
+    "lcoe_dset": "lcoe_fcr-means",
+    "power_density": 31.5,
+    "res_class_bins": [
+       0,
+       3.7,
+       3.9,
+       100
+    ],
+    "res_class_dset": "ghi_mean-means",
+    "resolution": 64,
+    "tm_dset": "techmap_nsrdb_ri_truth",
+    "h5_dsets": [
+      "capital_cost",
+      "fixed_operating_cost",
+      "system_capacity",
+      "fixed_charge_rate",
+      "variable_operating_cost"
+    ],
+    "recalc_lcoe": true
+  }
+  
