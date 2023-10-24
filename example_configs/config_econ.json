@@ -1,0 +1,31 @@
+{
+    "execution_control": {
+        "option": "local",
+        "allocation": "[REQUIRED IF ON HPC]",
+        "walltime": "[REQUIRED IF ON HPC]",
+        "qos": "normal",
+        "memory": null,
+        "nodes": 1,
+        "queue": null,
+        "feature": null,
+        "conda_env": null,
+        "module": null,
+        "sh_script": null,
+        "max_workers": 1,
+        "sites_per_worker": 100,
+        "memory_utilization_limit": 0.4,
+        "timeout": 1800,
+        "pool_size": 48
+    },
+    "log_directory": "./logs",
+    "log_level": "INFO",
+    "project_points": "[REQUIRED]",
+    "sam_files": "[REQUIRED]",
+    "cf_file": "[REQUIRED]",
+    "site_data": null,
+    "output_request": [
+        "lcoe_fcr"
+    ],
+    "append": false,
+    "analysis_years": null
+}

@@ -1,0 +1,41 @@
+{
+    "pipeline": [
+        {
+            "bespoke": "./config_bespoke.json"
+        },
+        {
+            "generation": "./config_generation.json"
+        },
+        {
+            "econ": "./config_econ.json"
+        },
+        {
+            "collect": "./config_collect.json"
+        },
+        {
+            "multi-year": "./config_multi_year.json"
+        },
+        {
+            "supply-curve-aggregation": "./config_supply_curve_aggregation.json"
+        },
+        {
+            "supply-curve": "./config_supply_curve.json"
+        },
+        {
+            "rep-profiles": "./config_rep_profiles.json"
+        },
+        {
+            "hybrids": "./config_hybrids.json"
+        },
+        {
+            "nrwal": "./config_nrwal.json"
+        },
+        {
+            "qa-qc": "./config_qa_qc.json"
+        }
+    ],
+    "logging": {
+        "log_file": null,
+        "log_level": "INFO"
+    }
+}

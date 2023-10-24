@@ -1,0 +1,29 @@
+{
+    "execution_control": {
+        "option": "local",
+        "allocation": "[REQUIRED IF ON HPC]",
+        "walltime": "[REQUIRED IF ON HPC]",
+        "qos": "normal",
+        "memory": null,
+        "queue": null,
+        "feature": null,
+        "conda_env": null,
+        "module": null,
+        "sh_script": null,
+        "max_workers": null
+    },
+    "log_directory": "./logs",
+    "log_level": "INFO",
+    "gen_fpath": "[REQUIRED]",
+    "rev_summary": "[REQUIRED]",
+    "reg_cols": "[REQUIRED]",
+    "cf_dset": "cf_profile",
+    "rep_method": "meanoid",
+    "err_method": "rmse",
+    "weight": "gid_counts",
+    "n_profiles": 1,
+    "aggregate_profiles": false,
+    "save_rev_summary": true,
+    "scaled_precision": false,
+    "analysis_years": null
+}

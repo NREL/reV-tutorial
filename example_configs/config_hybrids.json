@@ -1,0 +1,25 @@
+{
+    "execution_control": {
+        "option": "local",
+        "allocation": "[REQUIRED IF ON HPC]",
+        "walltime": "[REQUIRED IF ON HPC]",
+        "qos": "normal",
+        "memory": null,
+        "queue": null,
+        "feature": null,
+        "conda_env": null,
+        "module": null,
+        "sh_script": null
+    },
+    "log_directory": "./logs",
+    "log_level": "INFO",
+    "solar_fpath": "[REQUIRED]",
+    "wind_fpath": "[REQUIRED]",
+    "allow_solar_only": false,
+    "allow_wind_only": false,
+    "fillna": null,
+    "limits": null,
+    "ratio_bounds": null,
+    "ratio": "solar_capacity/wind_capacity",
+    "save_hybrid_meta": true
+}
