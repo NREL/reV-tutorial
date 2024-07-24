@@ -8,10 +8,8 @@ either via an increasing complexity strategy or by reV module.
 Initial Proposed Videos:
 
     #1: Technical Potential and The Renewable Energy Potential Model
-    - Define technical potential, contextualize this assessment in the broader
-      energy space, how its used, who uses it, what it looks like, etc.
-    - Introduce reV, its purpose, and how it can be used to model technical
-      potential.
+        - Define technical potential, contextualize this assessment in the broader energy space, how its used, who uses it, what it looks like, etc.
+        - Introduce reV, its purpose, and how it can be used to model technical potential.
 
     #2: Setting up a reV environment.
 
