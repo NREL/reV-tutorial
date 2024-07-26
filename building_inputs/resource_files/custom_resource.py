@@ -10,7 +10,7 @@ import datetime as dt
 from glob import glob
 
 import h5py
-import numpy as  np
+import numpy as np
 import pandas as pd
 
 from rex.utilities.utilities import get_dtype, to_records_array
@@ -21,7 +21,7 @@ PROFILES = "./inputs/*srw"
 
 def make_meta(metas):
     """Return structure meta array out of list of meta dicts."""
-    df = pd.DataFrame(metas)    
+    df = pd.DataFrame(metas)
     df["timezone"] = -9  # <--------------------------------------------------- We just know this
     df["elevation"] = 1_000  # <----------------------------------------------- We don't actually know this
     data = to_records_array(df)
@@ -49,7 +49,7 @@ def reformat_single(file):
     data = df.iloc[5:, :4]
 
     # These headers need to be lower case and associated with a height
-    headers = [  # <----------------------------------------------------------- We jus tknow all this too
+    headers = [  # <----------------------------------------------------------- We just know all this too
         "temperature_2m",
         "pressure_2m",
         "windspeed_100m",
