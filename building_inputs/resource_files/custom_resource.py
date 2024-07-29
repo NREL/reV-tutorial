@@ -13,10 +13,12 @@ import h5py
 import numpy as np
 import pandas as pd
 
+import csv
+
 from rex.utilities.utilities import get_dtype, to_records_array
 
 
-PROFILES = "./inputs/*srw"
+PROFILES = "./inputs/*srw" # https://samrepo.nrelcloud.org/help/weather_format_srw_wind.html
 
 
 def make_meta(metas):
@@ -33,20 +35,35 @@ def reformat_single(file):
     # An SRW is a format used in the SAM GUI for default resource inputs
 
     # It contains header information and a table
-    df = pd.read_csv(file, header=None)
+    # df = pd.read_csv(file, on_bad_lines='skip', header=None)
 
-    # In this case we have unit and location information in the first 2 lines
-    gid, city, state, county, year, lat, lon, _, _, steps = df.iloc[0]
+    with open(file, "r") as f:
+        reader = csv.reader(f, delimiter=",")
+        for i, line in enumerate(reader):
 
-    # More descriptive info is found in the second row, first column
-    description = df.iloc[1, 0]
+            if (i == 0):
+                # In this case we have unit and location information in the first 2 lines
+                gid, city, state, county, year, lat, lon, _, _, steps = line
 
-    # And header are in the thrid row with units in the 4th
-    headers = df.iloc[2, :4].values
-    units = df.iloc[3, :4]  # <------------------------------------------------ We will need to check units and convert if they aren't right
+            if (i == 1):
+                # More descriptive info is found in the second row, first column
+                description = line
 
-    # Finally our data starts in the 6th row, extends to the 5th column
-    data = df.iloc[5:, :4]
+            if (i == 2):
+                # And header are in the thrid row with units in the 4th
+                headers = line
+
+            if (i == 3):
+                units = line  # <------------------------------------------------ We will need to check units and convert if they aren't right
+
+            if (i == 5):
+                # Finally our data starts in the 6th row, extends to the 5th column
+                data = pd.DataFrame([line[0:4]])
+
+            if (i > 5):
+                data.loc[len(data)] = line[0:4]
+
+
 
     # These headers need to be lower case and associated with a height
     headers = [  # <----------------------------------------------------------- We just know all this too
@@ -60,7 +77,10 @@ def reformat_single(file):
     data = data.astype(float)
 
     # Hold onto the meta information
-    meta = {"latitude": lat, "longitude": lon, "year": year,
+    # HW 07292024 update: as in the SAM documentation: Row 1 must have at least 8 columns. You must provide a value for each column:
+    # If you do not have a value for a column, you can use an indicator like n/a or ?? for the missing value.
+    # Since we have missed original inputs, we generated a value for "year" from the output *.h5 file. 
+    meta = {"latitude": lat, "longitude": lon, "year": 2013, 
             "timesteps": steps, "description": description}
     return data, meta
 
@@ -70,9 +90,9 @@ def time(year, steps):
     # Assume first day of the year
     time_format = "%Y-%m-%d %H:%M:%S"
     if steps == 8760:
-        idx = pd.date_range(f"{int(year)}-01-01", periods=8760, freq='H')  # <- We know that it's hourly, it would be better to infer
+        idx = pd.date_range(f"{int(year)}-01-01", periods=8760, freq='h')  # <- We know that it's hourly, it would be better to infer
     else:
-        idx = pd.date_range(f"{int(year)}-01-01", periods=8784, freq='H')
+        idx = pd.date_range(f"{int(year)}-01-01", periods=8784, freq='h')
     strings = [dt.datetime.strftime(t, time_format) for t in idx]
     return strings
 
@@ -85,7 +105,7 @@ def build():
     metas = []
     for file in files:
         data, meta = reformat_single(file)
-        for name, vector in data.iteritems():
+        for name, vector in data.items():
             if name not in datasets:
                 datasets[name] = []
             datasets[name].append(vector.values)
