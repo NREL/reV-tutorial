@@ -1,7 +1,9 @@
 """Upload existing geotiffs into a new or existing reV-compatible HDF5 file."""
 import os
 
-from reVX.utilities.exclusions_converter import ExclusionsConverter
+# from reVX.utilities.exclusions_converter import ExclusionsConverter
+from reVX.handlers.layered_h5 import LayeredH5 # updated 07302024: now need an `LayeredH5` instance to run `layers_to_h5()` func
+from reVX.setbacks.setbacks_converter import SetbacksConverter as ExclusionsConverter
 
 
 # Target file
@@ -26,8 +28,8 @@ LAYER_DESCS = {
 
 def geotiffs_to_h5():
     """Upload geotiff to a new or existing h5 file."""
-    ExclusionsConverter.layers_to_h5(
-        excl_h5=EXCL_FPATH,
+    lh5 = LayeredH5(EXCL_FPATH)
+    lh5.layers_to_h5(
         layers=LAYER_FPATHS,
         descriptions=LAYER_DESCS
     )
