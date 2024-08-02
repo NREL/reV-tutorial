@@ -2,7 +2,7 @@
 
 The goal of the videos will be to provide new users an overview of what reV is and does, to teach key concepts such as technical potential, and to step through the technical details of implementing a model run. We could progress either via an increasing complexity strategy or by reV module. 
 
-We would like the videos to cycle between a concepts view (digital chalk board, physical white board, or something similar) screenshares of the computer work required.
+We would like the videos to cycle between a concepts view (digital chalk board, physical white board, or something similar) and screenshares of the computer work required.
 
 
 ## Initial Proposed Videos:
