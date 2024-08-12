@@ -13,7 +13,7 @@ We would like the videos to cycle between a concepts view (digital chalk board, 
         - Introduce reV, its purpose, and how it can be used to model technical potential.
     
     #2: Setting up a reV environment.
-    
+
     #3: Getting/Making reV Inputs
     
     #4: Running the model: Generation Modules 1
