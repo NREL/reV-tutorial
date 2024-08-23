@@ -38,3 +38,32 @@
 
 - Preview the next episode.
     - Tell the viewers that we'll start setting up the model in the next episode
+ 
+
+## Images to be assimilated
+
+Resource Data - National Solar Radiation Database
+![nsrdb_coverage_map_042024](https://github.com/user-attachments/assets/a3b7778d-b126-46ef-91d1-73a2447aa216)
+
+
+Resource Data - National Wind Database
+![wtk_coverage_map_042024](https://github.com/user-attachments/assets/302cf3e2-aaf4-407d-8172-a175ec0e6c60)
+
+
+Renewable Energy Assessments - Levels of Potential
+![re_potential_cirlces_diagram](https://github.com/user-attachments/assets/ae2aff1c-6117-4977-8f7f-a686a147b6a7)
+
+Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024). 
+
+
+Oil and Gas Energy Assessments - Levels of Potential 
+![oil_gas_potential_cirlces_diagram](https://github.com/user-attachments/assets/8c1592e6-5a45-4c3e-a254-e6e59e01ab71)
+
+Source: U.S. Energy Information Administration (2014). https://www.eia.gov/todayinenergy/detail.php?id=17151.
+
+
+NREL Modeling Ecosystem
+![seac_ecosystem](https://github.com/user-attachments/assets/74ceb6cc-9b2f-463a-84cf-873abe6f673e)
+
+
+
