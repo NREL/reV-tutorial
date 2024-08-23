@@ -6,7 +6,7 @@ We would like the videos to cycle between a concepts view (digital chalk board, 
 
 
 ## Initial Proposed Videos:
-    
+
     #1: Technical Potential and The Renewable Energy Potential Model
         - Define technical potential, contextualize this assessment in the broader energy space, how its used, 
           who uses it, what it looks like, etc.
