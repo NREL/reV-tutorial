@@ -30,7 +30,7 @@ def main():
     meta.loc[:, "config"] = "default"
 
     # All reV needs is config and gid, but you can include other fields
-    project_points = meta[['latitude', 'longitude', 'gid', 'config']]
+    project_points = meta[["latitude", "longitude", "gid", "config"]]
 
     # Save this to a project points file 
     fname = "project_points.csv"
