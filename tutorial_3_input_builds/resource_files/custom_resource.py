@@ -18,7 +18,7 @@ import csv
 from rex.utilities.utilities import get_dtype, to_records_array
 
 
-PROFILES = "./inputs/*srw" # https://samrepo.nrelcloud.org/help/weather_format_srw_wind.html
+PROFILES = "./inputs/*srw"
 
 
 def make_meta(metas):
@@ -42,11 +42,8 @@ def reformat_single(file):
         for i, line in enumerate(reader):
             if (i == 0):
                 # In this case we have unit and location information in the first 2 lines
-                # HW 07292024 update: as in the SAM documentation: Row 1 must have at least 8 columns. You must provide a value for each column:
-                # If you do not have a value for a column, you can use an indicator like n/a or ?? for the missing value.
-                # Since we have missed original inputs, we generated a value for "year" from the output *.h5 file. 
                 gid, city, state, county, year, lat, lon, _, _, steps = line
-                year = 2013
+                # year = 2013
 
             if (i == 1):
                 # More descriptive info is found in the second row, first column

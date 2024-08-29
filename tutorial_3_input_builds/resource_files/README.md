@@ -1,6 +1,6 @@
 ## Bulding Custom Resource Files
 
-The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. These can be found in the SAM documentation here: [placeholder]()
+The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. These can be found in the SAM documentation here: [SAM Help](https://samrepo.nrelcloud.org/help/index.html)
 
 
 ## Access the NSRDB Datasets
@@ -11,6 +11,8 @@ https://registry.opendata.aws/nrel-pds-nsrdb/
 https://data.nrel.gov/submissions/54
 https://www.nrel.gov/grid/wind-toolkit.html
 
+## Descriptions to SRW format for wind resource data. Note: SAM 2022 version supports CSV format for wind.
+https://samrepo.nrelcloud.org/help/weather_format_srw_wind.html
 
 
 
