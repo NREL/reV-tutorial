@@ -1,9 +1,10 @@
 """Upload existing geotiffs into a new or existing reV-compatible HDF5 file."""
 import os
 
+# updated 07302024: now need an `LayeredH5` instance to run `layers_to_h5()`
 # from reVX.utilities.exclusions_converter import ExclusionsConverter
-from reVX.handlers.layered_h5 import LayeredH5 # updated 07302024: now need an `LayeredH5` instance to run `layers_to_h5()` func
-from reVX.setbacks.setbacks_converter import SetbacksConverter as ExclusionsConverter
+from reVX.handlers.layered_h5 import LayeredH5
+from reVX.setbacks.setbacks_converter import SetbacksConverter
 
 
 # Target file
@@ -37,7 +38,7 @@ def geotiffs_to_h5():
 
 def h5_to_geotiffs():
     """Pull h5 datasets out as a geotiff."""
-    converter = ExclusionsConverter(O_EXCL_FPATH)
+    converter = SetbacksConverter(O_EXCL_FPATH)
     for layer in converter.layers:
         if layer not in ["latitude", "longitude"]:
             if "techmap" not in layer:
