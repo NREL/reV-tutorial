@@ -1,11 +1,11 @@
 {
-    "monitor_pid": 56901,
+    "monitor_pid": 61774,
     "generation": {
         "pipeline_index": 0,
         "solar_generation_j0": {
             "job_status": "successful",
             "hardware": "local",
-            "time_submitted": "03-Sep-2024 15:44:03",
+            "time_submitted": "03-Sep-2024 16:31:42",
             "low_res_resource_file": null,
             "max_workers": null,
             "memory_utilization_limit": 0.4,
@@ -22,21 +22,21 @@
                 "fixed_charge_rate",
                 "variable_operating_cost"
             ],
-            "resource_file": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/data/ri_100_NSRDB_2012.h5",
-            "runtime_seconds": 15.242231,
+            "resource_file": "/Users/hwang6/github/reV-tutorial/data/ri_100_NSRDB_2012.h5",
+            "runtime_seconds": 15.592787,
             "sam_files": {
                 "default": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/pv.json"
             },
             "sites_per_worker": 1,
             "technology": "pvwattsv8",
-            "time_end": "03-Sep-2024 15:44:20",
-            "time_start": "03-Sep-2024 15:44:05",
+            "time_end": "03-Sep-2024 16:31:59",
+            "time_start": "03-Sep-2024 16:31:43",
             "total_runtime": "0:00:15"
         },
         "solar_generation_j1": {
             "job_status": "successful",
             "hardware": "local",
-            "time_submitted": "03-Sep-2024 15:44:58",
+            "time_submitted": "03-Sep-2024 16:31:59",
             "low_res_resource_file": null,
             "max_workers": null,
             "memory_utilization_limit": 0.4,
@@ -54,14 +54,14 @@
                 "variable_operating_cost"
             ],
             "resource_file": "/Users/hwang6/github/reV-tutorial/data/ri_100_NSRDB_2013.h5",
-            "runtime_seconds": 15.581637,
+            "runtime_seconds": 15.380106,
             "sam_files": {
                 "default": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/pv.json"
             },
             "sites_per_worker": 1,
             "technology": "pvwattsv8",
-            "time_end": "03-Sep-2024 15:45:14",
-            "time_start": "03-Sep-2024 15:44:59",
+            "time_end": "03-Sep-2024 16:32:15",
+            "time_start": "03-Sep-2024 16:32:00",
             "total_runtime": "0:00:15"
         }
     },
@@ -70,7 +70,7 @@
         "solar_multi_year": {
             "job_status": "successful",
             "hardware": "local",
-            "time_submitted": "03-Sep-2024 15:45:21",
+            "time_submitted": "03-Sep-2024 16:32:22",
             "groups": {
                 "none": {
                     "dsets": [
@@ -93,9 +93,9 @@
             },
             "out_file": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_multi_year.h5",
             "out_fpath": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_multi_year",
-            "runtime_seconds": 0.259949,
-            "time_end": "03-Sep-2024 15:45:22",
-            "time_start": "03-Sep-2024 15:45:22",
+            "runtime_seconds": 0.287553,
+            "time_end": "03-Sep-2024 16:32:23",
+            "time_start": "03-Sep-2024 16:32:23",
             "total_runtime": "0:00:00"
         }
     },
@@ -104,7 +104,7 @@
         "solar_qa_qc": {
             "job_status": "successful",
             "hardware": "local",
-            "time_submitted": "03-Sep-2024 15:45:28",
+            "time_submitted": "03-Sep-2024 16:32:29",
             "modules": {
                 "multi-year": {
                     "dsets": [
@@ -122,10 +122,10 @@
             },
             "out_dir": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar",
             "out_file": null,
-            "runtime_seconds": 39.999391,
-            "time_end": "03-Sep-2024 15:46:10",
-            "time_start": "03-Sep-2024 15:45:30",
-            "total_runtime": "0:00:39"
+            "runtime_seconds": 183.840985,
+            "time_end": "03-Sep-2024 16:35:34",
+            "time_start": "03-Sep-2024 16:32:31",
+            "total_runtime": "0:03:03"
         }
     }
 }

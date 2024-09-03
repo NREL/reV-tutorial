@@ -1,4 +1,5 @@
 *.h5
+solar/.gaps/
 logs/
 QA_multi-year/
 solar_status.json
