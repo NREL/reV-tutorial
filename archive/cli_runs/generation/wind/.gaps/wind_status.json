@@ -1,0 +1,105 @@
+{
+    "monitor_pid": 52909,
+    "generation": {
+        "pipeline_index": 0,
+        "wind_generation_j0": {
+            "job_status": "successful",
+            "hardware": "local",
+            "time_submitted": "20-Oct-2023 14:12:28",
+            "low_res_resource_file": null,
+            "memory_utilization_limit": 0.4,
+            "out_file": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/wind_generation_2012.h5",
+            "out_fpath": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/wind_generation",
+            "output_request": [
+                "cf_mean",
+                "cf_profile",
+                "lcoe_fcr",
+                "capital_cost",
+                "fixed_operating_cost",
+                "system_capacity",
+                "fixed_charge_rate",
+                "variable_operating_cost"
+            ],
+            "resource_file": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/data/ri_100_wtk_2012.h5",
+            "runtime_seconds": 9.930175,
+            "sam_files": {
+                "onshore": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/sam_configs/wind.json"
+            },
+            "sites_per_worker": 1,
+            "technology": "windpower",
+            "time_end": "20-Oct-2023 14:12:40",
+            "time_start": "20-Oct-2023 14:12:30",
+            "total_runtime": "0:00:09"
+        },
+        "wind_generation_j1": {
+            "job_status": "successful",
+            "hardware": "local",
+            "time_submitted": "20-Oct-2023 14:12:40",
+            "low_res_resource_file": null,
+            "memory_utilization_limit": 0.4,
+            "out_file": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/wind_generation_2013.h5",
+            "out_fpath": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/wind_generation",
+            "output_request": [
+                "cf_mean",
+                "cf_profile",
+                "lcoe_fcr",
+                "capital_cost",
+                "fixed_operating_cost",
+                "system_capacity",
+                "fixed_charge_rate",
+                "variable_operating_cost"
+            ],
+            "resource_file": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/data/ri_100_wtk_2013.h5",
+            "runtime_seconds": 9.59705,
+            "sam_files": {
+                "onshore": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/sam_configs/wind.json"
+            },
+            "sites_per_worker": 1,
+            "technology": "windpower",
+            "time_end": "20-Oct-2023 14:12:51",
+            "time_start": "20-Oct-2023 14:12:41",
+            "total_runtime": "0:00:09"
+        }
+    },
+    "multi-year": {
+        "pipeline_index": 1,
+        "wind_multi_year": {
+            "job_status": "successful",
+            "hardware": "local",
+            "time_submitted": "20-Oct-2023 14:12:57",
+            "groups": {
+                "none": {
+                    "dsets": [
+                        "cf_mean",
+                        "cf_profile",
+                        "lcoe_fcr"
+                    ],
+                    "pass_through_dsets": [
+                        "capital_cost",
+                        "fixed_operating_cost",
+                        "system_capacity",
+                        "fixed_charge_rate",
+                        "variable_operating_cost"
+                    ],
+                    "source_dir": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind",
+                    "source_files": "PIPELINE",
+                    "source_prefix": ""
+                }
+            },
+            "out_file": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/wind_multi_year.h5",
+            "out_fpath": "/Users/sthomson/github/reV-tutorial/cli_runs/generation/wind/wind_multi_year",
+            "runtime_seconds": 0.130798,
+            "time_end": "20-Oct-2023 14:12:58",
+            "time_start": "20-Oct-2023 14:12:58",
+            "total_runtime": "0:00:00"
+        }
+    },
+    "qa-qc": {
+        "pipeline_index": 2,
+        "wind_qa_qc": {
+            "job_status": "submitted",
+            "hardware": "local",
+            "time_submitted": "30-Jul-2024 17:12:21"
+        }
+    }
+}
