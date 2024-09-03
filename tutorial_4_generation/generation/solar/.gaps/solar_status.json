@@ -1,16 +1,16 @@
 {
-    "monitor_pid": 37101,
+    "monitor_pid": 56901,
     "generation": {
         "pipeline_index": 0,
         "solar_generation_j0": {
             "job_status": "successful",
             "hardware": "local",
-            "time_submitted": "29-Jul-2024 14:05:55",
+            "time_submitted": "03-Sep-2024 15:44:03",
             "low_res_resource_file": null,
             "max_workers": null,
             "memory_utilization_limit": 0.4,
-            "out_file": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/solar_generation_2012.h5",
-            "out_fpath": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/solar_generation",
+            "out_file": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_generation_2012.h5",
+            "out_fpath": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_generation",
             "output_request": [
                 "cf_mean",
                 "cf_profile",
@@ -22,26 +22,26 @@
                 "fixed_charge_rate",
                 "variable_operating_cost"
             ],
-            "resource_file": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/data/ri_100_NSRDB_2012.h5",
-            "runtime_seconds": 13.26758,
+            "resource_file": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/data/ri_100_NSRDB_2012.h5",
+            "runtime_seconds": 15.242231,
             "sam_files": {
-                "default": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/pv.json"
+                "default": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/pv.json"
             },
             "sites_per_worker": 1,
             "technology": "pvwattsv8",
-            "time_end": "29-Jul-2024 14:06:09",
-            "time_start": "29-Jul-2024 14:05:56",
-            "total_runtime": "0:00:13"
+            "time_end": "03-Sep-2024 15:44:20",
+            "time_start": "03-Sep-2024 15:44:05",
+            "total_runtime": "0:00:15"
         },
         "solar_generation_j1": {
             "job_status": "successful",
             "hardware": "local",
-            "time_submitted": "29-Jul-2024 14:06:51",
+            "time_submitted": "03-Sep-2024 15:44:58",
             "low_res_resource_file": null,
             "max_workers": null,
             "memory_utilization_limit": 0.4,
-            "out_file": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/solar_generation_2013.h5",
-            "out_fpath": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/solar_generation",
+            "out_file": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_generation_2013.h5",
+            "out_fpath": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_generation",
             "output_request": [
                 "cf_mean",
                 "cf_profile",
@@ -53,16 +53,16 @@
                 "fixed_charge_rate",
                 "variable_operating_cost"
             ],
-            "resource_file": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/data/ri_100_NSRDB_2013.h5",
-            "runtime_seconds": 13.202034,
+            "resource_file": "/Users/hwang6/github/reV-tutorial/data/ri_100_NSRDB_2013.h5",
+            "runtime_seconds": 15.581637,
             "sam_files": {
-                "default": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/pv.json"
+                "default": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/pv.json"
             },
             "sites_per_worker": 1,
             "technology": "pvwattsv8",
-            "time_end": "29-Jul-2024 14:07:05",
-            "time_start": "29-Jul-2024 14:06:52",
-            "total_runtime": "0:00:13"
+            "time_end": "03-Sep-2024 15:45:14",
+            "time_start": "03-Sep-2024 15:44:59",
+            "total_runtime": "0:00:15"
         }
     },
     "multi-year": {
@@ -70,7 +70,7 @@
         "solar_multi_year": {
             "job_status": "successful",
             "hardware": "local",
-            "time_submitted": "29-Jul-2024 14:07:11",
+            "time_submitted": "03-Sep-2024 15:45:21",
             "groups": {
                 "none": {
                     "dsets": [
@@ -86,16 +86,16 @@
                         "fixed_charge_rate",
                         "variable_operating_cost"
                     ],
-                    "source_dir": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar",
+                    "source_dir": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar",
                     "source_files": "PIPELINE",
                     "source_prefix": ""
                 }
             },
-            "out_file": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/solar_multi_year.h5",
-            "out_fpath": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/solar_multi_year",
-            "runtime_seconds": 0.206379,
-            "time_end": "29-Jul-2024 14:07:12",
-            "time_start": "29-Jul-2024 14:07:12",
+            "out_file": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_multi_year.h5",
+            "out_fpath": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_multi_year",
+            "runtime_seconds": 0.259949,
+            "time_end": "03-Sep-2024 15:45:22",
+            "time_start": "03-Sep-2024 15:45:22",
             "total_runtime": "0:00:00"
         }
     },
@@ -104,7 +104,7 @@
         "solar_qa_qc": {
             "job_status": "successful",
             "hardware": "local",
-            "time_submitted": "30-Jul-2024 16:19:28",
+            "time_submitted": "03-Sep-2024 15:45:28",
             "modules": {
                 "multi-year": {
                     "dsets": [
@@ -115,17 +115,17 @@
                         "ghi_mean-means",
                         "ghi_mean-stdev"
                     ],
-                    "fpath": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar/solar_multi_year.h5",
+                    "fpath": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar/solar_multi_year.h5",
                     "plot_type": "plot",
                     "sub_dir": "QA_multi-year"
                 }
             },
-            "out_dir": "/Users/hwang6/github/reV-tutorial/cli_runs/generation/solar",
+            "out_dir": "/Users/hwang6/github/reV-tutorial/tutorial_4_generation/generation/solar",
             "out_file": null,
-            "runtime_seconds": 34.563837,
-            "time_end": "30-Jul-2024 16:20:03",
-            "time_start": "30-Jul-2024 16:19:29",
-            "total_runtime": "0:00:34"
+            "runtime_seconds": 39.999391,
+            "time_end": "03-Sep-2024 15:46:10",
+            "time_start": "03-Sep-2024 15:45:30",
+            "total_runtime": "0:00:39"
         }
     }
 }
