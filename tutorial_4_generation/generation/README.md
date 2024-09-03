@@ -1,7 +1,7 @@
 Simple Generation Run
 ===========================
 
-This is a simple set of configs that take a photovoltaic SAM module or a Wind SAM module, run it at several points in Rhode Island for 2012 and 2013 NSRDB data, then average the outputs into a single HDF5 file. To run, simply use the following command in your terminal:
+This is a simple set of configs that take a photovoltaic SAM module or a Wind SAM module, run it at several points in Rhode Island for 2012 and 2013 NSRDB data, then average the outputs into a single HDF5 file. To run, simply navigate to `solar` folder and use the following command in your terminal:
 
 ```
 reV pipeline -c config_pipeline.json --monitor
@@ -9,11 +9,9 @@ reV pipeline -c config_pipeline.json --monitor
 More On SAM:
 Further reading can be done on the specifics of the SAM configs.
 
-    - Solar:
-        https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html
+    - Solar: https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html
         
-    - Wind:
-        https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html
+    - Wind: https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html
 
 
 Production Notes:
