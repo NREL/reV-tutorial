@@ -5,6 +5,7 @@ Created on Wed Jan  5 13:21:06 2022
 
 @author: twillia2
 """
+import csv
 import datetime as dt
 
 from glob import glob
@@ -13,19 +14,29 @@ import h5py
 import numpy as np
 import pandas as pd
 
-import csv
-
-from rex.utilities.utilities import get_dtype, to_records_array
+from rex.utilities.utilities import to_records_array
 
 
 PROFILES = "./inputs/*srw"
 
 
 def make_meta(metas):
-    """Return structure meta array out of list of meta dicts."""
+    """Return structure meta array out of list of meta dicts.
+
+    Parameters
+    ----------
+    metas : list
+        A list of pandas dataframes representing the meta objects of multiple
+        resource files.
+
+    Returns
+    -------
+    numpy.recarray : A records array representing a singular combined meta
+        object for all input meta objects.
+    """
     df = pd.DataFrame(metas)
-    df["timezone"] = -9  # <--------------------------------------------------- We just know this
-    df["elevation"] = 1_000  # <----------------------------------------------- We don't actually know this
+    df["timezone"] = -9  # We just know this
+    df["elevation"] = 1_000  # We don't know this, you have to figure it out!
     data = to_records_array(df)
     return data
 
@@ -37,36 +48,35 @@ def reformat_single(file):
     # It contains header information and a table
     # df = pd.read_csv(file, on_bad_lines='skip', header=None)
 
-    with open(file, "r") as f:
+    with open(file, encoding="r") as f:
         reader = csv.reader(f, delimiter=",")
         for i, line in enumerate(reader):
-            if (i == 0):
-                # In this case we have unit and location information in the first 2 lines
-                gid, city, state, county, year, lat, lon, _, _, steps = line
+            if i == 0:
+                # We have unit and location information in the first 2 lines
+                # gid, city, state, county, year, lat, lon, _, _, steps = line
+                year, lat, lon, _, _, steps = line[4:]
                 # year = 2013
 
-            if (i == 1):
-                # More descriptive info is found in the second row, first column
+            if i == 1:
+                # More descriptive info is found in the second row
                 description = line
 
-            if (i == 2):
+            if i == 2:
                 # And header are in the thrid row with units in the 4th
                 headers = line
 
-            if (i == 3):
-                units = line  # <------------------------------------------------ We will need to check units and convert if they aren't right
+            # if i == 3:
+            #     units = line  # We will need to check units and convert
 
-            if (i == 5):
-                # Finally our data starts in the 6th row, extends to the 5th column
+            if i == 5:
+                # Our data starts in the 6th row, extends to the 5th column
                 data = pd.DataFrame([line[0:4]])
 
-            if (i > 5):
+            if i > 5:
                 data.loc[len(data)] = line[0:4]
 
-
-
     # These headers need to be lower case and associated with a height
-    headers = [  # <----------------------------------------------------------- We just know all this too
+    headers = [  # We just know all this too
         "temperature_2m",
         "pressure_2m",
         "windspeed_100m",
@@ -87,9 +97,17 @@ def time(year, steps):
     # Assume first day of the year
     time_format = "%Y-%m-%d %H:%M:%S"
     if steps == 8760:
-        idx = pd.date_range(f"{int(year)}-01-01", periods=8760, freq='h')  # <- We know that it's hourly, it would be better to infer
+        idx = pd.date_range(
+            f"{int(year)}-01-01",
+            periods=8760,
+            freq='h'
+            )  # We know that it's hourly, it would be better to infer
     else:
-        idx = pd.date_range(f"{int(year)}-01-01", periods=8784, freq='h')
+        idx = pd.date_range(
+            f"{int(year)}-01-01",
+            periods=8784,
+            freq='h'
+            )
     strings = [dt.datetime.strftime(t, time_format) for t in idx]
     return strings
 
