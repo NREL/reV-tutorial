@@ -6,12 +6,13 @@ This is a simple set of configs that take a photovoltaic SAM module or a Wind SA
 ```
 reV pipeline -c config_pipeline.json --monitor
 ```
+
 More On SAM:
 Further reading can be done on the specifics of the SAM configs.
 
-    - Solar: https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html
+- Solar: [https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html)
         
-    - Wind: https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html
+- Wind: [https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html)
 
 
 Production Notes:
