@@ -1,10 +1,16 @@
 Simple Generation Run
 ===========================
 
-This is a simple set of configs that take a photovoltaic SAM module or a Wind SAM module, run it at several points in Rhode Island for 2012 and 2013 NSRDB data, then average the outputs into a single HDF5 file. To run, simply run the following command in your terminal:
+This is a simple set of configs that take a photovoltaic SAM module or a Wind SAM module, run it at several points in Rhode Island for 2012 and 2013 NSRDB data. To run, simply run the following command in your terminal:
 
 ```
-reV pipeline -c config_pipeline.json --monitor
+reV generation -c config_gen.json
+```
+
+To explore more command options, use the `--help` flag: 
+
+```
+reV generation --help
 ```
 
 More On SAM:
