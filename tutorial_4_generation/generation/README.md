@@ -1,11 +1,16 @@
 Simple Generation Run
 ===========================
-
-This is a simple set of configs that take a photovoltaic SAM module or a Wind SAM module, run it at several points in Rhode Island for 2012 and 2013 NSRDB data. To run, simply run the following command in your terminal:
+This is a simple set of configs that take a photovoltaic SAM module or a Wind SAM module, run it at several points in Rhode Island for 2012 and 2013 NSRDB data. 
+To run, simply run the following command in your terminal:
 
 ```
 reV generation -c config_gen.json
 ```
+
+The `config_gen.json` specifies file locations of files that generated from previous tutorials, including:
+
+- **Project points**: It specifies the geographical locations (lat/lon) where the generation module will be performed. 
+- **Resource data**: This is typically in HDF5 format that contains solar (NSRDB) or wind (WTK) data. 
 
 To explore more command options, use the `--help` flag: 
 
