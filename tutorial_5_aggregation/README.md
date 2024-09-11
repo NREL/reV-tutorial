@@ -1,16 +1,15 @@
 Aggregation Pipeline Run
 =================
 
-This set of configs will take outputs built in `generation`, apply exclusions,
+This set of configs will take outputs built in `tutorial_4_generation`, apply exclusions (under `data/exclusions`),
 aggregate to represent plant-scale model points, attach these model plants to a 
-transmission grid with tie-lines, and then apply the same aggregation and 
+transmission grid with tie-lines (`ri_transmission_table.csv`), and then apply the same aggregation and 
 exclusion step to the generation profiles. Once the configs are setup, 
 the command to run all of this is the same as in generation:
 
 ```
 reV pipeline -c config_pipeline.json --monitor
 ```
-
 
 Production Notes:
  - These runs depend on two very specific input formats: the exclusion HDF5 file
