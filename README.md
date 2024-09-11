@@ -23,5 +23,5 @@ Land use constraints can be added into the aggregation step to exclude developme
   <h5 align="center"> Resource :arrow_right: Generation :arrow_right: Exclusions :arrow_right: Aggregation :arrow_right: Transmission :arrow_right: Energy and Costs :arrow_right: Representative Profiles </h5>
 
 # Repository Structure
-- `data/`: Directory where input datasets are stored.
+- `data`: Directory where input datasets are stored.
 - `tutorial_#`: Follow the folder sequence to learn about reV CLI workflow. 

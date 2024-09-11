@@ -7,6 +7,4 @@ All of the steps in the pipeline require execution control.
 First, navigate to the `generation` subfolder and run a simple example of generation command. 
 This subfolder includes a **configuration JSON** file (`config_gen.json`) that specify the simulation parameters, including system specifications, time periods, output requests, etc.
 
-Next, navigate to the 
-
-
+Next, navigate to the `pipeline` subfolder and run an example command that first combines generation data from multiple years (outputs generated in the `generation` folder) into a single multi-year file, and then conducts a QA/QC that performs quality assurance checks on the `reV` pipeline outputs. 
