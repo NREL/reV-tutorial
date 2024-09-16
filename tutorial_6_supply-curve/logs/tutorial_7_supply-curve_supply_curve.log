@@ -1,0 +1,88 @@
+gaps (INFO) - [config.py:233] : Running supply-curve from config file: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/config_supply-curve.json'
+gaps (INFO) - [config.py:238] : Target output directory: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve'
+gaps (INFO) - [config.py:239] : Target logging directory: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/logs'
+gaps (ERROR) - [pipeline.py:420] : Could not parse data for command <ModuleName.SUPPLY_CURVE: 'supply-curve'> from status file in PosixPath('/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve')
+gaps (ERROR) - [config.py:386] : Encountered error while kicking off jobs:
+gaps (ERROR) - [config.py:387] : "Could not parse data for command <ModuleName.SUPPLY_CURVE: 'supply-curve'> from status file in PosixPath('/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve')"
+Traceback (most recent call last):
+  File "/Users/hwang6/anaconda3/envs/rev/lib/python3.9/site-packages/NREL_gaps-0.6.11-py3.9.egg/gaps/cli/config.py", line 375, in run
+    self.enable_logging()
+  File "/Users/hwang6/anaconda3/envs/rev/lib/python3.9/site-packages/NREL_gaps-0.6.11-py3.9.egg/gaps/cli/config.py", line 169, in preprocess_config
+    self.config = self.command_config.config_preprocessor(
+  File "/Users/hwang6/anaconda3/envs/rev/lib/python3.9/site-packages/reV/supply_curve/cli_supply_curve.py", line 35, in _preprocessor
+    sc_points = parse_previous_status(out_dir, ModuleName.SUPPLY_CURVE)
+  File "/Users/hwang6/anaconda3/envs/rev/lib/python3.9/site-packages/NREL_gaps-0.6.11-py3.9.egg/gaps/pipeline.py", line 420, in parse_previous_status
+    raise gapsKeyError(msg)
+gaps.exceptions.gapsKeyError: "Could not parse data for command <ModuleName.SUPPLY_CURVE: 'supply-curve'> from status file in PosixPath('/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve')"
+gaps (INFO) - [config.py:233] : Running supply-curve from config file: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/config_supply-curve.json'
+gaps (INFO) - [config.py:238] : Target output directory: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve'
+gaps (INFO) - [config.py:239] : Target logging directory: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/logs'
+gaps (INFO) - [execution.py:122] : Running 'supply-curve' locally with job name 'tutorial_7_supply-curve_supply_curve'.
+INFO - 2024-09-16 13:56:46,912 [__init__.py:324] : Running with reV version 0.9.3
+INFO - 2024-09-16 13:56:46,912 [loggers.py:600] : Running with rex version 0.2.85
+INFO - 2024-09-16 13:56:46,912 [supply_curve.py:157] : Supply curve points input: /Users/hwang6/github/reV-tutorial/tutorial_6_aggregation/tutorial_6_aggregation_supply-curve-aggregation.csv
+INFO - 2024-09-16 13:56:46,912 [supply_curve.py:158] : Transmission table input: /Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/ri_transmission_table.csv
+INFO - 2024-09-16 13:56:46,912 [supply_curve.py:159] : Supply curve capacity column: capacity_ac_mw
+INFO - 2024-09-16 13:56:46,926 [supply_curve.py:608] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2024-09-16 13:56:46,930 [supply_curve.py:1529] : Starting simple supply curve sort (no capacity limits).
+INFO - 2024-09-16 13:56:46,930 [supply_curve.py:871] : Computing LCOT costs for all possible connections...
+INFO - 2024-09-16 13:56:50,307 [supply_curve.py:918] : LCOT cost calculation is complete.
+WARNING - 2024-09-16 13:56:50,310 [supply_curve.py:1299] : The following requested columns are not found in transmission table: ['count_num_parallel_trans'].
+Skipping...
+INFO - 2024-09-16 13:56:50,319 [status.py:827] : Pipeline step 'supply-curve' complete. Time elapsed: 0:00:03. Target output file: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/tutorial_7_supply-curve_supply-curve.csv'
+gaps (INFO) - [execution.py:137] : Subprocess received stdout: 
+INFO - 2024-09-16 13:56:46,912 [__init__.py:324] : Running with reV version 0.9.3
+INFO - 2024-09-16 13:56:46,912 [loggers.py:600] : Running with rex version 0.2.85
+INFO - 2024-09-16 13:56:46,912 [supply_curve.py:157] : Supply curve points input: /Users/hwang6/github/reV-tutorial/tutorial_6_aggregation/tutorial_6_aggregation_supply-curve-aggregation.csv
+INFO - 2024-09-16 13:56:46,912 [supply_curve.py:158] : Transmission table input: /Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/ri_transmission_table.csv
+INFO - 2024-09-16 13:56:46,912 [supply_curve.py:159] : Supply curve capacity column: capacity_ac_mw
+INFO - 2024-09-16 13:56:46,926 [supply_curve.py:608] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2024-09-16 13:56:46,930 [supply_curve.py:1529] : Starting simple supply curve sort (no capacity limits).
+INFO - 2024-09-16 13:56:46,930 [supply_curve.py:871] : Computing LCOT costs for all possible connections...
+INFO - 2024-09-16 13:56:50,307 [supply_curve.py:918] : LCOT cost calculation is complete.
+WARNING - 2024-09-16 13:56:50,310 [supply_curve.py:1299] : The following requested columns are not found in transmission table: ['count_num_parallel_trans'].
+Skipping...
+INFO - 2024-09-16 13:56:50,319 [status.py:827] : Pipeline step 'supply-curve' complete. Time elapsed: 0:00:03. Target output file: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/tutorial_7_supply-curve_supply-curve.csv'
+gaps (WARNING) - [execution.py:139] : Subprocess received stderr: 
+/Users/hwang6/anaconda3/envs/rev/lib/python3.9/site-packages/reV/supply_curve/supply_curve.py:1300: UserWarning: The following requested columns are not found in transmission table: ['count_num_parallel_trans'].
+Skipping...
+  warn(msg)
+gaps (INFO) - [execution.py:141] : Completed job 'tutorial_7_supply-curve_supply_curve'.
+gaps (INFO) - [config.py:233] : Running supply-curve from config file: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/config_supply-curve.json'
+gaps (INFO) - [config.py:238] : Target output directory: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve'
+gaps (INFO) - [config.py:239] : Target logging directory: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/logs'
+gaps (INFO) - [execution.py:197] : Job 'tutorial_7_supply-curve_supply_curve' is successful in status json found in PosixPath('/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve'), not re-running.
+gaps (INFO) - [config.py:233] : Running supply-curve from config file: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/config_supply-curve.json'
+gaps (INFO) - [config.py:238] : Target output directory: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve'
+gaps (INFO) - [config.py:239] : Target logging directory: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/logs'
+gaps (INFO) - [execution.py:122] : Running 'supply-curve' locally with job name 'tutorial_7_supply-curve_supply_curve'.
+INFO - 2024-09-16 13:58:52,053 [__init__.py:324] : Running with reV version 0.9.3
+INFO - 2024-09-16 13:58:52,053 [loggers.py:600] : Running with rex version 0.2.85
+INFO - 2024-09-16 13:58:52,053 [supply_curve.py:157] : Supply curve points input: /Users/hwang6/github/reV-tutorial/tutorial_6_aggregation/tutorial_6_aggregation_supply-curve-aggregation.csv
+INFO - 2024-09-16 13:58:52,053 [supply_curve.py:158] : Transmission table input: /Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/ri_transmission_table.csv
+INFO - 2024-09-16 13:58:52,053 [supply_curve.py:159] : Supply curve capacity column: capacity_ac_mw
+INFO - 2024-09-16 13:58:52,064 [supply_curve.py:608] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2024-09-16 13:58:52,066 [supply_curve.py:1529] : Starting simple supply curve sort (no capacity limits).
+INFO - 2024-09-16 13:58:52,067 [supply_curve.py:871] : Computing LCOT costs for all possible connections...
+INFO - 2024-09-16 13:58:55,366 [supply_curve.py:918] : LCOT cost calculation is complete.
+WARNING - 2024-09-16 13:58:55,369 [supply_curve.py:1299] : The following requested columns are not found in transmission table: ['count_num_parallel_trans'].
+Skipping...
+INFO - 2024-09-16 13:58:55,374 [status.py:827] : Pipeline step 'supply-curve' complete. Time elapsed: 0:00:03. Target output file: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/tutorial_7_supply-curve_supply-curve.csv'
+gaps (INFO) - [execution.py:137] : Subprocess received stdout: 
+INFO - 2024-09-16 13:58:52,053 [__init__.py:324] : Running with reV version 0.9.3
+INFO - 2024-09-16 13:58:52,053 [loggers.py:600] : Running with rex version 0.2.85
+INFO - 2024-09-16 13:58:52,053 [supply_curve.py:157] : Supply curve points input: /Users/hwang6/github/reV-tutorial/tutorial_6_aggregation/tutorial_6_aggregation_supply-curve-aggregation.csv
+INFO - 2024-09-16 13:58:52,053 [supply_curve.py:158] : Transmission table input: /Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/ri_transmission_table.csv
+INFO - 2024-09-16 13:58:52,053 [supply_curve.py:159] : Supply curve capacity column: capacity_ac_mw
+INFO - 2024-09-16 13:58:52,064 [supply_curve.py:608] : Merging SC table and Trans Table with sc_table_col: trans_table_col mapping: {'sc_row_ind': 'sc_point_row_id', 'sc_col_ind': 'sc_point_col_id'}
+INFO - 2024-09-16 13:58:52,066 [supply_curve.py:1529] : Starting simple supply curve sort (no capacity limits).
+INFO - 2024-09-16 13:58:52,067 [supply_curve.py:871] : Computing LCOT costs for all possible connections...
+INFO - 2024-09-16 13:58:55,366 [supply_curve.py:918] : LCOT cost calculation is complete.
+WARNING - 2024-09-16 13:58:55,369 [supply_curve.py:1299] : The following requested columns are not found in transmission table: ['count_num_parallel_trans'].
+Skipping...
+INFO - 2024-09-16 13:58:55,374 [status.py:827] : Pipeline step 'supply-curve' complete. Time elapsed: 0:00:03. Target output file: '/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/tutorial_7_supply-curve_supply-curve.csv'
+gaps (WARNING) - [execution.py:139] : Subprocess received stderr: 
+/Users/hwang6/anaconda3/envs/rev/lib/python3.9/site-packages/reV/supply_curve/supply_curve.py:1300: UserWarning: The following requested columns are not found in transmission table: ['count_num_parallel_trans'].
+Skipping...
+  warn(msg)
+gaps (INFO) - [execution.py:141] : Completed job 'tutorial_7_supply-curve_supply_curve'.

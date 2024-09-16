@@ -1,0 +1,25 @@
+{
+    "supply-curve": {
+        "tutorial_7_supply-curve_supply_curve": {
+            "fixed_charge_rate": 0.096,
+            "job_status": "successful",
+            "out_file": "/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/tutorial_7_supply-curve_supply-curve.csv",
+            "out_fpath": "/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/tutorial_7_supply-curve_supply_curve",
+            "runtime_seconds": 3.322063,
+            "sc_features": null,
+            "sc_points": "/Users/hwang6/github/reV-tutorial/tutorial_6_aggregation/tutorial_6_aggregation_supply-curve-aggregation.csv",
+            "simple": true,
+            "time_end": "16-Sep-2024 13:58:55",
+            "time_start": "16-Sep-2024 13:58:52",
+            "total_runtime": "0:00:03",
+            "trans_table": "/Users/hwang6/github/reV-tutorial/tutorial_7_supply-curve/ri_transmission_table.csv",
+            "transmission_costs": {
+                "center_tie_in_cost": 10,
+                "line_cost": 1000,
+                "line_tie_in_cost": 200,
+                "sink_tie_in_cost": 100,
+                "station_tie_in_cost": 50
+            }
+        }
+    }
+}

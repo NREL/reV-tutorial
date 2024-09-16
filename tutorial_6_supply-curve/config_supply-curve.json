@@ -7,7 +7,7 @@
     },
     "fixed_charge_rate": 0.096,
     "sc_features": null,
-    "sc_points": "PIPELINE",
+    "sc_points": "../tutorial_6_aggregation/tutorial_6_aggregation_supply-curve-aggregation.csv",
     "simple": true,
     "trans_table": "./ri_transmission_table.csv",
     "transmission_costs": {
