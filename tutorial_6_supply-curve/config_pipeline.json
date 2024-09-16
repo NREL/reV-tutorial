@@ -1,0 +1,12 @@
+{
+    "log_directory": "./logs",
+    "pipeline": [
+      {
+        "supply-curve-aggregation": "./config_aggregation.json"
+      },
+      {
+        "supply-curve": "./config_supply-curve.json"
+      }
+    ]
+  }
+  
