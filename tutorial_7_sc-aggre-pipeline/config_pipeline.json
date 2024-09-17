@@ -2,10 +2,16 @@
     "log_directory": "./logs",
     "pipeline": [
       {
-        "supply-curve-aggregation": "./config_aggregation.json"
+        "generation": "../tutorial_4_generation/generation/config_gen.json"
       },
       {
-        "supply-curve": "./config_supply-curve.json"
+        "multi-year": "../tutorial_4_generation/pipeline/config_multi-year.json"
+      },
+      {
+        "supply-curve-aggregation": "../tutorial_5_aggregation/config_aggregation.json"
+      },
+      {
+        "supply-curve": "../tutorial_6_supply-curve/config_supply-curve.json"
       }
     ]
   }
