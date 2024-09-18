@@ -1,6 +1,0 @@
-*.h5
-.gaps/
-logs/
-QA_multi-year/
-solar_status.json
-pipeline.out
