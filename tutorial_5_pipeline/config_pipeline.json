@@ -1,0 +1,12 @@
+{
+    "log_directory": "./logs/",
+    "pipeline": [
+      {
+        "multi-year": "./config_multi-year.json"
+      },
+      {
+       "qa-qc": "./config_qa-qc.json"
+      }
+    ]
+  }
+  

@@ -6,3 +6,5 @@ After running the `generation` module, we now show an example config that take t
 ```
 reV multi-year -c config_pipeline.json
 ```
+
+`ADDING MANUAL UPDATE ON CONFIG INPUTS PATHS HERE`

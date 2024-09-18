@@ -1,7 +1,8 @@
-reV pipeline
+reV multi-year
 ===========================
 
-An example reV pipeline command that executes the following modules in order: 
-    - `reV generation`: generates energy profiles through SAM simulations. 
-    - `reV multi-year`: combines generations in multiple years into a single multi-year file
-    - `reV qa-qc`: conducts a QA/QC that performs quality assurance checks on the `reV` pipeline outputs. 
+After running the `generation` module, we now show an example config that take the generated HDF5 files in the `generation` step, then average the multiple-year outputs into a single HDF5 file. To run the pipeline, simply run the command below: 
+
+```
+reV multi-year -c config_pipeline.json
+```
