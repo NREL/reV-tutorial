@@ -1,6 +1,6 @@
 # Generation Module
 This tutorial focuses on the **generation** module of the NREL reV model. 
-When running reV, a series of json files are used to inform the model on what configs you want to use.
+When running reV, a series of JSON files are used to inform the model on what configs you want to use and where you want to use them.
 Throughout the pipeline there are configs that are required and ones that are optional.
 All of the steps in the pipeline require execution control.
 
