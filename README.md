@@ -1,9 +1,9 @@
 # reV-tutorial
 A tutorial for the Renewable Energy Technical Potenital Model ([reV](https://github.com/NREL/reV)).
 
-This is a draft repository for learning to run reV, both through the command with CLIs and via the Python modules. It contains the sample input data found in the reV repository and sample run directories set up to create outputs for a study area in Rhode Island. Detailed instructions, example runs, and tests can be found in the official reV repository. This repository will supplement that material with a set of python scripts and preconfigured run folders specifically tailored for learning the basics of retrieving/generating the input datasets, configuring the settings, running the model, and troubleshooting common problems. The sample runs will point to the inputs automatically with the hope that it will help the user better understand the required formats needed for building custom inputs. This repo will also include a FAQ page that will be added to as questions arise along with a common gotcha page for common mistakes.
+This is a draft repository for learning to run reV, both through Commands-Line Interface (CLIs) and via the Python modules. It contains the sample input data found in the reV repository and sample run directories set up to create outputs for a study area in Rhode Island. Detailed instructions, example runs, and tests can be found in the official reV repository. This repository will supplement that material with a set of python scripts and preconfigured run folders specifically tailored for learning the basics of retrieving/generating the input datasets, configuring the settings, running the model, and troubleshooting common problems. The sample runs will point to the inputs automatically with the hope that it will help the user better understand the required formats needed for building custom inputs. This repo will also include a FAQ page that will be added to as questions arise along with a common gotcha page for common mistakes.
 
-# Brief Description of the reV modeling pipeline
+# Brief description of the reV modeling pipeline
 
 reV is split into three main components: 
 1) simulating renewable energy generation and cost potential across a landscape 
@@ -22,6 +22,10 @@ Land use constraints can be added into the aggregation step to exclude developme
 
   <h5 align="center"> Resource :arrow_right: Generation :arrow_right: Exclusions :arrow_right: Aggregation :arrow_right: Transmission :arrow_right: Energy and Costs :arrow_right: Representative Profiles </h5>
 
-# Repository Structure
-- `data`: Directory where input datasets are stored.
-- `tutorial_#`: Follow the folder sequence to learn about reV CLI workflow. 
+
+# Tutorials on reV CLI methods
+
+The quickest and easiest to get started with reV is to use the **JSON-CLI** workflow. This involves building a json configuration file (which is like a string of a Python dictionary) for a module you want to run and running that module with the corresponding CLI command. You can also configure several modules in an input-output pipeline and run each with a single command. The configurations will tell reV which SAM generator configurations to run and where, what variables to generate, which land-use assumptions to use, etc. It will also tell reV how to work with your system to most efficiently build these outputs (e.g. how to split the work across CPUs, how to split work across nodes for distributed systems, what memory utilization limits to use, etc.). This method is convenient in that you don't need to edit any Python scripts and is easy to set up and run directly from your terminal (at least for single runs). To learn about reV CLI workflow, go into each `tutorial_#_module` sequentially and follow the instruction in each. Go to `data` folder to examine input datasets used for the commands used in the tutorials.
+
+# reV Documentation
+Use this documentation in tandem with the tutorial series: https://nrel.github.io/reV/_cli/cli.html
