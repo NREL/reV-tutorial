@@ -1,6 +1,15 @@
 # MacOS Items
 **/.DS_Store
 
+# CLI Items
+# Change h5 after dev
+*.h5
+.gaps/
+logs/
+QA_multi-year/
+solar_status.json
+pipeline.out
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
