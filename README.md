@@ -31,3 +31,6 @@ To learn details about the reV JSON-CLI workflow, go into each `tutorial_#_modul
 
 # reV Documentation
 Use this documentation in tandem with the tutorial series: https://nrel.github.io/reV/_cli/cli.html
+
+# Getting started with the tutorial
+Tutorial #1 (`tutorial_1_concepts`) will introduce key concepts (particularly that of "technical potential") needed to understand what the outputs of the reV model represent. It is recommended to start here, but if you understand all that and wish to get on with running the model, you may move on. Each subsequent tutorial folder contains reV configuration files and a README describing what how to use them to run reV and generate outputs. The README's will also describe what each configuration parameter means. These tutorials are ordered by increasing complexity. Early tutorials should be setup such that you may simply run the model without editing, though later tutorials will require user input in order to work.
