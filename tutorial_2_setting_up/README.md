@@ -17,6 +17,11 @@ cd reV
 python setup.py install
 ```
 
+If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python setup.py install` above with 
+```
+pip install -e .
+```
+
 Finally, to make sure that the reV CLIs are working, simply type the ```reV``` command into your terminal. If it was successfully installed you will see a printout of a help file showing the command format and a brief description of all the reV modules:
 
 ```
@@ -47,11 +52,16 @@ Commands:
   supply-curve-aggregation  Run reV supply curve aggregation using the...
 ```
 
-# Getting Started - Installing reV-tutorial
+# Testing the installation
 
-To install `reV-tutorial`, follow below steps to clone the repository. 
-From your home dir: 
-
+Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems. If you have a different OS or would like to double check that the all of the tests pass in your set up, use the GitHub repository method described above, and 
 ```
-git clone https://github.com/WilliamsTravis/reV-tutorial.git
-cd reV-tutorial
+cd reV/tests/
+pip install pytest
+pytest .
+```
+This takes quite some time, so it's best if you have something else to do for a while.
+
+
+# All done?
+Now you may move on to Tutorial 3: Building Inputs (tutorial_3_input_builds).
