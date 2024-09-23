@@ -7,6 +7,7 @@ conda create -n rev python=3.11 -y
 conda activate rev
 pip install NREL-reV
 ```
+(also show an example with python's venv)
 
 You can also clone the repository and install directly from there. 
 ```
@@ -16,6 +17,7 @@ git clone https://github.com/NREL/reV.git
 cd reV
 python setup.py install
 ```
+(also describe the ssh method and point to a place that show's users how to set that up)
 
 If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python setup.py install` above with 
 ```
