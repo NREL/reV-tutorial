@@ -7,8 +7,17 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
 https://registry.opendata.aws/nrel-pds-nsrdb/
 
 
+## Access the metadata for the wind toolkit
+https://data.nrel.gov/submissions/54
+https://www.nrel.gov/grid/wind-toolkit.html
+
+## Descriptions to SRW format for wind resource data. Note: SAM 2022 version supports CSV format for wind.
+https://samrepo.nrelcloud.org/help/weather_format_srw_wind.html
+
+
+
 ### Things to do
-Get scripts or loc for solar resource data `ri_100_nsrdb_2012.h5`.
+Finish the script, and perhaps use different input datasets. The SRWs are too awkward, and too much of it is pulling out the right meta information. 
 
 Describe minimum inputs for each tech, or else how to figure out where to find this informations.
 

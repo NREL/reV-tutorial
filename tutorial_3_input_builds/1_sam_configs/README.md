@@ -25,5 +25,7 @@ multiple ways:
         and select "JSON for inputs". Click "OK", download the file, then
         edit the file to remove ("solar_resource_file") since that will be
         handled in reV.
-      - This becomes your input for "sam_files" in `config_generation.json`.
+      - This becomes your input for "sam_files". This
+        configuration file `config_SAM.json` is tailored to minimum entries 
+        for reV to run in the following tutorial folders. 
         
