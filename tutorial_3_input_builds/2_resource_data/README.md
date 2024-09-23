@@ -1,13 +1,13 @@
-## Bulding Custom Resource Files
-
+Bulding Custom Resource Files
+===
 The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. These can be found in the SAM documentation here: [SAM Help](https://samrepo.nrelcloud.org/help/index.html)
 
-
-## Access the NSRDB Datasets
+Access the NSRDB Datasets
+===
 https://registry.opendata.aws/nrel-pds-nsrdb/
 
-
-### Things to do
+Things to do
+===
 Get scripts or loc for solar resource data `ri_100_nsrdb_2012.h5`.
 
 Describe minimum inputs for each tech, or else how to figure out where to find this informations.
@@ -18,7 +18,8 @@ Show a nice image of a resource array with labels on the axis, point out a site 
 Fastforward to a generation file and point out the same items in it.
 Go back to the meta file and point out the row with that site.
 
-### Previous info
+Info before 2024
+===
 Some reminders for building custom resource files:
   1) You can use h5py and pandas to build it.
   2) You'll need a specific set of needed input datasets for the SAM power module you're using.
