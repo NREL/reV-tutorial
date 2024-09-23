@@ -12,7 +12,7 @@
           "ghi_mean-means",
           "ghi_mean-stdev"
         ],
-        "fpath": "./pipeline_multi_year.h5" ,
+        "fpath": "./tutorial_5_pipeline_multi_year.h5" ,
         "plot_type": "plot",
         "sub_dir": "QA_multi-year"
       }

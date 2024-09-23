@@ -1,0 +1,30 @@
+{
+    "log_directory": "./logs/",
+    "execution_control": {
+      "memory_utilization_limit": 0.4,
+      "sites_per_worker": 1
+    },
+    "analysis_years": [
+      2012,
+      2013
+    ],
+    "log_level": "INFO",
+    "output_request": [
+      "cf_mean",
+      "cf_profile",
+      "lcoe_fcr",
+      "capital_cost",
+      "ghi_mean",
+      "fixed_operating_cost",
+      "system_capacity",
+      "fixed_charge_rate",
+      "variable_operating_cost"
+    ],
+    "project_points": "../data/project_points/rhode_island_onshore_solar_project_points.csv",
+    "resource_file": "../data/resources/ri_100_NSRDB_{}.h5",
+    "sam_files": {
+      "default": "./config_SAM.json"
+    },
+    "technology": "pvwattsv8"
+  }
+  

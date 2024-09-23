@@ -11,8 +11,7 @@
           "lcoe_fcr",
           "ghi_mean"
         ],
-        "source_dir": "../generation/",
-        "source_prefix": "generation_",
+        "source_files": "PIPELINE",
         "pass_through_dsets": [
           "capital_cost",
           "fixed_operating_cost",

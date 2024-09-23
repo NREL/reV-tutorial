@@ -2,10 +2,13 @@
     "log_directory": "./logs/",
     "pipeline": [
       {
+        "generation": "./config_gen.json"
+      },
+      {
         "multi-year": "./config_multi-year.json"
       },
       {
-       "qa-qc": "./config_qa-qc.json"
+        "qa-qc": "./config_qa-qc.json"
       }
     ]
   }
