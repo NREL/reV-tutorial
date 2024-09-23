@@ -29,10 +29,3 @@ To explore more command options, use the `--help` flag:
 ```
 reV generation --help
 ```
-
-More On SAM:
-Further reading can be done on the specifics of the SAM configs.
-
-- Solar: [https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html)
-        
-- Wind: [https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html)

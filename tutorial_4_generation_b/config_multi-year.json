@@ -11,8 +11,10 @@
           "lcoe_fcr",
           "ghi_mean"
         ],
-        "source_dir": "../tutorial_4_generation_a/",
-        "source_prefix": "generation_",
+        "source_files": [
+          "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2012.h5", 
+          "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2013.h5"
+        ],
         "pass_through_dsets": [
           "capital_cost",
           "fixed_operating_cost",

@@ -23,7 +23,7 @@
     "project_points": "../data/project_points/rhode_island_onshore_solar_project_points.csv",
     "resource_file": "../data/resources/ri_100_NSRDB_{}.h5",
     "sam_files": {
-      "default": "./pv.json"
+      "default": "./config_SAM.json"
     },
     "technology": "pvwattsv8"
   }
