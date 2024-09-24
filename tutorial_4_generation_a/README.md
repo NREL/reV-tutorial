@@ -10,7 +10,7 @@ This example module runs at several points in Rhode Island for 2012 and 2013 NSR
 
 The `config_gen.json` entries that correspond to the input data created in `tutorial_3_input_builds/` are described below: 
 
-1) `sam_files`: The [SAM configurations](tutorial_3_input_builds/1_sam_configs) file location. 
+1) `sam_files`: The [SAM configurations](../tutorial_3_input_builds/1_sam_configs/) file location. 
     - A set of key-value pairs which represent the "config" column in the project points file and the SAM configuration associated with it.
 2) `resource_file`: The **resource data** is typically in HDF5 format that contains solar (NSRDB) or wind (WTK) data. 
     - Since we are executing `reV` from the command line, this input string can contain brackets `{}` that will be filled in by the `analysis_years` entry (in this case, year 2012 and 2013).
