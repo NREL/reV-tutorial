@@ -8,18 +8,22 @@ All of the steps in the pipeline require execution control.
 This tutorial includes a **configuration JSON** file (`config_gen.json`) that specify the simulation parameters, including system specifications, time periods, output requests, etc. 
 This example module runs at several points in Rhode Island for 2012 and 2013 NSRDB data. 
 
-The `config_gen.json` specifies file locations of files that generated from previous tutorials, including:
+The `config_gen.json` entries that correspond to the input data are described below: 
 
-- **Project points**: It specifies the geographical locations (lat/lon) where the generation module will be performed. 
-- **Resource data**: This is typically in HDF5 format that contains solar (NSRDB) or wind (WTK) data. 
-- **SAM configurations**: The "sam_files" entry contains a set of key-value pairs which represent the "config" column in the project points file and the SAM configuration associated with it.
+1) `sam_files`: The **SAM configurations** file location in a set of key-value pairs which represent the "config" column in the project points file and the SAM configuration associated with it.
+2) `resource_file`: The **resource data** is typically in HDF5 format that contains solar (NSRDB) or wind (WTK) data. 
+    - Since we are executing `reV` from the command line, this input string can contain brackets `{}` that will be filled in by the `analysis_years` entry (in this case, year 2012 and 2013).
+    - Alternatively, this input can be a list of explicit files to process. In this case, the length of the list must match the length of the `analysis_years` input exactly, and the path are assumed to align with the analysis_years (i.e. the first path corresponds to the first analysis year, the second path corresponds to the second analysis year, and so on).
+3) `project_points`: The **project points** file location that specifies the geographical locations (lat/lon) where the generation module will be performed. 
 
-Add entry descriptions here:
-- `project_points`: "../data/project_points/rhode_island_onshore_solar_project_points.csv",
-- `resource_file`: "../data/resources/ri_100_NSRDB_{}.h5",
+You need to change the config file locations for all above entries in the `config_gen.json`. Other brief descriptions to the entries are listed below; check on the [reV CLI help doc](https://nrel.github.io/reV/_cli/reV%20generation.html) for further documentations on each: 
 
+- `log_directory`: Path to directory where logs should be written. Path can be relative and does not have to exist on disk (it will be created if missing). In our case, we created the logs at the current directory: `"./logs/"`. 
+- `execution_control`: Dictionary containing execution control arguments. 
+- `log_level`: String representation of desired logger verbosity. Suitable options are `DEBUG` (most verbose), `INFO` (moderately verbose), `WARNING` (only log warnings and errors), and `ERROR` (only log errors).
+- `technology`: String indicating which SAM technology to analyze. We use `pvwattsv8`.
 
-Simply run the following command in your terminal:
+To run the generation, simply run the following command in your terminal:
 
 ```
 reV generation -c config_gen.json
