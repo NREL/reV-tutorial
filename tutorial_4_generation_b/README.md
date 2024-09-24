@@ -8,12 +8,10 @@ After running the `generation` module, we now show an example config that take t
     ```json
     "groups": {
       "none": {
-        ...
         "source_files": [
           "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2012.h5", 
           "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2013.h5"
         ],
-        ...
       }
     }
     ```
@@ -23,10 +21,8 @@ After running the `generation` module, we now show an example config that take t
     ```json
     "groups": {
       "none": {
-        ...
         "source_dir": "../tutorial_4_generation_a/", 
         "source_prefix": "tutorial_4_generation",
-        ...
       }
     }
     ```

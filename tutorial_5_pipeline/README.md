@@ -17,13 +17,13 @@ This tutorial introduces how to execute multiple reV steps in one single analysi
     ]
 ```
 
-Then, for the `multi-year` module, instead of set an explicit list of file names for the entry `source_files`, we set this entry to "PIPELINE" so that the input is determined from the status file of the previous pipeline step: 
+Then, for the `multi-year` module, instead of set an explicit list of file names for the entry `source_files`, we set this entry to `"PIPELINE"` so that the input is determined from the status file of the previous pipeline step: 
 
-```json
-"source_files": "PIPELINE",
-```
+  ```json
+  "source_files": "PIPELINE",
+  ```
 
-Simply run the following command to execute the pipeline run: 
+Other entries used in the config files are the same as in `tutorial_4_generation_a/b`. After setting up the configs, simply run the following command to execute the pipeline run: 
 
 ```
 reV pipeline -c config_pipeline.json --monitor
