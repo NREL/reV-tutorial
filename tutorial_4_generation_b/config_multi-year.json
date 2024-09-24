@@ -5,15 +5,15 @@
     },
     "groups": {
       "none": {
+        "source_files": [
+          "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2012.h5", 
+          "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2013.h5"
+        ],
         "dsets": [
           "cf_mean",
           "cf_profile",
           "lcoe_fcr",
           "ghi_mean"
-        ],
-        "source_files": [
-          "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2012.h5", 
-          "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2013.h5"
         ],
         "pass_through_dsets": [
           "capital_cost",
