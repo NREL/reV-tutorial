@@ -42,8 +42,12 @@ We would like the videos to cycle between a concepts view (digital chalk board, 
         - NRWAL
         - gaps
     
-    #11: Advanced reV modeling
+    #12: Advanced reV modeling
         - Bespoke
-        - Least-cost Transmission
         - BOS
         - etc.
+    #11: Advanced Input Building
+        - Least-cost Transmission
+        - Custom Resource Files
+    
+    
