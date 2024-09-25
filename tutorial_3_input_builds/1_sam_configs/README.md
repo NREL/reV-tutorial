@@ -32,7 +32,33 @@ multiple ways:
         Thus, the SAM config file is tailored to minimum entries 
         for reV to run in the following tutorial folders, 
         named `config_SAM.json`. 
-        
+
+<pre>
+{
+    "adjust:constant": 0,
+    "array_type": 2,
+    "azimuth": 180,
+    "capital_cost": 39767200,
+    "clearsky": false,
+    "dc_ac_ratio": 1.3,
+    "fixed_charge_rate": 0.096,
+    "fixed_operating_cost": 260000,
+    "gcr": 0.4,
+    "inv_eff": 96, <a class="headerlink" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.Outputs.inverter_efficiency" target="_blank" >link</a>
+    "losses": 14.07566,
+    "module_type": 0,
+    "system_capacity": 20000,
+    "tilt": 0,
+    "variable_operating_cost": 0
+  }
+</pre>
+
+
+
+
+
+
+
 More On SAM
 ===
 Further reading can be done on the specifics of the SAM configs.
