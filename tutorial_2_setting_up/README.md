@@ -3,23 +3,21 @@
 The simplest way to install reV and it's supporting packages ([PySAM](https://github.com/NREL/pysam), [rex](https://github.com/NREL/rex), & [NRWAL](https://github.com/NREL/NRWAL)) is to create a virtual environment and install rev through the nrel channel.
 
 ```
-conda create -n rev python=3.11 -y
-conda activate rev
+python3.11 -m venv rev
+source rev/bin/activate
 pip install NREL-reV
 ```
-(also show an example with python's venv)
 
-You can also clone the repository and install directly from there. 
+You can also clone the repository and install directly from there. To use the ssh address (as below) and avoid having to enter your username and password, use this [guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
 ```
-conda create -n rev python=3.11 -y
-conda activate rev
+python3.11 -m venv rev
+source rev/bin/activate
 git clone https://github.com/NREL/reV.git
 cd reV
-python setup.py install
+python -m pip install .
 ```
-(also describe the ssh method and point to a place that show's users how to set that up)
 
-If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python setup.py install` above with 
+If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python -m pip install .` above with 
 ```
 python -m pip install -e .
 ```
