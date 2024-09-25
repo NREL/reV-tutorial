@@ -1,6 +1,6 @@
 # Getting Started - Installing reV
 
-The simplest way to install reV and it's supporting packages ([PySAM](https://github.com/NREL/pysam), [rex](https://github.com/NREL/rex), & [NRWAL](https://github.com/NREL/NRWAL)) is to create a conda environment and install rev through the nrel channel.
+The simplest way to install reV and it's supporting packages ([PySAM](https://github.com/NREL/pysam), [rex](https://github.com/NREL/rex), & [NRWAL](https://github.com/NREL/NRWAL)) is to create a virtual environment and install rev through the nrel channel.
 
 ```
 conda create -n rev python=3.11 -y
@@ -21,7 +21,7 @@ python setup.py install
 
 If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python setup.py install` above with 
 ```
-pip install -e .
+python -m pip install -e .
 ```
 
 Finally, to make sure that the reV CLIs are working, simply type the ```reV``` command into your terminal. If it was successfully installed you will see a printout of a help file showing the command format and a brief description of all the reV modules:
