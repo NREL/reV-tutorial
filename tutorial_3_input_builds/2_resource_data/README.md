@@ -1,10 +1,24 @@
 Bulding Custom Resource Files
 ===
-The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. These can be found in the SAM documentation here: [SAM Help](https://samrepo.nrelcloud.org/help/index.html)
+The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is a particular data format that is nicely integrated into the NREL modeling ecosystem but is unique to NREL. 
 
-Access the NSRDB Datasets
+The Format
 ===
-https://registry.opendata.aws/nrel-pds-nsrdb/
+- Hierarchical Data Format 5 (HDF5)
+- 2D array for each data variable (GHI, Windspeed, air pressure, etc.)
+- Time Index on Y-Axis
+- Site Index X-Axis
+- Contains a `meta` data table that holds coordinate and other site information associated with the x-axis
+- Contains a 1D `time_index` vector that contains date-time strings associated with the y-axis.
+
+
+Existing Resource Files
+===
+NSRDB: 
+  - https://registry.opendata.aws/nrel-pds-nsrdb/
+WTK:
+  - PLACEHOLDER
+
 
 Things to do
 ===
