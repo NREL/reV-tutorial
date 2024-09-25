@@ -18,13 +18,12 @@ NSRDB:
   - https://registry.opendata.aws/nrel-pds-nsrdb/
 
 WTK:
-  - PLACEHOLDER
+  - https://registry.opendata.aws/nrel-pds-wtk/
 
 
 Remote ACCESS to preformatted datasets
 ===
   - https://github.com/NREL/hsds-examples
-
 
 
 Things to do
