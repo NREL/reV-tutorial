@@ -27,7 +27,7 @@ You need to change the config file locations for all above entries in the `confi
 
 After the configurations, to run the generation, simply run the following command in your terminal:
 
-```
+```console
 reV generation -c config_gen.json
 ```
 
