@@ -28,7 +28,7 @@ You need to change the config file locations for all above entries in the `confi
 After the configurations, to run the generation, simply run the following command in your terminal:
 
 ```console
-reV generation -c config_gen.json
+local:tutorial_4_generation_a user$ reV generation -c config_gen.json
 ```
 
 To explore more command options, use the `--help` flag: 
