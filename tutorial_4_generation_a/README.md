@@ -22,7 +22,7 @@ You need to change the config file locations for all above entries in the `confi
 
 - `log_directory`: Path to directory where logs should be written. Path can be relative and does not have to exist on disk (it will be created if missing). In our case, we created the logs at the current directory: `"./logs/"`. 
 - `execution_control`: Dictionary containing execution control arguments. 
-- `log_level`: String representation of desired logger verbosity. Suitable options are `DEBUG` (most verbose), `INFO` (moderately verbose), `WARNING` (only log warnings and errors), and `ERROR` (only log errors).
+- `log_level`: String representation of desired logger verbosity. Suitable options are "DEBUG" (most verbose), "INFO" (moderately verbose), "WARNING" (only log warnings and errors), and "ERROR" (only log errors).
 - `technology`: String indicating which SAM technology to analyze. We use `pvwattsv8`.
 
 After the configurations, to run the generation, simply run the following command in your terminal:
@@ -33,6 +33,6 @@ reV generation -c config_gen.json
 
 To explore more command options, use the `--help` flag: 
 
-```
+```console
 reV generation --help
 ```
