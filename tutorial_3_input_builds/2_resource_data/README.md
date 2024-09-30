@@ -14,25 +14,20 @@ The Format
 
 Existing Resource Files
 ===
-NSRDB: 
+`NSRDB`, the National Solar Radiation Database, is a serially complete collection of hourly and half-hourly values of the three most common measurements of solar radiation – global horizontal, direct normal, and diffuse horizontal irradiance — and meteorological data. These data have been collected at a sufficient number of locations and temporal and spatial scales to accurately represent regional solar radiation climates.
   - https://registry.opendata.aws/nrel-pds-nsrdb/
 
-WTK:
+`WTK`, the Wind Integration National Dataset (WIND) Toolkit, is an update and expansion of the Eastern Wind Integration Data Set and Western Wind Integration Data Set. It supports the next generation of wind integration studies. It includes instantaneous meteorological conditions from computer model output and calculated turbine power for more than 126,000 sites in the continental United States for the years 2007–2013. 
   - https://registry.opendata.aws/nrel-pds-wtk/
 
 
 Remote ACCESS to preformatted datasets
 ===
-  - https://github.com/NREL/hsds-examples
+  - NREL Highly Scalable Data Service (`HSDS`) Examples: https://github.com/NREL/hsds-examples
 
 
 Things to do
 ===
-Get scripts or loc for solar resource data `ri_100_nsrdb_2012.h5`.
-
-Describe minimum inputs for each tech, or else how to figure out where to find this informations.
-
-Describe the attributes, meta file, time index, shape of the arrays.
 
 Show a nice image of a resource array with labels on the axis, point out a site on the x-axis and time period on the y-axis.
 Fastforward to a generation file and point out the same items in it.
