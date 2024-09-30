@@ -44,7 +44,7 @@ multiple ways:
     "fixed_charge_rate": 0.096,
     "fixed_operating_cost": 260000,
     "gcr": 0.4,
-    "inv_eff": 96, <a class="headerlink" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.Outputs.inverter_efficiency" target="_blank" >link</a>
+    "inv_eff": 96, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.Outputs.inverter_efficiency">🔗</a>
     "losses": 14.07566,
     "module_type": 0,
     "system_capacity": 20000,
