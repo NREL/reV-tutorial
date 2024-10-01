@@ -35,28 +35,19 @@ multiple ways:
 
 <pre>
 {
-    "adjust:constant": 0,
-    "array_type": 2,
-    "azimuth": 180,
+    "array_type": 2, 
+    "azimuth": 180, 
     "capital_cost": 39767200,
-    "clearsky": false,
-    "dc_ac_ratio": 1.3,
+    "dc_ac_ratio": 1.3, <a target="_blank" rel="noopener noreferrer" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">🔗</a>
     "fixed_charge_rate": 0.096,
     "fixed_operating_cost": 260000,
-    "gcr": 0.4,
-    "inv_eff": 96, <a target="_blank" rel="noopener noreferrer" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.Outputs.inverter_efficiency">🔗</a>
     "losses": 14.07566,
     "module_type": 0,
     "system_capacity": 20000,
     "tilt": 0,
     "variable_operating_cost": 0
-  }
+}
 </pre>
-
-
-
-
-
 
 
 
