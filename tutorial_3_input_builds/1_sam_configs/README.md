@@ -35,10 +35,10 @@ multiple ways:
 
 <pre>
 {
-    "array_type": 2, 
-    "azimuth": 180, 
-    "capital_cost": 39767200,
-    "dc_ac_ratio": 1.3, <a target="_blank" rel="noopener noreferrer" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">🔗</a>
+    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.array_type">🔗</a> "array_type": 2, 
+    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">🔗</a> "azimuth": 180, 
+    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">🔗</a> "capital_cost": 39767200,
+    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">🔗</a> "dc_ac_ratio": 1.3, 
     "fixed_charge_rate": 0.096,
     "fixed_operating_cost": 260000,
     "losses": 14.07566,
