@@ -35,25 +35,24 @@ multiple ways:
 
 <pre>
 {
-    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.array_type">"array_type"</a>: 2, 
-    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.azimuth">"azimuth"</a>: 180, 
+    "array_type": 2, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.array_type">🔗</a>
+    "azimuth": 180, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.azimuth">🔗</a>
     "capital_cost": 39767200, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.capital_cost">🔗</a> 
     "dc_ac_ratio": 1.3, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">🔗</a> 
-    "fixed_charge_rate": 0.096,
-    "fixed_operating_cost": 260000,
-    "losses": 14.07566,
-    "module_type": 0,
-    "system_capacity": 20000,
-    "tilt": 0,
-    "variable_operating_cost": 0
+    "fixed_charge_rate": 0.096, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.fixed_charge_rate">🔗</a> 
+    "fixed_operating_cost": 260000, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.fixed_operating_cost">🔗</a> 
+    "losses": 14.07566, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.losses">🔗</a> 
+    "module_type": 0, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv5.html#PySAM.Pvwattsv5.Pvwattsv5.SystemDesign.module_type">🔗</a> 
+    "system_capacity": 20000, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.system_capacity">🔗</a> 
+    "tilt": 0, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.tilt">🔗</a> 
+    "variable_operating_cost": 0 <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.variable_operating_cost">🔗</a> 
 }
 </pre>
 
 
-
 More On SAM
 ===
-Further reading can be done on the specifics of the SAM configs.
+If you want to check other SAM config variables, you can open the SAM's GUI project `*.sam` file, click the "File" dropdown icon ("⌄"), and click "Inputs browser". It will show the full list of variables from SAM. For further reading on the SAM, see:
 
 - Solar: [https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html)
         
