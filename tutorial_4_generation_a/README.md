@@ -18,7 +18,7 @@ The `config_gen.json` entries that correspond to the input data created in `tuto
 3) `project_points`: The [project points](../tutorial_3_input_builds/3_project_points/) file location. 
     - It specifies the geographical locations (lat/lon) where the generation module will be performed. 
 
-You need to change the config file locations for all above entries in the `config_gen.json`. Other brief descriptions to the entries are listed below; check on the [reV generation help doc](https://nrel.github.io/reV/_cli/reV%20generation.html) for further documentations on each: 
+You need to change the config file locations for all above entries in the `config_gen.json`. Other brief descriptions to the entries are listed below: 
 
 - `log_directory`: Path to directory where logs should be written. Path can be relative and does not have to exist on disk (it will be created if missing). In our case, we created the logs at the current directory: `"./logs/"`. 
 - `execution_control`: Dictionary containing execution control arguments. 
@@ -31,7 +31,7 @@ After the configurations, to run the generation, simply run the following comman
 reV generation -c config_gen.json
 ```
 
-To explore more command options, use the `--help` flag: 
+To explore more command options, use the `--help` flag, or check on the [reV generation help doc](https://nrel.github.io/reV/_cli/reV%20generation.html) for further documentations: 
 
 ```console
 reV generation --help
