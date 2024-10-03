@@ -29,12 +29,8 @@ After running the `generation` module, we now show an example config that take t
 
 Other config entries that are not covered in previous tutorials are described below. Check on the [reV multi-year help doc](https://nrel.github.io/reV/_cli/reV%20multi-year.html) for further documentations on each: 
 - `groups`: The group names will be used as the HDF5 file group name under which the collected data will be stored. You can have exactly one group with the name `"none"` for a “no group” collection (this is typically what you want and all you need to specify).
-    - `dsets`: List of datasets to collect. Specifically, we used 
-      - "cf_mean": mean capacity factor (fractional).
-      - "cf_profile": hourly capacity factor (fractional) profile in local timezone.
-      - "lcoe_fcr": the Levelized Cost of Electricity (LCOE) using the fixed-charge-rate method.
-      - "ghi_mean": mean global horizontal irradiance (GHI) over a specified time period. GHI can be calculated from Direct Normal Irradiance (DNI) and Diffuse Horizontal Irradiance (DHI).
-    - `pass_through_dsets`: Optional list of datasets that are identical in the multi-year files (e.g. input datasets that don’t vary from year to year) that should be copied to the output multi-year file once without a year suffix or means/stdev calculation. In our case, we passed through the SAM config entries that could be found in `config_SAM.json`. 
+    - `dsets`: List of datasets to collect. These datasets are the same as in the previous [tutorial_4_generation_a](../tutorial_4_generation_a/) folder. 
+    - `pass_through_dsets`: Optional list of datasets that are identical in the multi-year files (e.g. input datasets that don’t vary from year to year) that should be copied to the output multi-year file once without a year suffix or means/stdev calculation. 
 
 To see further descriptions of these parameters, please check the help doc [PvWattsv8](https://nrel.github.io/reV/_autosummary/reV.SAM.generation.PvWattsv8.html#reV.SAM.generation.PvWattsv8) from the reV-to-SAM generation interface module. 
 

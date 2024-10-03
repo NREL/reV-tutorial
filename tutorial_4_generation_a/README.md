@@ -23,6 +23,15 @@ You need to change the config file locations for all above entries in the `confi
 - `log_directory`: Path to directory where logs should be written. Path can be relative and does not have to exist on disk (it will be created if missing). In our case, we created the logs at the current directory: `"./logs/"`. 
 - `execution_control`: Dictionary containing execution control arguments. 
 - `log_level`: String representation of desired logger verbosity. Suitable options are "DEBUG" (most verbose), "INFO" (moderately verbose), "WARNING" (only log warnings and errors), and "ERROR" (only log errors).
+- `output_request`: List of output variables requested from SAM. Most of the entries are introduced as in the [config_SAM.json](../tutorial_3_input_builds/1_sam_configs/README.md). Specifically, descriptions of the entries can be found in the link:    
+    <pre>
+    "output_request": [
+      "cf_mean", <a href="https://nrel.github.io/reV/_autosummary/reV.SAM.generation.PvWattsv8.html#reV.SAM.generation.PvWattsv8.cf_mean">🔗</a>
+      "cf_profile", <a href="https://nrel.github.io/reV/_autosummary/reV.SAM.generation.PvWattsv8.html#reV.SAM.generation.PvWattsv8.cf_profile">🔗</a>
+      "lcoe_fcr", <a href="https://nrel.github.io/reV/_autosummary/reV.SAM.econ.LCOE.html#reV.SAM.econ.LCOE.lcoe_fcr">🔗</a>
+      "ghi_mean", <a href="https://www.nrel.gov/grid/solar-resource/solar-glossary.html">🔗</a>
+    ],
+    </pre>
 - `technology`: String indicating which SAM technology to analyze. We use `pvwattsv8`.
 
 After the configurations, to run the generation, simply run the following command in your terminal:
