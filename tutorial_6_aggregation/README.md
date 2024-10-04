@@ -6,7 +6,7 @@ Descriptions to the config entries of the reV aggregation in `config_aggregation
 - `cf_dset`: Dataset name from the reV generation HDF5 output file containing a 1D dataset of mean capacity factor values. This dataset will be mapped onto the high-resolution grid and used to compute the mean capacity factor for non-excluded area. By default, `"cf_mean-means"`.
 - `data_layers`: Dictionary of aggregation data layers of the format below:
     ```json
-    data_layers = {
+    "data_layers" = {
         "output_layer_name": {
             "dset": "layer_name",
             "method": "mean",
@@ -15,9 +15,8 @@ Descriptions to the config entries of the reV aggregation in `config_aggregation
         "another_output_layer_name": {
             "dset": "input_layer_name",
             "method": "mode",
-            # optional "fpath" key omitted
+            "optional "fpath" key omitted"
         },
-        ...
     }
     ```
 - `log_directory`: Same as previous tutorials, the path to directory where logs should be written. By default, `"./logs"`.
@@ -31,6 +30,7 @@ Descriptions to the config entries of the reV aggregation in `config_aggregation
     - capital_cost
     - fixed_operating_cost
     - variable_operating_cost
+    
 If any of these datasets are missing from the reV generation HDF5 output, or if recalc_lcoe is set to False, the mean LCOE will be computed from the data stored under the `lcoe_dset` instead. By default, `True`.
 - `power_density`: Power density value (in MW/km2).
 - `res_class_bins`: Optional input to perform separate aggregations for various resource data ranges. If `None`, only a single aggregation per supply curve point is performed. Otherwise, this input should be a list of floats or ints representing the resource bin boundaries. One aggregation per resource value range is computed, and only pixels within the given resource range are aggregated. By default, `None`.
