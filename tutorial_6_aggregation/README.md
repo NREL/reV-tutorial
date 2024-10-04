@@ -6,8 +6,7 @@ Descriptions to the config entries of the reV aggregation in `config_aggregation
 - `cf_dset`: Dataset name from the reV generation HDF5 output file containing a 1D dataset of mean capacity factor values. This dataset will be mapped onto the high-resolution grid and used to compute the mean capacity factor for non-excluded area. By default, `"cf_mean-means"`.
 - `data_layers`: Dictionary of aggregation data layers of the format below:
     ```json
-    {
-    "data_layers" = {
+    "data_layers": {
         "output_layer_name": {
             "dset": "layer_name",
             "method": "mean",
@@ -18,7 +17,6 @@ Descriptions to the config entries of the reV aggregation in `config_aggregation
             "method": "mode",
             "optional 'fpath' key omitted"
         },
-    }
     }
     ```
 - `log_directory`: Same as previous tutorials, the path to directory where logs should be written. By default, `"./logs"`.
