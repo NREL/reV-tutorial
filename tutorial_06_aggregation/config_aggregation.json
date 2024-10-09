@@ -33,7 +33,7 @@
       "nodes": 1,
       "sites_per_worker": 10
     },
-    "gen_fpath": "../tutorial_4_generation/pipeline/pipeline_multi_year.h5",
+    "gen_fpath": "../tutorial_04_generation/pipeline/pipeline_multi_year.h5",
     "lcoe_dset": "lcoe_fcr-means",
     "power_density": 31.5,
     "res_class_bins": [

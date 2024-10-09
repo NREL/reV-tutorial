@@ -6,8 +6,8 @@
     "groups": {
       "none": {
         "source_files": [
-          "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2012.h5", 
-          "../tutorial_4_generation_a/tutorial_4_generation_a_generation_2013.h5"
+          "../tutorial_04_generation_a/tutorial_04_generation_a_generation_2012.h5", 
+          "../tutorial_04_generation_a/tutorial_04_generation_a_generation_2013.h5"
         ],
         "dsets": [
           "cf_mean",
