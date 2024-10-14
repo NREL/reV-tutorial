@@ -1,7 +1,7 @@
 reV supply-curve
 =================
 
-`reV supply-curve` module computes the transmission costs associated with each supply curve point output by reV supply curve aggregation. Transmission costs can either be computed competitively (where total capacity remaining on the transmission grid is tracked and updated after each new connection) or non-competitively (where the cheapest connections for each supply curve point are allowed regardless of the remaining transmission grid capacity). In both cases, the permutation of transmission costs between supply curve points and transmission grid features should be computed using the [reVX Least Cost Transmission Paths](https://github.com/NREL/reVX/tree/main/reVX/least_cost_xmission) utility. 
+`reV supply-curve` module computes the transmission interconnection costs associated with each supply curve point output by reV supply curve aggregation. Transmission costs can either be computed competitively (where total capacity remaining on the transmission grid is tracked and updated after each new connection) or non-competitively (where the cheapest connections for each supply curve point are allowed regardless of the remaining transmission grid capacity). In both cases, the permutation of transmission costs between supply curve points and transmission grid features should be computed using the [reVX Least Cost Transmission Paths](https://github.com/NREL/reVX/tree/main/reVX/least_cost_xmission) utility. 
 
 Descriptions to the config entries of the reV supply-curve in `config_supply-curve.json` are listed below, following the entry order in the JSON: 
 
