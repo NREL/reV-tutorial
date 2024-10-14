@@ -1,6 +1,6 @@
 # Getting Started - Installing reV
 
-The simplest way to install reV and it's supporting packages ([PySAM](https://github.com/NREL/pysam), [rex](https://github.com/NREL/rex), & [NRWAL](https://github.com/NREL/NRWAL)) is to create a virtual environment and install rev through the nrel channel.
+The simplest way to install reV and it's supporting packages ([PySAM](https://github.com/NREL/pysam), [rex](https://github.com/NREL/rex), & [NRWAL](https://github.com/NREL/NRWAL)) is to create a virtual environment and install rev with pip.
 
 ```
 python3.11 -m venv rev
