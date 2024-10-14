@@ -1,7 +1,6 @@
 """Upload existing geotiffs into a new or existing reV-compatible HDF5 file."""
 import os
 
-
 from reVX.handlers.layered_h5 import LayeredH5
 from reVX.setbacks.setbacks_converter import SetbacksConverter
 
@@ -18,6 +17,7 @@ LAYER_FPATHS = {
  'ri_srtm_slope': 'ri_srtm_slope.tif'
 }
 
+# Dataset descriptions
 LAYER_DESCS = {
  'ri_padus': 'Protected Lands Dataset US.',
  'ri_reeds_regions': 'ReEDS Regions.',
@@ -26,6 +26,8 @@ LAYER_DESCS = {
 }
 
 
+
+# To convert from GeoTiffs to the HDF5 file.
 def geotiffs_to_h5():
     """Upload geotiff to a new or existing h5 file."""
     lh5 = LayeredH5(EXCL_FPATH)
@@ -34,7 +36,7 @@ def geotiffs_to_h5():
         descriptions=LAYER_DESCS
     )
 
-
+# To convert HDF5 datasets back to GeoTiffs
 def h5_to_geotiffs():
     """Pull h5 datasets out as a geotiff."""
     converter = SetbacksConverter(O_EXCL_FPATH)
