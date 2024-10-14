@@ -1,4 +1,4 @@
-Bulding Custom Resource Files
+Resource Files
 ===
 The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is a particular data format that is nicely integrated into the NREL modeling ecosystem but is unique to NREL. In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the `reV` runs. Advanced input building can be found under [tutorial_11_advanced_input_builds](../../tutorial_11_advanced_input_builds/README.md). 
 
@@ -22,9 +22,11 @@ Remote ACCESS to preformatted datasets
 ===
   - NREL Highly Scalable Data Service (`HSDS`) [Examples](https://github.com/NREL/hsds-examples)
 
-Things to do
+Visualization an NSRDB resource file
 ===
+![resource_data_diagram](https://github.com/user-attachments/assets/7b14b266-3e81-4046-b2cb-b97566253b7d)
 
-Show a nice image of a resource array with labels on the axis, point out a site on the x-axis and time period on the y-axis.
-Fastforward to a generation file and point out the same items in it.
-Go back to the meta file and point out the row with that site.
+
+Visualization an NSRDB resource file (Zoom in)
+===
+![resource_data_diagram_soomin](https://github.com/user-attachments/assets/6064d31a-cc45-4569-833c-95a94944ea40)
