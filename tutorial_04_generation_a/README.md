@@ -16,7 +16,7 @@ The `config_gen.json` entries that correspond to the input data created in `tuto
     - Since we are executing `reV` from the command line, this input string can contain brackets `{}` that will be filled in by the `analysis_years` entry (in this case, year 2012 and 2013).
     - Alternatively, this input can be a list of explicit files to process. In this case, the length of the list must match the length of the `analysis_years` input exactly, and the path are assumed to align with the analysis_years (i.e. the first path corresponds to the first analysis year, the second path corresponds to the second analysis year, and so on).
 3) `project_points`: The [project points](../tutorial_03_input_builds/3_project_points/) file location. 
-    - It specifies the geographical locations (lat/lon) where the generation module will be performed. 
+    - It specifies the geographical locations (lat/lon) where the generation module will be performed. This file may also contain spatially-explicit SAM parameters by providing a new column named after the target SAM parameter.
 
 You need to change the config file locations for all above entries in the `config_gen.json`. Other brief descriptions to the entries are listed below: 
 
