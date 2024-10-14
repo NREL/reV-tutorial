@@ -14,7 +14,7 @@ multiple ways:
         add an entry of your own.
   2) Use the SAM GUI to build a system and then export the parameters to a
       JSON file (that reV can then use).
-      - Download [SAM's GUI](https://sam.nrel.gov/download.html)
+      - Download [SAM's GUI](https://sam.nrel.gov/download.html).
       - Open SAM, start a new project, choose your "performance model",
         then choose the specific SAM module, then choose your financial
         model.
@@ -23,11 +23,11 @@ multiple ways:
       - Once you're done, go to the title tab for the project (defaults to
         "untitled"), click the dropdown icon ("⌄"), click "generate code",
         and select "JSON for inputs". Click "OK", download the file, then
-        edit the file to remove ("solar_resource_file") since that will be
+        edit the file to remove the resource file entry since that will be
         handled in reV.
       - This becomes your input for the `sam_files` entry in the following 
-        tutorials' config files. Note that the GUI method will 
-        include many more entries, including default values and labels that are 
+        tutorial's config files. Note that the GUI method will 
+        include many entries, including default values and labels, that are 
         not necessary for reV and will not affect the reV CLI runs. 
         Thus, the SAM config file is tailored to minimum entries 
         for reV to run in the following tutorial folders, 
@@ -35,7 +35,7 @@ multiple ways:
 
 <pre>
 {
-    "array_type": 2, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.array_type">🔗</a>
+    "array_type": 2, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.array_type" target=”_blank” >🔗</a>
     "azimuth": 180, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.azimuth">🔗</a>
     "capital_cost": 39767200, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.capital_cost">🔗</a> 
     "dc_ac_ratio": 1.3, <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">🔗</a> 
