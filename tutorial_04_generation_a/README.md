@@ -20,9 +20,9 @@ The `config_gen.json` entries that correspond to the input data created in `tuto
 
 You need to change the config file locations for all above entries in the `config_gen.json`. Other brief descriptions to the entries are listed below: 
 
-- `log_directory`: Path to directory where logs should be written. Path can be relative and does not have to exist on disk (it will be created if missing). In our case, we created the logs at the current directory: `"./logs/"`. 
+- `log_directory`: Path to directory where logs should be written. Path can be relative and does not have to exist on disk (it will be created if missing). In our case, we created the logs at the current directory: `"./logs/"`. Each log file will be named after the process ID of the job. Information logging and uncaught errors will be writted to a file with the `.o` extension. Warnings and errors will be logged to a separate `.e` file.
 - `execution_control`: Dictionary containing execution control arguments. 
-- `log_level`: String representation of desired logger verbosity. Suitable options are "DEBUG" (most verbose), "INFO" (moderately verbose), "WARNING" (only log warnings and errors), and "ERROR" (only log errors).
+- `log_level`: String representation of desired logger verbosity. Suitable options are "DEBUG" (most verbose) and "INFO" (moderately verbose). 
 - `output_request`: List of output variables requested from SAM. Most of the entries are introduced as in the [config_SAM.json](../tutorial_03_input_builds/1_sam_configs/README.md). Specifically, descriptions of the entries can be found in the link:    
     <pre>
     "output_request": [
