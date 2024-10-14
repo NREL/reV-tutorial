@@ -1,4 +1,4 @@
-# Outline for a video tutorial series - Episode #1
+# Outline for a video tutorial series - Episode #1 (Under Construction)
 
 ## Introducing the reV Model and Defining Technical Potential
 - Introduce ourselves, who we are, where we work, and what we do
