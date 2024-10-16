@@ -26,7 +26,6 @@ LAYER_DESCS = {
 }
 
 
-
 # To convert from GeoTiffs to the HDF5 file.
 def geotiffs_to_h5():
     """Upload geotiff to a new or existing h5 file."""
@@ -35,6 +34,7 @@ def geotiffs_to_h5():
         layers=LAYER_FPATHS,
         descriptions=LAYER_DESCS
     )
+
 
 # To convert HDF5 datasets back to GeoTiffs
 def h5_to_geotiffs():
