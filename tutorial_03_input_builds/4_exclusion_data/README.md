@@ -41,6 +41,7 @@ Deployment System Regions ("ri_reeds_regions.tif").
 - [Human Settlement](https://human-settlement.emergency.copernicus.eu): 
 Global Human Settlement Layer ("ri_smod.tif"). 
 - **Elevation**: SRTM-derived slope ("ri_srtm_slope.tif"). 
+
 Other exclusion data may include urban areas that are heavily developed or 
 urbanized, infrastructures that are unsuitable for development, etc. 
 
@@ -49,13 +50,3 @@ such as creation date, source, citation, etc., to each dataset
 using the `h5py` library. To learn more information on `h5py` and its uses,  
 please see the [h5py help doc](https://docs.h5py.org/en/stable/quick.html#core-concepts).
 
-
-
-Things to do (x)
-===
-- Describe generally what the format is (An HDF5 collection of arrays with attribute information)
-- Describe how you start with GeoTiffs
-- The data in the GeoTiff can represent anything, you'll handle how to interpret the values
-  in a later configuration file
-- Describe how reVX already has methods that handle the conversion and link to it.
-- Also describe how you can any number of descriptive attributes to each dataset using H5py (creation date, source, citation, etc.)
