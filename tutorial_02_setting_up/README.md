@@ -14,12 +14,12 @@ python3.11 -m venv rev
 source rev/bin/activate
 git clone https://github.com/NREL/reV.git
 cd reV
-python -m pip install .
+python3.11 -m pip install .
 ```
 
-If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python -m pip install .` above with 
+If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python3.11 -m pip install .` above with 
 ```
-python -m pip install -e .
+python3.11 -m pip install -e .
 ```
 
 Finally, to make sure that the reV CLIs are working, simply type the ```reV``` command into your terminal. If it was successfully installed you will see a printout of a help file showing the command format and a brief description of all the reV modules:
