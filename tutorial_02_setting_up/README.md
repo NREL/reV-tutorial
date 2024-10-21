@@ -3,15 +3,15 @@
 The simplest way to install reV and it's supporting packages ([PySAM](https://github.com/NREL/pysam), [rex](https://github.com/NREL/rex), & [NRWAL](https://github.com/NREL/NRWAL)) is to create a virtual environment and install rev with pip.
 
 ```
-python3.11 -m venv rev
-source rev/bin/activate
+python3.11 -m venv rev-env
+source rev-env/bin/activate
 pip install NREL-reV
 ```
 
 You can also clone the repository and install directly from there. To use the ssh address (as below) and avoid having to enter your username and password, use this [guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
 ```
-python3.11 -m venv rev
-source rev/bin/activate
+python3.11 -m venv rev-env
+source rev-env/bin/activate
 git clone https://github.com/NREL/reV.git
 cd reV
 python3.11 -m pip install .
@@ -54,7 +54,7 @@ Commands:
 
 # Testing the installation
 
-Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems. If you have a different OS or would like to double check that the all of the tests pass in your set up, use the GitHub repository method described above, and 
+Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems. If you have a different OS or would like to double check that the all of the tests pass in your set up, use the GitHub repository method and the developer's installation method described above, and 
 ```
 cd reV/tests/
 pip install pytest
