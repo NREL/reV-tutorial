@@ -57,7 +57,7 @@ Commands:
 Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems. If you have a different OS or would like to double check that the all of the tests pass in your set up, use the GitHub repository method described above, and 
 ```
 cd reV/tests/
-python3.11 -m pip install pytest
+pip install pytest
 pytest .
 ```
 This takes quite some time, so it's best if you have something else to do for a while.
