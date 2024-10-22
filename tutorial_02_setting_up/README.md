@@ -18,7 +18,7 @@ cd reV
 python3 -m pip install .
 ```
 
-If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python3.11 -m pip install .` above with 
+If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python3 -m pip install .` above with 
 ```
 python3 -m pip install -e .
 ```
