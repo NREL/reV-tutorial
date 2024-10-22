@@ -4,23 +4,23 @@ The simplest way to install reV and it's supporting packages ([PySAM](https://gi
 
 ```
 mkdir -p ~/envs
-python3.11 -m venv rev
-source envs/rev/bin/activate
+python3 -m venv ~/envs/rev
+source ~/envs/rev/bin/activate
 pip install NREL-reV
 ```
 
 You can also clone the repository and install directly from there. To use the ssh address (as below) and avoid having to enter your username and password, use this [guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
 ```
-python3.11 -m venv rev
-source envs/rev/bin/activate
+python3 -m venv ~/rev
+source ~/envs/rev/bin/activate
 git clone https://github.com/NREL/reV.git
 cd reV
-python3.11 -m pip install .
+python3 -m pip install .
 ```
 
 If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python3.11 -m pip install .` above with 
 ```
-python3.11 -m pip install -e .
+python3 -m pip install -e .
 ```
 
 Finally, to make sure that the reV CLIs are working, simply type the ```reV``` command into your terminal. If it was successfully installed you will see a printout of a help file showing the command format and a brief description of all the reV modules:
