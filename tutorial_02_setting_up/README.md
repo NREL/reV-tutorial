@@ -11,7 +11,7 @@ pip install NREL-reV
 
 You can also clone the repository and install directly from there. To use the ssh address (as below) and avoid having to enter your username and password, use this [guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). We suggest not installing `reV` directly in your home directory to avoid name conflicts with the cli command.
 ```
-python3 -m venv ~/rev
+python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
 mkdir -p ~/github && cd ~/github
 git clone https://github.com/NREL/reV.git
