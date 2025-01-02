@@ -29,7 +29,7 @@ You need to change the config file locations for all above entries in the `confi
       "cf_mean", <a href="https://nrel.github.io/reV/_autosummary/reV.SAM.generation.PvWattsv8.html#reV.SAM.generation.PvWattsv8.cf_mean">🔗</a>
       "cf_profile", <a href="https://nrel.github.io/reV/_autosummary/reV.SAM.generation.PvWattsv8.html#reV.SAM.generation.PvWattsv8.cf_profile">🔗</a>
       "lcoe_fcr", <a href="https://nrel.github.io/reV/_autosummary/reV.SAM.econ.LCOE.html#reV.SAM.econ.LCOE.lcoe_fcr">🔗</a>
-      "ghi_mean", <a href="https://www.nrel.gov/grid/solar-resource/solar-glossary.html">🔗</a>
+      "ghi_mean", <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.Outputs.gh">🔗</a>
     ],
     </pre>
 - `technology`: String indicating which SAM technology to analyze. We use `pvwattsv8`.
