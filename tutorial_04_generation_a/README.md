@@ -34,7 +34,11 @@ You need to change the config file locations for all above entries in the `confi
     </pre>
 - `technology`: String indicating which SAM technology to analyze. We use `pvwattsv8`.
 
-After the configurations, to run the generation, simply run the following command in your terminal:
+Note that the "_mean" in the output requests (for example, in the `cf_mean`) typically indicates time-averaged results calculated by SAM. 
+
+Before running the first reV generation module, it is essential to readdress the relationship between `reV` and `SAM` to better understand the interplay mechanism of these two systems. The `reV` modeling framework acts as a high-level pipeline, utlizing `SAM` for detailed performance and financial modeling of renewable energy systems. 
+
+Finally, to run the generation, simply run the following command in your terminal:
 
 ```console
 reV generation -c config_gen.json
