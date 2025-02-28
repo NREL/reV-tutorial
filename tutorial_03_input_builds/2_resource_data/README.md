@@ -1,6 +1,6 @@
 Resource Files
 ===
-The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is a particular data format that is nicely integrated into the NREL modeling ecosystem but is unique to NREL. In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the `reV` runs. Advanced input building can be found under [tutorial_11_advanced_input_builds](../../tutorial_11_advanced_input_builds/README.md). 
+The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is a particular data format that is nicely integrated into the NREL modeling ecosystem but is unique to NREL. In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_11_advanced_input_builds](../../tutorial_11_advanced_input_builds/README.md). 
 
 The Format
 ===
