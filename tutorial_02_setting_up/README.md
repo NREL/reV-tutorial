@@ -19,7 +19,8 @@ cd reV
 python3 -m pip install .
 ```
 
-If you would prefer a developer's installation so that reV will pick up changes directly from the repository files, replace `python3 -m pip install .` above with 
+If you prefer an editable mode, which allows modifications to the source code without needing to reinstall the package, you can replace `python3 -m pip install .` above with: 
+
 ```
 python3 -m pip install -e .
 ```
