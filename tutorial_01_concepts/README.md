@@ -1,16 +1,32 @@
 # Outline for a video tutorial series - Episode #1 (Under Construction)
-The goals of this tutorial:
-- (1) Get you familiarized with the idea of renewable energy potentials and their assessments
-- (2) Develop fundamental understanding of technical potential and reV (renewable energy potential) model
+### The goals of this tutorial: 
+- Get you familiarized with the idea of renewable energy potentials and their assessments
+- Develop fundamental understanding of technical potential and reV (renewable energy potential) model
 
 ### Geospatial Data Science – Who we are, what we do?
-NREL's geospatial data science research uses geographic information systems (GIS) to produce maps, analyses, models, applications, and visualizations that inform energy planning and production. 
+NREL's geospatial data science research uses geographic information systems (GIS) to produce maps, analyses, models, applications, and visualizations that inform energy planning and production. The tutorial series are led by:  
 - Travis Williams, Researcher – III, GDS group
 - Chinna Subbaraya Siddharth (Sid) Ramavajjala, Researcher - II, GDS group 
 
+### Renewables Vs. Non-renewables
+We’ll try to understand how energy assessments happen across energy spectrum – renewables vs. oil & gas. Therefore, how to define resource potential is important. The energy generator has to be in the same place where there is resource availability. Therefore, understanding where the resource is available and how much is it available bring is the starting point to any kind of energy analysis.
+
+What is a resource?
+- Resource is the input utilized for energy generation (electricity) by a generator (Wind Turbine, Solar Panel, Steam Turbine etc.)
+Renewable energy is a site-specific resource and cannot be transported elsewhere for energy generation. Non-renewables like Crude oil, Natural gas, Coal are not site-specific resources, and they can be transported to a generation site.
+
+Renewable Energy Assessments - Levels of Potential
+![re_potential_cirlces_diagram](https://github.com/user-attachments/assets/ae2aff1c-6117-4977-8f7f-a686a147b6a7)
+Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024). 
+
+### Resource Potential
+The resource potential is the theoretical availability of renewable energy across an area is resource potential. It quantifies the energy content of a resource at specific location. There are two resource datasets developed at NREL for understanding solar resource potential and wind resource potential:
+- National Solar Radiation Database (NSRDB) for solar (Sengupta et al. 2018)
+- Wind Integrated National Dataset Toolkit (WTK) for wind (Draxl et al. 2015)
+
 
 ### Introducing the reV Model and Defining Technical Potential
-- Before talk about the model, we need introduce the idea of technical potential
+- The idea of technical potential
     - Define tech pot (reV 2019 & reV 2023 reports).
         - Technical potential is a measure of resource potential (i.e., capacity) that could be developed based on assumptions of the developable land area defined by the user; in other words, how much renewable energy capacity could be developed in a given land area after accounting for land exclusions predefined by the user. 
         - For example, the user can limit development by land ownership, terrain, land use/cover, and urban areas, as well as other custom inputs.
@@ -57,10 +73,7 @@ Resource Data - National Wind Database
 ![wtk_coverage_map_042024](https://github.com/user-attachments/assets/302cf3e2-aaf4-407d-8172-a175ec0e6c60)
 
 
-Renewable Energy Assessments - Levels of Potential
-![re_potential_cirlces_diagram](https://github.com/user-attachments/assets/ae2aff1c-6117-4977-8f7f-a686a147b6a7)
 
-Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024). 
 
 
 Oil and Gas Energy Assessments - Levels of Potential 
