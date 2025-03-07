@@ -1,11 +1,15 @@
 # Outline for a video tutorial series - Episode #1 (Under Construction)
+The goals of this tutorial:
+- (1) Get you familiarized with the idea of renewable energy potentials and their assessments
+- (2) Develop fundamental understanding of technical potential and reV (renewable energy potential) model
 
-## Introducing the reV Model and Defining Technical Potential
-- The goals of this tutorial: to get you familiarized with the idea of renewable energy potentials and their assessments
-- To develop fundamental understanding of technical potential and reV (renewable energy potential) model
+### Geospatial Data Science – Who we are, what we do?
+NREL's geospatial data science research uses geographic information systems (GIS) to produce maps, analyses, models, applications, and visualizations that inform energy planning and production. 
+- Travis Williams, Researcher – III, GDS group
+- Chinna Subbaraya Siddharth (Sid) Ramavajjala, Researcher - II, GDS group 
 
-- Geospatial Data Science – Who we are, what we do ?
 
+### Introducing the reV Model and Defining Technical Potential
 - Before talk about the model, we need introduce the idea of technical potential
     - Define tech pot (reV 2019 & reV 2023 reports).
         - Technical potential is a measure of resource potential (i.e., capacity) that could be developed based on assumptions of the developable land area defined by the user; in other words, how much renewable energy capacity could be developed in a given land area after accounting for land exclusions predefined by the user. 
