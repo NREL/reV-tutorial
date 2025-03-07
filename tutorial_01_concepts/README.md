@@ -32,8 +32,8 @@ The resource potential is the theoretical availability of renewable energy acros
 *Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024).* 
 
 
-### Technical Potential
-## Define technical potential
+## Technical Potential
+### Define technical potential
 - Technical potential refers to the maximum amount of capacity and generation possible in an area, given physical, technological and regulatory constraints (refer to reV 2019 & reV 2023 reports)
 - Technical potential is a measure of resource potential that could be developed based on assumptions of the developable area defined by the user
     - For example, the user can limit development by land ownership, terrain, land use/cover, and urban areas, as well as other custom inputs
