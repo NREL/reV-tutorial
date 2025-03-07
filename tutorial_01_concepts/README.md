@@ -1,8 +1,11 @@
 # Outline for a video tutorial series - Episode #1 (Under Construction)
 
 ## Introducing the reV Model and Defining Technical Potential
-- Introduce ourselves, who we are, where we work, and what we do
-- One of the main responsibility of GDS is the reV model, which is why you're here, etc.
+- The goals of this tutorial: to get you familiarized with the idea of renewable energy potentials and their assessments
+- To develop fundamental understanding of technical potential and reV (renewable energy potential) model
+
+- Geospatial Data Science – Who we are, what we do ?
+
 - Before talk about the model, we need introduce the idea of technical potential
     - Define tech pot (reV 2019 & reV 2023 reports).
         - Technical potential is a measure of resource potential (i.e., capacity) that could be developed based on assumptions of the developable land area defined by the user; in other words, how much renewable energy capacity could be developed in a given land area after accounting for land exclusions predefined by the user. 
@@ -13,7 +16,7 @@
 
     - Ideally, we'll convince Galen or Donna or Anthony to make a guest appearance and describe their thought process when they developed the technical potential analysis approach...this could also lead directly into the Model
 
-- Introduce the reV model
+- One of the main responsibility of GDS is the renewable energy potential a.k.a reV model. What is it? 
     - Background info about reV
         - Why it's called reV? It's a short for The Renewable Energy Potential (reV)
         - reV is an open-source geospatial platform for assessing system performance, available capacity, distance to transmission, and total costs for potential solar and wind energy deployment at regional to continental scales.
