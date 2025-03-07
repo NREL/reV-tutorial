@@ -45,11 +45,11 @@ The resource potential is the theoretical availability of renewable energy acros
 *Oil and Gas Energy Assessments - Levels of Potential*
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8c1592e6-5a45-4c3e-a254-e6e59e01ab71" style="max-width: 100%; height: auto;">
+  <img src="https://github.com/user-attachments/assets/8c1592e6-5a45-4c3e-a254-e6e59e01ab71" width="600">
 </p>
 
 <!-- ![oil_gas_potential_cirlces_diagram](https://github.com/user-attachments/assets/8c1592e6-5a45-4c3e-a254-e6e59e01ab71) -->
-*Source: U.S. Energy Information Administration ([2014](https://www.eia.gov/todayinenergy/detail.php?id=17151)).*
+<p align="center">*Source: U.S. Energy Information Administration ([2014](https://www.eia.gov/todayinenergy/detail.php?id=17151)).*</p>
 
 
 Ideally, we'll convince Galen or Donna or Anthony to make a guest appearance and describe their thought process when they developed the technical potential analysis approach...this could also lead directly into the Model
