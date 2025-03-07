@@ -16,14 +16,19 @@ What is a resource?
 Renewable energy is a site-specific resource and cannot be transported elsewhere for energy generation. Non-renewables like Crude oil, Natural gas, Coal are not site-specific resources, and they can be transported to a generation site.
 
 ![re_potential_cirlces_diagram](https://github.com/user-attachments/assets/ae2aff1c-6117-4977-8f7f-a686a147b6a7)
-**Figure 1.** Renewable Energy Assessments - Levels of Potential.  
+*Renewable Energy Assessments - Levels of Potential.*
 *Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024).* 
  <!-- [Reference or URL](https://example.com) -->
 
 ### Resource Potential
 The resource potential is the theoretical availability of renewable energy across an area is resource potential. It quantifies the energy content of a resource at specific location. There are two resource datasets developed at NREL for understanding solar resource potential and wind resource potential:
 - National Solar Radiation Database (NSRDB) for solar (Sengupta et al. 2018)
+![nsrdb_coverage_map_042024](https://github.com/user-attachments/assets/a3b7778d-b126-46ef-91d1-73a2447aa216)
+*Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024).* 
+
 - Wind Integrated National Dataset Toolkit (WTK) for wind (Draxl et al. 2015)
+![wtk_coverage_map_042024](https://github.com/user-attachments/assets/302cf3e2-aaf4-407d-8172-a175ec0e6c60)
+*Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024).* 
 
 
 ### Introducing the reV Model and Defining Technical Potential
@@ -66,22 +71,9 @@ The resource potential is the theoretical availability of renewable energy acros
 
 ## Images to be assimilated
 
-Resource Data - National Solar Radiation Database
-![nsrdb_coverage_map_042024](https://github.com/user-attachments/assets/a3b7778d-b126-46ef-91d1-73a2447aa216)
-
-
-Resource Data - National Wind Database
-![wtk_coverage_map_042024](https://github.com/user-attachments/assets/302cf3e2-aaf4-407d-8172-a175ec0e6c60)
-
-
-
-
-
 Oil and Gas Energy Assessments - Levels of Potential 
 ![oil_gas_potential_cirlces_diagram](https://github.com/user-attachments/assets/8c1592e6-5a45-4c3e-a254-e6e59e01ab71)
-
 Source: U.S. Energy Information Administration (2014). https://www.eia.gov/todayinenergy/detail.php?id=17151.
-
 
 NREL Modeling Ecosystem
 ![seac_ecosystem](https://github.com/user-attachments/assets/74ceb6cc-9b2f-463a-84cf-873abe6f673e)
