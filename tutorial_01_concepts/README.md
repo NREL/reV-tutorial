@@ -15,9 +15,10 @@ What is a resource?
 - Resource is the input utilized for energy generation (electricity) by a generator (Wind Turbine, Solar Panel, Steam Turbine etc.)
 Renewable energy is a site-specific resource and cannot be transported elsewhere for energy generation. Non-renewables like Crude oil, Natural gas, Coal are not site-specific resources, and they can be transported to a generation site.
 
-Renewable Energy Assessments - Levels of Potential
 ![re_potential_cirlces_diagram](https://github.com/user-attachments/assets/ae2aff1c-6117-4977-8f7f-a686a147b6a7)
-Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024). 
+**Figure 1.** Renewable Energy Assessments - Levels of Potential.  
+*Source: Geospatial Data Science Group - National Renewable Energy Laboratory (2024).* 
+ <!-- [Reference or URL](https://example.com) -->
 
 ### Resource Potential
 The resource potential is the theoretical availability of renewable energy across an area is resource potential. It quantifies the energy content of a resource at specific location. There are two resource datasets developed at NREL for understanding solar resource potential and wind resource potential:
