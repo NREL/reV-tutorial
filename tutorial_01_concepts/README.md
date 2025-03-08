@@ -1,15 +1,16 @@
-# Outline for a video tutorial series - Episode #1 (Under Construction)
+# Outline for a video tutorial series - Episode #1: The Concept of Technical Potential (Under Construction)
 ## The Goals 
-- Get you familiarized with the idea of renewable energy potentials and their assessments
-- Develop fundamental understanding of technical potential and reV (renewable energy potential) model
+- Get you familiarized with the idea of renewable energy technical potential.
+- Develop fundamental understanding of technical potential and Renewable Energy Potential model (reV).
 
 ## Geospatial Data Science – Who we are? What we do?
-NREL's geospatial data science research uses geographic information systems (GIS) to produce maps, analyses, models, applications, and visualizations that inform energy planning and production. The tutorial series are led by:  
+NREL's Geospatial Data Science research group (GDS) uses geographic information systems (GIS) to produce maps, analyses, models, applications, and visualizations that inform energy planning and production. reV is one of the main tool that GDS uses. The tutorial series are led by:  
 - Travis Williams, Researcher – III, GDS group
-- Chinna Subbaraya Siddharth (Sid) Ramavajjala, Researcher - II, GDS group 
+- Chinna Subbaraya Siddharth (Sid) Ramavajjala, Researcher - II, GDS group
+- Andrew Wang - GDS Intern
 
 ## Renewables Vs. Non-renewables
-We’ll try to understand how energy assessments happen across energy spectrum – renewables vs. oil & gas. Therefore, how to define resource potential is important. The energy generator has to be in the same place where there is resource availability. Therefore, understanding where the resource is available and how much is it available bring is the starting point to any kind of energy analysis.
+We’ll try to understand how energy assessments happen across the energy spectrum – renewables vs. oil & gas. Therefore, how to define resource potential is important. The energy generator has to be in the same place where there is resource availability. Therefore, understanding where the resource is available and how much is available brings us to the starting point to any kind of energy analysis.
 
 ### What is a resource?
 - Resource is the input utilized for energy generation (electricity) by a generator (Wind Turbine, Solar Panel, Steam Turbine etc.)
