@@ -1,7 +1,8 @@
 # Getting Started - Installing reV
 
-The simplest way to install reV and it's supporting packages ([PySAM](https://github.com/NREL/pysam), [rex](https://github.com/NREL/rex), & [NRWAL](https://github.com/NREL/NRWAL)) is to create a virtual environment and install rev with pip.
+Installation instructions are outlined in the reV repository, but we'll review them here to make sure you get it. The simplest way to install reV and it's supporting packages ([PySAM](https://github.com/NREL/pysam), [rex](https://github.com/NREL/rex), [reVX](https://github.com/NREL/reVX), & [NRWAL](https://github.com/NREL/NRWAL)) is to create a virtual environment and install rev with pip. This requires a Python 3 installation, which uses a different process for each operating system. In case you need help with that, OS-dependent installation instructions can be found [here](https://wiki.python.org/moin/BeginnersGuide/Download).
 
+Unix:
 ```
 mkdir -p ~/envs
 python3 -m venv ~/envs/rev
@@ -9,7 +10,15 @@ source ~/envs/rev/bin/activate
 pip install NREL-reV
 ```
 
-You can also clone the repository and install directly from there. To use the ssh address (as below) and avoid having to enter your username and password, use this [guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). We suggest not installing `reV` directly in your home directory to avoid name conflicts with the cli command.
+Windows:
+```
+mkdir -p ~/envs
+python3 -m venv ~/envs/rev
+.\env\Scripts\activate.bat
+pip install NREL-reV
+```
+
+You can also clone the repository and install directly from there. To use the ssh address (as below) and avoid having to enter your username and password, use this [guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). We suggest not installing `reV` directly in your home directory to avoid name conflicts with the cli command. Here is an example set of unix-commands 
 ```
 python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
