@@ -1,0 +1,43 @@
+{
+    "execution_control": {
+        "option": "local",
+        "qos": "normal",
+        "memory": null,
+        "nodes": 1,
+        "queue": null,
+        "feature": null,
+        "conda_env": null,
+        "module": null,
+        "sh_script": null,
+        "num_test_nodes": null,
+        "max_workers": 1,
+        "sites_per_worker": null,
+        "memory_utilization_limit": 0.4,
+        "timeout": 1800,
+        "pool_size": null
+    },
+    "log_directory": "./logs",
+    "log_level": "INFO",
+    "technology": "pvwattsv8",
+    "project_points": "./project_points_nsrdb_colorado.csv",
+    "sam_files": {"default": "./config_sam.json"},
+    "resource_file": [
+        "s3://nrel-pds-nsrdb/current/nsrdb_2021.h5",
+        "s3://nrel-pds-nsrdb/current/nsrdb_2022.h5"
+    ],
+    "low_res_resource_file": null,
+    "output_request": [
+        "cf_mean"
+    ],
+    "site_data": null,
+    "curtailment": null,
+    "gid_map": null,
+    "drop_leap": false,
+    "scale_outputs": true,
+    "write_mapped_gids": false,
+    "bias_correct": null,
+    "analysis_years": [
+        2021,
+        2022
+    ]
+}

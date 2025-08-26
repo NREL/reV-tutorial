@@ -35,35 +35,13 @@ PARAMETERS = {
     "res_fpath": None,
     "state": None
 }
-SAMPLE_RES_FPATH = "/nrel/wtk/conus/wtk_conus_2012.h5"
+SAMPLE_RES_FPATH = "/nrel/wtk/conus/wtk_conus_2011.h5"
 SAMPLE_STATE = "Colorado"
-SAMPLE_DST = HOME.joinpath("wtk_conus_colorado_2012.h5")
+SAMPLE_DST = HOME.joinpath("wtk_conus_colorado_2011.h5")
 
 
-def get_hsds_args():
-    """Read in HSDS configuration arguments."""
-    args = {}
-    with open(Path("~/.hscfg").expanduser(), "r") as r:
-        for line in r.readlines():
-            key, value = line.split(" = ")
-            value = value.replace("\n", "")
-            key = key.replace("hs_", "")
-            args[key] = value
-    return args
-
-
-def get_params():
-    """Collect user arguments."""
-    params = PARAMETERS.copy()
-    if len(ARGS) > len(PARAMETERS) + 1:
-        raise KeyError("Too many arguments.")
-    for i, arg in enumerate(ARGS[1:]):
-        key = list(params)[i]
-        params[key] = arg
-    return params
-
-
-def get(res_fpath, dst, state=None, overwrite=False):
+def get(res_fpath, dst, state=None, overwrite=False, ncpu=None,
+        sites_per_cpu=None):
     """Get the resource data, subset, and write to file.
 
     Parameters
@@ -77,6 +55,13 @@ def get(res_fpath, dst, state=None, overwrite=False):
         states.
     overwrite : bool
         Overwrite file and rewrite datasets, defaults to False.
+    ncpu : int
+        How many cpu workers to use. Defaults to None, which triggers all
+        availabile cores.
+    sites_per_cpu : int
+        How many sites to read in per individual worker. Defaults to None,
+        which chooses the minimum between 5,000 sites (an apparent maximum for
+        this data) or an even distribution of all sites between each worker.
     """
     # Infer appropriate mode
     mode = "w"
@@ -118,12 +103,14 @@ def get(res_fpath, dst, state=None, overwrite=False):
                 if key not in target:
                     print(f"Writing {key} to {dst}...")
                     try:
-                        data = get_dataset(res_fpath, key, idx)
+                        data = get_dataset(res_fpath, key, idx, ncpu,
+                                           sites_per_cpu)
                     except Exception as e:
                         try:
                             print(f"Error on {res_fpath}/{key} ({e}), "
                                   "trying again...")
-                            data = get_dataset(res_fpath, key, idx)
+                            data = get_dataset(res_fpath, key, idx, ncpu,
+                                               sites_per_cpu)
                         except Exception as e:
                             msg = f"Can't read {key} from {res_fpath}: {e}."
                             raise Exception(msg)
@@ -157,7 +144,7 @@ def _get_chunk(res_fpath, key, cidx):
     return data
 
 
-def get_dataset(res_fpath, key, idx):
+def get_dataset(res_fpath, key, idx, ncpu=None, sites_per_cpu=None):
     """Retrieve data from an open HDF5 file.
 
     Parameters
@@ -168,6 +155,13 @@ def get_dataset(res_fpath, key, idx):
         Target dataset name.
     idx : np.array
         Target index positions (optional).
+    ncpu : int
+        How many cpu workers to use. Defaults to None, which triggers all
+        availabile cores.
+    sites_per_cpu : int
+        How many sites to read in per individual worker. Defaults to None,
+        which chooses the minimum between 5,000 sites (an apparent maximum for
+        this data) or an even distribution of all sites between each worker.
 
     Returns
     -------
@@ -175,12 +169,16 @@ def get_dataset(res_fpath, key, idx):
         A 2D array of target data. Time on the first axis, location on second.
     """
     # We appear to be limited to around 5,000 sites at a time
-    n = len(idx) // 2_000
+    if not ncpu:
+        ncpu = os.cpu_count()
+    if not sites_per_cpu:
+        sites_per_cpu = min(len(idx) // ncpu, 5_000)
+    n = len(idx) // sites_per_cpu
     cidx = np.array_split(idx, n)
 
     # Read data in chunks
     data = []
-    with ProcessPoolExecutor(5) as pool:
+    with ProcessPoolExecutor(ncpu) as pool:
         jobs = [pool.submit(_get_chunk, res_fpath, key, cid) for cid in cidx]
         for job in tqdm(jobs):
             data.append(job.result())
@@ -191,14 +189,52 @@ def get_dataset(res_fpath, key, idx):
     return data
 
 
-def main(overwrite=False):
-    """Read, subset, and write target NREL resource data."""
+def get_hsds_args():
+    """Read in HSDS configuration arguments."""
+    args = {}
+    with open(Path("~/.hscfg").expanduser(), "r") as r:
+        for line in r.readlines():
+            key, value = line.split(" = ")
+            value = value.replace("\n", "")
+            key = key.replace("hs_", "")
+            args[key] = value
+    return args
+
+
+def get_params():
+    """Collect user arguments."""
+    params = PARAMETERS.copy()
+    if len(ARGS) > len(PARAMETERS) + 1:
+        raise KeyError("Too many arguments.")
+    for i, arg in enumerate(ARGS[1:]):
+        key = list(params)[i]
+        params[key] = arg
+    return params
+
+
+def main(overwrite=False, ncpu=None, sites_per_cpu=None):
+    """Read, subset, and write target NREL resource data.
+
+    Parameters
+    ----------
+    overwrite : bool
+        Overwrite file and rewrite datasets, defaults to False.
+    ncpu : int
+        How many cpu workers to use. Defaults to None, which triggers all
+        availabile cores.
+    sites_per_cpu : int
+        How many sites to read in per individual worker. Defaults to None,
+        which chooses the minimum between 5,000 sites (an apparent maximum for
+        this data) or an even distribution of all sites between each worker.
+    """
     # Start timer
     start = time.time()
 
     # Get user parameters
     params = get_params()
     params["overwrite"] = overwrite  # move to args
+    params["ncpu"] = ncpu
+    params["sites_per_cpu"] = sites_per_cpu
 
     # Use user parameters or examples
     if params["dst"] is None:
@@ -228,4 +264,6 @@ if __name__ == "__main__":
     dst = SAMPLE_DST
     state = SAMPLE_STATE
     overwrite = False
-    main(overwrite=overwrite)
+    ncpu = 12
+    sites_per_cpu = None
+    main(overwrite=overwrite, sites_per_cpu=sites_per_cpu, ncpu=ncpu)

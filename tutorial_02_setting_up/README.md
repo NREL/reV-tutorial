@@ -18,7 +18,7 @@ python3 -m venv ~/envs/rev
 pip install NREL-reV
 ```
 
-You can also clone the repository and install directly from there. To use the ssh address (as below) and avoid having to enter your username and password, use this [guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). We suggest not installing `reV` directly in your home directory to avoid name conflicts with the cli command. Here is an example set of unix-commands 
+You can also clone the repository and install directly from there. We suggest not installing `reV` directly in your home directory to avoid name conflicts with the cli command. Here is an example set of unix-commands.
 ```
 python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
@@ -66,13 +66,13 @@ Commands:
 
 # Testing the installation
 
-Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems. If you have a different OS or would like to double check that the all of the tests pass in your set up, use the GitHub repository method and the developer's installation method described above, and 
+Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems, though Windows may cause some issues. If you have a different OS or would like to double check that the all of the tests pass in your set up, use the GitHub repository method and the developer's installation method described above, and 
 ```
 cd reV/tests/
 pip install pytest
 pytest .
 ```
-This takes quite some time, so it's best if you have something else to do for a while.
+This takes quite some time, (particularly `test_bespoke.py`) so it's best if you have something else to do for a while.
 
 
 # All done?
