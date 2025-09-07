@@ -18,7 +18,7 @@ python3 -m venv ~/envs/rev
 pip install NREL-reV
 ```
 
-You can also clone the repository and install directly from there. We suggest not installing `reV` directly in your home directory to avoid name conflicts with the cli command. Here is an example set of unix-commands.
+You can also clone the repository and install directly from there. Here is an example set of unix-commands.
 ```
 python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
