@@ -4,7 +4,7 @@ Installation instructions are outlined in the reV repository, but we'll review t
 
 Unix:
 ```
-mkdir -p ~/envs
+mkdir ~/envs
 python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
 pip install NREL-reV
@@ -12,7 +12,7 @@ pip install NREL-reV
 
 Windows:
 ```
-mkdir -p ~/envs
+mkdir ~/envs
 python3 -m venv ~/envs/rev
 .\env\Scripts\activate.bat
 pip install NREL-reV
@@ -22,7 +22,7 @@ You can also clone the repository and install directly from there. Here is an ex
 ```
 python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
-mkdir -p ~/github && cd ~/github
+mkdir ~/github && cd ~/github
 git clone https://github.com/NREL/reV.git
 cd reV
 python3 -m pip install .
