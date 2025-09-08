@@ -1,6 +1,6 @@
 # Getting Started - Installing reV
 
-Installation instructions are outlined in the reV repository ([reV](https://github.com/NREL/reV)), but we'll review them here to make sure you get it. The simplest way to install reV and it's two main dependencies ([PySAM](https://github.com/NREL/pysam) and [rex](https://github.com/NREL/rex)) is to create a virtual environment and install rev with pip. This requires a Python 3 installation, which uses a different process for each operating system. In case you need help with that, OS-dependent installation instructions can be found [here](https://wiki.python.org/moin/BeginnersGuide/Download).
+Installation instructions are outlined in the reV repository ([reV](https://github.com/NREL/reV){:target="_blank"}), but we'll review them here to make sure you get it. The simplest way to install reV and it's two main dependencies ([PySAM](https://github.com/NREL/pysam) and [rex](https://github.com/NREL/rex)) is to create a virtual environment and install rev with pip. This requires a Python 3 installation, which uses a different process for each operating system. In case you need help with that, OS-dependent installation instructions can be found [here](https://wiki.python.org/moin/BeginnersGuide/Download).
 
 Unix:
 ```bash
@@ -66,10 +66,11 @@ Commands:
 
 # Activate the reV environment as an alias
 
-For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc`) to call the reV activation command. Here, you can either use any text editor (nan, vim, vscode, etc.) or you can append the alias setting command directly to the end of the file:
+For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc`) to call the reV activation command. Here, you can either use any text editor (nan, vim, vscode, etc.) or you can append the alias setting command directly to the end of the file with the following commands:
 
 ```bash
 echo "alias rev=source ~/envs/rev/bin/activate" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 # Testing the installation
