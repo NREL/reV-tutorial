@@ -3,7 +3,7 @@
 Installation instructions are outlined in the reV repository ([reV](https://github.com/NREL/reV)), but we'll review them here to make sure you get it. The simplest way to install reV and it's two main dependencies ([PySAM](https://github.com/NREL/pysam) and [rex](https://github.com/NREL/rex)) is to create a virtual environment and install rev with pip. This requires a Python 3 installation, which uses a different process for each operating system. In case you need help with that, OS-dependent installation instructions can be found [here](https://wiki.python.org/moin/BeginnersGuide/Download).
 
 Unix:
-```
+```bash
 mkdir ~/envs
 python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
@@ -11,7 +11,7 @@ pip install NREL-reV
 ```
 
 Windows:
-```
+```bash
 mkdir ~/envs
 python3 -m venv ~/envs/rev
 .\env\Scripts\activate.bat
@@ -19,7 +19,7 @@ pip install NREL-reV
 ```
 
 You can also clone the repository and install directly from there. Here is an example set of unix-commands.
-```
+```bash
 python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
 mkdir ~/github && cd ~/github
@@ -30,13 +30,13 @@ python3 -m pip install .
 
 If you prefer an editable mode, which allows modifications to the source code without needing to reinstall the package, you can replace `python3 -m pip install .` above with: 
 
-```
+```bash
 python3 -m pip install -e .
 ```
 
 Finally, to make sure that the reV CLIs are working, simply type the ```reV``` command into your terminal. If it was successfully installed you will see a printout of a help file showing the command format and a brief description of all the reV modules:
 
-```
+```bash
 Usage: reV [OPTIONS] COMMAND [ARGS]...
 
   reV command line interface.
@@ -64,10 +64,18 @@ Commands:
   supply-curve-aggregation  Run reV supply curve aggregation using the...
 ```
 
+# Activate the reV environment as an alias
+
+For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc`) to call the reV activation command. Here, you can either use any text editor (nan, vim, vscode, etc.) or you can append the alias setting command directly to the end of the file:
+
+```bash
+echo "alias rev=source ~/envs/rev/bin/activate" >> ~/.bashrc
+```
+
 # Testing the installation
 
 Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems, though Windows may cause some issues. If you have a different OS or would like to double check that the all of the tests pass in your set up, use the GitHub repository method and the developer's installation method described above, and 
-```
+```bash
 cd reV/tests/
 pip install pytest
 pytest .
