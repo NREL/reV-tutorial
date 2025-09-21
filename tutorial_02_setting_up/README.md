@@ -18,11 +18,16 @@ python3 -m venv ~/envs/rev
 pip install NREL-reV
 ```
 
+If you plan on retrieving resource data remotely from NREL servers, you need to install reV with HSDS support. Just add the `[hsds]` option to the pip installation command as follows:
+```bash
+pip install NREL-reV[hsds]
+```
+
 You can also clone the repository and install directly from there. Here is an example set of unix-commands.
 ```bash
 python3 -m venv ~/envs/rev
 source ~/envs/rev/bin/activate
-mkdir ~/github && cd ~/github
+mkdir ~/gitrepos && cd ~/gitrepos
 git clone https://github.com/NREL/reV.git
 cd reV
 python3 -m pip install .
@@ -66,23 +71,27 @@ Commands:
 
 # Activate the reV environment as an alias
 
-For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc`) to call the reV activation command. Here, you can either use any text editor (nan, vim, vscode, etc.) or you can append the alias setting command directly to the end of the file with the following commands:
+For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc`) to call the reV activation command. Here, you can either use any text editor (nano, vim, vscode, etc.) or you can append the alias setting command directly to the end of the file with the following commands:
 
 ```bash
-echo "alias rev=source ~/envs/rev/bin/activate" >> ~/.bashrc
+echo "alias arev=source ~/envs/rev/bin/activate" >> ~/.bashrc  # Use whatever you want (`arev` stands for "activate rev" here)
 source ~/.bashrc
 ```
 
 # Testing the installation
 
-Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems, though Windows may cause some issues. If you have a different OS or would like to double check that the all of the tests pass in your set up, use the GitHub repository method and the developer's installation method described above, and 
+Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems, though Windows may cause some issues. Each of these test use Rhode Island as a study area. So, if you have a different OS or would like to double check that the all of the tests pass in your setup, use the GitHub repository method and the developer's installation method described above, install `pytest`, move into the `tests` directory and run the `pytest` command on that directory.
 ```bash
 cd reV/tests/
 pip install pytest
 pytest .
 ```
-This takes quite some time, (particularly `test_bespoke.py`) so it's best if you have something else to do for a while.
-
+This takes quite some time, but it is possible to run these tests in parallel. One way to do this is to use the `pytext-xdist` package, as shown below. Regardless of you run in parallel or serially, some of these tests are large (especially `test_bespoke.py`, so it's best if you have something else to do for a while. Below updates the above routine to run the tests with all available CPU cores.
+```bash
+cd reV/tests/
+pip install pytest pytest-xdist
+pytest -n auto .
+```
 
 # All done?
-Now you may move on to Tutorial 3: Building Inputs (tutorial_3_input_builds).
+Move on to `Tutorial 3: Building Inputs (tutorial_3_input_builds)`.
