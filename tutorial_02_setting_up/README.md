@@ -94,4 +94,4 @@ pytest -n auto .
 ```
 
 # All done?
-Move on to `Tutorial 3: Building Inputs (tutorial_3_input_builds)`.
+Move on to [`Tutorial 3: Building Inputs (tutorial_3_input_builds)`](https://github.com/NREL/reV-tutorial/tree/master/tutorial_03_input_builds).
