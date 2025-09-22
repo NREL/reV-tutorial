@@ -74,7 +74,7 @@ Commands:
 For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc`) to call the reV activation command. Here, you can either use any text editor (nano, vim, vscode, etc.) or you can append the alias setting command directly to the end of the file with the following commands:
 
 ```bash
-echo 'alias "arev=source ~/envs/rev/bin/activate"' >> ~/.bashrc  # Use whatever you want (`arev` stands for "activate rev" here)
+echo 'alias arev="source ~/envs/rev/bin/activate"' >> ~/.bashrc  # Use whatever you want (`arev` stands for "activate rev" here)
 source ~/.bashrc
 ```
 
