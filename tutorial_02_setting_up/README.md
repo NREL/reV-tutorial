@@ -86,7 +86,7 @@ cd reV/tests/
 pip install pytest
 pytest .
 ```
-This takes quite some time, but it is possible to run these tests in parallel. One way to do this is to use the `pytext-xdist` package, as shown below. Regardless of you run in parallel or serially, some of these tests are large (especially `test_bespoke.py`, so it's best if you have something else to do for a while. Below updates the above routine to run the tests with all available CPU cores.
+This takes quite some time, but it is possible to run these tests in parallel. One way to do this is to use the `pytest-xdist` package, as shown below. Regardless of you run in parallel or serially, some of these tests are large (especially `test_bespoke.py`, so it's best if you have something else to do for a while. Below updates the above routine to run the tests with all available CPU cores.
 ```bash
 cd reV/tests/
 pip install pytest pytest-xdist
