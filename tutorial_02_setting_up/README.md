@@ -2,6 +2,7 @@
 
 Installation instructions are outlined in the reV repository ([reV](https://github.com/NREL/reV)), but we'll review them here to add more detail and a few more tips. The simplest way to install reV and it's two main dependencies ([PySAM](https://github.com/NREL/pysam) and [rex](https://github.com/NREL/rex)) is to create a virtual environment and install reV with pip. This requires a Python 3 installation, which uses a different process for each operating system. In case you need help with that, OS-dependent installation instructions can be found [here](https://wiki.python.org/moin/BeginnersGuide/Download).
 
+## Basic Installation
 Unix:
 ```bash
 mkdir ~/envs
@@ -23,6 +24,20 @@ If you plan on retrieving resource data remotely from NREL servers, you need to 
 pip install NREL-reV[hsds]
 ```
 
+## Activate the reV environment as an alias
+
+For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc` for Linux or `~/.bash_profile` for MacOS) to call the reV activation command. You can use any text editor (nano, vim, vscode, etc.) and add `alias arev="source ~/envs/rev/bin/activate"` to the bottom somewhere. Here, `arev` stands for "activate rev", but you can call it whatever you want. You can also append the alias setting command to the end of the file directly with the following command:
+
+```bash
+echo -e '\n# Activate the reV environment\nalias arev="source ~/envs/rev/bin/activate"' >> ~/.bashrc
+```
+After that, to use the command in the same session, you'll have to run your bash run command script again with the following command. This will run automatically the next time you open a new terminal session.
+
+```bash
+source ~/.bashrc
+```
+
+## Install from source
 You can also clone the repository and install directly from there. Here is an example set of unix-commands.
 ```bash
 python3 -m venv ~/envs/rev
@@ -33,13 +48,15 @@ cd reV
 python3 -m pip install .
 ```
 
+## Install from source in editable mode
 If you prefer an editable mode, which allows modifications to the source code without needing to reinstall the package, you can replace `python3 -m pip install .` above with: 
 
 ```bash
 python3 -m pip install -e .
 ```
 
-Finally, to make sure that the reV CLIs are working, simply type the ```reV``` command into your terminal. If it was successfully installed you will see a printout of a help file showing the command format and a brief description of all the reV modules:
+## First Check - Run the `reV` CLI command
+Next, let's do a quick check to see if reV was successfully installed on your system: simply type the ```reV``` command into your terminal. If it was successfully installed you will see a printout of a help file showing the command format and a brief description of all the reV modules:
 
 ```bash
 Usage: reV [OPTIONS] COMMAND [ARGS]...
@@ -69,18 +86,8 @@ Commands:
   supply-curve-aggregation  Run reV supply curve aggregation using the...
 ```
 
-# Activate the reV environment as an alias
-
-For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc`) to call the reV activation command. Here, you can either use any text editor (nano, vim, vscode, etc.) or you can append the alias setting command directly to the end of the file with the following commands:
-
-```bash
-echo 'alias arev="source ~/envs/rev/bin/activate"' >> ~/.bashrc  # Use whatever you want (`arev` stands for "activate rev" here)
-source ~/.bashrc
-```
-
-# Testing the installation
-
-Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems, though Windows may cause some issues. Each of these test use Rhode Island as a study area. So, if you have a different OS or would like to double check that the all of the tests pass in your setup, use the GitHub repository method and the developer's installation method described above, install `pytest`, move into the `tests` directory and run the `pytest` command on that directory.
+## Testing the installation
+Finally, you may want to thoroughly test your installation if you plan on doing large scale production runs. Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems, though Windows may cause some issues. Each of these test use Rhode Island as a study area. So, if you have a different OS or would like to double check that the all of the tests pass in your setup, use the GitHub repository method and the developer's installation method described above, install `pytest`, move into the `tests` directory and run the `pytest` command on that directory.
 ```bash
 cd reV/tests/
 pip install pytest
@@ -93,5 +100,5 @@ pip install pytest pytest-xdist
 pytest -n auto .
 ```
 
-# All done?
+## All done?
 Move on to [`Tutorial 3: Building Inputs (tutorial_3_input_builds)`](https://github.com/NREL/reV-tutorial/tree/master/tutorial_03_input_builds).
