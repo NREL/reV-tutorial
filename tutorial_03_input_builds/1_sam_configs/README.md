@@ -3,12 +3,12 @@ System Advisor Model (SAM) Configuration Files
 
 The first input you will need to either build or acquire is a SAM system 
 configuration file for your target generation technology. This can be done in
-multiple ways:
+in two main ways:
   1) Build a JSON dictionary from scratch using the 
   [PySAM documentation page](https://nrel-pysam.readthedocs.io/en/latest/index.html):
       - Go to "List of SSC Compute Modules" and click on your target
         technology (e.g., PVWattsv8 for photovoltaic systems).
-      - Go to the System Design Group and use these keywords and descriptions
+      - Go to the "System Design Group" and use these keywords and descriptions
         to manually piece your system together.
       - For any parameter that you don't want to use the default value for,
         add an entry of your own.
