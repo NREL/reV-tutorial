@@ -50,9 +50,9 @@ in two main ways:
 </pre>
 
 
-More On SAM
+Examples
 ===
-If you want to check other SAM config variables, you can open the SAM's GUI project `*.sam` file, click the "File" dropdown icon ("⌄"), and click "Inputs browser" and it will show the full list of variables from SAM. For further reading on the required input parameters, find the target PySAM module documentation. For example, the most commonly used modules in reV can be found here:
+The two most commonly used SAM modules used in reV can be found here:
 
 - Solar: [https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html)
         
