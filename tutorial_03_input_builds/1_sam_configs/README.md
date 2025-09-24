@@ -3,15 +3,15 @@ System Advisor Model (SAM) Configuration Files
 
 ## The System Advisor Model
 
-SAM is an open-source and free application that simulates performance and economics for a suite of energy technologies. It serves as the core of reV's generation modules. The actual SAM simulation code can be found in the SAM Simulation Core (https://github.com/NREL/ssc), which a library of C and C++ code. This code is accessed through reV via the PySAM Python package (https://github.com/NREL/pysam), which is a wrapper for the lower-level code in the simulation core and is how reV calls SAM.
+SAM is an open-source and free application that simulates performance and economics for a suite of energy technologies. It serves as the core of reV's generation modules. The actual SAM simulation code can be found in the SAM Simulation Core (https://github.com/NREL/ssc), which a library of C and C++ code. This code is accessed through reV via the PySAM Python package (https://github.com/NREL/pysam), which is a wrapper for the lower-level C code in the simulation core and is how reV calls SAM.
 
-You can think of reV, at least for the initial generation modules in any reV modeling pipeling, as a spatial coordinator of SAM. The reV model allows you to run SAM models at every location in a study area. You can use it to simulate a singular technology across the full extent of a study area or to run different technologies or system designs at specified locations in the study area. Regardless of how you intend to use reV, at least one SAM configuration file will be required for any reV run.
+You can think of reV, at least for the initial generation modules in any reV modeling pipeling, as a spatial coordinator of SAM. The reV model allows you to (relatively) easily run SAM models at every location in a study area. You can use it to simulate a singular technology across the full extent of a study area or to run different technologies or system designs at specified locations in that study area. Regardless of how you intend to use reV, at least one SAM configuration file will be required for any reV run.
 
-So, we need a way to communicate SAM parameters to reV. This is done via JSON configuration files, which are basically dictionaries as files. reV can take in JSON or JSON 5 (which allows comments) formatted files. So, the first input you will need to is a SAM configuration file in JSON format for your target generation technology or technologies. 
+So, we need a way to communicate SAM parameters to reV. This is done via JSON configuration files, which are basically dictionaries as files. reV can take in JSON or JSON5 (which allows comments) formatted files. So, the first input you will need is a SAM configuration file in JSON format for your target generation technology or technologies. 
 
-SAM is a very extensive and detailed model. It can model many different technologies and, within each, there are countless parameters that can be set. A thorough understanding SAM (and how to specify a SAM configuration file to a particular energy generator) requires significant study and practice with the model. This tutorial will not attempt to replace existing SAM tutorials, instead its goal is simply to demonstrate how to create a configuration file that will integrate with reV. For more resources for learning about SAM and how to use it, please visit:
+SAM is a *very* extensive and detailed model. It can model many different technologies and, within each, there are countless parameters that can be set. A thorough understanding of SAM (and how to specify a SAM configuration file to a particular energy generator) requires significant study and practice with the model. This tutorial will not attempt to replace existing SAM tutorials, instead its goal is simply to demonstrate how to create a configuration file that will integrate with reV. For more resources for learning about SAM and how to use it, please visit:
 
-  - The SAM website: https://sam.nrel.gov/ - 
+  - The SAM website: https://sam.nrel.gov/
   - The SAM YouTube Page: https://www.youtube.com/channel/UC_Z7m8z5tOclfNgaTfGDdPQ
   - The SAM  user forum: https://sam.nrel.gov/forum.html
 
@@ -25,6 +25,8 @@ Building a SAM configuration file can be done in two main ways:
         to manually piece your system together.
       - For any parameter that you don't want to use the default value for,
         add an entry of your own.
+      - You can use Python and the `json` package to write these parameters to a JSON-compliant file, or you may write these parameters directly to a file as long as you follow the formatting rules. Here is JSON's website for a direct reference to these formatting criteria: https://www.json.org. Basically, use Python's dictionary format, but avoid trailing commas (unless you're using JSON5).
+  
   2) Use the SAM GUI to build a system and then export the parameters to a
       JSON file (that reV can then use).
       - Download [SAM's GUI](https://sam.nrel.gov/download.html).
@@ -68,5 +70,5 @@ Examples
 The two most commonly used SAM modules used in reV can be found here:
 
 - Solar: [https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html)
-        
+
 - Wind: [https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html)
