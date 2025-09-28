@@ -10,13 +10,16 @@ export HSDS_ENDPOINT=http://localhost:5101
 export LOG_LEVEL=INFO
 export EC2_ID=SPOOFID
 
-echo Checking HSDS and Docker...
+thisfile=$(realpath $0)
+echo "Running $thisfile on $EC2_ID ($EC2_TYPE)..."
 
 
 check_hsds () {
     hsds_running=false
-    if command -v docker > /dev/null; then
+    if command -v docker &>/dev/null; then
+        echo "HSDS present on system."
         if [[ $(docker ps | wc -l) -ge 5 ]]; then
+            echo "HSDS is running."
             hsds_running=true
         fi
     fi
@@ -27,7 +30,7 @@ install_docker () {
     sudo apt-get update
 
     # Install the package
-    sudo apt install docker.io docker-compose
+    sudo apt install docker.io docker-compose -y
 
     # Enable and start the docker background service
     sudo systemctl start docker
@@ -38,9 +41,6 @@ install_docker () {
     sudo chmod +x /usr/local/bin/docker-compose
     sudo groupadd docker
     sudo usermod -aG docker "$USER"
-
-    # This probably isn't required on EC2?
-    sudo gpasswd -a $USER docker
 }
 
 
@@ -49,16 +49,20 @@ check_hsds
 if [ "$hsds_running" = true ]; then
     # We're good to go
     echo HSDS service running: $hsds_running
+    exit 0
 else
+
     # Lock this file to make sure only one compute node can run it script per EC2 hardware
-    lockfile="/tmp/start_hsds_$EC2_ID.flock"
-    exec 200>"$lockfile" || exit 1
-    flock -x -w 600 200
-    thisfile="$(realpath $0)"
-    echo "Locking $thisfile..."
+    lockfile=/var/lock/start_hsds_$EC2_ID.flock
+    thisfile=$(realpath $0)
+    exec 9>$lockfile || exit 1  # Ubuntu doesn't allow double digit file descriptors by default, whereas other OSs do (someone email me and explain me this)
+    flock -x -w 600 9 || { echo "ERROR: flock() failed." >&2; exit 1; }
+    echo "Locking $thisfile with $lockfile..."
 
     # Install docker if not found
-    if ! command -v docker &> /dev/null; then
+    if type docker &>/dev/null; then
+        echo "Docker found."
+    else
         echo "Docker not found, installing..."
         install_docker
     fi
@@ -75,8 +79,8 @@ else
 
         # Start HSDS
         echo "Starting local HSDS server..."
-        cd ~/github/hsds/ || exit
-        sh runall.sh "$(nproc --all)"
+        cd ~/hsds || exit
+        ./runall.sh "$(nproc --all)"
         cd - || exit
     else
         echo HSDS service running: $hsds_running
@@ -87,8 +91,6 @@ else
 
     # Release the lock on this file
     echo "Releasing lock on $thisfile"
-    flock -u 200
+    flock -u 9
 
 fi
-
-exit 0
