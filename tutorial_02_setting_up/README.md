@@ -24,36 +24,6 @@ If you plan on retrieving resource data remotely from NREL servers, you need to 
 pip install NREL-reV[hsds]
 ```
 
-## Activate the reV environment as an alias
-
-For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc` for Linux or `~/.bash_profile` for MacOS) to call the reV activation command. You can use any text editor (nano, vim, vscode, etc.) and add `alias arev="source ~/envs/rev/bin/activate"` to the bottom somewhere. Here, `arev` stands for "activate rev", but you can call it whatever you want. You can also append the alias setting command to the end of the file directly with the following command:
-
-```bash
-echo -e '\n# Activate the reV environment\nalias arev="source ~/envs/rev/bin/activate"' >> ~/.bashrc
-```
-After that, to use the command in the same session, you'll have to run your bash run command script again with the following command. This will run automatically the next time you open a new terminal session.
-
-```bash
-source ~/.bashrc
-```
-
-## Install from source
-You can also clone the repository and install directly from there. Here is an example set of unix-commands.
-```bash
-python3 -m venv ~/envs/rev
-source ~/envs/rev/bin/activate
-mkdir ~/gitrepos && cd ~/gitrepos
-git clone https://github.com/NREL/reV.git
-cd reV
-python3 -m pip install .
-```
-
-## Install from source in editable mode
-If you prefer an editable mode, which allows modifications to the source code without needing to reinstall the package, you can replace `python3 -m pip install .` above with: 
-
-```bash
-python3 -m pip install -e .
-```
 
 ## First Check - Run the `reV` CLI command
 Next, let's do a quick check to see if reV was successfully installed on your system: simply type the ```reV``` command into your terminal. If it was successfully installed you will see a printout of a help file showing the command format and a brief description of all the reV modules:
@@ -86,7 +56,39 @@ Commands:
   supply-curve-aggregation  Run reV supply curve aggregation using the...
 ```
 
-## Testing the installation
+
+## Activate the reV environment as an alias
+
+For convenience, assuming you're using a bash terminal, you can add an alias to your bash run command script (`~/.bashrc` for Linux or `~/.bash_profile` for MacOS) to call the reV activation command. You can use any text editor (nano, vim, vscode, etc.) and add `alias arev="source ~/envs/rev/bin/activate"` to the bottom somewhere. Here, `arev` stands for "activate rev", but you can call it whatever you want. You can also append the alias setting command to the end of the file directly with the following command:
+
+```bash
+echo -e '\n# Activate the reV environment\nalias arev="source ~/envs/rev/bin/activate"' >> ~/.bashrc
+```
+After that, to use the command in the same session, you'll have to run your bash run command script again with the following command. This will run automatically the next time you open a new terminal session.
+
+```bash
+source ~/.bashrc
+```
+
+## Install from source
+You can also clone the repository and install directly from there. Here is an example set of unix-commands.
+```bash
+python3 -m venv ~/envs/rev
+source ~/envs/rev/bin/activate
+mkdir ~/gitrepos && cd ~/gitrepos
+git clone https://github.com/NREL/reV.git
+cd reV
+python3 -m pip install .
+```
+
+## Install from source in editable mode
+If you prefer an editable mode, which allows modifications to the source code without needing to reinstall the package, you can replace `python3 -m pip install .` above with: 
+
+```bash
+python3 -m pip install -e .
+```
+
+## Second Check - Testing the installation
 Finally, you may want to thoroughly test your installation if you plan on doing large scale production runs. Each new reV model version is tested on the latest Linux (Ubuntu), Windows, and MacOS operating systems, though Windows may cause some issues. Each of these test use Rhode Island as a study area. So, if you have a different OS or would like to double check that the all of the tests pass in your setup, use the GitHub repository method and the developer's installation method described above, install `pytest`, move into the `tests` directory and run the `pytest` command on that directory.
 ```bash
 cd reV/tests/
