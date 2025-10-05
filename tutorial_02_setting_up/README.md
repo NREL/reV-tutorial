@@ -2,6 +2,12 @@
 
 Installation instructions are outlined in the reV repository ([reV](https://github.com/NREL/reV)), but we'll review them here to add more detail and a few more tips. The simplest way to install reV and its two main dependencies ([PySAM](https://github.com/NREL/pysam) and [rex](https://github.com/NREL/rex)) is to create a virtual environment and install reV with pip. This requires a Python 3 installation, which uses a different process for each operating system. In case you need help with that, OS-dependent installation instructions can be found [here](https://wiki.python.org/moin/BeginnersGuide/Download).
 
+## Check Python Version
+Make sure that the Python version you are using is compatible with reV. To do this, call the command below and check it against the supported Python versions found on the reV GitHub repository page.
+```bash
+python3 --version
+```
+
 ## Basic Installation
 Unix:
 ```bash
