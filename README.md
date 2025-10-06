@@ -6,10 +6,10 @@ This is a repository for learning to run reV, both through Commands-Line Interfa
 # Brief description of the reV modeling pipeline
 
 reV is split into four main components: 
-1) simulating renewable energy generation and cost potential across a landscape. 
-2) creating model generation plants within spatial constraints.
-3) connecting plants to a transmission grid.
-4) reaggregating generation profiles (timeseries) into representative profiles for each model generation plant.
+1) Simulating renewable energy generation and cost potential across a landscape. 
+2) Creating model generation plants within spatial constraints.
+3) Connecting plants to a transmission grid.
+4) Reaggregating generation profiles (timeseries) into representative profiles for each model generation plant.
 
 <p align="center">
   <img src="https://github.com/NREL/reV-tutorial/blob/master/tutorial_05_pipeline/images/rev_standard_pipeline.png" alt="" height=400>
