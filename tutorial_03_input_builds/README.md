@@ -24,4 +24,4 @@ For a full model pipeline, reV requires at least the following inputs:
     - Building this table may be more or less complex, but regardless of which level of detail is desired a more extensive build tutorial will be needed.
     - Introduce you to the transmission table that is used in the reV supply-curve-aggregation. 
 
-In each of these folders, you will find a README explaining how the input building script works.
+In each of these folders, you will find a README explaining how to either obtain or build each of these inputs.
