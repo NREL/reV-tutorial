@@ -22,7 +22,7 @@ At its foundation reV serves a spatial coordinator for the [Systems Advisor Mode
 reV is designed as a set of Python modules, each of which take as inputs the outputs of previous modules. The basic work flow is to take input "resource" datasets, a specifically formatted gridded timeseries of wind or solar irradiance, pass them through module generators (**in reV-Generation**) (wind turbines or photovoltaic panels) to create gridded timeseries of energy outputs and production costs, pass that into an aggregation module (**reV-Supply-Curve-Aggregation**) which combines the resource scale generation values into model plants with plant-level costs and energy production, and finally pass that into a transmission module (**reV-Supply-Curve**) which connects these plants to transmission and updates costs: 
 
 
- <h5 align="center"> Resource &rarr; Generation &rarr; Aggregation &rarr; Transmission &rarr; Potential Energy and Cost Estimates </h5>
+ <h5 align="center"> Resource &rarr; Generation &rarr; Aggregation &rarr; Transmission &rarr; Potential Energy and Costs </h5>
 
  
 Land use constraints can be added into the aggregation step to exclude development in parts of the study area, resulting in a range of plant sizes. It is also possible to create time series of plant-level power generation, or "representative profiles" as the final step, resulting in a modeling pipeline that looks like this:
