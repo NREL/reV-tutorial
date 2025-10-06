@@ -19,9 +19,9 @@ SAM is a *very* extensive and detailed model. It can model many different techno
 Building a SAM configuration file can be done in several ways, here's a few:
 
   1) Use the SAM GUI to build a system and then export the parameters to a JSON file (that reV can then use). This is probably the easiest, most foolproof method, and is what is recommended by PySAM for building its own model inputs.
-      - Download [SAM's GUI](https://sam.nrel.gov/download.html).
+      - Download the SAM GUI: https://sam.nrel.gov/download.html.
       - Open SAM, start a new project, choose your "performance model", then choose the specific SAM module, then choose your financial model.
-      - Enter your system design parameters for all entries that you don't want to use the defaults for (location is not applicable here).
+      - Enter your system design parameters for all entries that you don't want to use the defaults for.
       - Once you're done, go to the title tab for the project (defaults to "untitled"), click the dropdown icon ("⌄"), click "generate code", and select "JSON for inputs". Click "OK", download the file, then        edit the file to remove the resource file entry since that will be handled in reV.
       - This becomes your input for the `sam_files` entry in the following tutorial's config files. Note that the GUI method will include many entries, including default values and labels, that are not necessary for reV and will not affect the reV CLI runs.
 
