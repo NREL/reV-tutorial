@@ -20,56 +20,65 @@ Building a SAM configuration file can be done in several ways, here's a few:
 
   1) Use the SAM GUI to build a system and then export the parameters to a JSON file (that reV can then use). This is probably the easiest, most foolproof method, and is what is recommended by PySAM for building its own model inputs.
       - Download [SAM's GUI](https://sam.nrel.gov/download.html).
-      - Open SAM, start a new project, choose your "performance model",
-        then choose the specific SAM module, then choose your financial
-        model.
-      - Enter your system design parameters for all entries that you don't
-        want to use the defaults for (location is not applicable here).
-      - Once you're done, go to the title tab for the project (defaults to
-        "untitled"), click the dropdown icon ("⌄"), click "generate code",
-        and select "JSON for inputs". Click "OK", download the file, then
-        edit the file to remove the resource file entry since that will be
-        handled in reV.
-      - This becomes your input for the `sam_files` entry in the following 
-        tutorial's config files. Note that the GUI method will 
-        include many entries, including default values and labels, that are 
-        not necessary for reV and will not affect the reV CLI runs. 
-        Thus, the SAM config file is tailored to minimum entries 
-        for reV to run in the following tutorial folders, 
-        named `config_SAM.json`
+      - Open SAM, start a new project, choose your "performance model", then choose the specific SAM module, then choose your financial model.
+      - Enter your system design parameters for all entries that you don't want to use the defaults for (location is not applicable here).
+      - Once you're done, go to the title tab for the project (defaults to "untitled"), click the dropdown icon ("⌄"), click "generate code", and select "JSON for inputs". Click "OK", download the file, then        edit the file to remove the resource file entry since that will be handled in reV.
+      - This becomes your input for the `sam_files` entry in the following tutorial's config files. Note that the GUI method will include many entries, including default values and labels, that are not necessary for reV and will not affect the reV CLI runs.
 
   3) Build a JSON dictionary from scratch using the [PySAM documentation page](https://nrel-pysam.readthedocs.io/en/latest/index.html). If you prefer not to (or can't for some reason) download the SAM GUI, you can use the PySAM documentation for a the names, valid values, and descriptions of each input parameter. This may also be useful for small edits to existing SAM JSON configuration files since it's much quicker than building a new system in the GUI.
-      - Go to "List of SSC Compute Modules" and click on your target
-        technology (e.g., PVWattsv8 for photovoltaic systems).
-      - Go to the "System Design Group" and use these keywords and descriptions
-        to manually piece your system together.
-      - For any parameter that you don't want to use the default value for,
-        add an entry of your own.
-      - You can use Python and the `json` package to write these parameters to a JSON-compliant file, or you may write these parameters directly to a file as long as you follow the formatting rules. Here is JSON's website for a direct reference to these formatting criteria: https://www.json.org. Basically, use Python's dictionary format, but avoid trailing commas (unless you're using JSON5).
-  
+      - Go to "List of SSC Compute Modules" and click on your target technology (e.g., PVWattsv8 for photovoltaic systems).
+      - Go to the "System Design Group" and use these keywords and descriptions to manually piece your system together.
+      - For any parameter that you don't want to use the default value for, add an entry of your own.
+      - You can use Python and the `json` package to write these parameters to a JSON-compliant file, or you may write these parameters directly to a file as long as you follow the formatting rules. Here is JSON's website for a direct reference to these formatting criteria: https://www.json.org. Probably the main gotcha here is to avoid trailing commas (unless you're using JSON5).
+
+
+## Example SAM Configuration
+
+The following is a configuration example with the minimum parameters for a PV system and LCOE calculator. Each parameter has a link to its entry in the PySAM documentation and will describe the parameter, provide input options, and give you the default value.
 
 <pre>
 {
-    <a style="border: none !important" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesignarray_type">"array_type"</a>: 2,
+    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesignarray_type" style="border-bottom: 0px">"array_type"</a>: 2,
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.azimuth">"azimuth"</a>: 180,
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.capital_cost">"capital_cost"</a>: 39767200,
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">"dc_ac_ratio"</a>: 1.3, 
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.fixed_charge_rate">"fixed_charge_rate"</a>: 0.096, 
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.fixed_operating_cost">"fixed_operating_cost"</a>: 260000, 
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.losses">"losses"</a>: 14.07566, 
-    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv5.html#PySAM.Pvwattsv5.Pvwattsv5.SystemDesign.module_type">"module_type"</a>: 0, 
+    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv5.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.module_type">"module_type"</a>: 0, 
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.system_capacity">"system_capacity"</a>: 20000, 
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.tilt">"tilt"</a>: 0,
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.variable_operating_cost">"variable_operating_cost"</a>: 0 
 }
 </pre>
 
+## Editing a JSON file in Python
+
+It can be useful to either automate SAM configuration creation or to use Python to quickly adjust parameters (perhaps not for single value entries, but certainly for larger ones). The block below shows you how to read in a configuration file, adjust values, and write back to file.
+
+```Python
+# Import Python's builtin JSON package
+import json
+
+# Read the file in as a Python dictionary
+config = json.load(open("/path/to/sam_config.json")
+
+# Adjust
+config["entry"] = "value"
+del config["other_entry"]
+
+# Write the file back to file
+with open("/path/to/sam_config.json", "w") as file:
+  file.write(json.dumps(config, indent=4))  # Indent for legibility
+```
 
 
-Examples
+Common Modules
 ===
-The two most commonly used SAM modules used in reV can be found here:
+Three commonly used SAM modules in reV can be found here:
 
-- Solar: [https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html)
+- Solar (simple): [https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html)
+
+- Solar (detailed): [https://nrel-pysam.readthedocs.io/en/main/modules/Pvsamv1.html](https://nrel-pysam.readthedocs.io/en/main/modules/Pvsamv1.html)
 
 - Wind: [https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html](https://nrel-pysam.readthedocs.io/en/latest/modules/Windpower.html)
