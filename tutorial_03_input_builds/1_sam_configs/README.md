@@ -5,30 +5,20 @@ System Advisor Model (SAM) Configuration Files
 
 SAM is an open-source and free application that simulates performance and economics for a suite of energy technologies. It serves as the core of reV's generation modules. The actual SAM simulation code can be found in the SAM Simulation Core (https://github.com/NREL/ssc), which a library of C and C++ code. This code is accessed through reV via the PySAM Python package (https://github.com/NREL/pysam), which is a wrapper for the lower-level C code in the simulation core and is how reV calls SAM.
 
-You can think of reV, at least for the initial generation modules in any reV modeling pipeling, as a spatial coordinator of SAM. The reV model allows you to (relatively) easily run SAM models at every location in a study area. You can use it to simulate a singular technology across the full extent of a study area or to run different technologies or system designs at specified locations in that study area. Regardless of how you intend to use reV, at least one SAM configuration file will be required for any reV run.
+You can think of reV, at least for the initial generation modules in any reV modeling pipeline, as a spatial coordinator of SAM. The reV model allows you to run SAM models at every location in a study area or adjust SAM parameters with site specific parameters. You can use it to simulate a singular technology across the full extent of a study area or to run different technologies and system designs at specified locations or regions. Regardless of how you intend to use reV, at least one SAM configuration file will be required for any reV run.
 
-So, we need a way to communicate SAM parameters to reV. This is done via JSON configuration files, which are basically dictionaries as files. reV can take in JSON or JSON5 (which allows comments) formatted files. So, the first input you will need is a SAM configuration file in JSON format for your target generation technology or technologies. 
+We need a way to communicate SAM parameters to reV. This is done via JSON configuration files, which allows us to store dictionaries of model parameters on a file system. reV can take in JSON or JSON5 (which allows comments) formatted files. So, the first input you will need is a SAM configuration file in JSON format for your target generation technology or technologies. 
 
-SAM is a *very* extensive and detailed model. It can model many different technologies and, within each, there are countless parameters that can be set. A thorough understanding of SAM (and how to specify a SAM configuration file to a particular energy generator) requires significant study and practice with the model. This tutorial will not attempt to replace existing SAM tutorials, instead its goal is simply to demonstrate how to create a configuration file that will integrate with reV. For more resources for learning about SAM and how to use it, please visit:
+SAM is a *very* extensive and detailed model. It can model many different technologies and, within each, there are countless parameters that can be set. A thorough understanding of SAM (and how to specify a SAM configuration file to a particular energy generator) requires significant study and practice with the model. This tutorial will not attempt to replace existing SAM tutorials. Instead, its goal is simply to demonstrate how to create a configuration file that will integrate with reV. For more resources for learning about SAM and how to use it, please visit:
 
   - The SAM website: https://sam.nrel.gov/
   - The SAM YouTube Page: https://www.youtube.com/channel/UC_Z7m8z5tOclfNgaTfGDdPQ
   - The SAM  user forum: https://sam.nrel.gov/forum.html
 
 ## Building a configuration file
-Building a SAM configuration file can be done in two main ways:
-  1) Build a JSON dictionary from scratch using the 
-  [PySAM documentation page](https://nrel-pysam.readthedocs.io/en/latest/index.html):
-      - Go to "List of SSC Compute Modules" and click on your target
-        technology (e.g., PVWattsv8 for photovoltaic systems).
-      - Go to the "System Design Group" and use these keywords and descriptions
-        to manually piece your system together.
-      - For any parameter that you don't want to use the default value for,
-        add an entry of your own.
-      - You can use Python and the `json` package to write these parameters to a JSON-compliant file, or you may write these parameters directly to a file as long as you follow the formatting rules. Here is JSON's website for a direct reference to these formatting criteria: https://www.json.org. Basically, use Python's dictionary format, but avoid trailing commas (unless you're using JSON5).
-  
-  2) Use the SAM GUI to build a system and then export the parameters to a
-      JSON file (that reV can then use).
+Building a SAM configuration file can be done in several ways, here's a few:
+
+  1) Use the SAM GUI to build a system and then export the parameters to a JSON file (that reV can then use). This is probably the easiest, most foolproof method, and is what is recommended by PySAM for building its own model inputs.
       - Download [SAM's GUI](https://sam.nrel.gov/download.html).
       - Open SAM, start a new project, choose your "performance model",
         then choose the specific SAM module, then choose your financial
@@ -47,6 +37,16 @@ Building a SAM configuration file can be done in two main ways:
         Thus, the SAM config file is tailored to minimum entries 
         for reV to run in the following tutorial folders, 
         named `config_SAM.json`
+
+  3) Build a JSON dictionary from scratch using the [PySAM documentation page](https://nrel-pysam.readthedocs.io/en/latest/index.html). If you prefer not to (or can't for some reason) download the SAM GUI, you can use the PySAM documentation for a the names, valid values, and descriptions of each input parameter. This may also be useful for small edits to existing SAM JSON configuration files since it's much quicker than building a new system in the GUI.
+      - Go to "List of SSC Compute Modules" and click on your target
+        technology (e.g., PVWattsv8 for photovoltaic systems).
+      - Go to the "System Design Group" and use these keywords and descriptions
+        to manually piece your system together.
+      - For any parameter that you don't want to use the default value for,
+        add an entry of your own.
+      - You can use Python and the `json` package to write these parameters to a JSON-compliant file, or you may write these parameters directly to a file as long as you follow the formatting rules. Here is JSON's website for a direct reference to these formatting criteria: https://www.json.org. Basically, use Python's dictionary format, but avoid trailing commas (unless you're using JSON5).
+  
 
 <pre>
 {
