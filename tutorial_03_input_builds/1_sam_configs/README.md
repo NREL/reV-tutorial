@@ -50,8 +50,8 @@ Building a SAM configuration file can be done in several ways, here's a few:
 
 <pre>
 {
-    <a style="border-bottom: 0" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesignarray_type">"array_type"</a>: 2,
-    <a style="text-decoration: none" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.azimuth">"azimuth"</a>: 180,
+    <a style="border: none !important" href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesignarray_type">"array_type"</a>: 2,
+    <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.azimuth">"azimuth"</a>: 180,
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.capital_cost">"capital_cost"</a>: 39767200,
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.SystemDesign.dc_ac_ratio">"dc_ac_ratio"</a>: 1.3, 
     <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Lcoefcr.html#PySAM.Lcoefcr.Lcoefcr.SimpleLCOE.fixed_charge_rate">"fixed_charge_rate"</a>: 0.096, 
