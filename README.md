@@ -5,7 +5,7 @@ This is a repository for learning to run reV, both through Commands-Line Interfa
 
 # Brief description of the reV modeling pipeline
 
-reV is split into three main components: 
+reV is split into four main components: 
 1) simulating renewable energy generation and cost potential across a landscape. 
 2) creating model generation plants within spatial constraints.
 3) connecting plants to a transmission grid.
