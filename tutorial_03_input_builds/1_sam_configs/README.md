@@ -3,7 +3,7 @@ System Advisor Model (SAM) Configuration Files
 
 ## The System Advisor Model
 
-SAM is an open-source and free application that simulates performance and economics for a suite of energy technologies. It serves as the core of reV's generation modules. The actual SAM simulation code can be found in the SAM Simulation Core (https://github.com/NREL/ssc), which a library of C and C++ code. This code is accessed through reV via the PySAM Python package (https://github.com/NREL/pysam), which is a wrapper for the lower-level C code in the simulation core and is how reV calls SAM.
+SAM is an open-source and free application that simulates performance and economics for a suite of energy technologies. It serves as the core of reV's generation modules. The actual SAM simulation code can be found in the SAM Simulation Core (https://github.com/NREL/ssc), which a library of C and C++ code. This code is accessed through reV via the PySAM Python package (https://github.com/NREL/pysam), which uses SAM's C API functions and Python to access the simulation core.
 
 You can think of reV, at least for the initial generation modules in any reV modeling pipeline, as a spatial coordinator of SAM. The reV model allows you to run SAM models at every location in a study area or adjust SAM parameters with site specific parameters. You can use it to simulate a singular technology across the full extent of a study area or to run different technologies and system designs at specified locations or regions. Regardless of how you intend to use reV, at least one SAM configuration file will be required for any reV run.
 
