@@ -5,6 +5,12 @@ System Advisor Model (SAM) Configuration Files
 
 SAM is an open-source and free application that simulates performance and economics for a suite of energy technologies. It serves as the core of reV's generation modules. The actual SAM simulation code can be found in the SAM Simulation Core (https://github.com/NREL/ssc), which a library of C and C++ code. This code is accessed through reV via the PySAM Python package (https://github.com/NREL/pysam), which uses SAM's C API functions and Python to access the simulation core.
 
+<p align="center">
+  <img src="https://github.com/NREL/reV-tutorial/blob/master/tutorial_03_input_builds/1_sam_configs/images/rev_sam_coordination.png" alt="" width=500>
+  <p align="center"> <i>reV identifies resource data timeseries with coordinates, passes this data into PySAM along with a configuration file which then runs SAM and generates outputs.</i></p>
+</p>
+
+
 You can think of reV, at least for the initial generation modules in any reV modeling pipeline, as a spatial coordinator of SAM. The reV model allows you to run SAM models at every location in a study area or adjust SAM parameters with site specific parameters. You can use it to simulate a singular technology across the full extent of a study area or to run different technologies and system designs at specified locations or regions. Regardless of how you intend to use reV, at least one SAM configuration file will be required for any reV run.
 
 We need a way to communicate SAM parameters to reV. This is done via JSON configuration files, which allows us to store dictionaries of model parameters on a file system. reV can take in JSON or JSON5 (which allows comments) formatted files. So, the first input you will need is a SAM configuration file in JSON format for your target generation technology or technologies. 
