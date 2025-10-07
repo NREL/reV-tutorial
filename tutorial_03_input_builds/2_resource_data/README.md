@@ -106,9 +106,9 @@ If you zoom into the red segment in the array, you can see how this format repre
 Existing Resource Files
 ===
 
-`NSRDB`, the [National Solar Radiation Database](https://registry.opendata.aws/nrel-pds-nsrdb/), is a collection of half-hourly values of the three most common measurements of solar radiation – global horizontal, direct normal, and diffuse horizontal irradiance — and other meteorological data the System Advisor uses to refine energy generation estimates. These data have been collected at a sufficient number of locations and temporal and spatial scales to accurately represent regional solar radiation climates.
+The [National Solar Radiation Database](https://registry.opendata.aws/nrel-pds-nsrdb/) (NSRDB), is a collection of half-hourly values at 4km of the three most common important measurements of solar radiation – global horizontal, direct normal, and diffuse horizontal irradiance — and other meteorological data the System Advisor uses to refine energy generation estimates. It is updated annually and represents every year since 1999.
 
-`WTK`, the [Wind Integration National Dataset (WIND) Toolkit](https://registry.opendata.aws/nrel-pds-wtk/), is an update and expansion of the Eastern Wind Integration Data Set and Western Wind Integration Data Set. It supports the next generation of wind integration studies. It includes instantaneous meteorological conditions from computer model output and calculated turbine power for more than 126,000 sites in the continental United States for the years 2007–2013. 
+The [Wind Integration National Dataset Toolkit](https://registry.opendata.aws/nrel-pds-wtk/) (WTK), is a collection of hourly values with a 2km spatial resolution at 20m elevation increments representing wind speed, wind direction, and other meteorological data needed to accurately model wind power. The WTK contains yearly data from 2007-2013.
 
 Remote Access using `rex` and `HSDS`
 ===
