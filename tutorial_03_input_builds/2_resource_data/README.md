@@ -54,7 +54,7 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
     <tr><td>Snow Depth (cm)</td>
       <td></td><td>*</td><td>*</td><td></td><td></td>
     </tr>
-    <tr><td>Temperature - Dew Point(&deg;C)</td>
+    <tr><td>Temperature - Dew Point (&deg;C)</td>
       <td></td><td>*</td><td></td><td>*</td><td></td>
     </tr> 
     <tr><td>Temperature - Dry Bulb (&deg;C)</td>
