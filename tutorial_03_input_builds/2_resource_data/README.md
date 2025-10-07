@@ -89,8 +89,8 @@ The format is composed of a set of non-grouped HDF5 datasets and attributes. Atm
 
 Examples of this format for the `windpower` and `pvwatts` modules may be found here: [https://github.com/NREL/reV-tutorial/tree/master/data/resources](../../data/resources/). 
 
-## Visualizing reV Outputs
-The graphic below shows a representation of NREL's space-time format using a reV generation output. The reV generation module's outputs mirror the resource file's format so any variable in the resource file will match this structure. This graphic shows a reV capacity factor timeseries array, a map of the average capacity factors derived from it, a glimpse at the meta data associated with the X-Axis, and a glimpse at the timeseries vector associated with the Y-Axis.
+## Visualizing the format through reV Outputs
+The graphic below shows a representation of NREL's space-time format using a `reV` output. The `reV generation` and `rep-profiles` outputs mirror the resource file's format so any variable in the resource file will match this structure. This graphic shows a reV capacity factor timeseries array, a map of the average capacity factors derived from it, a glimpse at the meta data associated with the X-Axis, and a glimpse at the timeseries vector associated with the Y-Axis.
 
 ![resource_data_diagram](https://github.com/user-attachments/assets/7b14b266-3e81-4046-b2cb-b97566253b7d)
 
@@ -105,6 +105,7 @@ If you zoom into the red segment in the array, you can see how this format repre
 
 Existing Resource Files
 ===
+
 `NSRDB`, the [National Solar Radiation Database](https://registry.opendata.aws/nrel-pds-nsrdb/), is a collection of half-hourly values of the three most common measurements of solar radiation – global horizontal, direct normal, and diffuse horizontal irradiance — and other meteorological data the System Advisor uses to refine energy generation estimates. These data have been collected at a sufficient number of locations and temporal and spatial scales to accurately represent regional solar radiation climates.
 
 `WTK`, the [Wind Integration National Dataset (WIND) Toolkit](https://registry.opendata.aws/nrel-pds-wtk/), is an update and expansion of the Eastern Wind Integration Data Set and Western Wind Integration Data Set. It supports the next generation of wind integration studies. It includes instantaneous meteorological conditions from computer model output and calculated turbine power for more than 126,000 sites in the continental United States for the years 2007–2013. 
