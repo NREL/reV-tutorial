@@ -18,17 +18,20 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
   </thead>
 
   <tbody align="center">
+    <tr><td>Datetime (<i>"%Y-%m-%d %H:%M:%S"</i>)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Elevation (m)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td></td>
+    </tr>
     <tr><td>Latitude (decimal &deg;)</td>
       <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
     </tr>
     <tr><td>Longitude (decimal &deg;)</td>
       <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
     </tr>
-    <tr><td>Datetime (<i>"%Y-%m-%d %H:%M:%S"</i>)</td>
+    <tr><td>Timezone Offset (UTC)</td>
       <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
-    </tr>
-    <tr><td>Elevation (m)</td>
-      <td>*</td><td>*</td><td>*</td><td>*</td><td></td>
     </tr>
     <tr><td>Albedo</td>
       <td></td><td>*</td><td>*</td><td></td><td></td>
@@ -82,7 +85,7 @@ The format is composed of a set of non-grouped HDF5 datasets and attributes. Atm
 - 2D array for each data variable (GHI, windspeed, air pressure, etc.)
 - Time index on Y-Axis
 - Site index X-Axis
-- A `meta` data table (stored as a structure array) that holds coordinate and other site information associated with the x-axis
+- A `meta` data table (stored as a structure array) that holds coordinate, timezone, elevation, and other site information associated with the x-axis
 - A 1D `time_index` vector that contains date-time strings associated with the y-axis
 - A `scale_factor` attribute on each variable that is used to translate integers back into floats where scaling is used for data storage
 - A `units` attribute that stores the units for each variable
