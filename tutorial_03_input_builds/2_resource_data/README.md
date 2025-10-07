@@ -69,7 +69,6 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
   </tbody>
 </table>
 
-
 In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_10_advanced_input_builds](../../tutorial_10_advanced_input_builds/README.md). 
 
 The Format
