@@ -1,6 +1,27 @@
 Resource Files
 ===
-The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is a particular data format that is nicely integrated into the NREL modeling ecosystem but is unique to NREL. In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_10_advanced_input_builds](../../tutorial_10_advanced_input_builds/README.md). 
+The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. The datasets you'll need to include in the file will depend on the SAM technology being modeled. You can find more information about the minimum sets of required variables in SAM's help page here https://samrepo.nrelcloud.org/help/weather_format.html, but we've included a reference table here for convenience.
+
+<center>
+
+| Variable |   Wind  | Solar |
+| :-------: | :------------: | :---------: |
+| Latitude (decimal &deg;); | X | X | X | 
+| Longitude (decimal &deg;) | X | X | X | 
+| Time Zone (UTC)| X | X |
+| Datetime | X | X | 
+| Elevation (m)| X | X |
+| Wind Speed (m/s) | X | | 
+| Wind Direction (&deg;)| X | |
+| Diffuse Horizontal Irradiance (W/m<sup>2</sup>)|  | X | 
+| Direct Normal Irradiance (W/m<sup>2</sup>)|  | X | 
+| Global Horizontal Irradiance (W/m<sup>2</sup>)| | X| 
+
+
+
+</center>
+
+In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_10_advanced_input_builds](../../tutorial_10_advanced_input_builds/README.md). 
 
 The Format
 ===
