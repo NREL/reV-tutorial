@@ -75,16 +75,17 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
 
 The Format
 ===
-This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. For a high-level overview, these are the primary characteristic you'll need to know when working with these files:
+
+The format is composed of a set of non-grouped HDF5 datasets and attributes. Atmospheric datasets are stored as 2D arrays whose index positions correspond to separate datasets containing a 1D datetime vector and a 2D structured meta data array (which stores the coordinates and site-specifc information). Each data variable (aside from the meta and time datasets) will have attributes for at least a scale factor and a units string. Additional attributes on either the individual datasets or the file itself may also be stored to help users understand the file's contents. The main characteristics needed to understand this format are outlined below:
 
 - Hierarchical Data Format 5 (HDF5)
-- 2D array for each data variable (GHI, Windspeed, air pressure, etc.)
-- Time Index on Y-Axis
-- Site Index X-Axis
+- 2D array for each data variable (GHI, windspeed, air pressure, etc.)
+- Time index on Y-Axis
+- Site index X-Axis
 - Contains a `meta` data table that holds coordinate and other site information associated with the x-axis
-- Contains a 1D `time_index` vector that contains date-time strings associated with the y-axis.
-- A `scale_factor` attribute on each variable that is used to translate integers back into floats where scaling is used for data storage.
-- A `units` attribute that stores the units for each variable.
+- Contains a 1D `time_index` vector that contains date-time strings associated with the y-axis
+- A `scale_factor` attribute on each variable that is used to translate integers back into floats where scaling is used for data storage
+- A `units` attribute that stores the units for each variable
 
 Examples of this format for the `windpower` and `pvwatts` modules may be found here: [https://github.com/NREL/reV-tutorial/tree/master/data/resources](../../data/resources/). 
 
@@ -93,7 +94,12 @@ The graphic below shows a representation of NREL's space-time format using a reV
 
 ![resource_data_diagram](https://github.com/user-attachments/assets/7b14b266-3e81-4046-b2cb-b97566253b7d)
 
+<br>
+
 If you zoom into the red segment in the array, you can see how this format represents the daily pattern of solar irradiance across space.  In the map below, only the locations represented in this red segment are shown. In this value segment, you can also see the effect of clouds moving across this area over time, particularly from day 8 through 9 of this period.
+
+<br>
+
 
 ![resource_data_diagram_zoomin](https://github.com/NREL/reV-tutorial/blob/master/data/images/resource_data_diagram_zoomin.png)
 
@@ -103,6 +109,8 @@ Existing Resource Files
 
 `WTK`, the [Wind Integration National Dataset (WIND) Toolkit](https://registry.opendata.aws/nrel-pds-wtk/), is an update and expansion of the Eastern Wind Integration Data Set and Western Wind Integration Data Set. It supports the next generation of wind integration studies. It includes instantaneous meteorological conditions from computer model output and calculated turbine power for more than 126,000 sites in the continental United States for the years 2007–2013. 
 
-Remote ACCESS to preformatted datasets
+Remote Access using `rex` and `HSDS`
 ===
-  - NREL Highly Scalable Data Service (`HSDS`) [Examples](https://github.com/NREL/hsds-examples)
+
+NREL's resource data is remotely accessible using the HDF Groups Highly Scalable Data Service (`HSDS`). NREL's Resource Extraction Tool (rex), which is integrated into reV, allows users to seemlessly integrate remote resource access into the reV modeling pipeline, though some setup is required. For more guidance on how to setup your computer or server to access NREL data remotely, visit the rex [HSDS guide](https://nrel.github.io/rex/misc/examples.hsds.html). 
+
