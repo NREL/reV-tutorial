@@ -1,20 +1,56 @@
 Resource Files
 ===
-The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. The datasets you'll need to include in the file will depend on the SAM technology being modeled. You can find more information about the minimum sets of required variables in SAM's help page here https://samrepo.nrelcloud.org/help/weather_format.html, but we've included a reference table here for convenience.
+The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. The datasets you'll need to include in the file will depend on the SAM technology being modeled. You can find more information about the minimum sets of required variables in SAM's help page here https://samrepo.nrelcloud.org/help/weather_format.html, but we've included a reference table here for just the reV-comaptible modules here.
 
 <table align="center">
   <thead>
-    <tr><th>Variable</th><th>Wind</th><th>Solar</th></tr>
+    <tr>
+      <th>Variable</th>
+      <th>Windpower</th>
+      <th>PVWatts</th>
+      <th>PVSamv1</th>
+      <th>Concentrating Solar</th>
+      <th>Geothermal</th>
+  </tr>
+
   </thead>
   <tbody align="center">
-    <tr><td>Latitude (decimal &deg;)</td><td>*</td><td>*</td></tr>
-    <tr><td>Datetime ()</td><td>*</td><td>*</td></tr>
-    <tr><td>Elevation (m)</td><td>*</td><td>*</td></tr>
-    <tr><td>Wind Speed (m/s)</td><td>*</td><td></td></tr>
-    <tr><td>Wind Direction (&deg;)</td><td>*</td><td></td></tr>
-    <tr><td>Direct Normal Irradiance (W/m<sup>2</sup>)</td><td></td><td>*</td></tr>
-    <tr><td>Diffuse Horizontal Irradiance (W/m<sup>2</sup>)</td><td></td><td>*</td></tr>
-    <tr><td>Global Horizontal Irradiance (W/m<sup>2</sup>)</td><td></td><td>*</td></tr>    
+    <tr><td>Latitude (decimal &deg;)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Longitude (decimal &deg;)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Datetime (<i>"%Y-%m-%d %H:%M:%S"</i>)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Elevation (m)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Wind Speed (m/s)</td>
+      <td>*</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Wind Direction (&deg;)</td>
+      <td>*</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Direct Normal Irradiance (W/m<sup>2</sup>)</td>
+      <td></td><td>*</td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Diffuse Horizontal Irradiance (W/m<sup>2</sup>)</td>
+      <td></td><td>*</td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Global Horizontal Irradiance (W/m<sup>2</sup>)</td>
+      <td></td><td>*</td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Plane of Array Irradiance (W/m<sup>2</sup>)</td>
+      <td></td><td>*</td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Albedo</td>
+      <td></td><td>*</td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Atm. Pressure (mbar)</td>
+      <td></td><td>*</td><td></td><td></td><td></td>
+    </tr> 
   </tbody>
 </table>
 
