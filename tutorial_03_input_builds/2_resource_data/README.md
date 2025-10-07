@@ -2,8 +2,8 @@ Resource Files
 ===
 The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. The datasets you'll need to include in the file will depend on the SAM technology being modeled. You can find more information about the minimum sets of required variables in SAM's help page here https://samrepo.nrelcloud.org/help/weather_format.html, but we've included a reference table here for convenience.
 
-<center>
-
+<table align="center">
+  
 | Variable |   Wind  | Solar |
 | :-------: | :------------: | :---------: |
 | Latitude (decimal &deg;); | X | X | X | 
@@ -17,9 +17,20 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
 | Direct Normal Irradiance (W/m<sup>2</sup>)|  | X | 
 | Global Horizontal Irradiance (W/m<sup>2</sup>)| | X| 
 
+</table>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML-full"></script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts:["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk:(MathJax.Hub.Browser.isMobile ? 10 : 50) }, tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" }, TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } }, messageStyle: "none" });   </script>
 
-</center>
+$$
+\begin{array}{|c|c|c|}
+\hline
+   \textbf{Column1} & \textbf{Column1} & \textbf{Column1} \\ 
+\hline
+   \text{Column1} & \text{Column1} & \text{Column1} \\
+\hline
+\end{array}
+$$
+
 
 In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_10_advanced_input_builds](../../tutorial_10_advanced_input_builds/README.md). 
 
