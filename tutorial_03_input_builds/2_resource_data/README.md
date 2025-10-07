@@ -3,33 +3,20 @@ Resource Files
 The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. The datasets you'll need to include in the file will depend on the SAM technology being modeled. You can find more information about the minimum sets of required variables in SAM's help page here https://samrepo.nrelcloud.org/help/weather_format.html, but we've included a reference table here for convenience.
 
 <table align="center">
-  
-| Variable |   Wind  | Solar |
-| :-------: | :------------: | :---------: |
-| Latitude (decimal &deg;); | X | X | X | 
-| Longitude (decimal &deg;) | X | X | X | 
-| Time Zone (UTC)| X | X |
-| Datetime | X | X | 
-| Elevation (m)| X | X |
-| Wind Speed (m/s) | X | | 
-| Wind Direction (&deg;)| X | |
-| Diffuse Horizontal Irradiance (W/m<sup>2</sup>)|  | X | 
-| Direct Normal Irradiance (W/m<sup>2</sup>)|  | X | 
-| Global Horizontal Irradiance (W/m<sup>2</sup>)| | X| 
-
+  <thead>
+    <tr><th>Variable</th><th>Wind</th><th>Solar</th></tr>
+  </thead>
+  <tbody align="center">
+    <tr><td>Latitude (decimal &deg;)</td><td>*</td><td>*</td></tr>
+    <tr><td>Datetime ()</td><td>*</td><td>*</td></tr>
+    <tr><td>Elevation (m)</td><td>*</td><td>*</td></tr>
+    <tr><td>Wind Speed (m/s)</td><td>*</td><td></td></tr>
+    <tr><td>Wind Direction (&deg;)</td><td>*</td><td></td></tr>
+    <tr><td>Direct Normal Irradiance (W/m<sup>2</sup>)</td><td></td><td>*</td></tr>
+    <tr><td>Diffuse Horizontal Irradiance (W/m<sup>2</sup>)</td><td></td><td>*</td></tr>
+    <tr><td>Global Horizontal Irradiance (W/m<sup>2</sup>)</td><td></td><td>*</td></tr>    
+  </tbody>
 </table>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML-full"></script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts:["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk:(MathJax.Hub.Browser.isMobile ? 10 : 50) }, tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" }, TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } }, messageStyle: "none" });   </script>
-
-$$
-\begin{array}{|c|c|c|}
-\hline
-   \textbf{Column1} & \textbf{Column1} & \textbf{Column1} \\ 
-\hline
-   \text{Column1} & \text{Column1} & \text{Column1} \\
-\hline
-\end{array}
-$$
 
 
 In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_10_advanced_input_builds](../../tutorial_10_advanced_input_builds/README.md). 
