@@ -113,5 +113,5 @@ The [Wind Integration National Dataset Toolkit](https://registry.opendata.aws/nr
 Remote Access using `rex` and `HSDS`
 ===
 
-NREL's resource data is remotely accessible using the HDF Groups Highly Scalable Data Service (`HSDS`). NREL's Resource Extraction Tool (rex), which is integrated into reV, allows users to seemlessly integrate remote resource access into the reV modeling pipeline, though some setup is required. For more guidance on how to setup your computer or server to access NREL data remotely, visit the rex [HSDS guide](https://nrel.github.io/rex/misc/examples.hsds.html). 
+NREL's resource data is remotely accessible using the HDF Group's Highly Scalable Data Service (`HSDS`). NREL's Resource Extraction Tool (rex), which is integrated into reV, allows users to seemlessly integrate remote resource access into the reV modeling pipeline, though some setup is required. For more guidance on how to setup your computer or server to access NREL data remotely, visit the rex [HSDS guide](https://nrel.github.io/rex/misc/examples.hsds.html). 
 
