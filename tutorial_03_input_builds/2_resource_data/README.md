@@ -30,7 +30,7 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
     <tr><td>Longitude (decimal &deg;)</td>
       <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
     </tr>
-    <tr><td>Timezone Offset (UTC)</td>
+    <tr><td>Timezone (UTC Offset)</td>
       <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
     </tr>
     <tr><td>Albedo</td>
