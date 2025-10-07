@@ -46,7 +46,7 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
       <td></td><td>*</td><td></td><td></td><td></td>
     </tr>
     <tr><td>Irradiance - Plane of Array (W/m<sup>2</sup>)</td>
-      <td></td><td>*</td><td>*</td><td></td><td></td>
+      <td></td><td>*</td><td></td><td></td><td></td>
     </tr>
     <tr><td>Relative Humidity (%)</td>
       <td></td><td></td><td></td><td>*</td><td>*</td>
