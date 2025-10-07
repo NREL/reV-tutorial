@@ -69,18 +69,29 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
   </tbody>
 </table>
 
-In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_10_advanced_input_builds](../../tutorial_10_advanced_input_builds/README.md). 
 
 The Format
 ===
+
 - Hierarchical Data Format 5 (HDF5)
 - 2D array for each data variable (GHI, Windspeed, air pressure, etc.)
 - Time Index on Y-Axis
 - Site Index X-Axis
 - Contains a `meta` data table that holds coordinate and other site information associated with the x-axis
 - Contains a 1D `time_index` vector that contains date-time strings associated with the y-axis.
-- A `scale_factor` attribute that is used to translate integers back into floats where scaling is used for data storage.
+- A `scale_factor` attribute on each variable that is used to translate integers back into floats where scaling is used for data storage.
+- A `units` attribute that stores the units for each variable.
 
+Examples of this format for the `windpower` and `pvwatts` modules may be found here: [https://github.com/NREL/reV-tutorial/tree/master/data/resources](../../data/resources/). 
+
+## Visualizing reV Outputs
+The graphic below shows a representation of NREL's space-time format using a reV generation output. The reV generation module's outputs mirror the resource file's format so any variable in the resource file will match this structure. This graphic shows a reV capacity factor timeseries array, a map of the average capacity factors derived from it, a glimpse at the meta data associated with the X-Axis, and a glimpse at the timeseries vector associated with the Y-Axis.
+
+![resource_data_diagram](https://github.com/user-attachments/assets/7b14b266-3e81-4046-b2cb-b97566253b7d)
+
+If you zoom into the red segment in the array, you can see how this format represents the daily pattern of solar irradiance across space.  In the map below, only the locations represented in this red segment are shown. In this value segment, you can also see the effect of clouds moving across this area over time, particularly from day 8 through 9 of this period.
+
+![resource_data_diagram_zoomin](https://github.com/NREL/reV-tutorial/blob/master/data/images/resource_data_diagram_zoomin.png)
 
 Existing Resource Files
 ===
@@ -91,12 +102,3 @@ Existing Resource Files
 Remote ACCESS to preformatted datasets
 ===
   - NREL Highly Scalable Data Service (`HSDS`) [Examples](https://github.com/NREL/hsds-examples)
-
-Visualization an NSRDB resource file
-===
-![resource_data_diagram](https://github.com/user-attachments/assets/7b14b266-3e81-4046-b2cb-b97566253b7d)
-
-
-Visualization an NSRDB resource file (Zoom in)
-===
-![resource_data_diagram_soomin](https://github.com/user-attachments/assets/6064d31a-cc45-4569-833c-95a94944ea40)
