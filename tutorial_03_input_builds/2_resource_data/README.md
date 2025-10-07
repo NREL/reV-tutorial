@@ -82,8 +82,8 @@ The format is composed of a set of non-grouped HDF5 datasets and attributes. Atm
 - 2D array for each data variable (GHI, windspeed, air pressure, etc.)
 - Time index on Y-Axis
 - Site index X-Axis
-- Contains a `meta` data table that holds coordinate and other site information associated with the x-axis
-- Contains a 1D `time_index` vector that contains date-time strings associated with the y-axis
+- A `meta` data table (stored as a structure array) that holds coordinate and other site information associated with the x-axis
+- A 1D `time_index` vector that contains date-time strings associated with the y-axis
 - A `scale_factor` attribute on each variable that is used to translate integers back into floats where scaling is used for data storage
 - A `units` attribute that stores the units for each variable
 
@@ -96,7 +96,7 @@ The graphic below shows a representation of NREL's space-time format using a `re
 
 <br>
 
-If you zoom into the red segment in the array, you can see how this format represents the daily pattern of solar irradiance across space.  In the map below, only the locations represented in this red segment are shown. In this value segment, you can also see the effect of clouds moving across this area over time, particularly from day 8 through 9 of this period.
+If you zoom into the red segment in the array, you can see how this format represents the daily pattern of solar irradiance across space.  In the map below, only the locations represented in this red segment are shown. In this value segment, you can also see the effect of clouds moving across this area over time, particularly from day 8 through 10 of this period.
 
 <br>
 
