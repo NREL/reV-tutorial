@@ -1,6 +1,6 @@
 Resource Files
 ===
-The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. The datasets you'll need to include in the file will depend on the SAM technology being modeled. You can find more information about the sets of required variables in SAM's help page here https://samrepo.nrelcloud.org/help/weather_format.html, but we've recreated the reference table to include just the reV-comaptible modules here.
+The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. The datasets you'll need to include in the file will depend on the SAM technology being modeled. You can find more information about the sets of required variables in SAM's help page here https://samrepo.nrelcloud.org/help/weather_format.html. Below, we've recreated SAM's weather variable reference table to include just the reV-comaptible modules. Note that not all elements are always required (e.g., snow losses simply won't be modeled in PV if the depth variable is missing). More notes on each variable can be found in the weather data elements page here: https://samrepo.nrelcloud.org/help/weather_data_elements.html.
 
 <table align="center">
   <thead>
