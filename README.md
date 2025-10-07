@@ -5,11 +5,11 @@ This is a repository for learning to run reV, both through Commands-Line Interfa
 
 # Brief description of the reV modeling pipeline
 
-reV is split into three main components: 
-1) simulating renewable energy generation and cost potential across a landscape. 
-2) creating model generation plants within spatial constraints.
-3) connecting plants to a transmission grid.
-4) reaggregating generation profiles (timeseries) into representative profiles for each model generation plant.
+reV is split into four main components: 
+1) Simulating renewable energy generation and cost potential across a landscape. 
+2) Creating model generation plants within spatial constraints.
+3) Connecting plants to a transmission grid.
+4) Reaggregating generation profiles (timeseries) into representative profiles for each model generation plant.
 
 <p align="center">
   <img src="https://github.com/NREL/reV-tutorial/blob/master/tutorial_05_pipeline/images/rev_standard_pipeline.png" alt="" height=400>
@@ -22,19 +22,19 @@ At its foundation reV serves a spatial coordinator for the [Systems Advisor Mode
 reV is designed as a set of Python modules, each of which take as inputs the outputs of previous modules. The basic work flow is to take input "resource" datasets, a specifically formatted gridded timeseries of wind or solar irradiance, pass them through module generators (**in reV-Generation**) (wind turbines or photovoltaic panels) to create gridded timeseries of energy outputs and production costs, pass that into an aggregation module (**reV-Supply-Curve-Aggregation**) which combines the resource scale generation values into model plants with plant-level costs and energy production, and finally pass that into a transmission module (**reV-Supply-Curve**) which connects these plants to transmission and updates costs: 
 
 
- <h5 align="center"> Resource :arrow_right: Generation :arrow_right: Aggregation :arrow_right: Transmission :arrow_right: Energy and Costs </h5>
+ <h5 align="center"> Resource &rarr; Generation &rarr; Aggregation &rarr; Transmission &rarr; Potential Energy and Costs </h5>
 
  
 Land use constraints can be added into the aggregation step to exclude development in parts of the study area, resulting in a range of plant sizes. It is also possible to create time series of plant-level power generation, or "representative profiles" as the final step, resulting in a modeling pipeline that looks like this:
 
-  <h5 align="center"> Resource :arrow_right: Generation :arrow_right: Exclusions :arrow_right: Aggregation :arrow_right: Transmission :arrow_right: Energy and Costs :arrow_right: Representative Profiles </h5>
+  <h5 align="center"> Resource &rarr; Generation &rarr; Exclusions &rarr; Aggregation &rarr; Transmission &rarr; Potential Energy and Costs &rarr; Representative Profiles </h5>
 
 
 # Tutorials on reV CLI methods
 
-The quickest and easiest way to get started with reV is to use the **JSON-CLI** workflow. This involves building a json configuration file for a module you want to run and running that module with the corresponding CLI command. You can also configure several modules in an input-output pipeline and run each with a single command. The configurations will tell reV which SAM generator configurations to run and where, what variables to generate, which land-use assumptions to use, etc. It will also tell reV how to work with your system to most efficiently build these outputs (e.g. how to split the work across CPUs, how to split work across nodes for distributed systems, what memory utilization limits to use, etc.). This method is convenient in that you don't need to edit any Python scripts, it is relatively straightforward to set up and run directly from your terminal, and leaves a tidy way to keep track of run parameters when recreating or reviewing a reV run. 
+The quickest and easiest way to get started with reV is to use the **JSON-CLI** workflow. This involves building a JSON configuration file for a module you want to run and running that module with the corresponding CLI command. You can also configure several modules in the input-output pipeline described above and run each sequentially with a single command. The configurations will tell reV which SAM generator configurations to run and where, what variables to generate, which land-use assumptions to use, etc. It will also tell reV how to work with your system to most efficiently build these outputs (e.g. how to split the work across CPUs, how to split work across nodes for distributed systems, what memory utilization limits to use, etc.). This method is convenient in that you don't need to edit any Python scripts, it is relatively straightforward to set up and run directly from your terminal, and it leaves a tidy way to keep track of run parameters when recreating or reviewing a reV run. 
 
-To learn details about the reV JSON-CLI workflow, go into each `tutorial_#_module` folder sequentially and follow the instruction in each. 
+To learn about how to work with the reV JSON-CLI workflow, go into each `tutorial_#_module` folder sequentially and follow the instruction in each. 
 
 # reV Documentation
 Use this documentation in tandem with the tutorial series: https://nrel.github.io/reV/_cli/cli.html.

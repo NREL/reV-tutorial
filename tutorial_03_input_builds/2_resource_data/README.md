@@ -1,6 +1,75 @@
 Resource Files
 ===
-The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is a particular data format that is nicely integrated into the NREL modeling ecosystem but is unique to NREL. In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_10_advanced_input_builds](../../tutorial_10_advanced_input_builds/README.md). 
+The inputs required for a reV-compatible resource file will depend on the SAM module used in the generation step. This format is nicely integrated into the NREL modeling ecosystem but is unique to NREL, so it requires some explanation. The datasets you'll need to include in the file will depend on the SAM technology being modeled. You can find more information about the sets of required variables in SAM's help page here https://samrepo.nrelcloud.org/help/weather_format.html. Below, we've recreated SAM's weather variable reference table to include just the reV-comaptible modules. Note that not all elements are always required (e.g., snow losses simply won't be modeled in PV if the depth variable is missing). More notes on each variable can be found in the weather data elements page here: https://samrepo.nrelcloud.org/help/weather_data_elements.html.
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Windpower</th>
+      <th>PVSamv1</th>
+      <th>PVWatts</th>
+      <th>Concentrating Solar</th>
+      <th>Geothermal</th>
+  </tr>
+  </thead>
+
+  <tbody align="center">
+    <tr><td>Latitude (decimal &deg;)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Longitude (decimal &deg;)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Datetime (<i>"%Y-%m-%d %H:%M:%S"</i>)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Elevation (m)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td></td>
+    </tr>
+    <tr><td>Albedo</td>
+      <td></td><td>*</td><td>*</td><td></td><td></td>
+    </tr>
+    <tr><td>Atmospheric Pressure (mbar)</td>
+      <td>*</td><td>*</td><td></td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Irradiance - Diffuse Horizontal (W/m<sup>2</sup>)</td>
+      <td></td><td>*</td><td>*</td><td></td><td></td>
+    </tr>
+    <tr><td>Irradiance - Direct Normal (W/m<sup>2</sup>)</td>
+      <td></td><td>*</td><td>*</td><td>*</td><td></td>
+    </tr>
+    <tr><td>Irradiance - Global Horizontal (W/m<sup>2</sup>)</td>
+      <td></td><td>*</td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Irradiance - Plane of Array (W/m<sup>2</sup>)</td>
+      <td></td><td>*</td><td>*</td><td></td><td></td>
+    </tr>
+    <tr><td>Relative Humidity (%)</td>
+      <td></td><td></td><td></td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Snow Depth (cm)</td>
+      <td></td><td>*</td><td>*</td><td></td><td></td>
+    </tr>
+    <tr><td>Temperature - Dew Point(&deg;C)</td>
+      <td></td><td>*</td><td></td><td>*</td><td></td>
+    </tr> 
+    <tr><td>Temperature - Dry Bulb (&deg;C)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Temperature - Wet Bulb (&deg;C)</td>
+      <td></td><td>*</td><td></td><td>*</td><td>*</td>
+    </tr>
+    <tr><td>Wind Direction (&deg;)</td>
+      <td>*</td><td>*</td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>Wind Speed (m/s)</td>
+      <td>*</td><td>*</td><td>*</td><td>*</td><td></td>
+    </tr>
+  </tbody>
+</table>
+
+In this tutorial, we'll use the example HDF5 resource [data](../../data/resources/) to introduce the format. Advanced input building can be found under [tutorial_10_advanced_input_builds](../../tutorial_10_advanced_input_builds/README.md). 
 
 The Format
 ===

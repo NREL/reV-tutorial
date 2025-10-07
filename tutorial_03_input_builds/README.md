@@ -6,7 +6,7 @@ For a full model pipeline, reV requires at least the following inputs:
 
 1) **A SAM Configuration JSON File**
     - This refers to reV-compatible configurations for the System Advisor Model (SAM), which is used to simulate energy generation and costs.
-    - Refer to the two methods in `1_sam_configs/` to build a SAM config file.
+    - Refer to `1_sam_configs/` for ways to build a SAM config file.
     - This file will be used in the [tutorial_04_generation_a/](../tutorial_04_generation_a/), and [tutorial_05_pipeline/](../tutorial_05_pipeline/). 
 3) **Resource Data HDF5 Files**
     - "Resource" here refers to spatial timeseries of atmospheric or geothermal energy resources.
