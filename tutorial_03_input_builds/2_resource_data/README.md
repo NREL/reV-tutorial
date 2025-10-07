@@ -76,7 +76,7 @@ The inputs required for a reV-compatible resource file will depend on the SAM mo
 The Format
 ===
 
-The format is composed of a set of non-grouped HDF5 datasets and attributes. Atmospheric datasets are stored as 2D arrays whose index positions correspond to separate datasets containing a 1D datetime vector and a 2D structured meta data array (which stores the coordinates and site-specifc information). Each data variable (aside from the meta and time datasets) will have attributes for at least a scale factor and a units string. Additional attributes on either the individual datasets or the file itself may also be stored to help users understand the file's contents. The main characteristics needed to understand this format are outlined below:
+The format is composed of a set of non-grouped HDF5 datasets and attributes. Atmospheric datasets are stored as 2D arrays whose index positions correspond to separate datasets containing a 1D datetime vector and a 2D structured meta data array (which stores the coordinates and site-specifc information). Each data variable (aside from the meta and time datasets) will have attributes for at least a scale factor and units. Additional attributes on either the individual datasets or the file itself may also be stored to help users understand the file's contents. The main characteristics needed to understand this format are outlined below:
 
 - Hierarchical Data Format 5 (HDF5)
 - 2D array for each data variable (GHI, windspeed, air pressure, etc.)
