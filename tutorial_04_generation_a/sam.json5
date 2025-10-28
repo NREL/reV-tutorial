@@ -9,5 +9,6 @@
     "module_type": 0,
     "system_capacity": 20000,
     "tilt": 0,
-    "variable_operating_cost": 0
+    "variable_operating_cost": 0,
+    "time_index_step": 2
   }
