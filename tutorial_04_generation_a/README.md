@@ -29,7 +29,7 @@ For a basic run, these following entries in `config_generation.json` are the mos
             "cf_profile",  # reV-derived, see <a href="https://nrel.github.io/reV/_autosummary/reV.SAM.generation.PvWattsv8.html#reV.SAM.generation.PvWattsv8.cf_profile">description</a>
             "lcoe_fcr",  # reV-derived, see <a href="https://nrel.github.io/reV/_autosummary/reV.SAM.econ.LCOE.html#reV.SAM.econ.LCOE.lcoe_fcr">description</a>
             "gh",  # Directly from SAM, see <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.Outputs.gh">description</a>
-            "ghi_mean",  # reV-derived, see <a href="https://github.com/NREL/reV/blob/0f71e9e97cc320a085c519819750f3a5a6889f5f/reV/SAM/generation.py#L193">method</a>
+            "ghi_mean",  # reV-derived, see <a href="https://github.com/NREL/reV/blob/0f71e9e97cc320a085c519819750f3a5a6889f5f/reV/SAM/generation.py#L161">method</a>
             "capital_cost"  # Passed through from SAM inputs, see <a href="https://nrel-pysam.readthedocs.io/en/latest/modules/Pvwattsv8.html#PySAM.Pvwattsv8.Pvwattsv8.Outputs.gh">description</a>
         ]</pre>
 
@@ -62,31 +62,36 @@ Even if you received no obvious errors, it is always a good idea to check the lo
 In a Python session, import the `Resource` class from `rex` and use it to open your files. Here is an example for the first output file:
 
 ```python
-from rex import Resource
-
-gen = Resource("./tutorial_04_generation_a_generation_2012.h5")
+>>> from rex import Resource
+>>> gen = Resource("./tutorial_04_generation_a_generation_2012.h5")
 ```
 
-Now you have created a pointer to the data in the output HDF5 file, but have not pulled any data in yet. Let's pull that data into memory (the outputs will be Numpy arrays) and take a look at the average capacity factor dataset to make sure we get reasonable values. The first check is that you got values. If you got all zeros everywhere for a whole year, that's an excellent clue that something probably went wrong and you should check your logs for exceptions. 
+Now you have created a pointer to the data in the output HDF5 file, but have not pulled any data in yet. Let's pull that data into memory (the outputs will be Numpy arrays) and take a look at the average capacity factor dataset to make sure we get reasonable values. A first good check is that you got values. If you got all zeros everywhere for a whole year, that's an excellent clue that something probably went wrong and you should check your logs for exceptions. 
 
 ```python
-cf_mean = gen["cf_mean"]
-print(cf_mean[cf_mean == 0].shape[0])
-0
+>>> cf_mean = gen["cf_mean"]
+>>> print(any(cf_mean == 0))
+False
 ```
 
-So, this indicates that every site in our sample was generating at least something. 
+So, this indicates that every site in our sample was generating at least something.
 
 The next check is if the output values are within an expected range. You might not know what that minimum or maximum value should be for other technologies, so that will require some research. However, without any knowledge about solar capacity factors, we already know that PV systems aren't generating anything at night (50% of our generation is lost there) and for about half of the day the sun is either rising or falling, so we are generating less than full capacity during most of the day. On top of this, clouds, snow, dust, and other system losses will pull more generation away from the potential energy hitting the solar panels. Tracking, bifacility, high DC/AC ratios, and other technologcial advancements can gain some of this energy back, but only so much is possible. For a solar run, the most advanced technology in the most ideal locations (of which Rhode Island is certainly not one) for a properly configured SAM model will rarely have an average capacity factor value over .30, so we expect significantly lower average values for this run. 
 
 Anyways, let's pull out that value and check for obviously wrong values.
 
 ```python
-print(cf_mean.max())
-0.18519369
+>>> print(f"Min value: {cf_mean.min()}")
+Min value: 0.1708141267299652
+
+>>> print(f"Mean value: {cf_mean.mean()}")
+Mean value: 0.1791270226240158
+
+>>> print(f"Max value: {cf_mean.max()}")
+Max value: 0.18519368767738342
 ```
 
-So, that checks out, it's not zero and 18.5% is perhaps low enough to be believable for the North East United States.
+So, these values don't look too bad, they are probably higher than what currently exists in Rhode Island but are low enough to be believable.
 
 Did you get unreasonable values instead? If so, were they absurdly high or absurdly low? That could indicate either a configuration or a runtime error, check the logs for errors and make sure your SAM parameters are correct. If no errors are found in either of those, perhaps your resource file has some errors. There is no end to the list of possible errors, but we can only do our best, so keep looking and you'll probably find one eventually.
 
@@ -95,9 +100,9 @@ Are they only uncomfortably high or unreasonably low, but relatively close to wh
 What about instantaneous generation. We know that a capacity factor should never go above one, so that's an easy check. Let's pull out the time series and see if that's true:
 
 ```python
-cf_profile = gen["cf_profile"]
-print(cf_profile[cf_profile > 1].shape[0])
-0
+>>> cf_profile = gen["cf_profile"]
+>>> print((cf_profile > 1).any())
+False
 ```
 
 Of course, you'll want follow a similar process any other output you requested. Once you've checked everything for clearly wrong or suspicious values, you have completed the generation step and can move on to the next tutorial ([`tutorial_04_generation_b`](https://github.com/NREL/reV-tutorial/tree/master/tutorial_04_generation_b)), where we'll look at combining multiple yearly files into one.
