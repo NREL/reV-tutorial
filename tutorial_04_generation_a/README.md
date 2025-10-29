@@ -50,7 +50,7 @@ Here, the base command is `reV`, the submodule is `generation`, the `-c` option 
 If you receive an error instead, this may indicate an mistake in your configuration file. If everything looks good on that front, try examining the files in your `logs` directory for clues about what went wrong.
 
 ## Checking Outputs
-Even if you received no errors, it is always a good idea to check that the output values make sense. Valid ranges of values will depend on the model you are running, but there are some easy characteristics to check for in every case. There are several ways to examine the values in your output file. Since `reV` uses the reV Exchange model (`rex`) to handle HDF5 files, we will go ahead and introduce a useful class from that package here.
+Even if you received no obvious errors, it is always a good idea to check the logs for warnings or buried excpetions and that the output values make sense. Valid ranges of values will depend on the model you are running, but there are some easy characteristics to check for in every case. There are several ways to examine the values in your output file. Since `reV` uses the reV Exchange model (`rex`) to handle HDF5 files, we will go ahead and introduce a useful class from that package here.
 
 In a Python session, import the `Resource` class from `rex` and use it to open your files. Here is an example for the first output file:
 
