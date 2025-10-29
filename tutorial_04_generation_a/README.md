@@ -62,16 +62,16 @@ Even if you received no obvious errors, it is always a good idea to check the lo
 In a Python session, import the `Resource` class from `rex` and use it to open your files. Here is an example for the first output file:
 
 ```python
->>> from rex import Resource
->>> gen = Resource("./tutorial_04_generation_a_generation_2012.h5")
+from rex import Resource
+gen = Resource("./tutorial_04_generation_a_generation_2012.h5")
 ```
 
 Now you have created a pointer to the data in the output HDF5 file, but have not pulled any data in yet. Let's pull that data into memory (the outputs will be Numpy arrays) and take a look at the average capacity factor dataset to make sure we get reasonable values. A first good check is that you got values. If you got all zeros everywhere for a whole year, that's an excellent clue that something probably went wrong and you should check your logs for exceptions. 
 
 ```python
->>> cf_mean = gen["cf_mean"]
->>> print(any(cf_mean == 0))
-False
+cf_mean = gen["cf_mean"]
+print(any(cf_mean == 0))
+# False
 ```
 
 So, this indicates that every site in our sample was generating at least something.
@@ -81,14 +81,14 @@ The next check is if the output values are within an expected range. You might n
 Anyways, let's pull out that value and check for obviously wrong values.
 
 ```python
->>> print(f"Min value: {cf_mean.min()}")
-Min value: 0.1708141267299652
+print(f"Min value: {cf_mean.min()}")
+# Min value: 0.1708141267299652
 
->>> print(f"Mean value: {cf_mean.mean()}")
-Mean value: 0.1791270226240158
+print(f"Mean value: {cf_mean.mean()}")
+# Mean value: 0.1791270226240158
 
->>> print(f"Max value: {cf_mean.max()}")
-Max value: 0.18519368767738342
+print(f"Max value: {cf_mean.max()}")
+# Max value: 0.18519368767738342
 ```
 
 So, these values don't look too bad, they are probably higher than what currently exists in Rhode Island but are low enough to be believable.
@@ -100,9 +100,9 @@ Are they only uncomfortably high or unreasonably low, but relatively close to wh
 What about instantaneous generation. We know that a capacity factor should never go above one, so that's an easy check. Let's pull out the time series and see if that's true:
 
 ```python
->>> cf_profile = gen["cf_profile"]
->>> print((cf_profile > 1).any())
-False
+cf_profile = gen["cf_profile"]
+print((cf_profile > 1).any())
+# False
 ```
 
 Of course, you'll want follow a similar process any other output you requested. Once you've checked everything for clearly wrong or suspicious values, you have completed the generation step and can move on to the next tutorial ([`tutorial_04_generation_b`](https://github.com/NREL/reV-tutorial/tree/master/tutorial_04_generation_b)), where we'll look at combining multiple yearly files into one.
