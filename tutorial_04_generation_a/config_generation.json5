@@ -1,28 +1,27 @@
 {
-    "log_directory": "./logs/",
     "execution_control": {
       "memory_utilization_limit": 0.4,
-      "sites_per_worker": 1
+      "sites_per_worker": 100
     },
+    "log_directory": "./logs/",
+    "log_level": "INFO",
     "analysis_years": [
       2012,
       2013
     ],
-    "log_level": "INFO",
     "output_request": [
       "cf_mean",
       "cf_profile",
       "lcoe_fcr",
       "capital_cost",
       "ghi_mean",
-      "gh",
       "fixed_operating_cost",
       "system_capacity",
       "fixed_charge_rate",
       "variable_operating_cost"
     ],
     "project_points": "./project_points_ri.csv",
-    "resource_file": "./ri_100_nsrdb_{}.h5",
+    "resource_file": "./nsrdb_ri_{}.h5",
     "sam_files": {
       "default": "./sam.json5"
     },
