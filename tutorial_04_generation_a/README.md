@@ -93,7 +93,7 @@ print(f"Max value: {cf_mean.max()}")
 
 So, these values don't look too bad, they are probably higher than what currently exists in Rhode Island but are low enough to be believable.
 
-Did you get unreasonable values instead? If so, were they absurdly high or absurdly low? That could indicate either a configuration or a runtime error, check the logs for errors and make sure your SAM parameters are correct. If no errors are found in either of those, perhaps your resource file has some errors. There is no end to the list of possible errors, but we can only do our best, so keep looking and you'll probably find one eventually.
+Did you get unreasonable values instead? If so, were they absurdly high or absurdly low? That could indicate either a configuration or a runtime error, check the logs for errors and make sure your SAM parameters are correct. If no errors are found in either of those, perhaps your resource file has some errors. There is no end to the list of possible errors, but most errors indicate a simple surface-level problem, so keep looking and you'll likely find it eventually.
 
 Are they only uncomfortably high or unreasonably low, but relatively close to what you'd expect? That sounds more like a simpler configuration error. Check the SAM config for mistakes in your losses, DC/AC ratio, inverter efficiency, or other parameters that might affect generation efficiency. It could still be anything, of course.
 
