@@ -5,6 +5,7 @@ The Renewable Energy Potential Model (reV) was originally designed to run on Nat
 
 
 ## 1) Setup an AWS Account
+- Write for an audience that ranges from a non-CS University Grad Student to Upper Intermediate-level IT professional. We don't really need to worry about AWS pros.
 - We'll want a section on how to do this for both individual and institutional accounts. 
 - Describe the Single Sign On Issue and reiterate the need for an IAM user.
     - Here we can probably contact John Readey to see if he found any insights into the Authorization protocol problem with SSO vs IAM user accounts
@@ -21,21 +22,21 @@ An AWS Parallel Cluster provides the user a head node that controls the distribu
     - The configuration file will require some elaboration.
  
 ## 3) Differences with an HPC
-There are default behaviors in an AWS Parallel Cluster that differ significantly from what an HPC user might expect and which can cause some confusion when configuring a reV job since it was designed assuming behaviors common to HPC systems.
+There are default behaviors in an AWS Parallel Cluster that may differ significantly from what an HPC user might expect. This can cause some confusion when configuring a reV job since the model was designed specifically to run on HPC systems.
 
-On NREL's HPC, exclusive node access is turned on. If you submit a job to a compute node that job has exclusive access to the entire server (i.e., all cpus and available memory). If you submit a second job, that job will check out a second compute node and block all those resources from other jobs submitted through the scheduler. So, this is the assumption that reV makes. This is important for message passing between nodes (MPI) and is perhaps more appropriate for HPC systems to prevent multiple users from interfering with each other's jobs.
-    
-AWS, however, uses the default SLURM settings and shares nodes between jobs by default. When you submit that second job, if there are still enough resources available on the first compute node, it will kick that job on off on it. As you kick more jobs off, it will continue using that first node until it runs out of CPUs and/or memory after which the scheduler will spin up a second node and start kicking jobs off on that one. So, this make sense from an efficiency/cost perspective and gets around underutilization problems that can occur with exclusive node scheduling behavior, but it requires you to think differently about your execution control in reV configurations if you're used to this default behavior.
+On NREL's HPC, exclusive node access is turned on. If you submit a job to a compute node, that job has exclusive access to the entire server (i.e., all cpus and available memory). If you submit a second job, that job will check out a second compute node and block all those resources from other jobs submitted through the scheduler. So, this is the assumption that reV makes. This is important for message passing between nodes (MPI) and is more appropriate for HPC systems to prevent multiple users from interfering with each other's jobs.
 
-Alternately, you can tweak a few settings to effectively turn node sharing off. Without having to spin up a new cluster, you may simply set the `memory` option in your `execution_control` block to approximately match the available memory on the target compute node (this actually didn't work, AI!). If you want to change the default behavior to be exclusive, you may add `JobExclusiveAllocation = true` to the target SLURM Queue in your AWS Parallel Cluster configuration file before spinning up your cluster.
+AWS, however, uses the default SLURM settings and shares nodes between jobs by default. When you submit that second job, if there are still enough resources available on the first compute node, it will kick that job off on it. As you kick more jobs off, it will continue using that first node until it runs out of CPUs and/or memory after which the scheduler will spin up a second node and start kicking jobs off on that one. So, this make sense from an efficiency/cost perspective and gets around underutilization problems that can occur with exclusive node scheduling behavior, but it requires you to think differently about your execution control in reV configurations if you're used to this default behavior.
+
+Alternatively, you can tweak a few settings to effectively turn node sharing off. Without having to spin up a new cluster, you may simply set the `memory` option in your `execution_control` block to approximately match the available memory on the target compute node (this actually didn't work, AI!). If you want to change the default behavior to be exclusive, you may add `JobExclusiveAllocation = true` to the target SLURM Queue in your AWS Parallel Cluster configuration file before spinning up your cluster.
 
 ## 4) Setup an HSDS Server
 HSDS can be used to access wind, solar, and other resource data that NREL houses in an AWS S3 bucket. For smaller jobs single node jobs, this can be done by installing HSDS, giving it access information to this S3 bucket, kicking it off directly on your file system, adjusting your resource file paths in your reV configuration files, and then letting reV handle the rest. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job.
 
-For large jobs, a local HSDS server will likely encounter connection issues at some point and kill your reV job. This problem can be largely fixed using docker. Also, since you're spinning up multiple machines to distribute reV work, you'll need to install and kick off HSDS on each machine you spin up.
+For large jobs, a local HSDS server will likely encounter connection issues at some point and kill your reV project. This problem can be largely fixed using Docker. Also, since you're spinning up multiple machines to distribute reV work, you'll need to install and kick off HSDS on each machine you spin up.
 
-- Setting up docker
-- IAM and authetication issues
+- Setting up Docker
+- IAM and authentication issues
 - Different pacakge managers for different OSs, some with caveats
 - Kick off script
     - Exclusive vs node sharing (i.e., whether a file lock is needed)
@@ -61,7 +62,8 @@ For large jobs, a local HSDS server will likely encounter connection issues at s
     - A common problem you might come across is a violation of the max HSDS task count settings. You are, by default, allowed 100 concurrent tasks per node. If you exceed this count, you will receive a 503 error. You can tell if this is the error by sshing into the offending node (e.g., `ssh standard-dy-standard-6`), using the docker logs command on the HSDS server node, and searching the output for 503 errors (`docker logs hsds_sn_1 | grep 503`). You can solve this by reducing the possible number of concurrent processes in the reV configuration file (e.g., reduce `max_workers`) or by adjusting the HSDS parameter in a `override.yaml` file in the HSDS repository (e.g., `~/github/hsds/admin/override.yml`). This override file will supercede individual entries in `config.yml` with user-supplied values. In our example problem, the `override.yml` file would contain only the line `max_task_count: <task count>` (e.g., `max_task_count: 150`). If you run enough sample reV runs, it will probably become clear whether this is a common problem that requires a more fundamental change to your execution control in reV or if it's rare enough that a slightly higher HSDS task count will be suffice. The default for this parameter is `100`.
 
 
-
+6) Monitoring AWS PCluster usage and costs
+- Just a real brief overview of how to avoid cost overruns.
 
 ## AWS Parallel Cost Service
 In this setup, there are four main sets of fees for running reV on an AWS Parallel Cluster:
