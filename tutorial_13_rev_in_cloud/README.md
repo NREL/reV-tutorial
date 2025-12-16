@@ -63,7 +63,15 @@ For large jobs, a local HSDS server will likely encounter connection issues at s
 
 
 6) Monitoring AWS PCluster usage and costs
-- Just a real brief overview of how to avoid cost overruns.
+- Just a real brief overview of how to monitor usage and avoid cost overruns.
+
+7) AWS PCluster clean up
+- Remove the PCluster
+- Depending on settings, you may need to handle the file system separately
+- Ways to keep as much infrastructure alive with as little cost as possible
+    - "The minimal state"
+- Etc.
+
 
 ## AWS Parallel Cost Service
 In this setup, there are four main sets of fees for running reV on an AWS Parallel Cluster:
