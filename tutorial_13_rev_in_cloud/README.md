@@ -1,7 +1,7 @@
 reV in the Cloud
 ===
 
-The Renewable Energy Potential Model (reV) was originally designed to run on National Renewable Energy Laboratory (NREL) High Performance Computer systems (HPCs) and access energy resource data on a local file system. Users wishing to run large-scale reV jobs without access to NREL's HPC can recreate the original work flow using an [Amazon Web Services (AWS) Parallel Cluster](https://aws.amazon.com/hpc/parallelcluster/) to provide the compute infrastructure and the [Highly Scalable Data Service (HSDS)](https://www.hdfgroup.org/solutions/highly-scalable-data-service-hsds/) to provide access to resource data. This document will walk you through how to set these services up and start using reV in the cloud.
+The Renewable Energy Potential Model (reV) was originally designed to run on National Laboratory of the Rockies (NLR) High Performance Computer systems (HPCs) and access energy resource data on a local file system. Users wishing to run large-scale reV jobs without access to NLR's HPC can recreate the original work flow using an [Amazon Web Services (AWS) Parallel Cluster](https://aws.amazon.com/hpc/parallelcluster/) to provide the compute infrastructure and the [Highly Scalable Data Service (HSDS)](https://www.hdfgroup.org/solutions/highly-scalable-data-service-hsds/) to provide access to resource data. This document will walk you through how to set these services up and start using reV in the cloud.
 
 
 ## 1) Setup an AWS Account
@@ -13,25 +13,91 @@ The Renewable Energy Potential Model (reV) was originally designed to run on Nat
 > A lot of companies will just use IAM users and currently that will just work.  Others might use identify center and AWS SSO users, or other forms of SSO that use STS credentials.  We could stop here and just say SSO (STS credentials) doesn't work, you will need an IAM user account.  We could also look at hsds and see if we can fix it, it might be an easy fix to enable the use of STS credentials.
 
 ## 2) Setup a Parallel Cluster
-An AWS Parallel Cluster provides the user a head node that controls the distribution of computational work to compute nodes which are spun up on demand and shutdown after the work is finished.
-- Discuss the different options for spinning up a cluster
-    - AWS pcluster CLI
-    - User interfaces
-    - etc.
+Once an AWS account is created, the user is able to choose the type of cluster they want and parameterize its characteristic. A AWS Parallel Cluster provides the user a head node that controls the distribution of computational work to compute nodes which are spun up on demand and shutdown after the work is finished. For reV run, this also requires a shared file system so inputs and outputs can be accessible from one location. The following outlines how configure, spin up, and tear a cluster using the AWS CLI.
+
+> Note that we are using read-only access for S3 buckets in this configuration (`AmazonS3ReadOnlyAccess`). This is because we are writing our reV outputs to the shared file system and only use S3 to access the resource data. If, for any reason, you need to elevate or refine your access privileges, change the `AdditionalIamPolicies` `Policy` entries to something more permissable. See all available options here: [https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html).
+
+### 2a) Install AWS CLIs
+Full instructions for installing and using AWS CLIs can be found in the official Amazon page here: [https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html). To install the program, you may use your OS's package manager (i.e., apt, dnf, yum, etc) or you create a virtual Python environment on your local machine and install using `pip` or any other Python package manager, e.g.,:
+
+```bash
+python3 -m venv ~/envs/aws
+source activate ~/envs/aws/bin/activate
+pip install awscli aws-parallelcluster
+```
+
+Then you need to link these CLIs to your AWS account. First, create a `config` file in a directory called `~/.aws` and fill in the following account information. Here, we are also including the required entries for a Single Sign-On (SSO) method:
+
+```Python
+[profile profile_name]
+sso_session = account_name
+sso_account_id = 123456789123
+sso_role_name = developers
+region = us-west-2
+output = json
+
+[sso-session account_name]
+sso_start_url = https://org-name.awsapps.com/start/#
+sso_region = us-west-2
+sso_registration_scopes = sso:account:access
+```
+
+Moving forward, we need to tell the AWS CLI's which profile (that you just created) to use for authentication. You may do this manually for each session by setting the `AWS_PROFILE` environment variable to this name, you may specify the name in a `--profile` option for each CLI command, or you can add the variable to your command-line interpreter's startup script to automate this step, which is what we're suggesting for convenience. Here, we are using a Bash shell so will be editing the `~/.bashrc` script to add the following line:
+
+```bash
+export AWS_PROFILE=profile_name
+```
+
+### 2b) Configure the Cluster
+A sample AWS Parallel Cluster YAML configuration file is provided in this repository. This allows the user to specify the AWS compute region, the operating system, the type of head node, the types of compute nodes (multiple types are possible), the type of job scheduler, and the type of file system. 
+> *replace the SubnetId with the appropriate value given to you by your system administrator or (where would you find this?)*
+
+Linux operating systems supported in all regions (see [https://docs.aws.amazon.com/parallelcluster/latest/ug/Image-v3.html](https://docs.aws.amazon.com/parallelcluster/latest/ug/Image-v3.html)):
+    - `alinux2`: Amazon Linux 2
+    - `alinux2023`: Amazon Linux 2023
+    - `rhel8`: Red Hat Enterprise Linux 8
+    - `rhel9`: Red Hat Enterprise Linux 9
+    - `ubuntu2004`: Ubuntu 20.04 LTS
+    - `ubuntu2204`: Ubuntu 22.04 LTS
+    - `ubuntu2404`: Ubuntu 24.04 LTS
+
+### 2c) Spin up the Cluster
+
+Before you can access your AWS account to create the parallel cluster we configured in step 2b) we need to authenticate the connection. To do this, run the appropriate AWS sign-on command using the AWS CLI. For the single sign-on method use:
+
+```bash
+sso login
+```
+
+- *add any other method here*
+
+Now we can use the `aws-parallelcluster` CLI to create your cluster. Run the following command (if you want to keep default cluster name from the sample config, you may use this command directly, otherwise update the cluster name to your own):
+
+    `pcluster create-cluster -c rev-pcluster-config.yaml --cluster-name rev-pcluster`
+
+If everything was configured correctly, you will see an output JSON message in your shell indicating that the creation process has begun (look for "CREATE_IN_PROGRESS"). This process will take some time to finish, but you may check on it's progress throught the CloudFormation portal in your AWS developers page where you'll the status of each individual cluster component or run the following command to see its overall status:
+
+```
+rev-pluster list-clusters
+```
+
+### 2d) Tear down or Restart the Cluster
+
+
 - Discuss the configuration file
     - The configuration file will require some elaboration.
  
 ## 3) Differences with an HPC
 There are default behaviors in an AWS Parallel Cluster that may differ significantly from what an HPC user might expect. This can cause some confusion when configuring a reV job since the model was designed specifically to run on HPC systems.
 
-On NREL's HPC, exclusive node access is turned on. If you submit a job to a compute node, that job has exclusive access to the entire server (i.e., all cpus and available memory). If you submit a second job, that job will check out a second compute node and block all those resources from other jobs submitted through the scheduler. So, this is the assumption that reV makes. This is important for message passing between nodes (MPI) and is more appropriate for HPC systems to prevent multiple users from interfering with each other's jobs.
+On NLR's HPC, exclusive node access is turned on. If you submit a job to a compute node, that job has exclusive access to the entire server (i.e., all cpus and available memory). If you submit a second job, that job will check out a second compute node and block all those resources from other jobs submitted through the scheduler. So, this is the assumption that reV makes. This is important for message passing between nodes (MPI) and is more appropriate for HPC systems to prevent multiple users from interfering with each other's jobs.
 
 AWS, however, uses the default SLURM settings and shares nodes between jobs by default. When you submit that second job, if there are still enough resources available on the first compute node, it will kick that job off on it. As you kick more jobs off, it will continue using that first node until it runs out of CPUs and/or memory after which the scheduler will spin up a second node and start kicking jobs off on that one. So, this make sense from an efficiency/cost perspective and gets around underutilization problems that can occur with exclusive node scheduling behavior, but it requires you to think differently about your execution control in reV configurations if you're used to this default behavior.
 
 Alternatively, you can tweak a few settings to effectively turn node sharing off. Without having to spin up a new cluster, you may simply set the `memory` option in your `execution_control` block to approximately match the available memory on the target compute node (this actually didn't work, AI!). If you want to change the default behavior to be exclusive, you may add `JobExclusiveAllocation = true` to the target SLURM Queue in your AWS Parallel Cluster configuration file before spinning up your cluster.
 
 ## 4) Setup an HSDS Server
-HSDS can be used to access wind, solar, and other resource data that NREL houses in an AWS S3 bucket. For smaller jobs single node jobs, this can be done by installing HSDS, giving it access information to this S3 bucket, kicking it off directly on your file system, adjusting your resource file paths in your reV configuration files, and then letting reV handle the rest. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job.
+HSDS can be used to access wind, solar, and other resource data that NLR houses in an AWS S3 bucket. For smaller jobs single node jobs, this can be done by installing HSDS, giving it access information to this S3 bucket, kicking it off directly on your file system, adjusting your resource file paths in your reV configuration files, and then letting reV handle the rest. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job.
 
 For large jobs, a local HSDS server will likely encounter connection issues at some point and kill your reV project. This problem can be largely fixed using Docker. Also, since you're spinning up multiple machines to distribute reV work, you'll need to install and kick off HSDS on each machine you spin up.
 
