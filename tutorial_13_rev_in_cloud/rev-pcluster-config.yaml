@@ -2,31 +2,23 @@
 # For the most recent AWS parallel cluster docs see: https://docs.aws.amazon.com/parallelcluster/latest/ug/cluster-configuration-file-v3.html
 # See latest config examples: https://github.com/aws/aws-parallelcluster/tree/release-3.0/cli/tests/pcluster/example_configs
 
-# Usage:
-# pip install aws-parallelcluster
-# pcluster create-cluster -c rev-pcluster-config.yaml --cluster-name rev-pcluster
-
 Region: us-west-2
 
 Image:
-  Os: ubuntu2404   # options: (alinux2 | rhel8 | rhel9 | ubuntu2004 | ubuntu2204 | etc.)
+  Os: ubuntu2404
 
 HeadNode:
   InstanceType: t3.large
   Ssh:
     KeyName: rev-pcluster-edkey  # Replace with your keypair name (Required)
   Networking:
-    SubnetId: subnet-xxxxxxxxxxxxxxxxx  # subnet for head node
-
+    SubnetId: subnet-xxxxxxxxxxxxxxxxx  # Subnet for head node
   Iam:
     AdditionalIamPolicies:
-      - Policy: arn:aws:iam::aws:policy/AmazonS3FullAccess  # In production limit S3 access to specific buckets (e.g., AmazonS3ReadOnlyAccess)
+      - Policy: arn:aws:iam::aws:policy/AmazonS3FullAccess
 
 Scheduling:
   Scheduler: slurm
-  #SlurmSettings:
-  #  Dns:
-  #    HostedZoneId: ${HOSTED_ZONE_ID} # Only required if using a DNS hosted zone that already exists
   SlurmQueues:
     - Name: standard
       Networking:
@@ -42,23 +34,23 @@ Scheduling:
           DisableSimultaneousMultithreading: true  # disable hyperthreading
       Iam:
         AdditionalIamPolicies:
-          - Policy: arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess  # In production - limit S3 access to specific buckets
+          - Policy: arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
 
     - Name: bigmem
       Networking:
         SubnetIds:
-          - subnet-xxxxxxxxxxxxxxxxx  # subnet for compute nodes
+          - subnet-xxxxxxxxxxxxxxxxx
         PlacementGroup:
-          Enabled: true   # v2: placement_group = DYNAMIC
+          Enabled: true
       ComputeResources:
         - Name: bigmem
           InstanceType: m6a.12xlarge
           MinCount: 0
           MaxCount: 10
-          DisableSimultaneousMultithreading: true  # disable hyperthreading
+          DisableSimultaneousMultithreading: true
       Iam:
         AdditionalIamPolicies:
-          - Policy: arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess  # In production - limit S3 access to specific buckets
+          - Policy: arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
 
 SharedStorage:
   - Name: rev-lustre
@@ -68,10 +60,9 @@ SharedStorage:
       StorageCapacity: 1200         # 1200 minimal (1200 minimal for SSD, 1800 minimal for HDD when used with 40 throughput)
       DeploymentType: SCRATCH_2  # SCRATCH_1 | SCRATCH_2 | PERSISTENT_1
       StorageType: SSD              # SSD | HDD
-      # PerUnitStorageThroughput: 40  # (only for HDD)
 
 Tags:
   - Key:   org
-    Value: "revcloud"
+    Value: "your_organization"
   - Key:   billingId
-    Value: "123456"
+    Value: "xxxxxx"
