@@ -133,7 +133,7 @@ To write your own configuration file, you may start with the example configurati
 
 5. **SharedStorage**
 
-    The final hardware component in the sample Parallel Cluster configuration file specifies disk and file system settings. reV is highly I/O intensive, relying heavily on the file system to write out temporary chunked files from compute nodes or to read in outputs from previous modules into subsequent modules in the modeling pipeline. Here, we have chosen a solid-state drive (SSD) Lustre file system mounted on `/scratch` with 1.2 TB of storage.  We have found that model performance for large-scale reV runs can be severely hampered by sub-optimal file systems and suggest that you stick with this option, though disk size and mount points will, of course, depend on your use-case. More information on this type of filesystem can be found in [AWS' Fsx for Lustre Documentation Page](aws.amazon.com/fsx/lustre/) and more configuration options for this entry in this configuration file can be found on [AWS's SharedStorage page](https://docs.aws.amazon.com/parallelcluster/latest/ug/SharedStorage-v3.html).
+    The final hardware component in the sample Parallel Cluster configuration file specifies disk and file system settings. reV is highly I/O intensive, relying heavily on the file system to write out temporary chunked files from compute nodes or to read in outputs from previous modules into subsequent modules in the modeling pipeline. Here, we have chosen a solid-state drive (SSD) Lustre file system mounted on `/scratch` with 1.2 TB of storage.  We have found that model performance for large-scale reV runs can be severely hampered by sub-optimal file systems and suggest that you stick with this option, though disk size and mount points will, of course, depend on your use-case. More information on this type of filesystem can be found in [AWS's Fsx for Lustre Documentation Page](aws.amazon.com/fsx/lustre/) and more configuration options for this entry in this configuration file can be found on [AWS's SharedStorage page](https://docs.aws.amazon.com/parallelcluster/latest/ug/SharedStorage-v3.html).
 
 6. **Tags**
 
@@ -179,7 +179,7 @@ Next, you'll need the username for the server. It is possible to add new user na
 
 - **Amazon Linux**: *ec2-user*
 - **RHEL**: *ec2-user* or *root*
-- **Ubuntu** – *ubuntu*
+- **Ubuntu**: *ubuntu*
 
 Now we'll use the `ssh` command with the public key, username, and IP address (or "hostname") to connect to the clusters head node. This command can be saved as an alias for quick terminal access or used to connect the instance to an Integrated Development Environment (IDE) such as Visual Studio Code (VSCode). VSCode is a popular IDE for activities such as this and is how this team put together the sample runs used to develop this guide; for instructions on how to connect to your head node through VSCode see [https://code.visualstudio.com/docs/remote/ssh](https://code.visualstudio.com/docs/remote/ssh).
 
@@ -203,23 +203,71 @@ Alternatively, you can tweak a few settings to effectively turn node sharing off
 
 Another subtle difference between NLR's Slurm setting and the default parameters used in AWS involves checking out an interactive node. The `salloc` command allows you to manually check out a compute node of your choosing. This may be useful if you wish to monitor a reV job mid-stream or if you'd like to check something like memory overhead before kicking your jobs off. On NLR's HPC systems, this will put you in a resource queue which can take more or less time to get through depending on how many other users are attempting to connect to the same compute nodes on the system. On high-traffic days, this may take a signficant amount of time depending on your node choice, how long you asked to use the resource, and how many other users are trying to checkout the same type of node. On low-traffic days, you may be instantly granted a compute node allocation and will be SSH'd into that node automatically. On an AWS system with default Slurm settings you will not necessarily have to wait for other users, but it will take some time for the node to spin up since these instances aren't on standby as they are on an HPC system. Then, once the node is ready, you will then have to manually log into that node. In this case, you may use the `squeue` command to see the hostname of the machine you checked out and then you can use the `ssh` command to log into it. Slurm settings such as this may be configured to your liking in the [Job Scheduler Section](docs.aws.amazon.com/parallelcluster/latest/ug/Scheduling-v3.html#yaml-Scheduling-Scheduler) of your Parallel Cluster configuration file.
 
-## 5) Setup an HSDS Server
-HSDS can be used to access wind, solar, and other resource data that NLR houses in an AWS S3 bucket. For smaller jobs single node jobs, this can be done by installing HSDS, giving it access information to this S3 bucket, kicking it off directly on your file system, adjusting your resource file paths in your reV configuration files, and then letting reV handle the rest. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job.
 
-For large jobs, a local HSDS server will likely encounter connection issues at some point and kill your reV project. This problem can be largely fixed using Docker. Also, since you're spinning up multiple machines to distribute reV work, you'll need to install and kick off HSDS on each machine you spin up.
 
-- Setting up Docker
+
+
+
+
+## 5) Setup the HSDS Server
+HSDS can be used to access wind, solar, and other resource data that NLR houses in an AWS S3 bucket. For smaller, single node jobs, this can be done by installing HSDS, giving it access information to this S3 bucket, kicking it off directly on your file system, adjusting your resource file paths in your reV configs, and then letting reV handle the rest. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job. For large jobs, running an non-containerized HSDS server will likely encounter connection issues at some point and kill your reV runs. This problem can be largely fixed using HSDS Docker images. The current recommended approach for handling this is to write a script that will install HSDS, Docker, and kick off a containerized HSDS service on each compute node that a reV job uses. The following will walk you through setting up that process.
+
+### 5a) Create Virtual Python Environment
+
+The first step is to create a virtual Python environment that will contain both the reV model and HSDS Python APIs. There are many ways to do this, but this simplest is to use Python's builtin virtual environment module, `venv`. You can use the existing Python interpreter on your system or you can update it with your package manager, but make sure that the Python versions you're working with are compatible with reV. Login into your cluster's head node, then you can create create and activate such an environment using a set of commands like this:
+
+```bash
+mkdir /scratch/envs
+cd /scratch/envs
+python3 -m venv rev
+source rev/bin/activate
+```
+
+Then you could assign the activation command to an alias if you don't want to type it out each time with a command like this:
+
+```bash
+echo "alias arev='source /scratch/envs/rev/bin/activate'" >> ~/.bashrc
+source ~/.bashrc
+arev
+```
+
+### 5b) Clone the HSDS Repository
+The HSDS repository has a number of useful scripts for Dockerizing a server. Clone this repository somewhere on your file system:
+
+```bash
+git clone git@github.com:HDFGroup/hsds.git
+```
+
+-
 - IAM and authentication issues
-- Different pacakge managers for different OSs, some with caveats
 - Kick off script
-    - Exclusive vs node sharing (i.e., whether a file lock is needed)
 
-## 6) Configuring reV
+
+
+
+### 5c) Setup Notes:
+
+1) Be careful about defining your AWS and HSDS environment variables. These can be defined in many places and can result in unexpected behavior if they aren’t aligned. Some of those places include:
+
+- The HSDS config: `~/.hscfg`
+- Your `~/.bashrc` file or any other script it runs
+- The "Start HSDS" Bash script
+- The parameter override configuration file (~/hsds/admin/config/override.yml)
+
+2) The contents of your `start_hsds.sh` script for installing and starting Docker depends on which OS you’re using since it uses the package manager to do it. Different OSes uses different package managers. Edit the file to reflect this.
+
+
+
+
+
+
+
+## 6) Configure reV
 - The sh_script option points to a script that installs and kicks off HSDS on each compute node. If the run is not setup such that each SLURM node has full access to the compute node, this file will need to contain a lock to prevent multiple processes on the same server from attempting to install and run HSDS at the same time. This tutorial contains a few sample scripts that will achieve this, though the script may require adjustments depending on your operating system.
 - reV Execution control:
     - When SLURM is not set to node sharing, there is more responsibility for the the user to ensure that each job is efficiently using its compute node. This can be done with a combination of settings:
 
-        - `sites_per_worker`: The number of concurrent process the CPU will run at a time. A higher `sites_per_worker` require more memory but will reduce slower I/O processes. If you are getting either low memory utilization or out-of-memory (OOM) errors you can adjust this variable up or down.
+        - `sites_per_worker`: The number of concurrent process the CPU will run at a time. A higher `sites_per_worker` value requires more memory but will reduce slower I/O processes. If you are getting either low memory utilization or out-of-memory (OOM) errors you can adjust this variable up or down.
         - `max_workers`: The maximum number of CPU cores per node to split reV work across. A higher number of workers will increase the memory overhead used to manage concurrency. If you are getting either low memory utilization or OOM errors you can also adjust this variable up or down.
         - `memory_utilization_limit`: The percentage of available memory at which reV starts dumping data from memory onto disk. Because disk I/O is slower than memory transfers, it can improve runtimes to perform fewer I/O operations by holding more data in memory for longer. However, full memory utilization is not desired because of the possibility for brief memory spikes (either from reV itself or background processes) that can cause OOM errors. So, this number can be adjusted up to some percentage of total available memory that leaves enough room other processes. Note that this is memory utilization at which reV will start dumping data to disk, meaning actual memory use will continue to rise for a period after it starts the write process. So, it needs to be lower than the 100% and that will depend on the behavior of system (in the sample reV-generation config, this value was set to 70% but the actual memory use topped out at about 90%). The proper value will depend on many factors such as your hardware, operating system (OS), other reV execution control settings, and other processes running on the server.
         - `nodes`: The number of nodes you choose will determine the number of individual processes (reV sites) that each individual node runs. The larger number of nodes, the smaller number of sites. On a shared HPC system, a higher number of nodes could result in longer queue times, especially on busy days. More nodes will also result in longer node and process start up times and more chunked files written to the filesystem. More nodes will of course result in faster model runs according to your, but it could actually increase overall computational resource costs given the overhead mentioned above.
@@ -256,17 +304,19 @@ https://aws.amazon.com/pcs/pricing/
 - Etc.
 
 
-## Deprecated methodology
+## 9) Deprecated and Untested Methods
 Some older methods may still work, though they are not covered in this guide.
-- E.g., Kubernetes
+- Kubernetes
 
+Other methods have been tested and were found to be less than ideal for reV
+- AWS Lamda Functions
 
 ## Scratch Notes on Deployment
 Notes on deployment
 
 - The official amazon recommendations are to use docker to install hsds. This is what Grant followed. On rhel systems, this would require you to register for an entitlement server. At NREL, the system admins responded that they only had so many RHEL licenses, enough for the head (login) node but not enough for all of the compute nodes. Why they want us to use docker over a basic docker installation is unknown to me.
 - Next, I tried amazon linux 2, not knowing about amazon linux 2023. Here, the hsds installation failed because I was unable to install gcc 9
-- AWS Linux OSs:
+- AWS Linux Operating Systems:
     - https://docs.aws.amazon.com/systems-manager/latest/userguide/operating-systems-and-machine-types.html#prereqs-os-linux
 - Ubuntu
     - Next I tried Ubuntu, 22.04 and 24.04, but it won’t allow RSA keys. This can be done in the EC2 portal under “Network & Security” and “Key Pairs” (e.g., https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#InstanceDetails:instanceId=i-00035fdba289b5f4f) 
