@@ -217,8 +217,8 @@ HSDS can be used to access wind, solar, and other resource data that NLR houses 
 The first step is to create a virtual Python environment that will contain both the reV model and HSDS Python APIs. There are many ways to do this, but this simplest is to use Python's builtin virtual environment module, `venv`. You can use the existing Python interpreter on your system or you can update it with your package manager, but make sure that the Python versions you're working with are compatible with reV. Login into your cluster's head node, then you can create create and activate such an environment using a set of commands like this:
 
 ```bash
-mkdir /scratch/envs
-cd /scratch/envs
+mkdir ~/envs
+cd ~/envs
 python3 -m venv rev
 source rev/bin/activate
 ```
@@ -226,7 +226,7 @@ source rev/bin/activate
 Then you could assign the activation command to an alias if you don't want to type it out each time with a command like this:
 
 ```bash
-echo "alias arev='source /scratch/envs/rev/bin/activate'" >> ~/.bashrc
+echo "alias arev='source ~/envs/rev/bin/activate'" >> ~/.bashrc
 source ~/.bashrc
 arev
 ```
