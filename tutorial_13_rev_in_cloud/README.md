@@ -5,14 +5,23 @@ The Renewable Energy Potential Model (reV) was originally designed to run on Nat
 
 This guide is designed to provide both a step-by-step guide and detailed explanations for the basic components of a reV environment on an AWS Parallel Cluster and is oriented towards analysts with moderate to intermediate levels of experience with AWS. More experienced cloud architects may be interested in this Terraform-based guide produced by Switchbox: [https://github.com/switchbox-data/rev-parallel-cluster](https://github.com/switchbox-data/rev-parallel-cluster).
 
-## 1) Setup an AWS Account
-- Write for an audience that ranges from a non-CS University Grad Student to Upper/Intermediate-level IT professional. We don't really need to worry about AWS pros.
-- We'll want a section on how to do this for both individual and institutional accounts. 
-- Describe the Single Sign On Issue and reiterate the need for an IAM user.
-    - Here we can probably contact John Readey to see if he found any insights into the Authorization protocol problem with SSO vs IAM user accounts
+## 1) Set Up an AWS Account
+You need an AWS account and all prerequisites before you can run reV on AWS ParallelCluster. You also need to ensure that networking components such as a VPC, subnets, a NAT gateway, and an internet gateway already exist. Record the `SubnetId` you plan to use for the head node, it must be reachable from the server/workstation you will use for SSH access to the head node in later steps.
 
-- From Whiteside:
-> A lot of companies will just use IAM users and currently that will just work.  Others might use identify center and AWS SSO users, or other forms of SSO that use STS credentials.  We could stop here and just say SSO (STS credentials) doesn't work, you will need an IAM user account.  We could also look at hsds and see if we can fix it, it might be an easy fix to enable the use of STS credentials.
+### Individual accounts
+If you are creating a personal AWS account, review the AWS recomended steps for creating a new AWS Account: [https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html).
+
+Also, review the AWS ParallelCluster prerequisites before proceeding: [https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3.html#prerequisites](https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3.html#prerequisites)
+
+### Institutional accounts
+Institutional users generally work within an AWS Organization or a preconfigured landing zone. Coordinate with your cloud administrator to:
+- Obtain or create an IAM user with programmatic access keys dedicated to this project with permission to deploy AWS Parallel Cluster. See: [https://docs.aws.amazon.com/parallelcluster/latest/ug/iam-roles-in-parallelcluster-v3.html](https://docs.aws.amazon.com/parallelcluster/latest/ug/iam-roles-in-parallelcluster-v3.html).
+- Confirm the `SubnetId` to be used for the head node and compute nodes.
+- Verify budget, budget controls and alert thresholds before launching resource-intensive clusters.
+- Recomended to setup AWS Budget alerts for projected usage: [https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).
+
+### IAM versus AWS SSO
+At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI and ParallelCluster. If your organization must rely on SSO, consult the HSDS maintainers (for example, John Readey) for updates on STS compatibility before proceeding.
 
 
 ## 2) Install AWS Command Line Interfaces
@@ -192,7 +201,7 @@ ssh -i ~/.ssh/publickey.pub user@hostname
 
 
 
-## 4) Differences with an HPC
+## 4) Differences with a Traditional HPC Cluster
 At this point, it is worthwhile to point out that there are default behaviors in an AWS Parallel Cluster that may differ from what an HPC user might expect. This can cause some confusion when configuring a reV job since the model was designed specifically to run on HPC systems.
 
 On NLR's HPC, Slurm's exclusive node access option is turned on. If you submit a job to a compute node, that job has exclusive access to the entire server (i.e., all cpus and available memory). If you submit a second job, that job will check out a second compute node and block all those resources from other jobs submitted through the scheduler. So, this is the assumption that reV makes. This is more appropriate for HPC systems to prevent multiple users from interfering with each other's jobs.
