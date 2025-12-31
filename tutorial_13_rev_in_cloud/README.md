@@ -6,22 +6,26 @@ The Renewable Energy Potential Model (reV) was originally designed to run on Nat
 This guide is designed to provide both a step-by-step guide and detailed explanations for the basic components of a reV environment on an AWS Parallel Cluster and is oriented towards analysts with moderate to intermediate levels of experience with AWS. More experienced cloud architects may be interested in this Terraform-based guide produced by Switchbox: [https://github.com/switchbox-data/rev-parallel-cluster](https://github.com/switchbox-data/rev-parallel-cluster).
 
 ## 1) Set Up an AWS Account
-You need an AWS account and all prerequisites before you can run reV on AWS ParallelCluster. You also need to ensure that networking components such as a VPC, subnets, a NAT gateway, and an internet gateway already exist. Record the `SubnetId` you plan to use for the head node, it must be reachable from the server/workstation you will use for SSH access to the head node in later steps.
+You need an AWS account and all prerequisites setup before you can run reV on AWS ParallelCluster. You also need to ensure that networking components such as a VPC, subnets, a NAT gateway, and an internet gateway already exist.  The subnets CIDR should be large enough to handle the number of compute nodes, a CIDR of `/24` is a good starting point. Record the `SubnetId` you plan to use for the head node and compute nodes, it must be reachable from the server/workstation you will use for SSH access to the head node in later steps. The instructions below provide guidance for users leveraging an individual AWS account as well as guidance if your working within an institutional IT organization's AWS account.
 
-### Individual accounts
-If you are creating a personal AWS account, review the AWS recomended steps for creating a new AWS Account: [https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html).
+### Individual AWS Account Guide
+If you are creating an individual AWS account to run reV, review the AWS recommended steps for creating a new AWS Account: [https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html) as well as the AWS ParallelCluster prerequisites before proceeding: [https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3.html#prerequisites](https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3.html#prerequisites).
 
-Also, review the AWS ParallelCluster prerequisites before proceeding: [https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3.html#prerequisites](https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3.html#prerequisites)
+We recommend the ["Two subnet"](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3-two-subnets.html) configuration for Parallel Cluster networking.  This means the head node will use a public `SubnetId` (you should limit ssh/22 tcp access to just your IP in the security group) and the compute nodes use a private `SubnetId`. Review the [AWS Recommended Parallel Cluster network configurations](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3.html) for more details on network options and best practices.
 
-### Institutional accounts
+### Institutional AWS Account Guide
 Institutional users generally work within an AWS Organization or a preconfigured landing zone. Coordinate with your cloud administrator to:
 - Obtain or create an IAM user with programmatic access keys dedicated to this project with permission to deploy AWS Parallel Cluster. See: [https://docs.aws.amazon.com/parallelcluster/latest/ug/iam-roles-in-parallelcluster-v3.html](https://docs.aws.amazon.com/parallelcluster/latest/ug/iam-roles-in-parallelcluster-v3.html).
-- Confirm the `SubnetId` to be used for the head node and compute nodes.
+- Your cloud administrator should review the [AWS Recomended Parallel Cluster network configurations](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3.html).
+- Confirm the `SubnetId` to be used for the head node and compute nodes provided by your cloud administrator. Institutional AWS accounts might use a private `SubnetId` for both the head node and compute nodes, work out those specifics with your cloud administrator.
+
+### Other recommendations for AWS account configurations
 - Verify budget, budget controls and alert thresholds before launching resource-intensive clusters.
-- Recomended to setup AWS Budget alerts for projected usage: [https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).
+- Its highly recommended to setup AWS Budget alerts for projected usage: [https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).  This can help reduce the risk of a surprise AWS bill and keep costs in control.
+- *Note: Your VPC must have DNS Resolution = yes, DNS Hostnames = yes and DHCP options with the correct domain name for the Region. The default DHCP Option Set already specifies the required AmazonProvidedDNS. If specifying more than one domain name server, see DHCP options sets in the Amazon VPC User Guide.*
 
 ### IAM versus AWS SSO
-At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI and ParallelCluster. If your organization must rely on SSO, consult the HSDS maintainers (for example, John Readey) for updates on STS compatibility before proceeding.
+At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI and ParallelCluster. If your organization must rely on SSO, consult the HSDS maintainers for updates on STS compatibility before proceeding.
 
 
 ## 2) Install AWS Command Line Interfaces
@@ -55,7 +59,7 @@ Identity and Access Management (IAM):
 Include IAM case here
 ```
 
-Moving forward, we need to tell the AWS CLI which profile to use for authentication. You may do this manually for each session by setting the `AWS_PROFILE` environment variable to this name in each comand-line session, you may specify the name in a `--profile` option for each CLI command, or you may add the variable to your command-line interpreter's startup script to automate this step, which is what we're suggesting for convenience. Here, we are using a Bash shell so will be editing the `~/.bashrc` script (Linux) or the `~/.bash_profile` (MacOS) to add the following line:
+Moving forward, we need to tell the AWS CLI which profile to use for authentication. You may do this manually for each session by setting the `AWS_PROFILE` environment variable to this name in each command-line session, you may specify the name in a `--profile` option for each CLI command, or you may add the variable to your command-line interpreter's startup script to automate this step, which is what we're suggesting for convenience. Here, we are using a Bash shell so will be editing the `~/.bashrc` script (Linux) or the `~/.bash_profile` (MacOS) to add the following line:
 
 ```bash
 export AWS_PROFILE=profile_name
@@ -65,11 +69,11 @@ export AWS_PROFILE=profile_name
 
 The most direct way to interact with your parallel cluster is through a Secure Shell (SSH) Protocol connection. This will enable to you to both interact with the operating and file systems and to transfer data to and from the cluster. Because subsequent setup steps will require SSH information, it is best to go ahead and address this one before moving on. To do this, assuming you don't have existing keys stored on your computer, you first need to generate a pair (public and private) of SSH keys. There are a few ways to do this, outlined below.
 
-> Note: While the most common of these algorithms (the Rivest–Shamir–Adleman crytosystem or `RSA`) will work for some operating systems, other images on AWS do not allow it and will require you to use a more up-to-date algorithm. In this case, you may use the newer `Ed25519` option, which is based on the Edwards-curve Digital Signature Algorithm. For more on AWS and SSH, see: [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
+> Note: While the most common of these algorithms (the Rivest–Shamir–Adleman cryptosystem or `RSA`) will work for some operating systems, other images on AWS do not allow it and will require you to use a more up-to-date algorithm. In this case, you may use the newer `Ed25519` option, which is based on the Edwards-curve Digital Signature Algorithm. For more on AWS and SSH, see: [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
 
 
 #### Method #1: Generate a key-pair on your local machine and copy the public key to AWS's Secrets manager
-Users on Unix systems may use the built-in `ssh-keygen` command. Windows users may also use this command, though it will require the installation of an OpenSSH server. There are different algorithms and keysizes that you may specify when running this command and which one will be acceptable for your parallel cluster will depend on the security requirements of the operating system you chose when creating it. Here, given the limitations on some operatings systems described above, we will generate a Ed25519 key pair with the following command:
+Users on Unix systems may use the built-in `ssh-keygen` command. Windows users may also use this command, though it will require the installation of an OpenSSH server. There are different algorithms and keysizes that you may specify when running this command and which one will be acceptable for your parallel cluster will depend on the security requirements of the operating system you chose when creating it. Here, given the limitations on some operating systems described above, we will generate a Ed25519 key pair with the following command:
 
 ```
 ssh-keygen -t ed25519
@@ -122,7 +126,7 @@ To write your own configuration file, you may start with the example configurati
     - `ubuntu2404`: Ubuntu 24.04 LTS
     - `rhel8`: Red Hat Enterprise Linux (RHEL) 8
     - `rhel9`: Red Hat Enterprise Linux (RHEL) 9
-        > Note that RHEL systems will require registration with an "entitlement server". If you or your organization does not have a RHEL license, you will not be able to install required dependencies with the RHEL package manager (yum). Also, as per the methodology outlined in this guide, you will also need nough licenses to install HSDS and docker on each compute you check out. Because of this, RHEL is not recommended for users without access to RHEL licenses.
+        > Note that RHEL systems will require registration with an "entitlement server". If you or your organization does not have a RHEL license, you will not be able to install required dependencies with the RHEL package manager (yum). Also, as per the methodology outlined in this guide, you will also need enough licenses to install HSDS and docker on each compute you check out. Because of this, RHEL is not recommended for users without access to RHEL licenses.
 
 3. **HeadNode**
 
@@ -132,7 +136,7 @@ To write your own configuration file, you may start with the example configurati
     
     > Make sure to replace the `SubnetId` value in the `Networking` subsection with the appropriate value given to you by your system administrator or (where would you find this?)
 
-    > Note that we are using read-only access for S3 buckets in this configuration (`AmazonS3ReadOnlyAccess`). This is because we are writing our reV outputs to the shared file system and only use S3 to access the resource data. If, for any reason, you need to elevate or refine your access privileges, change the `AdditionalIamPolicies` `Policy` entries to something more permissable. You may also add additional policies to fit your needs. See all available options here: [https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html).
+    > Note that we are using read-only access for S3 buckets in this configuration (`AmazonS3ReadOnlyAccess`). This is because we are writing our reV outputs to the shared file system and only use S3 to access the resource data. If, for any reason, you need to elevate or refine your access privileges, change the `AdditionalIamPolicies` `Policy` entries to something more permissible. You may also add additional policies to fit your needs. See all available options here: [https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html).
 
 4. **Scheduling**
 
@@ -170,7 +174,7 @@ Now we can use the `aws-parallelcluster` CLI to create your cluster. Run the fol
 
     `pcluster create-cluster -c rev-pcluster-config.yaml --cluster-name rev-pcluster`
 
-If everything was configured correctly, you will see an output JSON message in your shell indicating that the creation process has begun (look for "CREATE_IN_PROGRESS"). This process will take some time to finish, but you may check on it's progress throught the EC2 CloudFormation portal in your AWS developers page where you'll see the status of each individual cluster component. You may also run the following command to see its overall status:
+If everything was configured correctly, you will see an output JSON message in your shell indicating that the creation process has begun (look for "CREATE_IN_PROGRESS"). This process will take some time to finish, but you may check on it's progress through the EC2 CloudFormation portal in your AWS developers page where you'll see the status of each individual cluster component. You may also run the following command to see its overall status:
 
 ```
 pcluster list-clusters
@@ -210,7 +214,7 @@ AWS, however, uses the default SLURM settings and shares nodes between jobs by d
 
 Alternatively, you can tweak a few settings to effectively turn node sharing off. Without having to spin up a new cluster, you may simply set the `memory` option in the reV `execution_control` block to approximately match the available memory on the target compute node. If you want to change the default behavior to be exclusive, you may add `JobExclusiveAllocation = true` to the target SLURM Queue (e.g., standard or bigmem in the example) in your AWS Parallel Cluster configuration file before spinning up your cluster. You may also specify the exclusive node option using the `feature` option in your `execution_control` block by setting the value to `--exclusive`.
 
-Another subtle difference between NLR's Slurm setting and the default parameters used in AWS involves checking out an interactive node. The `salloc` command allows you to manually check out a compute node of your choosing. This may be useful if you wish to monitor a reV job mid-stream or if you'd like to check something like memory overhead before kicking your jobs off. On NLR's HPC systems, this will put you in a resource queue which can take more or less time to get through depending on how many other users are attempting to connect to the same compute nodes on the system. On high-traffic days, this may take a signficant amount of time depending on your node choice, how long you asked to use the resource, and how many other users are trying to checkout the same type of node. On low-traffic days, you may be instantly granted a compute node allocation and will be SSH'd into that node automatically. On an AWS system with default Slurm settings you will not necessarily have to wait for other users, but it will take some time for the node to spin up since these instances aren't on standby as they are on an HPC system. Then, once the node is ready, you will then have to manually log into that node. In this case, you may use the `squeue` command to see the hostname of the machine you checked out and then you can use the `ssh` command to log into it. Slurm settings such as this may be configured to your liking in the [Job Scheduler Section](docs.aws.amazon.com/parallelcluster/latest/ug/Scheduling-v3.html#yaml-Scheduling-Scheduler) of your Parallel Cluster configuration file.
+Another subtle difference between NLR's Slurm setting and the default parameters used in AWS involves checking out an interactive node. The `salloc` command allows you to manually check out a compute node of your choosing. This may be useful if you wish to monitor a reV job mid-stream or if you'd like to check something like memory overhead before kicking your jobs off. On NLR's HPC systems, this will put you in a resource queue which can take more or less time to get through depending on how many other users are attempting to connect to the same compute nodes on the system. On high-traffic days, this may take a significant amount of time depending on your node choice, how long you asked to use the resource, and how many other users are trying to checkout the same type of node. On low-traffic days, you may be instantly granted a compute node allocation and will be SSH'd into that node automatically. On an AWS system with default Slurm settings you will not necessarily have to wait for other users, but it will take some time for the node to spin up since these instances aren't on standby as they are on an HPC system. Then, once the node is ready, you will then have to manually log into that node. In this case, you may use the `squeue` command to see the hostname of the machine you checked out and then you can use the `ssh` command to log into it. Slurm settings such as this may be configured to your liking in the [Job Scheduler Section](docs.aws.amazon.com/parallelcluster/latest/ug/Scheduling-v3.html#yaml-Scheduling-Scheduler) of your Parallel Cluster configuration file.
 
 
 
@@ -283,7 +287,7 @@ git clone git@github.com:HDFGroup/hsds.git
         - `pool_size`: placeholder
     - When SLURM is set to share nodes, additional resources left on any one node may be consumed with additional jobs. While this has the potential to improve efficiency, I have not experimented enough with this setup to describe it much detail or to make execution control suggestions.
 - HSDS Configuration
-    - HSDS has certain request limits that you may have to either account for or adjust to perform large-scale reV runs. Bascially, everything from line 32 to 60 falls into this group, but here are few to start:
+    - HSDS has certain request limits that you may have to either account for or adjust to perform large-scale reV runs. Basically, everything from line 32 to 60 falls into this group, but here are few to start:
         - `max_tcp_connections`: max number of inflight tcp connections?
         - `max_pending_write_requests`: maxium number of inflight write requests?
         - `max_task_count`: maximum number of concurrent tasks per node before server will return 503 error?**
