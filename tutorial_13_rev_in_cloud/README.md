@@ -214,7 +214,13 @@ HSDS can be used to access wind, solar, and other resource data that NLR houses 
 
 ### 5a) Create Virtual Python Environment
 
-The first step is to create a virtual Python environment that will contain both the reV model and HSDS Python APIs. There are many ways to do this, but this simplest is to use Python's builtin virtual environment module, `venv`. You can use the existing Python interpreter on your system or you can update it with your package manager, but make sure that the Python versions you're working with are compatible with reV. Login into your cluster's head node, then you can create create and activate such an environment using a set of commands like this:
+The first step is to create a virtual Python environment that will contain both the reV model and HSDS Python APIs. There are many ways to do this, but this simplest is to use Python's builtin virtual environment module, `venv`. You can use the existing Python interpreter on your system or you can update it with your package manager, but make sure that the Python versions you're working with are compatible with reV. If you choose to use `venv`, you may need to install this module with your package manager. On our Ubuntu system, if you have Python 3.12, that command would be:
+
+```bash
+sudo apt install python3.12-venv
+```
+
+Then, create and activate this environment using a set of commands like this:
 
 ```bash
 mkdir ~/envs
@@ -226,16 +232,18 @@ source rev/bin/activate
 Then you could assign the activation command to an alias if you don't want to type it out each time with a command like this:
 
 ```bash
-echo "alias arev='source ~/envs/rev/bin/activate'" >> ~/.bashrc
+echo -e "\nalias arev='source ~/envs/rev/bin/activate'" >> ~/.bashrc
 source ~/.bashrc
 arev
 ```
 
 ### 5b) Clone the HSDS Repository
-The HSDS repository has a number of useful scripts for Dockerizing a server. Clone this repository somewhere on your file system:
+The HSDS repository has a number of useful scripts for Dockerizing a server. Clone this repository somewhere on your file system. Then use a 
 
 ```bash
-git clone git@github.com:HDFGroup/hsds.git
+git clone ~/https://github.com/HDFGroup/hsds.git
+cd ~/hsds
+python -m pip install . 
 ```
 
 -
