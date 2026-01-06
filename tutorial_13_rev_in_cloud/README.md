@@ -240,10 +240,6 @@ cd ~/hsds
 python -m pip install . 
 ```
 
-- IAM and authentication issues
-- Kick off script
-
-
 ### 5c) Configure Data Access
 1. Create an HSDS Configuration file in your home directory called `~/.hscfg` with the following content:
 ```
