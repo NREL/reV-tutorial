@@ -1,0 +1,11 @@
+{
+    "pipeline": [
+        {
+            "generation": "./config_generation.json5"
+        }
+    ],
+    "logging": {
+        "log_file": null,
+        "log_level": "INFO"
+    }
+}

@@ -7,16 +7,16 @@
 #     https://data.openei.org/s3_viewer?bucket=nrel-pds-hsds&prefix=nrel
 
 
-export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-export AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
-export BUCKET_NAME="nrel-pds-hsds"
-export AWS_REGION="us-west-2"
-export AWS_S3_GATEWAY="http://s3.us-west-2.amazonaws.com/"
-export HSDS_ENDPOINT="http://localhost:5102"
-export LOG_LEVEL="ERROR"
-export ROOT_DIR="/scratch/hsdsdata"
-export AWS_S3_NO_SIGN_REQUEST=1
+# Set the location of the HSDS code directory
+export HSDS_DIR=$HOME
+
+# Stop server if requested
+if [[ $1 == "--stop" ]]; then
+    echo "Stopping HSDS server."
+    cd $HSDS_DIR/hsds
+    ./runall.sh --stop || exit 1
+    exit 0
+fi
 
 # Get this instance's ID and type (with Instance Meta Data Service (IMDS) V2 below, comment out and use V1 below if needed)
 export TOKEN=$(curl --silent -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
@@ -28,7 +28,7 @@ export EC2_TYPE=$(curl --silent -H "X-aws-ec2-metadata-token: $TOKEN" http://169
 # export EC2_TYPE=$(curl -s http://169.254.169.254/latest/meta-data/instance-type)
 
 thisfile=$(realpath $0)
-echo "Running $thisfile on $EC2_ID ($EC2_TYPE)..."
+echo "Running $thisfile on $EC2_ID ($EC2_TYPE) from $HSDS_DIR..."
 
 check_hsds () {
     hsds_running=false
@@ -43,18 +43,12 @@ check_hsds () {
 
 install_docker () {
     # Update repositories
-    sudo apt-get update
+    sudo apt update
 
-    # Install the package
-    sudo apt install docker.io docker-compose -y
+    # Run the convenient docker install script
+    curl https://get.docker.com | sudo sh
 
-    # Enable and start the docker background service
-    sudo systemctl start docker
-    sudo systemctl enable docker
-
-    # Update permissions and groups
-    sudo chmod 666 /var/run/docker.sock
-    sudo chmod +x /usr/local/bin/docker-compose
+    # Update groups
     sudo groupadd docker
     sudo usermod -aG docker "$USER"
 }
@@ -67,13 +61,19 @@ if [ "$hsds_running" = true ]; then
     echo HSDS service running: $hsds_running
     exit 0
 else
-    # We need to setup the service
     # Lock this file so only one process on any EC2 hardware can run it
     lockfile=/var/lock/start_hsds_$EC2_ID.flock
     thisfile=$(realpath $0)
     exec 9>$lockfile || exit 1  # Ubuntu doesn't allow double digit file descriptors by default, apparently, whereas other OSs do (someone email me and explain me this)
     flock -x -w 600 9 || { echo "ERROR: flock() failed." >&2; exit 1; }
     echo "Locking $thisfile with $lockfile..."
+
+    # Clone HSDS repository if not found
+    if [ ! -d $HSDS_DIR/hsds ]; then
+        echo "$HSDS_DIR/hsds not found, cloning https://github.com/HDFGroup/hsds.git..."
+        cd $HSDS_DIR
+        git clone https://github.com/HDFGroup/hsds.git
+    fi
 
     # Install Docker if not found
     if type docker &>/dev/null; then
@@ -83,27 +83,36 @@ else
         install_docker
     fi
 
-    # Second check to if HSDS is running, start it if not
+    # Second check if HSDS is running, start it if not
     check_hsds
     if [ "$hsds_running" = false ]; then
         # Double check that Docker is running
         echo "HSDS not running, starting docker service..."
-        sudo chmod 666 /var/run/docker.sock
-        sudo groupadd docker
-        sudo usermod -aG docker "$USER"
         sudo service docker start
 
         # Start HSDS
         echo "Starting local HSDS server..."
-        cd ~/hsds || exit
+        cd $HSDS_DIR/hsds  || exit 1
         ./runall.sh "$(nproc --all)"
-        cd - || exit
     else
         echo HSDS service running: $hsds_running
     fi
 
     # Give HSDS a chance to warm up (not sure why but this helps a ton!)
-    sleep 10s
+    sleep 5s
+
+    # Let's test here if it wasn't already running
+    test_fpath="/nrel/wtk/conus/wtk_conus_2010.h5"
+    test=$(hsls /nrel/wtk/conus/wtk_conus_2010.h5 | grep windspeed_10m)
+    echo "Running HSDS access test on $test_fpath..."
+    if [[ $test == "windspeed_10m Dataset {8760, 2488136}" ]]; then
+        echo "Windspeed data access test PASSED"
+    else
+        echo "Windspeed data access test FAILED"
+    fi
+    state=$(hsinfo | grep "server state")
+    uptime=$(hsinfo | grep "up:" | cut -d":" -f2)
+    echo "HSDS $state, uptime: $uptime"
 
     # Release the lock on this file (Not necessary unless further steps are added)
     echo "Releasing lock on $thisfile"
