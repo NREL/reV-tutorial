@@ -8,12 +8,12 @@
 
 
 # Set the location of the HSDS code directory
-export HSDS_DIR=$HOME/hsds
+export HSDS_DIR=$HOME
 
 # Stop server if requested
 if [[ $1 == "--stop" ]]; then
     echo "Stopping HSDS server."
-    cd $HSDS_DIR
+    cd $HSDS_DIR/hsds
     ./runall.sh --stop || exit 1
     exit 0
 fi
@@ -61,6 +61,20 @@ if [ "$hsds_running" = true ]; then
     echo HSDS service running: $hsds_running
     exit 0
 else
+    # Lock this file so only one process on any EC2 hardware can run it
+    lockfile=/var/lock/start_hsds_$EC2_ID.flock
+    thisfile=$(realpath $0)
+    exec 9>$lockfile || exit 1  # Ubuntu doesn't allow double digit file descriptors by default, apparently, whereas other OSs do (someone email me and explain me this)
+    flock -x -w 600 9 || { echo "ERROR: flock() failed." >&2; exit 1; }
+    echo "Locking $thisfile with $lockfile..."
+
+    # Clone HSDS repository if not found
+    if [ ! -d $HSDS_DIR/hsds ]; then
+        echo "$HSDS_DIR/hsds not found, cloning https://github.com/HDFGroup/hsds.git..."
+        cd $HSDS_DIR
+        git clone https://github.com/HDFGroup/hsds.git
+    fi
+
     # Install Docker if not found
     if type docker &>/dev/null; then
         echo "Docker found."
@@ -78,7 +92,7 @@ else
 
         # Start HSDS
         echo "Starting local HSDS server..."
-        cd $HSDS_DIR  || exit 1
+        cd $HSDS_DIR/hsds  || exit 1
         ./runall.sh "$(nproc --all)"
     else
         echo HSDS service running: $hsds_running
@@ -87,17 +101,21 @@ else
     # Give HSDS a chance to warm up (not sure why but this helps a ton!)
     sleep 5s
 
-fi
+    # Let's test here if it wasn't already running
+    test_fpath="/nrel/wtk/conus/wtk_conus_2010.h5"
+    test=$(hsls /nrel/wtk/conus/wtk_conus_2010.h5 | grep windspeed_10m)
+    echo "Running HSDS access test on $test_fpath..."
+    if [[ $test == "windspeed_10m Dataset {8760, 2488136}" ]]; then
+        echo "Windspeed data access test PASSED"
+    else
+        echo "Windspeed data access test FAILED"
+    fi
+    state=$(hsinfo | grep "server state")
+    uptime=$(hsinfo | grep "up:" | cut -d":" -f2)
+    echo "HSDS $state, uptime: $uptime"
 
-# One more test to make sure it's actually working
-test_fpath="/nrel/wtk/conus/wtk_conus_2010.h5"
-test=$(hsls /nrel/wtk/conus/wtk_conus_2010.h5 | grep windspeed_10m)
-echo "Running HSDS access test on $test_fpath..."
-if [[ $test == "windspeed_10m Dataset {8760, 2488136}" ]]; then
-    echo "Windspeed data access test PASSED"
-else
-    echo "Windspeed data access test FAILED"
+    # Release the lock on this file (Not necessary unless further steps are added)
+    echo "Releasing lock on $thisfile"
+    flock -u 9
+
 fi
-state=$(hsinfo | grep "server state")
-uptime=$(hsinfo | grep "up:" | cut -d":" -f2)
-echo "HSDS $state, uptime: $uptime"

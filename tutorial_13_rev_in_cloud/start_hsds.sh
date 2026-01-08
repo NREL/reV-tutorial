@@ -56,13 +56,6 @@ fi
 thisfile=$(realpath $0)
 echo "Running $thisfile on $EC2_ID ($EC2_TYPE) from $HSDS_DIR..."
 
-# Clone the HSDS repository if needed
-if [ ! -d $HSDS_DIR/hsds ]; then 
-    echo "$HSDS_DIR not found, cloning https://github.com/HDFGroup/hsds.git..."
-    cd $HSDS_DIR
-    git clone https://github.com/HDFGroup/hsds.git
-fi
-
 # First check to see if HSDS is running
 check_hsds
 if [ "$hsds_running" = true ]; then
@@ -70,6 +63,13 @@ if [ "$hsds_running" = true ]; then
     echo HSDS service running: $hsds_running
     exit 0
 else
+    # Clone HSDS repository if not found
+    if [ ! -d $HSDS_DIR/hsds ]; then
+        echo "$HSDS_DIR not found, cloning https://github.com/HDFGroup/hsds.git..."
+        git clone https://github.com/HDFGroup/hsds.git
+        cd $HSDS_DIR/hsds
+    fi
+
     # Install Docker if not found
     if type docker &>/dev/null; then
         echo "Docker found."
