@@ -88,7 +88,19 @@ For more information on this method, see
 An AWS Parallel Cluster provides the user a head node that controls the distribution of computational work to a number of compute nodes, each of which are spun up on demand and shutdown after the work is finished. For reV runs, this also requires a shared file system. Once an AWS account is created, the user is able to choose the type of cluster they want and parameterize its characteristics. The following outlines how to configure and spin up a cluster using the AWS CLI, after which you will have access to the head node and file system until you delete the cluster (as outlined in [step 7](#7-aws-pcluster-clean-up)).
 
 
-### 3a) The Parallel Cluster Configuration File
+### 3a) Differences with an HPC
+At this point, it is worthwhile to point out that there are default behaviors in an AWS Parallel Cluster that may differ from what an user with access to an onsite HPC might expect. This can cause some confusion when configuring a reV job since the model was designed specifically to run on NLR HPC systems.
+
+On NLR's HPC, Slurm's exclusive node access option is turned on. If you submit a job to a compute node, that job has exclusive access to the entire server (i.e., all cpus and available memory). If you submit a second job, that job will check out a second compute node and block all those resources from other jobs submitted through the scheduler. So, this is the assumption that reV makes. This is more appropriate for HPC systems to prevent multiple users from interfering with each other's jobs.
+
+AWS, however, uses the default SLURM settings and shares nodes between jobs by default. When you submit that second job, if there are still enough resources available on the first compute node, it will kick that job off on it. As you kick more jobs off, it will continue using that first node until it runs out of CPUs and/or memory after which the scheduler will spin up a second node and start kicking jobs off on that one. So, this make sense from an efficiency/cost perspective and gets around underutilization problems that can occur with exclusive node scheduling behavior, but it requires you to think differently about your execution control in reV configurations if you're used to this default behavior.
+
+Alternatively, you can tweak a few settings to effectively turn node sharing off. Without having to spin up a new cluster, you may simply set the `memory` option in the reV `execution_control` block to approximately match the available memory on the target compute node. If you want to change the default behavior to be exclusive, you may add `JobExclusiveAllocation = true` to the target SLURM Queue (e.g., standard or bigmem in the example) in your AWS Parallel Cluster configuration file before spinning up your cluster. You may also specify the exclusive node option using the `feature` option in your `execution_control` block by setting the value to `--exclusive`.
+
+Another subtle difference between NLR's Slurm setting and the default parameters used in AWS involves checking out an interactive node. The `salloc` command allows you to manually check out a compute node of your choosing. This may be useful if you wish to monitor a reV job mid-stream or if you'd like to check something like memory overhead before kicking your jobs off. On NLR's HPC systems, this will put you in a resource queue which can take more or less time to get through depending on how many other users are attempting to connect to the same compute nodes on the system. On high-traffic days, this may take a signficant amount of time depending on your node choice, how long you asked to use the resource, and how many other users are trying to checkout the same type of node. On low-traffic days, you may be instantly granted a compute node allocation and will be SSH'd into that node automatically. On an AWS system with default Slurm settings you will not necessarily have to wait for other users, but it will take some time for the node to spin up since these instances aren't on standby as they are on an HPC system. Then, once the node is ready, you will then have to manually log into that node. In this case, you may use the `squeue` command to see the hostname of the machine you checked out and then you can use the `ssh` command to log into it. Slurm settings such as this may be configured to your liking in the [Job Scheduler Section](docs.aws.amazon.com/parallelcluster/latest/ug/Scheduling-v3.html#yaml-Scheduling-Scheduler) of your Parallel Cluster configuration file.
+
+
+### 3b) The Parallel Cluster Configuration File
 
 The next step is to write a YAML configuration file that specifies the build characteristic of the machines and software you wish to wish to deploy (e.g., operating system, disk, RAM, CPUs, job scheduler, etc.). Here, you may use the AWS CLI for a set of command lines prompts that will guide the build process or you may write your own manually. To use the guided process, use the command below or go to [The AWS Parallel Cluster Configuration page](https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3-configuring.html) for more detailed instructions.
 
@@ -141,7 +153,7 @@ To write your own configuration file, you may start with the [example configurat
 
 
 
-### 3b) Spin Up Cluster
+### 3c) Spin Up Cluster
 
 Before you can access your AWS account to create the parallel cluster we configured in [section 2b](2b-configure-cluster) we need to authenticate the connection. To do this, run the appropriate AWS sign-on command using the AWS CLI. For the single sign-on method use:
 
@@ -167,7 +179,7 @@ If everything was configured correctly, you will see an output JSON message in y
 pcluster list-clusters
 ```
 
-### 3c) Access Cluster
+### 3d) Access Cluster
 
 Now that you have a running cluster and an SSH key pair, you may log in to your head node, but you need two more items. First, you need to locate the hostname (or private IP address) associated with this instance. The easiest way to do this is to use the AWS CLI to "describe" your instance and locate the appropriate entry in the response. The response is a large JSON dictionary of information and the IP address is present in several locations. You may use just the `aws ec2 describe-instances` command and find the "PrivateIpAddress" entry manually, or you may use something like the following command to filter the response down to a single line representing the address:
 
@@ -189,22 +201,10 @@ ssh -i ~/.ssh/publickey.pub user@hostname
 
 > Note: If you have created and destroyed several AWS Parallel Clusters trying to get this to work, you may encounter some connection issues associated with SSH. If this happens, try removing entries for previous attempts (lines starting with the hostname or IP address) from the `~/.ssh/known_hosts` file.
 
-
-## 4) Differences with an HPC
-At this point, it is worthwhile to point out that there are default behaviors in an AWS Parallel Cluster that may differ from what an user with access to an onsite HPC might expect. This can cause some confusion when configuring a reV job since the model was designed specifically to run on NLR HPC systems.
-
-On NLR's HPC, Slurm's exclusive node access option is turned on. If you submit a job to a compute node, that job has exclusive access to the entire server (i.e., all cpus and available memory). If you submit a second job, that job will check out a second compute node and block all those resources from other jobs submitted through the scheduler. So, this is the assumption that reV makes. This is more appropriate for HPC systems to prevent multiple users from interfering with each other's jobs.
-
-AWS, however, uses the default SLURM settings and shares nodes between jobs by default. When you submit that second job, if there are still enough resources available on the first compute node, it will kick that job off on it. As you kick more jobs off, it will continue using that first node until it runs out of CPUs and/or memory after which the scheduler will spin up a second node and start kicking jobs off on that one. So, this make sense from an efficiency/cost perspective and gets around underutilization problems that can occur with exclusive node scheduling behavior, but it requires you to think differently about your execution control in reV configurations if you're used to this default behavior.
-
-Alternatively, you can tweak a few settings to effectively turn node sharing off. Without having to spin up a new cluster, you may simply set the `memory` option in the reV `execution_control` block to approximately match the available memory on the target compute node. If you want to change the default behavior to be exclusive, you may add `JobExclusiveAllocation = true` to the target SLURM Queue (e.g., standard or bigmem in the example) in your AWS Parallel Cluster configuration file before spinning up your cluster. You may also specify the exclusive node option using the `feature` option in your `execution_control` block by setting the value to `--exclusive`.
-
-Another subtle difference between NLR's Slurm setting and the default parameters used in AWS involves checking out an interactive node. The `salloc` command allows you to manually check out a compute node of your choosing. This may be useful if you wish to monitor a reV job mid-stream or if you'd like to check something like memory overhead before kicking your jobs off. On NLR's HPC systems, this will put you in a resource queue which can take more or less time to get through depending on how many other users are attempting to connect to the same compute nodes on the system. On high-traffic days, this may take a signficant amount of time depending on your node choice, how long you asked to use the resource, and how many other users are trying to checkout the same type of node. On low-traffic days, you may be instantly granted a compute node allocation and will be SSH'd into that node automatically. On an AWS system with default Slurm settings you will not necessarily have to wait for other users, but it will take some time for the node to spin up since these instances aren't on standby as they are on an HPC system. Then, once the node is ready, you will then have to manually log into that node. In this case, you may use the `squeue` command to see the hostname of the machine you checked out and then you can use the `ssh` command to log into it. Slurm settings such as this may be configured to your liking in the [Job Scheduler Section](docs.aws.amazon.com/parallelcluster/latest/ug/Scheduling-v3.html#yaml-Scheduling-Scheduler) of your Parallel Cluster configuration file.
-
-## 5) Setup HSDS Server
+## 4) Setup HSDS Server
 HSDS can be used to access wind, solar, and other resource data that NLR houses in an AWS S3 bucket. For smaller, single node jobs, this can be done by running HSDS and adjusting the resource file paths in your reV configs. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job. For large jobs, running an non-containerized HSDS server will likely encounter connection issues at some point and kill your reV runs. This problem can be largely fixed using HSDS Docker images. The current recommended approach for handling this is to write a script that will install HSDS, Docker, and kick off a containerized HSDS service on each compute node that a reV job uses. The following will walk you through setting up that process.
 
-### 5a) Create Virtual Python Environment
+### 4a) Create Virtual Python Environment
 
 The first step is to create a virtual Python environment that will contain both the reV model and HSDS Python APIs. There are many ways to do this, but this simplest is to use Python's builtin virtual environment module, `venv`. You can use the existing Python interpreter on your system or you can update it with your package manager, but make sure that the Python versions you're working with are compatible with reV. If you choose to use `venv`, you may need to install this module with your package manager. On our Ubuntu system, if you have Python 3.12, that command would be:
 
@@ -227,7 +227,7 @@ source ~/.bashrc
 arev
 ```
 
-### 5b) Configure Data Access
+### 4b) Configure Data Access
 1. Create an HSDS Configuration file in your home directory called `~/.hscfg` with just the following content:
 ```
 # Local HSDS server
@@ -263,12 +263,17 @@ export AWS_REGION="us-west-2"
 
 Now you (and reV) should have access to all the resource files in this bucket. You can explore available datasets using the `hsls` command on the remote files and directories in the remote resource directory. For example, `hsls /nrel/` will list out all top-level resource directories and `hsls /nrel/wtk/conus/wtk_conus_2007.h5` will list out all the datasets and shapes in that file (include the trailing slash on directory names).
 
-## 6) Setup reV
+## 5) Setup reV
 
-You'll need to install reV but most of the reV configuration files you'll need for this example run are provided in this repository. They are based off of a small study area in Delaware, which was built using HSDS and the `make_project_points.py` script. If you would like to try other project points, edit the subsetting in that script to reflect your study area. 
+You'll need to install reV but most of the reV configuration files you'll need for this example run are provided in this repository. They are based off of a small study area in Delaware, which was built using HSDS and the `make_project_points.py` script. If you would like to try other project points, edit that script to reflect your study area. 
 
-## 6a) Install reV and configuration files
-- Navigate to the shared filesystem directory (since this is where we will be writing outputs) and clone this repository to get the sample reV configuration files and HSDS startup scripts. Then, in the same Python environment you installed HSDS into, install reV through PyPI, and run the CLI to check that it works:
+
+
+
+
+
+## 5a) Install reV and configuration files
+- Navigate to the shared filesystem directory and clone this repository there to get the sample reV configuration files and HSDS startup scripts. We want it in the shared directory because this is where we are going to be writing reV outputs. Then, in the same Python environment you installed HSDS into, install reV through PyPI, and run the CLI to check that it works:
 
 ```bash
 cd /scratch/
@@ -280,7 +285,7 @@ reV
 
 If you see reV's help file, the installation was successful and works on your system. In this folder you will see several "start_hsds" scripts
 
-## 6b) Configure reV
+## 5b) Configure reV
 There are at least two steps in a full reV model pipeline where reV will make a call to the resource data:
 
 1) Generation: will always require access to resource data
@@ -313,15 +318,13 @@ There are at least two steps in a full reV model pipeline where reV will make a 
 
 Make sure this key-value pair is set in the execution_control block of the config_gen.json file: "sh_script": "sh ~/start_hsds.sh"
 
-Add the following to config_gen.json: config_gen["execution_control"]["sh_script"] = "sh ~/start_hsds.sh" this will start the HSDS server on each compute node before running reV.
+Add the following to config_gen.json: config_gen["execution_control"]["sh_script"] = "~/start_hsds.sh" this will start the HSDS server on each compute node before running reV.
 
 Set the resource file paths in config_gen.json to the appropriate file paths on HSDS: config_gen["resource_file"] = "/nrel/wtk/conus/wtk_conus_{}.h5" (the curly bracket will be filled in automatically by reV). To find the appropriate HSDS filepaths, see the instruction set here.
 
 You should be good to go! The line in the generation config file makes reV run the start_hsds.sh script before running the reV job. The script will install docker and make sure one HSDS server is running per EC2 instance.
 
-
-
-## 7) Monitoring AWS Parallel Cluster Usage and Costs
+## 6) Monitoring AWS Parallel Cluster Usage and Costs
 - Just a real brief overview of how to monitor usage and avoid cost overruns.
 
 In this setup, there are four main sets of fees for running reV on an AWS Parallel Cluster:
@@ -334,7 +337,7 @@ In this setup, there are four main sets of fees for running reV on an AWS Parall
 https://aws.amazon.com/pcs/pricing/
 
 
-## 8) AWS Parallel Cluster Clean Up
+## 7) AWS Parallel Cluster Clean Up
 - Remove the PCluster
 - Depending on settings, you may need to handle the file system separately
 - Ways to keep as much infrastructure alive with as little cost as possible
@@ -342,42 +345,10 @@ https://aws.amazon.com/pcs/pricing/
 - Etc.
 
 
-## 9) Deprecated and Untested Methods
+## 8) Deprecated and Untested Methods
 Some older methods may still work, though they are not covered in this guide.
 - Kubernetes
 
 Other methods have been tested and were found to be less than ideal for reV
 - AWS Lamda Functions
 
-## Scratch Notes on Deployment
-Notes on deployment
-
-- The official amazon recommendations are to use docker to install hsds. This is what Grant followed. On rhel systems, this would require you to register for an entitlement server. At NREL, the system admins responded that they only had so many RHEL licenses, enough for the head (login) node but not enough for all of the compute nodes. Why they want us to use docker over a basic docker installation is unknown to me.
-- Next, I tried amazon linux 2, not knowing about amazon linux 2023. Here, the hsds installation failed because I was unable to install gcc 9
-- AWS Linux Operating Systems:
-    - https://docs.aws.amazon.com/systems-manager/latest/userguide/operating-systems-and-machine-types.html#prereqs-os-linux
-- Ubuntu
-    - Next I tried Ubuntu, 22.04 and 24.04, but it won’t allow RSA keys. This can be done in the EC2 portal under “Network & Security” and “Key Pairs” (e.g., https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#InstanceDetails:instanceId=i-00035fdba289b5f4f) 
-- In the start_hsds.sh you need to get the instance ID and type of each node. There are two ways to do this depending on your Instance Meta Data Service (IMDS) Version:
-    - IMDS v1: 
-        *     curl http://169.254.169.254/latest/meta-data/instance-type
-        *     curl http://169.254.169.254/latest/meta-data/instance-id
-    * IMDS v2:
-        * TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600”). # Get your token first
-        * curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/instance-type
-        * curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/instance-id
-- The start_hsds.sh method of installing docker depends on which OS you’re using. Edit the file to reflect this:
-    - https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-docker.html 
-- If you cloned the hsds repository anywhere else than ~/hsds, replace that path on line 65
-- Docker compose is now a separate package and the installation commands will also depend on your OS. For Amazon Linux 2023:
-    * sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-linux-$(uname -m) -o /usr/bin/docker-compose && sudo chmod 755 /usr/bin/docker-compose
-    * Then, to call it, replace every “docker compose” with “docker-compose” in hsds/runall.sh in the hsds repository
-- When you run hsds through docker, if you want to stop it, run the hsds/stopall.sh script, which is just running the runall.sh script with a stop option
-- If you ran HSDS in the background without Docker or some container and you want to stop it, good luck. It spins up a coordinator process and another process for each hsds server node you request. Each of these are very resilient and hard to kill, so far the only thing that’s worked is rebooting.
-- Be very careful about defining your AWS and HSDS environment variables. These can be defined in many places and can result in unexpected behavior if they aren’t aligned. Some of those places include:
-    - 1) The HSDS config: ~/.hscfg]
-    - 2) Your .bashrc or any other scripts it runs
-    - 3) The start hsds script
-    - 4) The parameter override config (~/hsds/admin/config/override.yml)
-- In the current SLURM configuration, the compute node only shutdowns after the wall time is reached, not if the job fails.
-    - This would require either better tuning of the wall time (but will waste a lot of resource time regardless) or reconfiguring SLURM to shutdown after the command sent by GAPs fails.
