@@ -20,12 +20,12 @@ Institutional users generally work within an AWS Organization or a preconfigured
 - Confirm the `SubnetId` to be used for the head node and compute nodes provided by your cloud administrator. Institutional AWS accounts might use a private `SubnetId` for both the head node and compute nodes, work out those specifics with your cloud administrator.
 
 ### Other recommendations for AWS account configurations
-- Verify budget, budget controls and alert thresholds before launching resource-intensive clusters.
+- Verify budget, budget controls, and alert thresholds before launching resource-intensive clusters.
 - Its highly recommended to setup AWS Budget alerts for projected usage: [https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).  This can help reduce the risk of a surprise AWS bill and keep costs in control.
-- *Note: Your VPC must have DNS Resolution = yes, DNS Hostnames = yes and DHCP options with the correct domain name for the Region. The default DHCP Option Set already specifies the required AmazonProvidedDNS. If specifying more than one domain name server, see DHCP options sets in the Amazon VPC User Guide.*
+> Note: Your VPC must have DNS Resolution = yes, DNS Hostnames = yes and DHCP options with the correct domain name for the Region. The default DHCP Option Set already specifies the required AmazonProvidedDNS. If specifying more than one domain name server, see DHCP options sets in the Amazon VPC User Guide.*
 
 ### IAM versus AWS SSO
-At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI and ParallelCluster. If your organization must rely on SSO, consult the HSDS maintainers for updates on STS compatibility before proceeding.
+At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI and Parallel Cluster. If your organization must rely on SSO, consult the HSDS maintainers for updates on STS compatibility before proceeding.
 
 
 ## 2) Install AWS Command Line Interfaces
