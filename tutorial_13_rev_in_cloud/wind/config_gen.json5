@@ -9,7 +9,7 @@
     "nodes": 2,
     "option": "awspc",
     "sites_per_worker": 20,
-    "sh_script": "~/start_hsds_nodocker.sh logfile",
+    "sh_script": "~/start_hsds.sh",
     "max_workers": 1,
     "walltime": 0.25
   },
@@ -19,13 +19,13 @@
     "cf_profile",
     "lcoe_fcr"
   ],
-  "project_points": "./project_points_rhode_island.csv",
+  "project_points": "./project_points_delaware.csv",
   "resource_file": [
       "/nrel/wtk/conus/wtk_conus_2007.h5",
       "/nrel/wtk/conus/wtk_conus_2008.h5"
   ],
   "sam_files": {
-    "default": "./windpower.json"
+    "default": "./windpower.json5"
   },
   "technology": "windpower"
 }

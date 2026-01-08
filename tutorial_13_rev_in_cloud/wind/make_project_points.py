@@ -5,7 +5,7 @@ from rex import Resource
 
 
 HOME = Path(__file__).parent
-SAMPLE_FPATH = "/nrel/nsrdb/GOES/conus/v4.0.0/nsrdb_conus_2024.h5"
+SAMPLE_FPATH = "/nrel/wtk/conus/wtk_conus_2008.h5"
 
 
 def main(src, state=None):
