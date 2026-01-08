@@ -150,20 +150,20 @@ sso login
 ```
 
 or, if you didn't set the `AWS_PROFILE` environment variable:
-
-```
+```bash
 aws sso login --profile=profile_name
 ```
 
 - *Include IAM case here*
 
 Now we can use the `aws-parallelcluster` CLI to create your cluster. Run the following command (if you want to keep default cluster name from the sample config, you may use this command directly, otherwise update the cluster name to your own):
-
-    `pcluster create-cluster -c rev-pcluster-config.yaml --cluster-name rev-pcluster`
+```bash
+pcluster create-cluster -c rev-pcluster-config.yaml --cluster-name rev-pcluster`
+```
 
 If everything was configured correctly, you will see an output JSON message in your shell indicating that the creation process has begun (look for "CREATE_IN_PROGRESS"). This process will take some time to finish, but you may check on it's progress throught the EC2 CloudFormation portal in your AWS developers page where you'll see the status of each individual cluster component. You may also run the following command to see its overall status:
 
-```
+```bash
 pcluster list-clusters
 ```
 
@@ -202,7 +202,7 @@ Alternatively, you can tweak a few settings to effectively turn node sharing off
 Another subtle difference between NLR's Slurm setting and the default parameters used in AWS involves checking out an interactive node. The `salloc` command allows you to manually check out a compute node of your choosing. This may be useful if you wish to monitor a reV job mid-stream or if you'd like to check something like memory overhead before kicking your jobs off. On NLR's HPC systems, this will put you in a resource queue which can take more or less time to get through depending on how many other users are attempting to connect to the same compute nodes on the system. On high-traffic days, this may take a signficant amount of time depending on your node choice, how long you asked to use the resource, and how many other users are trying to checkout the same type of node. On low-traffic days, you may be instantly granted a compute node allocation and will be SSH'd into that node automatically. On an AWS system with default Slurm settings you will not necessarily have to wait for other users, but it will take some time for the node to spin up since these instances aren't on standby as they are on an HPC system. Then, once the node is ready, you will then have to manually log into that node. In this case, you may use the `squeue` command to see the hostname of the machine you checked out and then you can use the `ssh` command to log into it. Slurm settings such as this may be configured to your liking in the [Job Scheduler Section](docs.aws.amazon.com/parallelcluster/latest/ug/Scheduling-v3.html#yaml-Scheduling-Scheduler) of your Parallel Cluster configuration file.
 
 ## 5) Setup HSDS Server
-HSDS can be used to access wind, solar, and other resource data that NLR houses in an AWS S3 bucket. For smaller, single node jobs, this can be done by installing HSDS, giving it access information to this S3 bucket, kicking it off directly on your file system, adjusting your resource file paths in your reV configs, and then letting reV handle the rest. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job. For large jobs, running an non-containerized HSDS server will likely encounter connection issues at some point and kill your reV runs. This problem can be largely fixed using HSDS Docker images. The current recommended approach for handling this is to write a script that will install HSDS, Docker, and kick off a containerized HSDS service on each compute node that a reV job uses. The following will walk you through setting up that process.
+HSDS can be used to access wind, solar, and other resource data that NLR houses in an AWS S3 bucket. For smaller, single node jobs, this can be done by running HSDS and adjusting the resource file paths in your reV configs. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job. For large jobs, running an non-containerized HSDS server will likely encounter connection issues at some point and kill your reV runs. This problem can be largely fixed using HSDS Docker images. The current recommended approach for handling this is to write a script that will install HSDS, Docker, and kick off a containerized HSDS service on each compute node that a reV job uses. The following will walk you through setting up that process.
 
 ### 5a) Create Virtual Python Environment
 
@@ -213,7 +213,6 @@ sudo apt install python3.12-venv
 ```
 
 Then, create and activate this environment using a set of commands like this:
-
 ```bash
 mkdir ~/envs
 cd ~/envs
@@ -222,68 +221,51 @@ source rev/bin/activate
 ```
 
 Then you could assign the activation command to an alias if you don't want to type it out each time with a command like this:
-
 ```bash
 echo -e "\nalias arev='source ~/envs/rev/bin/activate'" >> ~/.bashrc
 source ~/.bashrc
 arev
 ```
-> Note: This is the same environment you will install reV into. Perform this step before installing reV so that it doesn't point the interpreter away from this local `hsds` installation.
 
-
-### 5b) Install HSDS
-The HSDS repository has a number of useful scripts for Dockerizing a server. Clone this repository somewhere on your file system. Then use a 
-
-```bash
-git clone ~/https://github.com/HDFGroup/hsds.git
-cd ~/hsds
-python -m pip install . 
-```
-
-### 5c) Configure Data Access
-1. Create an HSDS Configuration file in your home directory called `~/.hscfg` with the following content:
+### 5b) Configure Data Access
+1. Create an HSDS Configuration file in your home directory called `~/.hscfg` with just the following content:
 ```
 # Local HSDS server
 hs_endpoint = http://localhost:5101
-hs_username = admin
-hs_password = admin
-hs_api_key = None
 hs_bucket = nrel-pds-hsds
 ```
 
-2. Optionally, you can copy the password file and modify your username/password combinations:
+2. Clone or move this tutorial repository into the shared directory we established in the AWS Parallel Cluster configuration YAML in [section 3](#3-setup-and-deploy-the-parallel-cluster) (`/scratch/` by default). We want it in the shared directory because this is where we're going to run reV and write the outputs here.
+
+3. In this directory you'll find several "start_hsds" bash scripts. If you wish to run reV with the Slurm `exclusive` parameter, use `start_hsds.sh`. If you want to use node sharing, you will need to use `start_hsds_node_sharing.sh`, which locks the file so that only one process attempts to install docker and run HSDS while the others wait for the service to start. This is needed in this case because reV will run this script once for each process it kicks off; if node sharing is turned off each process is run on a dedicated node, but if it is left on many reV jobs will be kicked off and each will run the file on the same server.
+> Note: The contents of your `start_hsds.sh` script for installing and starting Docker depend on which OS you’re using since it uses the package manager to do it. Different OSes use different package managers. The sample file included in this repository uses the Advanced Package Tool (APT), which is common to all Debian-based operating systems such as Ubuntu. If you aren't using a Debian-based OS, you'll need to edit the file.
+
+4. Set your AWS environment variables. This can be done at the start of the HSDS script itself or it can be done it your `~/.bashrc` run command file, which will set the variables when you spin up a shell. Here, we are going to add these variables to your `~/.bashrc`. The benefit of putting them here is that it allows you use the HSDS scripts to stop the service more easily and that requires the `AWS_S3_GATEWAY` environment variables to be set in your current shell. Add the following environment variables with your values to the `~/.bashrc` files. Here, use AWS access variables from an IAM user with admin privileges and not your AWS console root user. The `unset` parameter here is needed in case you are using a SSO authentication method and need to override AWS access variables with your IAM user variables.
 
 ```
-cp ~/hsds/admin/config/passwd.default ~/hsds/admin/config/passwd.txt
+unset AWS_SESSION_TOKEN
+export AWS_ACCESS_KEY_ID=<your-aws-access-key-id>
+export AWS_SECRET_ACCESS_KEY=<your-aws-secret-access-key>
+export AWS_S3_GATEWAY="http://s3.us-west-2.amazonaws.com/"
+export AWS_S3_NO_SIGN_REQUEST=1
+export AWS_REGION="us-west-2"
 ```
+> Note: Be careful about defining your AWS and HSDS environment variables. These can be defined in many places and can result in unexpected behavior if they aren’t aligned. Some of those places include: the HSDS config: `~/.hscfg`, your `~/.bashrc` file or any other script it runs, the `start_hsds.sh` Bash script, or the parameter override configuration file (`~/hsds/admin/config/override.yml`).
+> Note: If you are using a Single Sign-On (SSO) authentication method, you will also need an IAM user assigned to you since HSDS fails without this authentication procedure. In this case, you'll need to unset the `AWS_SESSION_TOKEN` variable before declaring the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` variables from the IAM user.
 
-2. Copy the start_hsds.sh script from this example (source file) to your home directory in the pcluster login node (e.g. cp /shared/reV/examples/aws_pcluster/start_hsds.sh ~/).
+4. Test your HSDS local server configuration on your head node. The start HSDS script will run a quick access test on an example NRL resource file, but you may also run any of the subsequent command after it has finished to double check:
 
-3. Replace the following environment variables in start_hsds.sh with your values: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and BUCKET_NAME (note that you should use AWS keys from an IAM user with admin privileges and not your AWS console root user).
+    - Run the start script: `./start_hsds.sh`
+    - Run `docker ps` and verify that there are active HSDS services (hsds_rangeget_1, hsds_sn_1, hsds_head_1, and an hsds_dn_* node for every available core). 
+    - Run `hsinfo` and verify that this doesn’t throw an error
+    - Run the a Python access test with `h5pyd`: `test_hsds.py`.
+    - When you're finished testing on the head node, you can run `./start_hsds.sh --stop` to shut the server down. 
 
-4. Test your HSDS local server config, do the following:
-
-    - Run the start script: sh ~/start_hsds.sh
-    - Run docker ps and verify that there are 4 or more HSDS services active (hsds_rangeget_1, hsds_sn_1, hsds_head_1, and an hsds_dn_* node for every available core)
-    - Run hsinfo and verify that this doesn’t throw an error
-    - Try running pip install h5pyd and then run the the h5pyd test (either the .py in this example or the h5pyd test snippet below).
-
-
-
-### 5d) Setup Notes:
-
-1) Be careful about defining your AWS and HSDS environment variables. These can be defined in many places and can result in unexpected behavior if they aren’t aligned. Some of those places include:
-
-- The HSDS config: `~/.hscfg`
-- Your `~/.bashrc` file or any other script it runs
-- The `start_hsds.sh`" Bash script
-- The parameter override configuration file (`~/hsds/admin/config/override.yml`)
-
-2) The contents of your `start_hsds.sh` script for installing and starting Docker depends on which OS you’re using since it uses the package manager to do it. Different OSes uses different package managers. The sample file included in this repository use the Advanced Package Tool (APT), which is common to all Debian-based operating systems such as Ubuntu. If you aren't using a Debian-based OS, you'll need to edit the file.
-
-
+Now you (and reV) should have access to all the resource files in this bucket. You can explore available datasets using the `hsls` command on the remote files and directories in the remote resource directory. For example, `hsls /nrel/` will list out all top-level resource directories and `hsls /nrel/wtk/conus/wtk_conus_2007.h5` will list out all the datasets and shapes in that file (include the trailing slash on directory names).
 
 ## 6) Setup reV
+
+You'll need to install reV but most of the reV configuration files you'll need for this example run are provided in this repository. They are based off of a small study area in Delaware, which was built using HSDS and the `make_project_points.py` script. If you would like to try other project points, edit the subsetting in that script to reflect your study area. 
 
 ## 6a) Install reV and configuration files
 - Navigate to the shared filesystem directory (since this is where we will be writing outputs) and clone this repository to get the sample reV configuration files and HSDS startup scripts. Then, in the same Python environment you installed HSDS into, install reV through PyPI, and run the CLI to check that it works:
