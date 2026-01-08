@@ -3,16 +3,29 @@ reV in the Cloud
 
 The Renewable Energy Potential Model (reV) was originally designed to run on National Laboratory of the Rockies (NLR) High Performance Computer systems (HPCs) and access energy resource data on a local file system. Users wishing to run large-scale reV jobs without access to NLR's HPC can now recreate the original work flow using an [Amazon Web Services (AWS) Parallel Cluster](https://aws.amazon.com/hpc/parallelcluster/) to provide the compute infrastructure and the [Highly Scalable Data Service (HSDS)](https://www.hdfgroup.org/solutions/highly-scalable-data-service-hsds/) to provide access to resource data. This document will walk you through how to set these services up and start using large-scale reV in the cloud.
 
-This guide is designed to provide both a step-by-step guide and detailed explanations for the basic components of a reV environment on an AWS Parallel Cluster and is oriented towards analysts with moderate to intermediate levels of experience with AWS. More experienced cloud architects may be interested in this Terraform-based guide produced by Switchbox: [https://github.com/switchbox-data/rev-parallel-cluster](https://github.com/switchbox-data/rev-parallel-cluster).
+This guide is designed to provide both a step-by-step guide and detailed explanations for the basic components of a reV environment on an AWS Parallel Cluster. It is oriented towards analysts with moderate to intermediate levels of experience with AWS. More experienced cloud architects may be interested in this Terraform-based guide produced by Switchbox: [https://github.com/switchbox-data/rev-parallel-cluster](https://github.com/switchbox-data/rev-parallel-cluster).
 
-## 1) Setup an AWS Account
-- Write for an audience that ranges from a non-CS University Grad Student to Upper/Intermediate-level IT professional. We don't really need to worry about AWS pros.
-- We'll want a section on how to do this for both individual and institutional accounts. 
-- Describe the Single Sign On Issue and reiterate the need for an IAM user.
-    - Here we can probably contact John Readey to see if he found any insights into the Authorization protocol problem with SSO vs IAM user accounts
+## 1) Set Up an AWS Account
+You need an AWS account and all prerequisites setup before you can run reV on AWS Parallel Cluster. You also need to ensure that networking components such as a Virtual Private Cloud (VPC), subnetworks (or subnets), a Network Address Translation gateway (NAT), and an internet gateway already exist.  The subnet's Classless Inter-Domain Routing range (CIDR) should be large enough to handle the number of compute nodes, a CIDR of `/24` is a good starting point. Record the `SubnetId` you plan to use for the head node and compute nodes, it must be reachable from the server/workstation you will use for SSH access to the head node in later steps. The instructions below provide guidance for users leveraging an individual AWS account as well as guidance if your working within an institutional IT organization's AWS account.
 
-- From Whiteside:
-> A lot of companies will just use IAM users and currently that will just work.  Others might use identify center and AWS SSO users, or other forms of SSO that use STS credentials.  We could stop here and just say SSO (STS credentials) doesn't work, you will need an IAM user account.  We could also look at hsds and see if we can fix it, it might be an easy fix to enable the use of STS credentials.
+### 1a) Individual AWS Account Guide
+If you are creating an individual AWS account to run reV, review the AWS recommended steps for creating a new AWS Account: [https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html) as well as the AWS Parallel Cluster prerequisites before proceeding: [https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3.html#prerequisites](https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3.html#prerequisites).
+
+We recommend the ["two subnet"](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3-two-subnets.html) configuration for Parallel Cluster networking.  This means the head node will use a public `SubnetId` (you should limit ssh/22 TCP access to just your IP in the security group) and the compute nodes use a private `SubnetId`. Review the [AWS Recommended Parallel Cluster network configurations](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3.html) for more details on network options and best practices.
+
+### 1b) Institutional AWS Account Guide
+Institutional users generally work within an AWS Organization or a preconfigured landing zone. Coordinate with your cloud administrator to:
+- Obtain or create an IAM user with programmatic access keys dedicated to this project with permission to deploy AWS Parallel Cluster. See: [https://docs.aws.amazon.com/parallelcluster/latest/ug/iam-roles-in-parallelcluster-v3.html](https://docs.aws.amazon.com/parallelcluster/latest/ug/iam-roles-in-parallelcluster-v3.html).
+- Your cloud administrator should review the [AWS Recomended Parallel Cluster network configurations](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3.html).
+- Confirm the `SubnetId` to be used for the head node and compute nodes provided by your cloud administrator. Institutional AWS accounts might use a private `SubnetId` for both the head node and compute nodes, work out those specifics with your cloud administrator.
+
+### 1c) Other recommendations for AWS account configurations
+- Verify budget, budget controls, and alert thresholds before launching resource-intensive clusters.
+- Its highly recommended to setup AWS Budget alerts for projected usage: [https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).  This can help reduce the risk of a surprise AWS bill and keep costs in control.
+> Note: Your VPC must have DNS Resolution = yes, DNS Hostnames = yes and DHCP options with the correct domain name for the Region. The default DHCP Option Set already specifies the required AmazonProvidedDNS. If specifying more than one domain name server, see DHCP options sets in the Amazon VPC User Guide.*
+
+### 1d) IAM versus AWS Single Sign-on (SSO)
+At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI and Parallel Cluster. If your organization must rely on SSO, consult the HSDS maintainers for updates on STS compatibility before proceeding.
 
 
 ## 2) Install AWS Command Line Interfaces
@@ -46,7 +59,7 @@ Identity and Access Management (IAM):
 Include IAM case here
 ```
 
-Moving forward, we need to tell the AWS CLI which profile to use for authentication. You may do this manually for each session by setting the `AWS_PROFILE` environment variable to this name in each comand-line session, you may specify the name in a `--profile` option for each CLI command, or you may add the variable to your command-line interpreter's startup script to automate this step, which is what we're suggesting for convenience. Here, we are using a Bash shell so will be editing the `~/.bashrc` script (Linux) or the `~/.bash_profile` (MacOS) to add the following line:
+Moving forward, we need to tell the AWS CLI which profile to use for authentication. You may do this manually for each session by setting the `AWS_PROFILE` environment variable to this name in each command-line session, you may specify the name in a `--profile` option for each CLI command, or you may add the variable to your command-line interpreter's startup script to automate this step, which is what we're suggesting for convenience. Here, we are using a Bash shell so will be editing the `~/.bashrc` script (Linux) or the `~/.bash_profile` (MacOS) to add the following line:
 
 ```bash
 export AWS_PROFILE=profile_name
@@ -56,11 +69,11 @@ export AWS_PROFILE=profile_name
 
 The most direct way to interact with your parallel cluster is through a Secure Shell (SSH) Protocol connection. This will enable to you to both interact with the operating and file systems and to transfer data to and from the cluster. Because subsequent setup steps will require SSH information, it is best to go ahead and address this one before moving on. To do this, assuming you don't have existing keys stored on your computer, you first need to generate a pair (public and private) of SSH keys. There are a few ways to do this, outlined below.
 
-> Note: While the most common of these algorithms (the Rivest–Shamir–Adleman crytosystem or `RSA`) will work for some operating systems, other images on AWS do not allow it and will require you to use a more up-to-date algorithm. In this case, you may use the newer `Ed25519` option, which is based on the Edwards-curve Digital Signature Algorithm. For more on AWS and SSH, see: [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
+> Note: While the most common of these algorithms (the Rivest–Shamir–Adleman cryptosystem or `RSA`) will work for some operating systems, other images on AWS do not allow it and will require you to use a more up-to-date algorithm. In this case, you may use the newer `Ed25519` option, which is based on the Edwards-curve Digital Signature Algorithm. For more on AWS and SSH, see: [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
 
 
 #### Method #1: Generate a key-pair on your local machine and copy the public key to AWS's Secrets manager
-Users on Unix systems may use the built-in `ssh-keygen` command. Windows users may also use this command, though it will require the installation of an OpenSSH server. There are different algorithms and keysizes that you may specify when running this command and which one will be acceptable for your parallel cluster will depend on the security requirements of the operating system you chose when creating it. Here, given the limitations on some operatings systems described above, we will generate a Ed25519 key pair with the following command:
+Users on Unix systems may use the built-in `ssh-keygen` command. Windows users may also use this command, though it will require the installation of an OpenSSH server. There are different algorithms and keysizes that you may specify when running this command and which one will be acceptable for your parallel cluster will depend on the security requirements of the operating system you chose when creating it. Here, given the limitations on some operating systems described above, we will generate a Ed25519 key pair with the following command:
 
 ```
 ssh-keygen -t ed25519
@@ -84,11 +97,11 @@ For more information on this method, see
 [https://docs.aws.amazon.com/cli/latest/reference/ec2/import-key-pair.html](https://docs.aws.amazon.com/cli/latest/reference/ec2/import-key-pair.html)
 
 
-## 3) Setup and Deploy the Parallel Cluster
+## 4) Setup and Deploy the Parallel Cluster
 An AWS Parallel Cluster provides the user a head node that controls the distribution of computational work to a number of compute nodes, each of which are spun up on demand and shutdown after the work is finished. For reV runs, this also requires a shared file system. Once an AWS account is created, the user is able to choose the type of cluster they want and parameterize its characteristics. The following outlines how to configure and spin up a cluster using the AWS CLI, after which you will have access to the head node and file system until you delete the cluster (as outlined in [step 7](#7-aws-pcluster-clean-up)).
 
 
-### 3a) Differences with an HPC
+### 4a) Differences with an HPC
 At this point, it is worthwhile to point out that there are default behaviors in an AWS Parallel Cluster that may differ from what an user with access to an onsite HPC might expect. This can cause some confusion when configuring a reV job since the model was designed specifically to run on NLR HPC systems.
 
 On NLR's HPC, Slurm's exclusive node access option is turned on. If you submit a job to a compute node, that job has exclusive access to the entire server (i.e., all cpus and available memory). If you submit a second job, that job will check out a second compute node and block all those resources from other jobs submitted through the scheduler. So, this is the assumption that reV makes. This is more appropriate for HPC systems to prevent multiple users from interfering with each other's jobs.
@@ -100,7 +113,7 @@ Alternatively, you can tweak a few settings to effectively turn node sharing off
 Another subtle difference between NLR's Slurm setting and the default parameters used in AWS involves checking out an interactive node. The `salloc` command allows you to manually check out a compute node of your choosing. This may be useful if you wish to monitor a reV job mid-stream or if you'd like to check something like memory overhead before kicking your jobs off. On NLR's HPC systems, this will put you in a resource queue which can take more or less time to get through depending on how many other users are attempting to connect to the same compute nodes on the system. On high-traffic days, this may take a signficant amount of time depending on your node choice, how long you asked to use the resource, and how many other users are trying to checkout the same type of node. On low-traffic days, you may be instantly granted a compute node allocation and will be SSH'd into that node automatically. On an AWS system with default Slurm settings you will not necessarily have to wait for other users, but it will take some time for the node to spin up since these instances aren't on standby as they are on an HPC system. Then, once the node is ready, you will then have to manually log into that node. In this case, you may use the `squeue` command to see the hostname of the machine you checked out and then you can use the `ssh` command to log into it. Slurm settings such as this may be configured to your liking in the [Job Scheduler Section](docs.aws.amazon.com/parallelcluster/latest/ug/Scheduling-v3.html#yaml-Scheduling-Scheduler) of your Parallel Cluster configuration file.
 
 
-### 3b) The Parallel Cluster Configuration File
+### 4b) The Parallel Cluster Configuration File
 
 The next step is to write a YAML configuration file that specifies the build characteristic of the machines and software you wish to wish to deploy (e.g., operating system, disk, RAM, CPUs, job scheduler, etc.). Here, you may use the AWS CLI for a set of command lines prompts that will guide the build process or you may write your own manually. To use the guided process, use the command below or go to [The AWS Parallel Cluster Configuration page](https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3-configuring.html) for more detailed instructions.
 
@@ -125,7 +138,7 @@ To write your own configuration file, you may start with the [example configurat
     - `ubuntu2404`: Ubuntu 24.04 LTS
     - `rhel8`: Red Hat Enterprise Linux (RHEL) 8
     - `rhel9`: Red Hat Enterprise Linux (RHEL) 9
-        > Note that RHEL systems will require registration with an "entitlement server". If you or your organization does not have a RHEL license, you will not be able to install required dependencies with the RHEL package manager (yum). Also, as per the methodology outlined in this guide, you will also need nough licenses to install HSDS and docker on each compute you check out. Because of this, RHEL is not recommended for users without access to RHEL licenses.
+        > Note that RHEL systems will require registration with an "entitlement server". If you or your organization does not have a RHEL license, you will not be able to install required dependencies with the RHEL package manager (yum). Also, as per the methodology outlined in this guide, you will also need enough licenses to install HSDS and docker on each compute you check out. Because of this, RHEL is not recommended for users without access to RHEL licenses.
 
 3. **HeadNode**
 
@@ -135,7 +148,7 @@ To write your own configuration file, you may start with the [example configurat
     
     > Make sure to replace the `SubnetId` value in the `Networking` subsection with the appropriate value given to you by your system administrator or (where would you find this?)
 
-    > Note that we are using read-only access for S3 buckets in this configuration (`AmazonS3ReadOnlyAccess`). This is because we are writing our reV outputs to the shared file system and only use S3 to access the resource data. If, for any reason, you need to elevate or refine your access privileges, change the `AdditionalIamPolicies` `Policy` entries to something more permissable. You may also add additional policies to fit your needs. See all available options here: [https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html).
+    > Note that we are using read-only access for S3 buckets in this configuration (`AmazonS3ReadOnlyAccess`). This is because we are writing our reV outputs to the shared file system and only use S3 to access the resource data. If, for any reason, you need to elevate or refine your access privileges, change the `AdditionalIamPolicies` `Policy` entries to something more permissible. You may also add additional policies to fit your needs. See all available options here: [https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/policy-list.html).
 
 4. **Scheduling**
 
@@ -153,7 +166,7 @@ To write your own configuration file, you may start with the [example configurat
 
 
 
-### 3c) Spin Up Cluster
+### 4c) Spin Up Cluster
 
 Before you can access your AWS account to create the parallel cluster we configured in [section 2b](2b-configure-cluster) we need to authenticate the connection. To do this, run the appropriate AWS sign-on command using the AWS CLI. For the single sign-on method use:
 
@@ -173,13 +186,13 @@ Now we can use the `aws-parallelcluster` CLI to create your cluster. Run the fol
 pcluster create-cluster -c rev-pcluster-config.yaml --cluster-name rev-pcluster`
 ```
 
-If everything was configured correctly, you will see an output JSON message in your shell indicating that the creation process has begun (look for "CREATE_IN_PROGRESS"). This process will take some time to finish, but you may check on it's progress throught the EC2 CloudFormation portal in your AWS developers page where you'll see the status of each individual cluster component. You may also run the following command to see its overall status:
+If everything was configured correctly, you will see an output JSON message in your shell indicating that the creation process has begun (look for "CREATE_IN_PROGRESS"). This process will take some time to finish, but you may check on it's progress through the EC2 CloudFormation portal in your AWS developers page where you'll see the status of each individual cluster component. You may also run the following command to see its overall status:
 
 ```bash
 pcluster list-clusters
 ```
 
-### 3d) Access Cluster
+### 4d) Access Cluster
 
 Now that you have a running cluster and an SSH key pair, you may log in to your head node, but you need two more items. First, you need to locate the hostname (or private IP address) associated with this instance. The easiest way to do this is to use the AWS CLI to "describe" your instance and locate the appropriate entry in the response. The response is a large JSON dictionary of information and the IP address is present in several locations. You may use just the `aws ec2 describe-instances` command and find the "PrivateIpAddress" entry manually, or you may use something like the following command to filter the response down to a single line representing the address:
 
@@ -201,10 +214,10 @@ ssh -i ~/.ssh/publickey.pub user@hostname
 
 > Note: If you have created and destroyed several AWS Parallel Clusters trying to get this to work, you may encounter some connection issues associated with SSH. If this happens, try removing entries for previous attempts (lines starting with the hostname or IP address) from the `~/.ssh/known_hosts` file.
 
-## 4) Setup HSDS Server
+## 5) Setup HSDS Server
 HSDS can be used to access wind, solar, and other resource data that NLR houses in an AWS S3 bucket. For smaller, single node jobs, this can be done by running HSDS and adjusting the resource file paths in your reV configs. However, since you went through all the trouble to setup your AWS account and spin up a parallel cluster, you're probably not running a small job. For large jobs, running an non-containerized HSDS server will likely encounter connection issues at some point and kill your reV runs. This problem can be largely fixed using HSDS Docker images. The current recommended approach for handling this is to write a script that will install HSDS, Docker, and kick off a containerized HSDS service on each compute node that a reV job uses. The following will walk you through setting up that process.
 
-### 4a) Create Virtual Python Environment
+### 5a) Create Virtual Python Environment
 
 The first step is to create a virtual Python environment that will contain both the reV model and HSDS Python APIs. There are many ways to do this, but this simplest is to use Python's builtin virtual environment module, `venv`. You can use the existing Python interpreter on your system or you can update it with your package manager, but make sure that the Python versions you're working with are compatible with reV. If you choose to use `venv`, you may need to install this module with your package manager. On our Ubuntu system, if you have Python 3.12, that command would be:
 
@@ -227,7 +240,7 @@ source ~/.bashrc
 arev
 ```
 
-### 4b) Configure Data Access
+### 5b) Configure Data Access
 1. Create an HSDS Configuration file in your home directory called `~/.hscfg` with just the following content:
 ```
 # Local HSDS server
@@ -263,7 +276,7 @@ export AWS_REGION="us-west-2"
 
 Now you (and reV) should have access to all the resource files in this bucket. You can explore available datasets using the `hsls` command on the remote files and directories in the remote resource directory. For example, `hsls /nrel/` will list out all top-level resource directories and `hsls /nrel/wtk/conus/wtk_conus_2007.h5` will list out all the datasets and shapes in that file (include the trailing slash on directory names).
 
-## 5) Setup reV
+## 6) Setup reV
 
 You'll need to install reV but most of the reV configuration files you'll need for this example run are provided in this repository. They are based off of a small study area in Delaware, which was built using HSDS and the `make_project_points.py` script. If you would like to try other project points, edit that script to reflect your study area. 
 
@@ -272,7 +285,7 @@ You'll need to install reV but most of the reV configuration files you'll need f
 
 
 
-## 5a) Install reV and configuration files
+## 6a) Install reV and configuration files
 - Navigate to the shared filesystem directory and clone this repository there to get the sample reV configuration files and HSDS startup scripts. We want it in the shared directory because this is where we are going to be writing reV outputs. Then, in the same Python environment you installed HSDS into, install reV through PyPI, and run the CLI to check that it works:
 
 ```bash
@@ -285,7 +298,7 @@ reV
 
 If you see reV's help file, the installation was successful and works on your system. In this folder you will see several "start_hsds" scripts
 
-## 5b) Configure reV
+## 6b) Configure reV
 There are at least two steps in a full reV model pipeline where reV will make a call to the resource data:
 
 1) Generation: will always require access to resource data
@@ -305,7 +318,7 @@ There are at least two steps in a full reV model pipeline where reV will make a 
     - When SLURM is set to share nodes, additional resources left on any one node may be consumed with additional jobs. While this has the potential to improve efficiency, I have not experimented enough with this setup to describe it much detail or to make execution control suggestions.
 
 - HSDS Configuration
-    - HSDS has certain request limits that you may have to either account for or adjust to perform large-scale reV runs. Bascially, everything from line 32 to 60 falls into this group, but here are few to start:
+    - HSDS has certain request limits that you may have to either account for or adjust to perform large-scale reV runs. Basically, everything from line 32 to 60 falls into this group, but here are few to start:
         - `max_tcp_connections`: max number of inflight tcp connections?
         - `max_pending_write_requests`: maxium number of inflight write requests?
         - `max_task_count`: maximum number of concurrent tasks per node before server will return 503 error?**
@@ -324,7 +337,7 @@ Set the resource file paths in config_gen.json to the appropriate file paths on 
 
 You should be good to go! The line in the generation config file makes reV run the start_hsds.sh script before running the reV job. The script will install docker and make sure one HSDS server is running per EC2 instance.
 
-## 6) Monitoring AWS Parallel Cluster Usage and Costs
+## 7) Monitoring AWS Parallel Cluster Usage and Costs
 - Just a real brief overview of how to monitor usage and avoid cost overruns.
 
 In this setup, there are four main sets of fees for running reV on an AWS Parallel Cluster:
@@ -337,7 +350,7 @@ In this setup, there are four main sets of fees for running reV on an AWS Parall
 https://aws.amazon.com/pcs/pricing/
 
 
-## 7) AWS Parallel Cluster Clean Up
+## 8) AWS Parallel Cluster Clean Up
 - Remove the PCluster
 - Depending on settings, you may need to handle the file system separately
 - Ways to keep as much infrastructure alive with as little cost as possible
@@ -345,10 +358,114 @@ https://aws.amazon.com/pcs/pricing/
 - Etc.
 
 
-## 8) Deprecated and Untested Methods
-Some older methods may still work, though they are not covered in this guide.
-- Kubernetes
+## 9) Deprecated and Untested Methods
+### 9a) Setting up an HSDS Kubernetes Service
 
-Other methods have been tested and were found to be less than ideal for reV
-- AWS Lamda Functions
+Setting up your own HSDS Kubernetes service is one way to run a large reV job with full parallelization. This has not been trialed by the NREL team in full, but we have tested on the HSDS group's Kubernetes cluster. If you want to pursue this route, you can follow the HSDS repository instructions for [HSDS Kubernetes on AWS](https://github.com/HDFGroup/hsds/blob/master/docs/kubernetes_install_aws.md).
 
+
+### 9b) Setting up an HSDS Lambda Service
+
+We've tested AWS Lambda functions as the HSDS service for reV workflows and we've found that Lambda functions require too much overhead to work well with the reV workflow. These instructions are included here for posterity, but HSDS-Lambda is _not_ recommended for the reV workflow.
+
+These instructions are generally copied from the [HSDS Lambda README](https://github.com/HDFGroup/hsds/blob/master/docs/aws_lambda_setup.md) with a few modifications.
+
+It seems you cannot currently use the public ECR container image from the HSDS ECR repo so the first few bullets are instructions on how to set up your own HSDS image and push to a private ECR repo.
+
+H5pyd cannot currently call a lambda function directly, so the instructions at the end show you how to set up an API gateway that interfaces between h5pyd and the lambda function.
+
+Follow these instructions from your Cloud9 environment. None of this is directly related to the pcluster environment, except for the requirement to add the ``.hscfg`` file in the pcluster home directory.
+
+1. Clone the [HSDS repository](https://github.com/HDFGroup/hsds) onto your filesystem.
+
+2. You may need to [resize your EBS volume](https://docs.aws.amazon.com/cloud9/latest/user-guide/move-environment.html#move-environment-resize).
+
+3. In the AWS Management Console, create a new ECR repository called "hslambda". Keep the default private repo settings.
+
+4. Create an HSDS image and push to your ``hslambda`` ECR repo. This sublist is a combination of commands from the ECR push commands and the HSDS build instructions (make sure you use the actual push commands from your ECR repo with the actual region, repository name, and AWS account ID):
+
+    ```bash
+    cd hsds
+
+    aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
+
+    sh lambda_build.sh
+
+    docker tag hslambda:latest aws_account_id.dkr.ecr.region.amazonaws.com/my-repository:tag
+
+    docker push aws_account_id.dkr.ecr.region.amazonaws.com/my-repository:tag
+    ```
+
+5. You should now see your new image appear in your ``hslambda`` ECR repo in the AWS Console. Get the URI from this image.
+
+6. In the AWS Management Console, go to the Lambda service interface in your desired region (us-west-2, Oregon).
+
+7. Click "Create Function" -> Choose "Container Image" option, function name is ``hslambda``, use the Container Image URI from the image you just uploaded to your ECR repo, select "Create Function" and wait for the image to load.
+
+8. You should see a banner saying you've successfully created the `hslambda` function.
+
+9. Set the following in the configuration tab:
+
+- Use at least 1024MB of memory (feel free to tune this later for your workload)
+- Timeout of at least 30 seconds (feel free to tune this later for your workload)
+- Use an execution role that includes S3 read only access
+- Add an environment variable `AWS_S3_GATEWAY`: `http://s3.us-west-2.amazonaws.com`
+
+10. Select the "Test" tab and click on the "Test" button. You should see a successful run with a `status_code` of 200 and an output like this:
+
+    ```
+        {
+          "isBase64Encoded": false,
+          "statusCode": 200,
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Content-Length": "323",
+            "Date": "Tue, 23 Nov 2021 22:27:08 GMT",
+            "Server": "Python/3.8 aiohttp/3.8.1"
+          },
+          "body": {
+            "start_time": 1637706428, 
+            "state": "READY",
+            "hsds_version": "0.7.0beta",
+            "name": "HSDS on AWS Lambda",
+            "greeting": "Welcome to HSDS!",
+            "about": "HSDS is a webservice for HDF data", 
+            "node_count": 1,
+            "dn_urls": [
+                "http+unix://%2Ftmp%2Fhs1a1c917f%2Fdn_1.sock"
+            ],
+            "dn_ids": [
+                "dn-001"
+            ], 
+            "username": "anonymous",
+            "isadmin": false
+           }
+        }
+    ```
+
+11. Now we need to create an API Gateway so that reV and h5pyd can interface with the lambda function. Go to the API Gateway page in the AWS console and do these things:
+
+- Create API -> choose HTTP API (build)
+- Add integration -> Lambda -> use ``us-west-2``, select your lambda function, use some generic name like ``hslambda-api``
+- Configure routes -> Method is ``ANY``, the Resource path is ``$default``, the integration target is your lambda function
+- Configure stages -> Stage name is ``$default`` and auto-deploy must be enabled
+- Create and get the API's Invoke URL, something like ``https://XXXXXXX.execute-api.us-west-2.amazonaws.com``
+- Make an `.hscfg` file in the home dir (e.g., `/home/ec2-user/`). Make sure you also have this config in your pcluster filesystem. The config file should have these entries:
+
+    ```bash
+        # HDFCloud configuration file
+        hs_endpoint = https://XXXXXXX.execute-api.us-west-2.amazonaws.com
+        hs_username = hslambda
+        hs_password = lambda
+        hs_api_key = None
+        hs_bucket = nrel-pds-hsds
+    ```
+
+12. All done! You should now be able to run the `aws_pcluster` test sourcing data from `/nrel/nsrdb/v3/nsrdb_{}.h5` or the simple h5pyd test below.
+
+13. Here are some summary notes for posterity:
+
+- We now have a lambda function `hslambda` that will retrieve data from the NSRDB or WTK using the HSDS service.
+- We have an API Gateway that we can use as an endpoint for API requests
+- We have configured h5pyd with the `.hscfg` file to hit that API endpoint with the proper username, password, and bucket target
+- reV will now retrieve data from the NSRDB or WTK in parallel requests to the `hslambda` function via h5pyd.
