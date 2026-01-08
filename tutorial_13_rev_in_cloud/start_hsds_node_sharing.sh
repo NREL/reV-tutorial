@@ -8,7 +8,15 @@
 
 
 # Set the location of the HSDS code directory
-export HSDS_DIR=$HOME
+export HSDS_DIR=$HOME/hsds
+
+# Stop server if requested
+if [[ $1 == "--stop" ]]; then
+    echo "Stopping HSDS server."
+    cd $HSDS_DIR
+    ./runall.sh --stop || exit 1
+    exit 0
+fi
 
 # Get this instance's ID and type (with Instance Meta Data Service (IMDS) V2 below, comment out and use V1 below if needed)
 export TOKEN=$(curl --silent -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
@@ -19,8 +27,9 @@ export EC2_TYPE=$(curl --silent -H "X-aws-ec2-metadata-token: $TOKEN" http://169
 # export EC2_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 # export EC2_TYPE=$(curl -s http://169.254.169.254/latest/meta-data/instance-type)
 
+thisfile=$(realpath $0)
+echo "Running $thisfile on $EC2_ID ($EC2_TYPE) from $HSDS_DIR..."
 
-# Define Docker checking and installation functions
 check_hsds () {
     hsds_running=false
     if command -v docker &>/dev/null; then
@@ -44,24 +53,6 @@ install_docker () {
     sudo usermod -aG docker "$USER"
 }
 
-# Stop server if requested
-if [[ $1 == "--stop" ]]; then
-    echo "Stopping HSDS server."
-    cd $HSDS_DIR/hsds
-    ./runall.sh --stop
-    exit 0
-fi
-
-# Start script with first message to user
-thisfile=$(realpath $0)
-echo "Running $thisfile on $EC2_ID ($EC2_TYPE) from $HSDS_DIR..."
-
-# Clone the HSDS repository if needed
-if [ ! -d $HSDS_DIR/hsds ]; then 
-    echo "$HSDS_DIR not found, cloning https://github.com/HDFGroup/hsds.git..."
-    cd $HSDS_DIR
-    git clone https://github.com/HDFGroup/hsds.git
-fi
 
 # First check to see if HSDS is running
 check_hsds
@@ -87,7 +78,7 @@ else
 
         # Start HSDS
         echo "Starting local HSDS server..."
-        cd $HSDS_DIR/hsds  || exit 1
+        cd $HSDS_DIR  || exit 1
         ./runall.sh "$(nproc --all)"
     else
         echo HSDS service running: $hsds_running
