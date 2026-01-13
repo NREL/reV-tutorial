@@ -36,7 +36,7 @@ install_docker () {
     # Update repositories
     sudo apt update
 
-    # Run the convenient docker install script
+    # Run this convenient docker installation script
     curl https://get.docker.com | sudo sh
 
     # Update groups

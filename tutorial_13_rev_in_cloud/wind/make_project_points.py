@@ -1,4 +1,8 @@
-"""Make reV project points for a study area and resoure dataset."""
+"""Make reV project points for a study area and resoure dataset.
+
+This required a running HSDS service that points to NLR's (formerly NREL)
+resource data S3 bucket.
+"""
 from pathlib import Path
 
 from rex import Resource
@@ -42,7 +46,4 @@ def main(src, state=None):
 
 
 if __name__ == "__main__":
-    main(
-        src=SAMPLE_FPATH,
-        state="Delaware"
-    )
+    main(src=SAMPLE_FPATH, state="Rhode Island")

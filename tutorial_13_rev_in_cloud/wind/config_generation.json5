@@ -9,7 +9,7 @@
         "walltime": 0.25,
         "qos": "normal",
         "memory": null,
-        "nodes": 1,
+        "nodes": 2,
         "queue": null,
         "conda_env": null,
         "module": null,
@@ -22,7 +22,7 @@
     "log_directory": "./logs",
     "log_level": "INFO",
     "technology": "windpower",
-    "project_points": "./project_points_delaware.csv",
+    "project_points": "./project_points_rhode_island.csv",
     "sam_files": {
         "default": "./windpower.json5"
     },
@@ -34,7 +34,8 @@
     "output_request": [
         "cf_mean",
         "cf_profile",
-        "lcoe_fcr"
+        "lcoe_fcr",
+        "ws_mean"
     ],
     "site_data": null,
     "curtailment": null,
