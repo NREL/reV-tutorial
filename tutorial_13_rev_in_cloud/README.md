@@ -92,7 +92,7 @@ For more information on this method, see
 
 
 ## 4) Setup and Deploy the Parallel Cluster
-An AWS Parallel Cluster provides the user a head node that controls the distribution of computational work to a number of compute nodes, each of which are spun up on demand and shutdown after the work is finished. For reV runs, this also requires a shared file system. Once an AWS account is created, the user is able to choose the type of cluster they want and parameterize its characteristics. The following outlines how to configure and spin up a cluster using the AWS CLI, after which you will have access to the head node and file system until you delete the cluster (as outlined in [step 7](#7-aws-pcluster-clean-up)).
+An AWS Parallel Cluster provides the user a head node that controls the distribution of computational work to a number of compute nodes, each of which are spun up on demand and shutdown after the work is finished. For reV runs, this also requires a shared file system. Once an AWS account is created, the user is able to choose the type of cluster they want and parameterize its characteristics. The following outlines how to configure and spin up a cluster using the AWS CLI, after which you will have access to the head node and file system until you delete the cluster (as outlined in [step 7](#8-aws-pcluster-clean-up)).
 
 
 ### 4a) Differences with an HPC
