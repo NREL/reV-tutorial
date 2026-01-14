@@ -273,7 +273,7 @@ Now you (and reV) should have access to all the resource files in this bucket. Y
 
 ## 6) Setup reV
 
-In this repository, you'll find an example reV wind power run for two years in Rhode Island. All of the reV configuration files you'll need for this example run are provided, so you should be able to just run the model but you may need to tweak some configurations if you installed files in a different locations from the defaults or if you need to update some execution parameters to better fit your AWS system. The project points were built using HSDS and the `make_project_points.py` script. If you would like to try other project points, edit that script to reflect your study area. 
+In this repository, you'll find an example reV wind power run for two years in Rhode Island. All of the reV configuration files you'll need for this example run are provided, so you should be able to just run the model but you may need to tweak some configurations if you installed files in a different locations from the defaults or if you need to update some execution parameters to better fit your AWS system. 
 
 ### 6a) Install reV and configuration files
 Navigate to the shared file system directory and clone this repository there to get the sample reV configuration files and HSDS startup scripts. We want it in the shared directory because this is where we are going to be writing reV outputs. Then, in the same Python environment you installed HSDS into, install reV through PyPI, and run the CLI to check that it works. If you see reV's help file, the installation was successful and works on your system.
@@ -286,50 +286,60 @@ pip install NREL-reV
 reV
 ```
 
-In this folder you will see two "start_hsds" scripts, one assumes that you are disabling SLURM's node sharing and the other assumes you haven't. You can find the example reV run configurations in the "wind" directory. This has files for each reV module and a pipeline configuration file that coordinates these. This example represents a mostly complete reV pipeline to demonstrate where you are likely to require an HSDS server and where it isn't necessary.
+In this folder you will see two "start_hsds" scripts, one assumes that you are disabling SLURM's node sharing and the other assumes you haven't. You can find the example reV run configurations in the "wind" directory. This has files for each reV module and a pipeline configuration file that coordinates these. This example represents a mostly complete reV pipeline to demonstrate where you are likely to require an HSDS server and where it isn't necessary. The project points for this run were built using HSDS and the `make_project_points.py` script. If you would like to try other project points, edit that script to reflect your study area, run the `start_hsds.sh` script to start the HSDS service, run it to build the points, and then you'll probably want to stop the HSDS service to save head node resources.
 
 ### 6b) Configure reV to start HSDS
-There are two steps in a full reV model pipeline where reV will make a call to the resource data:
+There are two steps in a full reV model pipeline where reV will make a call to the resource data and where we need to start the HSDS service:
 
 1) `Generation`: will always require access to resource data.
 2) `Supply Curve Aggregation`: will require access to resource data if a `techmap` has not been built and saved to the exclusion file yet.
 
-The `sh_script` option in the execution control of a reV configuration file will run a shell script before running any reV processes. We will use this option run one of the "start_hsds" scripts mentioned above, which will install and start Docker and HSDS on each compute node. If the SLURM node sharing is active, this file will need to contain a lock to prevent multiple processes on the same server from attempting to install and run HSDS at the same time (use `start_hsds_node_sharing.sh`). If node sharing is disabled, use `start_hsds.sh`, which is the default setting in the example configs. This script was written using Ubuntu 24.04 LTS and may require adjustments depending on your operating system.
+The `sh_script` option in the execution control of a reV configuration file will run a shell script before running any reV processes. We will use this option run one of the "start_hsds" scripts mentioned above, which will install and start Docker and HSDS on each compute node. If SLURM node sharing is active, this file will need to contain a lock to prevent multiple processes on the same server from attempting to install and run HSDS at the same time (use `start_hsds_node_sharing.sh`). If node sharing is disabled, use `start_hsds.sh`, which is the default setting in the example configs. This script was written using Ubuntu 24.04 LTS and may require adjustments depending on your operating system.
 
-### 6c) reV Execution control:
-When SLURM is not set to node sharing, there is more responsibility for the the user to ensure that each job is efficiently using its compute node. This can be done with a combination of settings:
+Make sure this key-value pair is set in the execution_control block of the `config_generation.json5` and `config_aggregation.json5` files.
+
+```json
+"sh_script": "/scratch/reV-tutorial/tutorial_13_rev_in_cloud/start_hsds.sh",
+```
+
+> NOTE: The techmap step in `aggregation` should happen on the fly if the HSDS server if running properly, but it might fail if there's a connection issue. In that case, check the techmap dataset in the exclusion file to make sure it was written correctly. Sometimes the techmap step will appear to succeed, but actually fail to write any values to the data array (i.e., you'll see all -1s). In this case, try deleting the techmap from the exclusion file and running again. If that fails, assuming you verified the configuration settings are correct and that HSDS is running properly, you can either try to build the manually or submit an issue to reV's [GitHub repository](https://github.com/NREL/reV/issues).
+
+
+### 6c) reV Execution Settings:
+When SLURM is not set to node sharing, there is more responsibility for the the user to ensure that each job is efficiently using its compute node. This can be done with a combination of settings in `execution_control`:
 
 - `sites_per_worker`: The number of concurrent process the CPU will run at a time. A higher `sites_per_worker` value requires more memory but will reduce the number of slower I/O processes. If you are getting either low memory utilization or out-of-memory (OOM) errors you can adjust this variable up or down.
 - `max_workers`: The maximum number of CPU cores per node to split reV work across. A higher number of workers will increase the memory overhead used to manage concurrency. If you are getting either low memory utilization or OOM errors you can also adjust this variable up or down.
 - `memory_utilization_limit`: The percentage of available memory at which reV starts dumping data from memory onto disk. Because disk I/O is slower than memory transfers, it can improve runtimes to perform fewer I/O operations by holding more data in memory for longer. However, full memory utilization is not desired because of the possibility for brief memory spikes that can cause OOM errors (either from reV itself or background processes). So, this number can be adjusted up to some percentage of total available memory that leaves enough room for other processes. 
-    > Note that this is the memory utilization at which reV will start dumping data to disk, meaning actual memory use will continue to rise for a period after it starts the write process. So, it needs rrrrlowean the 100% and that will depend on the behavior of system (in the sample reV-generation config, this value was set to 70% but the actual memory use topped out at about 90%). The proper value will depend on many factors such as your hardware, operating system (OS), other reV execution control settings, and other processes running on the server.
-- `nodes`: The number of nodes you choose will determine the number of individual processes (reV sites) that each individual node runs. The larger number of nodes, the smaller number of sites. On a shared HPC system, a higher number of nodes could result in longer queue times, especially on busy days. More nodes will also result in longer node and process start up times and more chunked files written to the filesystem. More nodes will of course result in faster model runs according to your, but it could actually increase overall computational resource costs given the overhead mentioned above.
+> Note: this is the memory utilization at which reV will start dumping data to disk, meaning actual memory use will continue to rise for a period after it starts the write process, so this needs to be somewhat lower than your target threshold (in full-scale version of the example reV-generation config, this value was set to 70% but actual memory use topped out at about 90%). The proper value will depend on many factors such as your hardware, operating system, other reV execution control settings, and other processes running on the server.
+- `nodes`: The number of nodes you choose will also determine the number of individual processes (reV sites) that each individual node runs. The larger number of nodes, the smaller number of sites on each. On a shared HPC system, a higher number of nodes could result in longer queue times, especially on busy days. More nodes will also result in longer node and process start up times and more chunked files written to the filesystem. More nodes will result in faster model runs according to your wall clock, but it could increase overall computational resource costs given the overhead mentioned above.
 - `pool_size`: placeholder
 
-When SLURM is set to share nodes, additional resources left on any one node may be consumed with additional jobs. While this has the potential to improve efficiency, the experimented enough with this setup to describe it much detail or to make execution control suggestions.
+When SLURM is set to share nodes, additional resources left on any one node may be consumed with additional jobs. While this has the potential to improve efficiency, the reV team has not experimented enough with this setup to describe it much detail or to make execution control suggestions.
 
-- HSDS Configuration
-    - HSDS has certain request limits that you may have to either account for or adjust to perform large-scale reV runs. Basically, everything from line 32 to 60 falls into this group, but here are few to start:
-        - `max_tcp_connections`: max number of inflight tcp connections?
-        - `max_pending_write_requests`: maxium number of inflight write requests?
-        - `max_task_count`: maximum number of concurrent tasks per node before server will return 503 error?**
-        - `max_tasks_per_node_per_request`:  maximum number of inflight tasks to each node per request?
+### 6d) HSDS Settings
 
-    - If you are struggling with Docker and HSDS, you might want to turn on timestamps in the HSDS config to help identify events. (I didnt' manage to get this to work, still no time stamps)
+HSDS has certain request limits that you may have to either account for or adjust to perform large-scale reV runs. These values are stored in `hsds/admin/config/config.yml` in the HSDS repository. There are 106 such settings, but here are few to start:
 
-    - A common problem you might come across is a violation of the max HSDS task count settings. You are, by default, allowed 100 concurrent tasks per node. If you exceed this count, you will receive a 503 error. You can tell if this is the error by sshing into the offending node (e.g., `ssh standard-dy-standard-6`), using the docker logs command on the HSDS server node, and searching the output for 503 errors (`docker logs hsds_sn_1 | grep 503`). You can solve this by reducing the possible number of concurrent processes in the reV configuration file (e.g., reduce `max_workers`) or by adjusting the HSDS parameter in a `override.yaml` file in the HSDS repository (e.g., `~/github/hsds/admin/override.yml`). This override file will supercede individual entries in `config.yml` with user-supplied values. In our example problem, the `override.yml` file would contain only the line `max_task_count: <task count>` (e.g., `max_task_count: 150`). If you run enough sample reV runs, it will probably become clear whether this is a common problem that requires a more fundamental change to your execution control in reV or if it's rare enough that a slightly higher HSDS task count will be suffice. The default for this parameter is `100`.
+- `max_tcp_connections`: Max number of inflight Transmission Control Protocol (TCP) connections. 
+- `max_pending_write_requests`: Maxium number of inflight write requests.
+- `max_task_count`: Maximum number of concurrent tasks per node before the server will return a 503 (Service Unavailable) error.
+- `max_tasks_per_node_per_request`:  Maximum number of inflight tasks to each node per request.
+
+A common problem you might come across is a violation of the max HSDS task count settings. You are, by default, allowed 100 concurrent tasks per node. If you exceed this count, you will receive a 503 error. You can tell if this is the error by SSHing into the offending node (e.g., `ssh standard-dy-standard-6`), using the Docker logs command on the HSDS server node, and searching the output for 503 errors (`docker logs hsds_sn_1 | grep 503`). You can solve this by reducing the number of concurrent processes in the reV configuration file (e.g., reduce `max_workers`) or by adjusting the HSDS parameter in a new `hsds/admin/config/override.yml` file. This override file will supercede individual entries in `config.yml` with user-supplied values. In our example problem, a `override.yml` file would contain only the line `max_task_count: <task count>` (e.g., `max_task_count: 150`). If you run enough sample reV runs, it will probably become clear whether this is a common problem that requires a more fundamental change to your execution control in reV or if it's rare enough that a higher HSDS task count will be suffice. The default for this parameter is 100.
+
+### 6f) Run reV
+
+If everything was configured correctly, you should be able to run the example run!
+
+```bash
+cd wind/
+reV pipeline -c config_pipeline.json --monitor --background
+```
 
 
-Make sure this key-value pair is set in the execution_control block of the config_gen.json file: "sh_script": "sh ~/start_hsds.sh"
-
-Add the following to config_gen.json: config_gen["execution_control"]["sh_script"] = "~/start_hsds.sh" this will start the HSDS server on each compute node before running reV.
-
-Set the resource file paths in config_gen.json to the appropriate file paths on HSDS: config_gen["resource_file"] = "/nrel/wtk/conus/wtk_conus_{}.h5" (the curly bracket will be filled in automatically by reV). To find the appropriate HSDS filepaths, see the instruction set here.
-
-You should be good to go! The line in the generation config file makes reV run the start_hsds.sh script before running the reV job. The script will install docker and make sure one HSDS server is running per EC2 instance.
 
 
-> NOTE: Each module that requires access to the resource data will need the `start_hsds.sh` script in it's configuration file. The `supply-curve-aggregation` module only needs to access resource data once to build and write a  resource-to-exclusion grid mapping dataset to the exclusions file (the "techmap"). This step should happen on the fly if the HSDS server if running properly, but it might fail if there's a connection issue. In that case, check the techmap in the exclusion file to make sure it was written correctly. Sometimes the techmap step will appear to succeed, but actually fail to write any values to the data array (i.e., you'll see all -1s). In this case, try deleting the techmap from the exclusion file and running again. If that fails, assuming you verified the configuration settings are correct and that HSDS is running properly, you can either try to build the manually or submit an issue to reV's [GitHub repository](https://github.com/NREL/reV/issues).
 
 ## 7) Monitoring AWS Parallel Cluster Usage and Costs
 - Just a real brief overview of how to monitor usage and avoid cost overruns.
