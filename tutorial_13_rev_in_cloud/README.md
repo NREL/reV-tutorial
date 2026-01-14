@@ -311,9 +311,9 @@ When SLURM is not set to node sharing, there is more responsibility for the the 
 - `memory_utilization_limit`: The percentage of available memory at which reV starts dumping data from memory onto disk. Because disk I/O is slower than memory transfers, it can improve runtimes to perform fewer I/O operations by holding more data in memory for longer. However, full memory utilization is not desired because of the possibility for brief memory spikes that can cause OOM errors (either from reV itself or background processes). So, this number can be adjusted up to some percentage of total available memory that leaves enough room for other processes. 
     > Note: this is the memory utilization at which reV will start dumping data to disk, meaning actual memory use will continue to rise for a period after it starts the write process, so this needs to be somewhat lower than your target threshold (in a full-scale version of the example reV-generation config, this value was set to 70% but actual memory use topped out at about 90%). The proper value will depend on many factors such as your hardware, operating system, other reV execution control settings, and other processes running on the server.
 - `nodes`: The number of nodes you choose will also determine the number of individual processes (reV sites) that each individual node runs. The larger number of nodes, the smaller number of sites on each. On a shared HPC system, a higher number of nodes could result in longer queue times, especially on busy days. More nodes will also result in longer node and process start up times and more chunked files written to the filesystem. More nodes may result in faster model runs according to your wall clock, but they could increase overall computational resource costs given the overhead mentioned above.
-- `pool_size`: placeholder
+- `pool_size`: This is the maximum number of processes to submit to the `concurrent.futures.ProcessPoolExecutor` on any one node at a time. Lowering this value will help to reduce parallel process memory overhead, but will result in somewhat longer runtimes since some CPU workers at the end of each process pool execution will remain idle until the last processes are finished and the next pool is submitted.
 
-When SLURM is set to share nodes, additional resources left on any one node may be consumed with additional jobs. While this has the potential to improve efficiency, the reV team has not experimented enough with this setup to describe it much detail or to make execution control suggestions.
+When SLURM is set to share nodes, additional resources left on any one node may be consumed with additional jobs. While this has the potential to improve efficiency and resource utilization, the reV team has not experimented enough with this setup to describe it much detail or to make execution control suggestions.
 
 ### 6d) HSDS Settings
 
@@ -352,12 +352,30 @@ In this setup, there are four main sets of fees for running reV on an AWS Parall
 https://aws.amazon.com/pcs/pricing/
 
 
-## 8) AWS Parallel Cluster Clean Up
-- Remove the PCluster
-- Depending on settings, you may need to handle the file system separately
-- Ways to keep as much infrastructure alive with as little cost as possible
-    - "The minimal state"
-- Etc.
+## 8) AWS Parallel Cluster Management/Clean Up
+
+If you wish to adjust your cluster's system configuration after setting everything up, you can do so from your local computer's terminal with the AWS CLI. Pause, update, and restart your cluster with the following commands:
+
+```bash
+pcluster list-clusters # For a reminder of the cluster name 
+pcluster update-compute-fleet -n cluster_name --status STOP_REQUESTED. # This will take a while
+pcluster update-cluster --cluster-name cluster_name --cluster-configuration /path/to/pcluster-config.yaml
+pcluster update-compute-fleet -n cluster_name --status START_REQUESTED. # So will this
+```
+
+Don’t like your OS? You can't change that with a simple update. Destroy it and start over:
+
+```bash
+pcluster delete-cluster --cluster-name cluster_name
+# Edit the file...
+pcluster create-cluster -c pcluster-config.yaml --cluster-name cluster_name
+```
+
+Of course, if you are fully done with the cluster and wish to shut it down permanently, you may run the just `delete-cluster` command and stop there.
+
+
+
+
 
 
 ## 9) Deprecated and Untested Methods
