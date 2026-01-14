@@ -352,7 +352,7 @@ In this setup, there are four main sets of fees for running reV on an AWS Parall
 https://aws.amazon.com/pcs/pricing/
 
 
-## 8) AWS Parallel Cluster Management/Clean Up
+## 8) AWS Parallel Cluster Updating/Deleting
 
 If you wish to adjust your cluster's system configuration after setting everything up, you can do so from your local computer's terminal with the AWS CLI. Pause, update, and restart your cluster with the following commands:
 
@@ -367,16 +367,13 @@ Don’t like your OS? You can't change that with a simple update. Destroy it and
 
 ```bash
 pcluster delete-cluster --cluster-name cluster_name
-# Edit the file...
+# Edit the YAML file...
 pcluster create-cluster -c pcluster-config.yaml --cluster-name cluster_name
 ```
 
-Of course, if you are fully done with the cluster and wish to shut it down permanently, you may run the just `delete-cluster` command and stop there.
+Of course, if you are fully done with the cluster and wish to shut it down permanently, you may run just the `delete-cluster` command and stop there.
 
-
-
-
-
+<br/><br/><br/><br/><br/><br/><br/>
 
 ## 9) Deprecated and Untested Methods
 ### 9a) Setting up an HSDS Kubernetes Service
