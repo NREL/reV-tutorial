@@ -336,6 +336,9 @@ Set the resource file paths in config_gen.json to the appropriate file paths on 
 
 You should be good to go! The line in the generation config file makes reV run the start_hsds.sh script before running the reV job. The script will install docker and make sure one HSDS server is running per EC2 instance.
 
+
+> NOTE: Each module that requires access to the resource data will need the `start_hsds.sh` script in it's configuration file. The `supply-curve-aggregation` module only needs to access resource data once to build and write a  resource-to-exclusion grid mapping dataset to the exclusions file (the "techmap"). This step should happen on the fly if the HSDS server if running properly, but it might fail if there's a connection issue. In that case, check the techmap in the exclusion file to make sure it was written correctly. Sometimes the techmap step will appear to succeed, but actually fail to write any values to the data array (i.e., you'll see all -1s). In this case, try deleting the techmap from the exclusion file and running again. If that fails, assuming you verified the configuration settings are correct and that HSDS is running properly, you can either try to build the manually or submit an issue to reV's [GitHub repository](https://github.com/NREL/reV/issues).
+
 ## 7) Monitoring AWS Parallel Cluster Usage and Costs
 - Just a real brief overview of how to monitor usage and avoid cost overruns.
 

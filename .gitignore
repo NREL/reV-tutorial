@@ -14,7 +14,7 @@ solar_status.json
 pipeline.out
 
 # Excpetions
-!tutorial_13_rev_in_cloud/sample_exclusions.h5
+!tutorial_13_rev_in_cloud/wind/sample_exclusions.h5
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

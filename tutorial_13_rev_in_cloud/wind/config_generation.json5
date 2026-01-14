@@ -13,7 +13,7 @@
         "queue": null,
         "conda_env": null,
         "module": null,
-        "keep_sh": false,
+        "keep_sh": false,  // This refers the SLURM submission script, not the start HSDS script, don't worry
         "num_test_nodes": null,
         "memory_utilization_limit": 0.4,
         "timeout": 1800,

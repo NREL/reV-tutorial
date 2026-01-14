@@ -10,7 +10,7 @@
             "multi-year": "./config_multi_year.json5"
         },
         {
-            "supply-curve-aggregation": "./config_supply_curve_aggregation.json5"
+            "supply-curve-aggregation": "./config_aggregation.json5"
         },
         {
             "rep-profiles": "./config_rep_profiles.json5"
