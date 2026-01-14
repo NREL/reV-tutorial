@@ -92,8 +92,7 @@ For more information on this method, see
 
 
 ## 4) Setup and Deploy the Parallel Cluster
-An AWS Parallel Cluster provides the user a head node that controls the distribution of computational work to a number of compute nodes, each of which are spun up on demand and shutdown after the work is finished. For reV runs, this also requires a shared file system. Once an AWS account is created, the user is able to choose the type of cluster they want and parameterize its characteristics. The following outlines how to configure and spin up a cluster using the AWS CLI, after which you will have access to the head node and file system until you delete the cluster (as outlined in [step 7](#8-aws-pcluster-clean-up)).
-
+An AWS Parallel Cluster provides the user a head node that controls the distribution of computational work to a number of compute nodes, each of which are spun up on demand and shutdown after the work is finished. For reV runs, this also requires a shared file system. Once an AWS account is created, the user is able to choose the type of cluster they want and parameterize its characteristics. The following outlines how to configure and spin up a cluster using the AWS CLI, after which you will have access to the head node and file system until you delete the cluster (as outlined in [step 8](#8-aws-parallel-cluster-updating-and-deleting)).
 
 ### 4a) Differences with an HPC
 At this point, it is worthwhile to point out that there are default behaviors in an AWS Parallel Cluster that may differ from what an user with access to an onsite HPC might expect. This can cause some confusion when configuring a reV job since the model was designed specifically to run on NLR HPC systems.
@@ -162,7 +161,7 @@ To write your own configuration file, you may start with the [example configurat
 
 ### 4c) Spin Up Cluster
 
-Before you can access your AWS account to create the parallel cluster we configured in [section 2b](2b-configure-cluster) we need to authenticate the connection. To do this, run the appropriate AWS sign-on command using the AWS CLI. For the single sign-on method use:
+Before you can access your AWS account to create the parallel cluster you configured above,you need to authenticate the connection. To do this, run the appropriate AWS sign-on command using the AWS CLI. For the single sign-on method use:
 
 ```bash
 sso login
@@ -173,11 +172,9 @@ or, if you didn't set the `AWS_PROFILE` environment variable:
 aws sso login --profile=profile_name
 ```
 
-- *Include IAM case here*
-
 Now we can use the `aws-parallelcluster` CLI to create your cluster. Run the following command (if you want to keep default cluster name from the sample config, you may use this command directly, otherwise update the cluster name to your own):
 ```bash
-pcluster create-cluster -c rev-pcluster-config.yaml --cluster-name rev-pcluster`
+pcluster create-cluster -c rev-pcluster-config.yaml --cluster-name rev-pcluster
 ```
 
 If everything was configured correctly, you will see an output JSON message in your shell indicating that the creation process has begun (look for "CREATE_IN_PROGRESS"). This process will take some time to finish, but you may check on it's progress through the EC2 CloudFormation portal in your AWS developers page where you'll see the status of each individual cluster component. You may also run the following command to see its overall status:
@@ -194,7 +191,7 @@ Now that you have a running cluster and an SSH key pair, you may log in to your 
 aws ec2 describe-instances | grep PrivateIpAddress | tail -1 | awk '{print $2}'
 ```
 
-Next, you'll need the username for the server. It is possible to add new user names to your instances (see, [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html)), but since we have not described that step here, you will likely need to use the default user for the OS you chose in the image configuration step. Below are the default user names associated with the three OS groups described in [section 2b](#2b-configure-cluster) but you can find all default names in the "managing users" link above:
+Next, you'll need the username for the server. It is possible to add new user names to your instances (see, [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html)), but since we have not described that step here, you will likely need to use the default user for the OS you chose in the image configuration step. Below are the default user names associated with the three OS groups described in [section 4b](#4b-the-parallel-cluster-configuration-file) but you can find all default names in the "managing users" link above:
 
 - **Amazon Linux**: *ec2-user*
 - **RHEL**: *ec2-user* or *root*
@@ -242,7 +239,7 @@ Then you could assign the activation command to an alias if you don't want to ty
     hs_bucket = nrel-pds-hsds
     ```
 
-2. Clone or move this tutorial repository into the shared directory we established in the AWS Parallel Cluster configuration YAML in [section 3](#3-setup-and-deploy-the-parallel-cluster) (`/scratch/` by default). We want it in the shared directory because this is where we're going to run reV and write the outputs here.
+2. Clone or move this tutorial repository into the shared directory we established in the AWS Parallel Cluster configuration YAML in [section 4](#4b-the-parallel-cluster-configuration-file) (`/scratch/` by default). We want it in the shared directory because this is where we're going to run reV and write the outputs here.
 
 3. In this directory you'll find several "start_hsds" bash scripts. If you wish to run reV with the Slurm `exclusive` parameter, use `start_hsds.sh`. If you want to use node sharing, you will need to use `start_hsds_node_sharing.sh`, which locks the file so that only one process attempts to install docker and run HSDS while the others wait for the service to start. This is needed in this case because reV will run this script once for each process it kicks off; if node sharing is turned off each process is run on a dedicated node, but if it is left on many reV jobs will be kicked off and each will run the file on the same server.
     > Note: The contents of your `start_hsds.sh` script for installing and starting Docker depend on which OS you’re using since it uses the package manager to do it. Different OSes use different package managers. The sample file included in this repository uses the Advanced Package Tool (APT), which is common to all Debian-based operating systems such as Ubuntu. If you aren't using a Debian-based OS, you'll need to edit the file.
@@ -352,7 +349,7 @@ In this setup, there are four main sets of fees for running reV on an AWS Parall
 https://aws.amazon.com/pcs/pricing/
 
 
-## 8) AWS Parallel Cluster Updating/Deleting
+## 8) AWS Parallel Cluster Updating and Deleting
 
 If you wish to adjust your cluster's system configuration after setting everything up, you can do so from your local computer's terminal with the AWS CLI. Pause, update, and restart your cluster with the following commands:
 
@@ -373,7 +370,7 @@ pcluster create-cluster -c pcluster-config.yaml --cluster-name cluster_name
 
 Of course, if you are fully done with the cluster and wish to shut it down permanently, you may run just the `delete-cluster` command and stop there.
 
-<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/>
 
 ## 9) Deprecated and Untested Methods
 ### 9a) Setting up an HSDS Kubernetes Service
