@@ -111,7 +111,7 @@ Another subtle difference between NLR's Slurm setting and the default parameters
 The next step is to write a YAML configuration file that specifies the build characteristic of the machines and software you wish to wish to deploy (e.g., operating system, disk, RAM, CPUs, job scheduler, etc.). Here, you may use the AWS CLI for a set of command lines prompts that will guide the build process or you may write your own manually. To use the guided process, use the command below or go to [The AWS Parallel Cluster Configuration page](https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3-configuring.html) for more detailed instructions.
 
 ```bash
-pcluster configure --config "./cluster-config.yaml
+pcluster configure --config ./cluster-config.yaml
 ```
 
 To write your own configuration file, you may start with the [example configuration file](https://github.com/NREL/reV-tutorial/blob/master/tutorial_13_rev_in_cloud/rev-pcluster-config.yaml) provided for you in this repository. Each configuration section used in the example is briefly described below along with some notes on reV-specific considerations. For more information on how to specify your cluster to your needs please visit the latest [AWS documentation](https://docs.aws.amazon.com/parallelcluster/latest/ug/cluster-configuration-file-v3.html) and take a look at some AWS-provided [example configuration files](https://github.com/aws/aws-parallelcluster/tree/release-3.0/cli/tests/pcluster/example_configs).
