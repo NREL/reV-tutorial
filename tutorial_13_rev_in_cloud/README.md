@@ -14,13 +14,7 @@ If you are creating an individual AWS account to run reV, review the AWS recomme
 We recommend the ["two subnet"](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3-two-subnets.html) configuration for Parallel Cluster networking.  This means the head node will use a public `SubnetId` (you should limit ssh/22 TCP access to just your IP in the security group) and the compute nodes use a private `SubnetId`. Review the [AWS Recommended Parallel Cluster network configurations](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3.html) for more details on network options and best practices.
 
 ### 1b) Institutional AWS Account Guide
-Institutional users generally work within an AWS Organization or a preconfigured landing zone. Coordinate with your cloud administrator to:
-- Obtain or create an IAM user with programmatic access keys dedicated to this project with permission to deploy AWS Parallel Cluster. See: [https://docs.aws.amazon.com/parallelcluster/latest/ug/iam-roles-in-parallelcluster-v3.html](https://docs.aws.amazon.com/parallelcluster/latest/ug/iam-roles-in-parallelcluster-v3.html).
-- Your cloud administrator should review the [AWS Recomended Parallel Cluster network configurations](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3.html).
-- Confirm the `SubnetId` to be used for the head node and compute nodes provided by your cloud administrator. Institutional AWS accounts might use a private `SubnetId` for both the head node and compute nodes, work out those specifics with your cloud administrator.
-
-### 1c) Other recommendations for AWS account configurations
-- Verify budget, budget controls, and alert thresholds before launching resource-intensive clusters.
+Institutional users generally work within an AWS Organization or a preconfigured landing zone. Coordinate with your cloud administrator to:git- Verify budget, budget controls, and alert thresholds before launching resource-intensive clusters.
 - Its highly recommended to setup AWS Budget alerts for projected usage: [https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).  This can help reduce the risk of a surprise AWS bill and keep costs in control.
 > Note: Your VPC must have DNS Resolution = yes, DNS Hostnames = yes and DHCP options with the correct domain name for the Region. The default DHCP Option Set already specifies the required AmazonProvidedDNS. If specifying more than one domain name server, see DHCP options sets in the Amazon VPC User Guide.*
 
@@ -279,42 +273,40 @@ Now you (and reV) should have access to all the resource files in this bucket. Y
 
 ## 6) Setup reV
 
-You'll need to install reV but most of the reV configuration files you'll need for this example run are provided in this repository. They are based off of a small study area in Delaware, which was built using HSDS and the `make_project_points.py` script. If you would like to try other project points, edit that script to reflect your study area. 
+In this repository, you'll find an example reV wind power run for two years in Rhode Island. All of the reV configuration files you'll need for this example run are provided, so you should be able to just run the model but you may need to tweak some configurations if you installed files in a different locations from the defaults or if you need to update some execution parameters to better fit your AWS system. The project points were built using HSDS and the `make_project_points.py` script. If you would like to try other project points, edit that script to reflect your study area. 
 
+### 6a) Install reV and configuration files
+Navigate to the shared file system directory and clone this repository there to get the sample reV configuration files and HSDS startup scripts. We want it in the shared directory because this is where we are going to be writing reV outputs. Then, in the same Python environment you installed HSDS into, install reV through PyPI, and run the CLI to check that it works. If you see reV's help file, the installation was successful and works on your system.
 
+```bash
+cd /scratch/
+git clone https://github.com/NREL/reV-tutorial.git
+cd reV-tutorial/tutorial_13_rev_in_cloud/
+pip install NREL-reV
+reV
+```
 
+In this folder you will see two "start_hsds" scripts, one assumes that you are disabling SLURM's node sharing and the other assumes you haven't. You can find the example reV run configurations in the "wind" directory. This has files for each reV module and a pipeline configuration file that coordinates these. This example represents a mostly complete reV pipeline to demonstrate where you are likely to require an HSDS server and where it isn't necessary.
 
-## 6a) Install reV and configuration files
-- Navigate to the shared filesystem directory and clone this repository there to get the sample reV configuration files and HSDS startup scripts. We want it in the shared directory because this is where we are going to be writing reV outputs. Then, in the same Python environment you installed HSDS into, install reV through PyPI, and run the CLI to check that it works:
+### 6b) Configure reV to start HSDS
+There are two steps in a full reV model pipeline where reV will make a call to the resource data:
 
-    ```bash
-    cd /scratch/
-    git clone https://github.com/NREL/reV-tutorial.git
-    cd reV-tutorial/tutorial_13_rev_in_cloud/
-    pip install NREL-reV
-    reV
-    ```
+1) `Generation`: will always require access to resource data.
+2) `Supply Curve Aggregation`: will require access to resource data if a `techmap` has not been built and saved to the exclusion file yet.
 
-If you see reV's help file, the installation was successful and works on your system. In this folder you will see several "start_hsds" scripts
+The `sh_script` option in the execution control of a reV configuration file will run a shell script before running any reV processes. We will use this option run one of the "start_hsds" scripts mentioned above, which will install and start Docker and HSDS on each compute node. If the SLURM node sharing is active, this file will need to contain a lock to prevent multiple processes on the same server from attempting to install and run HSDS at the same time (use `start_hsds_node_sharing.sh`). If node sharing is disabled, use `start_hsds.sh`, which is the default setting in the example configs. This script was written using Ubuntu 24.04 LTS and may require adjustments depending on your operating system.
 
-## 6b) Configure reV
-There are at least two steps in a full reV model pipeline where reV will make a call to the resource data:
+### 6c) reV Execution control:
+When SLURM is not set to node sharing, there is more responsibility for the the user to ensure that each job is efficiently using its compute node. This can be done with a combination of settings:
 
-1) Generation: will always require access to resource data
-2) Aggregation: will require access to resource data if a `techmap` has not been computed and saved to the exclusion file yet.
+- `sites_per_worker`: The number of concurrent process the CPU will run at a time. A higher `sites_per_worker` value requires more memory but will reduce the number of slower I/O processes. If you are getting either low memory utilization or out-of-memory (OOM) errors you can adjust this variable up or down.
+- `max_workers`: The maximum number of CPU cores per node to split reV work across. A higher number of workers will increase the memory overhead used to manage concurrency. If you are getting either low memory utilization or OOM errors you can also adjust this variable up or down.
+- `memory_utilization_limit`: The percentage of available memory at which reV starts dumping data from memory onto disk. Because disk I/O is slower than memory transfers, it can improve runtimes to perform fewer I/O operations by holding more data in memory for longer. However, full memory utilization is not desired because of the possibility for brief memory spikes that can cause OOM errors (either from reV itself or background processes). So, this number can be adjusted up to some percentage of total available memory that leaves enough room for other processes. 
+    > Note that this is the memory utilization at which reV will start dumping data to disk, meaning actual memory use will continue to rise for a period after it starts the write process. So, it needs rrrrlowean the 100% and that will depend on the behavior of system (in the sample reV-generation config, this value was set to 70% but the actual memory use topped out at about 90%). The proper value will depend on many factors such as your hardware, operating system (OS), other reV execution control settings, and other processes running on the server.
+- `nodes`: The number of nodes you choose will determine the number of individual processes (reV sites) that each individual node runs. The larger number of nodes, the smaller number of sites. On a shared HPC system, a higher number of nodes could result in longer queue times, especially on busy days. More nodes will also result in longer node and process start up times and more chunked files written to the filesystem. More nodes will of course result in faster model runs according to your, but it could actually increase overall computational resource costs given the overhead mentioned above.
+- `pool_size`: placeholder
 
-- The `sh_script` option points to a script that installs and kicks off HSDS on each compute node. If the run is not setup such that each SLURM node has full access to the compute node, this file will need to contain a lock to prevent multiple processes on the same server from attempting to install and run HSDS at the same time. This tutorial contains a few sample scripts that will achieve this, though the script may require adjustments depending on your operating system.
-
-- reV Execution control:
-    - When SLURM is not set to node sharing, there is more responsibility for the the user to ensure that each job is efficiently using its compute node. This can be done with a combination of settings:
-
-        - `sites_per_worker`: The number of concurrent process the CPU will run at a time. A higher `sites_per_worker` value requires more memory but will reduce slower I/O processes. If you are getting either low memory utilization or out-of-memory (OOM) errors you can adjust this variable up or down.
-        - `max_workers`: The maximum number of CPU cores per node to split reV work across. A higher number of workers will increase the memory overhead used to manage concurrency. If you are getting either low memory utilization or OOM errors you can also adjust this variable up or down.
-        - `memory_utilization_limit`: The percentage of available memory at which reV starts dumping data from memory onto disk. Because disk I/O is slower than memory transfers, it can improve runtimes to perform fewer I/O operations by holding more data in memory for longer. However, full memory utilization is not desired because of the possibility for brief memory spikes (either from reV itself or background processes) that can cause OOM errors. So, this number can be adjusted up to some percentage of total available memory that leaves enough room other processes. Note that this is memory utilization at which reV will start dumping data to disk, meaning actual memory use will continue to rise for a period after it starts the write process. So, it needs to be lower than the 100% and that will depend on the behavior of system (in the sample reV-generation config, this value was set to 70% but the actual memory use topped out at about 90%). The proper value will depend on many factors such as your hardware, operating system (OS), other reV execution control settings, and other processes running on the server.
-        - `nodes`: The number of nodes you choose will determine the number of individual processes (reV sites) that each individual node runs. The larger number of nodes, the smaller number of sites. On a shared HPC system, a higher number of nodes could result in longer queue times, especially on busy days. More nodes will also result in longer node and process start up times and more chunked files written to the filesystem. More nodes will of course result in faster model runs according to your, but it could actually increase overall computational resource costs given the overhead mentioned above.
-        - `pool_size`: placeholder
-
-    - When SLURM is set to share nodes, additional resources left on any one node may be consumed with additional jobs. While this has the potential to improve efficiency, I have not experimented enough with this setup to describe it much detail or to make execution control suggestions.
+When SLURM is set to share nodes, additional resources left on any one node may be consumed with additional jobs. While this has the potential to improve efficiency, the experimented enough with this setup to describe it much detail or to make execution control suggestions.
 
 - HSDS Configuration
     - HSDS has certain request limits that you may have to either account for or adjust to perform large-scale reV runs. Basically, everything from line 32 to 60 falls into this group, but here are few to start:
