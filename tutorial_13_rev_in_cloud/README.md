@@ -212,7 +212,7 @@ Next, you'll need the username for the server. It is possible to add new user na
 Now we'll use the `ssh` command with the public key, username, and IP address (or "hostname") to connect to the clusters head node. This command can be saved as an alias for quick terminal access or used to connect the instance to an Integrated Development Environment (IDE) such as Visual Studio Code (VSCode). VSCode is a popular IDE for activities such as this and is how this team put together the sample runs used to develop this guide; for instructions on how to connect to your head node through VSCode see [https://code.visualstudio.com/docs/remote/ssh](https://code.visualstudio.com/docs/remote/ssh).
 
 ```bash
-ssh -i ~/.ssh/your_key.pem user@hostname
+ssh -i ~/.ssh/privatekey.pem user@hostname
 ```
 
 > Note: If you have created and destroyed several AWS Parallel Clusters trying to get this to work, you may encounter some connection issues associated with SSH. If this happens, try removing entries for previous attempts (lines starting with the hostname or IP address) from the `~/.ssh/known_hosts` file.
