@@ -14,12 +14,14 @@ If you are creating an individual AWS account to run reV, review the AWS recomme
 We recommend the ["two subnet"](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3-two-subnets.html) configuration for Parallel Cluster networking.  This means the head node will use a public `SubnetId` (you should limit ssh/22 TCP access to just your IP in the security group) and the compute nodes use a private `SubnetId`. Review the [AWS Recommended Parallel Cluster network configurations](https://docs.aws.amazon.com/parallelcluster/latest/ug/network-configuration-v3.html) for more details on network options and best practices.
 
 ### 1b) Institutional AWS Account
-Institutional users generally work within an AWS Organization or a preconfigured landing zone. Coordinate with your cloud administrator to:git- Verify budget, budget controls, and alert thresholds before launching resource-intensive clusters.
+Institutional users generally work within an AWS Organization or a preconfigured landing zone. Coordinate with your cloud administrator to verify budget, budget controls, and alert thresholds before launching resource-intensive clusters.
 - Its highly recommended to setup AWS Budget alerts for projected usage: [https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html).  This can help reduce the risk of a surprise AWS bill and keep costs in control.
 > Note: Your VPC must have DNS Resolution = yes, DNS Hostnames = yes and DHCP options with the correct domain name for the Region. The default DHCP Option Set already specifies the required AmazonProvidedDNS. If specifying more than one domain name server, see DHCP options sets in the Amazon VPC User Guide.*
 
 ### 1d) IAM versus AWS Single Sign-on (SSO)
 At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI and Parallel Cluster. If your organization must rely on SSO, consult the HSDS maintainers for updates on STS compatibility before proceeding.
+
+SSO can be used to provision the cluster, but the specific configurations at [5b) Configure Data Access](#5b-configure-data-access) requires IAM access keys at this time of writing and will break when using SSO or STS.
 
 
 ## 2) Install AWS Command Line Interfaces
@@ -27,11 +29,11 @@ Many of the instructions that follow will utilize AWS command line interfaces (C
 
 ```bash
 python3 -m venv ~/envs/aws
-source activate ~/envs/aws/bin/activate
+source ~/envs/aws/bin/activate
 pip install awscli aws-parallelcluster
 ```
 
-Once you have installed these two programs, you then need to link them to your AWS account with a profile. The easiest way to do this is to run the `aws configure` command and follow the prompts to build a profile configuration file, which will be stored in a hidden AWS directory in your home folder (`~/.aws`). Before running this command, make sure you know your access key ID, secret access key, and target AWS region. We will default to JSON for the output format prompt. The resulting file will look like this:
+Once you have installed these two programs, you then need to link them to your AWS account with a profile. The easiest way to do this is to run the `aws configure` or `aws configure sso` command and follow the prompts to build a profile configuration file, which will be stored in a hidden AWS directory in your home folder (`~/.aws`). Before running this command, make sure you know your access key ID, secret access key, and target AWS region. We will default to JSON for the output format prompt. The resulting file will look like this:
 
 Single-Sign On:
 ```yaml
@@ -49,8 +51,17 @@ sso_registration_scopes = sso:account:access
 ```
 
 Identity and Access Management (IAM):
+`~/.aws/config`
 ```yaml
-Include IAM case here
+[profile profile_name]
+region = us-west-2
+output = json
+```
+`~/.aws/credentials`
+```yaml
+[profile_name]
+aws_access_key_id = <secret>
+aws_secret_access_key = <secret>
 ```
 
 Moving forward, we need to tell the AWS CLI which profile to use for authentication. You may do this manually for each session by setting the `AWS_PROFILE` environment variable to this name in each command-line session, you may specify the name in a `--profile` option for each CLI command, or you may add the variable to your command-line interpreter's startup script to automate this step, which is what we're suggesting for convenience. Here, we are using a Bash shell so will be editing the `~/.bashrc` script (Linux) or the `~/.bash_profile` (MacOS) to add the following line:
@@ -164,7 +175,7 @@ To write your own configuration file, you may start with the [example configurat
 Before you can access your AWS account to create the parallel cluster you configured above,you need to authenticate the connection. To do this, run the appropriate AWS sign-on command using the AWS CLI. For the single sign-on method use:
 
 ```bash
-sso login
+aws sso login
 ```
 
 or, if you didn't set the `AWS_PROFILE` environment variable:
@@ -200,7 +211,7 @@ Next, you'll need the username for the server. It is possible to add new user na
 Now we'll use the `ssh` command with the public key, username, and IP address (or "hostname") to connect to the clusters head node. This command can be saved as an alias for quick terminal access or used to connect the instance to an Integrated Development Environment (IDE) such as Visual Studio Code (VSCode). VSCode is a popular IDE for activities such as this and is how this team put together the sample runs used to develop this guide; for instructions on how to connect to your head node through VSCode see [https://code.visualstudio.com/docs/remote/ssh](https://code.visualstudio.com/docs/remote/ssh).
 
 ```bash
-ssh -i ~/.ssh/publickey.pub user@hostname
+ssh -i ~/.ssh/your_key.pem user@hostname
 ```
 
 > Note: If you have created and destroyed several AWS Parallel Clusters trying to get this to work, you may encounter some connection issues associated with SSH. If this happens, try removing entries for previous attempts (lines starting with the hostname or IP address) from the `~/.ssh/known_hosts` file.
@@ -244,7 +255,7 @@ Then you could assign the activation command to an alias if you don't want to ty
 3. In this directory you'll find several "start_hsds" bash scripts. If you wish to run reV with the Slurm `exclusive` parameter, use `start_hsds.sh`. If you want to use node sharing, you will need to use `start_hsds_node_sharing.sh`, which locks the file so that only one process attempts to install docker and run HSDS while the others wait for the service to start. This is needed in this case because reV will run this script once for each process it kicks off; if node sharing is turned off each process is run on a dedicated node, but if it is left on many reV jobs will be kicked off and each will run the file on the same server.
     > Note: The contents of your `start_hsds.sh` script for installing and starting Docker depend on which OS you’re using since it uses the package manager to do it. Different OSes use different package managers. The sample file included in this repository uses the Advanced Package Tool (APT), which is common to all Debian-based operating systems such as Ubuntu. If you aren't using a Debian-based OS, you'll need to edit the file.
 
-4. Set your AWS environment variables. This can be done at the start of the HSDS script itself or it can be done it your `~/.bashrc` run command file, which will set the variables when you spin up a shell. Here, we are going to add these variables to your `~/.bashrc`. The benefit of putting them here is that it allows you use the HSDS scripts to stop the service more easily and that requires the `AWS_S3_GATEWAY` environment variables to be set in your current shell. Add the following environment variables with your values to the `~/.bashrc` files. Here, use AWS access variables from an IAM user with admin privileges and not your AWS console root user. The `unset` parameter here is needed in case you are using a SSO authentication method and need to override AWS access variables with your IAM user variables.
+4. Set your AWS environment variables. This can be done at the start of the HSDS script itself or it can be done it your `~/.bashrc` run command file, which will set the variables when you spin up a shell. Here, we are going to add these variables to your `~/.bashrc`. The benefit of putting them here is that it allows you use the HSDS scripts to stop the service more easily and that requires the `AWS_S3_GATEWAY` environment variables to be set in your current shell. Add the following environment variables with your values to the `~/.bashrc` files. Here, use AWS access variables from an IAM user with admin privileges and not your AWS console root user. The `unset` parameter here is needed in case you are using a SSO authentication method and need to override AWS access variables with your IAM user variables.  **This step currently requires IAM access keys and does NOT support SSO or STS.**
 
     ```
     unset AWS_SESSION_TOKEN
