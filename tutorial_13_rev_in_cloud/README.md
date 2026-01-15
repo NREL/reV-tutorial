@@ -19,7 +19,7 @@ Institutional users generally work within an AWS Organization or a preconfigured
 > Note: Your VPC must have DNS Resolution = yes, DNS Hostnames = yes and DHCP options with the correct domain name for the Region. The default DHCP Option Set already specifies the required AmazonProvidedDNS. If specifying more than one domain name server, see DHCP options sets in the Amazon VPC User Guide.*
 
 ### 1d) IAM versus AWS Single Sign-on (SSO)
-At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI and Parallel Cluster. If your organization must rely on SSO, consult the HSDS maintainers for updates on STS compatibility before proceeding.
+At the time of writing, reV and HSDS cannot authenticate with temporary credentials issued by AWS IAM Identity Center (SSO) or any workflow that relies solely on Security Token Service (STS). To avoid authentication failures, create an IAM user with access keys and use those keys when configuring the AWS CLI in step [5b) Configure Data Access](#5b-configure-data-access). If your organization must rely on SSO, consult the HSDS maintainers for updates on STS compatibility before proceeding.
 
 SSO can be used to provision the cluster, but the specific configurations at [5b) Configure Data Access](#5b-configure-data-access) requires IAM access keys at this time of writing and will break when using SSO or STS.
 
