@@ -36,6 +36,7 @@ pip install awscli aws-parallelcluster
 Once you have installed these two programs, you then need to link them to your AWS account with a profile. The easiest way to do this is to run the `aws configure` or `aws configure sso` command and follow the prompts to build a profile configuration file, which will be stored in a hidden AWS directory in your home folder (`~/.aws`). Before running this command, make sure you know your access key ID, secret access key, and target AWS region. We will default to JSON for the output format prompt. The resulting file will look like this:
 
 Single-Sign On:
+`~/.aws/config`
 ```yaml
 [profile profile_name]
 sso_session = account_name
