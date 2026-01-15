@@ -349,17 +349,18 @@ reV pipeline -c config_pipeline.json --monitor --background
 
 
 ## 7) Monitoring AWS Parallel Cluster Usage and Costs
-- Just a real brief overview of how to monitor usage and avoid cost overruns.
+
 
 In this setup, there are four main sets of fees for running reV on an AWS Parallel Cluster:
 
-    1) Constant hourly head node fees
-    2) Intermittant hourly compute node fees
-    3) Constant hourly and storage-based SLURM accounting fees
-    4) Various other AWS programs that provide services such as DNS resolution, system monitoring, threat detection, etc.
+1) Constant hourly head node fees
+2) Intermittant hourly compute node fees
+3) Constant hourly and storage-based SLURM accounting fees
+4) Various other AWS programs that provide services such as DNS resolution, system monitoring, threat detection, etc.
 
-https://aws.amazon.com/pcs/pricing/
+For more details on costs see [https://aws.amazon.com/pcs/pricing/](https://aws.amazon.com/pcs/pricing/).
 
+> Note: These prices are based on a specific set of runs, at a particular time and location. Other price factors such as discounts, time of day, on-demand vs spot prices will affect your costs. Realized prices could be very different from these estimates, use them as a very rough estimate of scale.
 
 ## 8) AWS Parallel Cluster Updating and Deleting
 
