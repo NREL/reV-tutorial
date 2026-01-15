@@ -350,13 +350,19 @@ reV pipeline -c config_pipeline.json --monitor --background
 
 ## 7) Monitoring AWS Parallel Cluster Usage and Costs
 
-
 In this setup, there are four main sets of fees for running reV on an AWS Parallel Cluster:
 
-1) Constant hourly head node fees
-2) Intermittant hourly compute node fees
-3) Constant hourly and storage-based SLURM accounting fees
-4) Various other AWS programs that provide services such as DNS resolution, system monitoring, threat detection, etc.
+1) Constant hourly head node fees.
+3) Intermittant hourly compute node fees.
+4) Constant hourly and storage-based SLURM accounting fees.
+5) Various other AWS programs that provide services such as DNS resolution, system monitoring, threat detection, etc.
+
+A set of national-scale runs was performed to generally assess the costs. The rates came out to:
+
+- head node t3.large 60.74 USD per month
+- m6a.12xlarge compute node 2.07 USD per hour
+- c6a.12xlarge compute node 1.84 USD per hour
+- LustreFSx SSD, 1.2GB 720.13 USD per month 
 
 For more details on costs see [https://aws.amazon.com/pcs/pricing/](https://aws.amazon.com/pcs/pricing/).
 
