@@ -134,7 +134,7 @@ To write your own configuration file, you may start with the [example configurat
 
 2. **Image**:
 
-    This section provides an `Os` option for specifying the operating system (OS) you wish to use. The following Linux operating systems are supported in all regions (see [https://docs.aws.amazon.com/parallelcluster/latest/ug/Image-v3.html](https://docs.aws.amazon.com/parallelcluster/latest/ug/Image-v3.html)). We chose Ubuntu 24.04 in the example configuration because the `HSDS` package is tested on it, but other options may be more suitable depending on your comfort levels with the different Linux options or your institutions setup. Do note that different operating systems use different package managers, so that will affect the contents of the Bash script used to connect reV to the HSDS-stored resource data as described in [section 5](#5-configuring-rev).
+    This section provides an `Os` option for specifying the operating system (OS) you wish to use. The following Linux operating systems are supported in all regions (see [https://docs.aws.amazon.com/parallelcluster/latest/ug/Image-v3.html](https://docs.aws.amazon.com/parallelcluster/latest/ug/Image-v3.html)). We chose Ubuntu 24.04 in the example configuration because the `HSDS` package is tested on it, but other options may be more suitable depending on your comfort levels with the different Linux options or your institution's setup. Do note that different operating systems use different package managers, so that will affect the contents of the Bash script used to connect reV to the HSDS-stored resource data as described in [section 5](#5-configuring-rev).
 
     - `alinux2`: Amazon Linux 2
     - `alinux2023`: Amazon Linux 2023
