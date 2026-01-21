@@ -371,9 +371,7 @@ So, estimating the cost of your reV run or runs will depend both on how long you
 - Day 2 - $202 in total costs
 - Day 3 - $51 in total costs
 
-
-
-> Note: These prices are based on a specific set of runs, at a particular time and location. Other price factors such as discounts, time of day, on-demand vs [spot prices]() will affect your costs. Realized prices could be very different from these estimates, use them as a very rough estimate of scale.
+> Note: These prices are based on a specific set of runs, at a particular time and location. Other price factors such as discounts, time of day, on-demand vs spot prices will affect your costs. Realized prices could be very different from these estimates, use them as a very rough estimate of scale.
 
 For more details on costs see [https://aws.amazon.com/pcs/pricing/](https://aws.amazon.com/pcs/pricing/).
 
