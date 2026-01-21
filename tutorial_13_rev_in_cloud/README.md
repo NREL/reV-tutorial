@@ -335,9 +335,9 @@ HSDS has certain request limits that you may have to either account for or adjus
 
 A common problem you might come across is a violation of the max HSDS task count settings. You are, by default, allowed 100 concurrent tasks per node. If you exceed this count, you will receive a 503 error. You can tell if this is the error by SSHing into the offending node (e.g., `ssh standard-dy-standard-6`), using the Docker logs command on the HSDS server node, and searching the output for 503 errors (`docker logs hsds_sn_1 | grep 503`). You can solve this by reducing the number of concurrent processes in the reV configuration file (e.g., reduce `max_workers`) or by adjusting the HSDS parameter in a new `hsds/admin/config/override.yml` file. This override file will supercede individual entries in `config.yml` with user-supplied values. In our example problem, a `override.yml` file would contain only the line `max_task_count: <task count>` (e.g., `max_task_count: 150`). If you run enough sample reV runs, it will probably become clear whether this is a common problem that requires a more fundamental change to your execution control in reV or if it's rare enough that a higher HSDS task count will be suffice. The default for this parameter is 100.
 
-### 6f) Run reV
+### 7) Run reV
 
-If everything was configured correctly, you should be able to run the example run!
+If everything was configured correctly, you should be able to run the example run! Here, we are running the reV pipeline so that it monitors progress on the compute nodes (and successful modules kick off subsequent modules automatically) as a background process. 
 
 ```bash
 cd wind/
@@ -346,9 +346,7 @@ reV pipeline -c config_pipeline.json --monitor --background
 
 
 
-
-
-## 7) Monitoring AWS Parallel Cluster Usage and Costs
+## 8) Monitoring AWS Parallel Cluster Usage and Costs
 
 In this setup, there are four main sets of fees for running reV on an AWS Parallel Cluster:
 
@@ -368,7 +366,7 @@ For more details on costs see [https://aws.amazon.com/pcs/pricing/](https://aws.
 
 > Note: These prices are based on a specific set of runs, at a particular time and location. Other price factors such as discounts, time of day, on-demand vs spot prices will affect your costs. Realized prices could be very different from these estimates, use them as a very rough estimate of scale.
 
-## 8) AWS Parallel Cluster Updating and Deleting
+## 9) AWS Parallel Cluster Updating and Deleting
 
 If you wish to adjust your cluster's system configuration after setting everything up, you can do so from your local computer's terminal with the AWS CLI. Pause, update, and restart your cluster with the following commands:
 
@@ -391,13 +389,13 @@ Of course, if you are fully done with the cluster and wish to shut it down perma
 
 <br/><br/>
 
-## 9) Deprecated and Untested Methods
-### 9a) Setting up an HSDS Kubernetes Service
+## Appendix: Deprecated and Untested Methods
+### a) Setting up an HSDS Kubernetes Service
 
 Setting up your own HSDS Kubernetes service is one way to run a large reV job with full parallelization. This has not been trialed by the NREL team in full, but we have tested on the HSDS group's Kubernetes cluster. If you want to pursue this route, you can follow the HSDS repository instructions for [HSDS Kubernetes on AWS](https://github.com/HDFGroup/hsds/blob/master/docs/kubernetes_install_aws.md).
 
 
-### 9b) Setting up an HSDS Lambda Service
+### b) Setting up an HSDS Lambda Service
 
 We've tested AWS Lambda functions as the HSDS service for reV workflows and we've found that Lambda functions require too much overhead to work well with the reV workflow. These instructions are included here for posterity, but HSDS-Lambda is _not_ recommended for the reV workflow.
 
