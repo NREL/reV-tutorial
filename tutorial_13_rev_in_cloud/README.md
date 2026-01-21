@@ -345,26 +345,37 @@ reV pipeline -c config_pipeline.json --monitor --background
 ```
 
 
+## 8) Costs 
 
-## 8) Monitoring AWS Parallel Cluster Usage and Costs
-
-In this setup, there are four main sets of fees for running reV on an AWS Parallel Cluster:
+In this setup, there are four main sets of costs or fees for running reV on an AWS Parallel Cluster:
 
 1) Constant hourly head node fees.
 3) Intermittant hourly compute node fees.
 4) Constant hourly and storage-based SLURM accounting fees.
 5) Various other AWS programs that provide services such as DNS resolution, system monitoring, threat detection, etc.
 
-A set of national-scale runs was performed to generally assess the costs. The rates came out to:
+So, estimating the cost of your reV run or runs will depend both on how long you incur constant costs while your cluster is deployed and how many intermittant costs you incur from the reV runs themselves. These prices will also vary depending on many factors such as your hardware, time, and location. To provide a rough estimate of how much a reV run might cost you, a set of national-scale runs was performed and the resulting costs are summarized below. 
 
-- head node t3.large 60.74 USD per month
-- m6a.12xlarge compute node 2.07 USD per hour
-- c6a.12xlarge compute node 1.84 USD per hour
-- LustreFSx SSD, 1.2GB 720.13 USD per month 
+### Test Run Rate Assumptions:
+- **LustreFSx SSD (1.2GB):** $720.13 /month 
+- **Head node (t3.large):**  $60.74 /month
+- **Compute node (m6a.12xlarge):**  $2.07 /hour
+- **Compute node (c6a.12xlarge):** $1.84 /hour
+
+### National Scale reV Run Costs
+- **Wind:** 119.5 hours * $1.84/hour = $218.96
+- **Solar:** 14.3 hours * $1.84/hour = 26.12
+
+### Estimated Daily Costs
+- Day 1 - $128 in total costs
+- Day 2 - $202 in total costs
+- Day 3 - $51 in total costs
+
+
+
+> Note: These prices are based on a specific set of runs, at a particular time and location. Other price factors such as discounts, time of day, on-demand vs [spot prices]() will affect your costs. Realized prices could be very different from these estimates, use them as a very rough estimate of scale.
 
 For more details on costs see [https://aws.amazon.com/pcs/pricing/](https://aws.amazon.com/pcs/pricing/).
-
-> Note: These prices are based on a specific set of runs, at a particular time and location. Other price factors such as discounts, time of day, on-demand vs spot prices will affect your costs. Realized prices could be very different from these estimates, use them as a very rough estimate of scale.
 
 ## 9) AWS Parallel Cluster Updating and Deleting
 
@@ -390,12 +401,12 @@ Of course, if you are fully done with the cluster and wish to shut it down perma
 <br/><br/>
 
 ## Appendix: Deprecated and Untested Methods
-### a) Setting up an HSDS Kubernetes Service
+### I. Setting up an HSDS Kubernetes Service
 
 Setting up your own HSDS Kubernetes service is one way to run a large reV job with full parallelization. This has not been trialed by the NREL team in full, but we have tested on the HSDS group's Kubernetes cluster. If you want to pursue this route, you can follow the HSDS repository instructions for [HSDS Kubernetes on AWS](https://github.com/HDFGroup/hsds/blob/master/docs/kubernetes_install_aws.md).
 
 
-### b) Setting up an HSDS Lambda Service
+### II. Setting up an HSDS Lambda Service
 
 We've tested AWS Lambda functions as the HSDS service for reV workflows and we've found that Lambda functions require too much overhead to work well with the reV workflow. These instructions are included here for posterity, but HSDS-Lambda is _not_ recommended for the reV workflow.
 
